@@ -52,6 +52,40 @@ Exemplo:
 - Trim: "Curso" como core; resto stackado como bonus 1, 2, 3, 4
 - Resultado: oferta core parece mais limpa, bonuses parecem extras enormes
 
+## Naming psychology — como nomear bonus
+
+Nome do bonus carrega 50-80% da percepção de valor antes do cliente ler o detalhe. Bonus mal nomeado é descartável; bonus bem nomeado vira ancoragem.
+
+**Padrões que **NÃO** usar:**
+- "Extra X" → soa commodity, intercambiável.
+- "Bônus: [coisa genérica]" → sem nome próprio, mente do cliente não fixa.
+- "Material complementar" → administrativo, parece anexo de PDF.
+- "X (gratuito)" → atrai atenção pro fato de ser grátis, sugere baixo valor.
+
+**Padrões que **funcionam** — estrutura `[Palavra-gatilho] de [Especificidade]`:**
+
+| Palavra-gatilho | O que implica | Exemplo bom |
+|---|---|---|
+| **Sistema** | Repetível, encapsulado, estruturado | "Sistema de Onboarding de Clientes em 7 Passos" |
+| **Vault** | Curation, exclusividade, acesso restrito | "Vault de Scripts Validados — 47 emails" |
+| **Acelerador** | Tempo economizado, atalho legítimo | "Acelerador de Setup — sai de 3 sem pra 3 dias" |
+| **Toolkit** | Complexidade encapsulada em pacote pronto | "Toolkit Premium de Email Sequences — 23 templates" |
+| **Framework** | Metodologia proprietária, repetível | "Framework de Pricing em 5 Leis" |
+| **Playbook** | Operacional, passo-a-passo executável | "Playbook de Cold Outreach B2B SaaS" |
+| **Blueprint** | Plano completo, do zero ao pronto | "Blueprint de Lançamento de SaaS em 90 dias" |
+| **Masterclass** | Profundidade, expertise concentrada | "Masterclass de Negociação Enterprise (3h)" |
+
+**Antes/depois:**
+
+| Bonus fraco | Bonus forte |
+|---|---|
+| "Bônus: templates de email" | "Toolkit Premium de Email Sequences — 47 templates validados em 14 contas (R$ 1.997 valor)" |
+| "Suporte por 30 dias" | "Acelerador 30 Dias — acesso direto via WhatsApp, resposta em até 4h úteis (R$ 4.997 valor)" |
+| "Material extra" | "Vault de Scripts Validados — 47 emails frios + 23 follow-ups testados em 6 nichos (R$ 2.997 valor)" |
+| "Curso de presentes" | "Masterclass de Pricing — gravação de 3h com 7 estudos de caso reais (R$ 1.497 valor)" |
+
+**Regra:** se você pode trocar o nome do seu bonus pelo nome do bonus de um concorrente sem perder coerência, o nome está fraco.
+
 ## Anti-padrões
 
 - Bonus que parece custar nada (PDF de 2 páginas sem nome próprio)

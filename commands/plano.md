@@ -1,6 +1,6 @@
 ---
 description: Business plan completo (3000-6000 palavras) para empresa ou produto. Estrutura em 10 seções — sumário, mercado, oferta, money model, pricing, aquisição, operação, métricas, riscos, roadmap 30-60-90. Usa Money Models, LTV:CAC, Core Four, Pricing Playbook, Leila Scaling.
-argument-hint: "[slug_ou_caminho] [--tipo=empresa|produto] [--no-humanize]"
+argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--tipo=empresa|produto] [--no-humanize]"
 ---
 
 # /hormozi-gtm:plano
@@ -87,13 +87,23 @@ Documento interno — modo lite preserva tom direto.
 
 `outputs/plano/plano-{slug}-{YYYYMMDD}-v{n}.md` via template `plano.md`. O discriminador `tipo` (empresa | produto) vai no frontmatter, não no nome do arquivo.
 
-### Passo 6: Pontos críticos
+### Passo 6: Preview na conversa
 
-Mostra na conversa:
-- LTGP:CAC ratio + payback (✓ verde, ⚠️ amarelo, ❌ vermelho)
-- 1-3 riscos identificados
-- 1 recomendação contraintuitiva (se aplicável)
-- Caminho do arquivo
+```
+✅ Salvo em: outputs/plano/plano-{slug}-{YYYYMMDD}-v{n}.md
+📋 Preview:
+   • Tipo: {{empresa | produto}}
+   • LTV:CAC: {{N}}:1 ({{✓ verde | ⚠️ amarelo | ❌ vermelho}})
+   • Payback: {{N}} dias (alvo < 30)
+   • Riscos identificados: {{N}}
+   • Recomendação contraintuitiva: "{{texto curto}}"
+   • Status humanizer: ✓ lite pass
+
+👉 Próximos passos:
+   1. Validar projeções com unit economics reais (3 meses de dados)
+   2. /hormozi-gtm:audit antes de mexer no Core (se ratio < 3:1)
+   3. /hormozi-gtm:pricing --produto={{slug}} se tier-mix precisa ajustar
+```
 
 ## Critério de pronto
 

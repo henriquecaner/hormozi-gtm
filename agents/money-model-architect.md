@@ -4,6 +4,8 @@ description: Especialista em Money Models — Attraction Offer, Core Offer, Upse
 model: opus
 effort: high
 maxTurns: 20
+tools: Read
+disallowedTools: Write, Edit
 ---
 
 # Money Model Architect

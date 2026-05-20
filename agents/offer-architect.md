@@ -4,6 +4,8 @@ description: Especialista em Grand Slam Offer e Value Equation. Use quando preci
 model: opus
 effort: high
 maxTurns: 20
+tools: Read
+disallowedTools: Write, Edit
 ---
 
 # Offer Architect

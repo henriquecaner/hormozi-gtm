@@ -1,12 +1,12 @@
 ---
-empresa: {{empresa}}
-slug: {{slug}}
+empresa_nome: {{empresa_nome}}
+empresa_slug: {{empresa_slug}}
 last_updated: {{YYYY-MM-DD}}
 version: 1
 plugin: hormozi-gtm
 ---
 
-# GTM Context — {{empresa}}
+# GTM Context — {{empresa_nome}}
 
 Arquivo de contexto persistente. Todos os comandos do plugin consultam ele automaticamente. Atualize-o quando mudanças relevantes acontecerem (oferta, preço, ICP, canal). Versões antigas ficam em git.
 

@@ -1,6 +1,6 @@
 ---
 description: Cria ou refina landing page de vendas long-form (2000-3500 palavras). Usa Grand Slam Offer, Value Equation, bonus stacking, scarcity/urgency, guarantees. Humanizer modo full obrigatório. Soft warning se sem audit recente.
-argument-hint: "[slug_ou_caminho_de_LP_existente] [--section=<nome>] [--skip-audit] [--no-humanize]"
+argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--foco=<secao>] [--skip-audit] [--no-humanize]"
 ---
 
 # /hormozi-gtm:lp
@@ -42,9 +42,18 @@ Pass final: delegate a `humanizer` (modo full, obrigatório).
 1. `gtm-context.md` existe → carrega ICP, oferta, brand voice, audience externa, intensidade do tom
 2. Se não existe → dispara `/hormozi-gtm:init` antes
 3. Audit recente de oferta (≤14 dias)? → carrega como `audit_ref`
-4. Sem audit recente e sem `--skip-audit` → mostra warning:
+4. Sem audit recente e sem `--skip-audit` → pergunta interativa (não warning passivo):
 
-> "Detectei que sua oferta não passou por Value Equation audit recente. Recomendo rodar `/hormozi-gtm:audit` antes — leva 5min e a LP fica muito melhor. Seguir mesmo assim ou pausar pra audit?"
+> "Sua oferta não passou por Value Equation audit nas últimas 2 semanas. Copy escrita sobre oferta sem audit recente frequentemente precisa retrabalho.
+>
+> Como prefere seguir?
+> (1) Rodar `/hormozi-gtm:audit` agora (5min) — recomendado, LP fica muito melhor
+> (2) Seguir mesmo assim — entendo o risco, quero a LP hoje
+> (3) Cancelar — vou rodar audit em sessão separada e volto"
+
+Se (1): roda `/hormozi-gtm:audit` inline, salva audit, carrega `audit_ref` automaticamente, continua o fluxo de LP.
+Se (2): segue, mas grava `audit_ref: null` no frontmatter com nota.
+Se (3): sai limpo, sem criar arquivo.
 
 ## Fluxo
 
@@ -85,12 +94,26 @@ Delegate ao subagent `humanizer`. Aplica todas as regras (não só lite).
 
 Salva em `outputs/lp/lp-{slug}-{YYYYMMDD}-v1.md` com frontmatter completo.
 
-#### Passo 5: Resumo
+#### Passo 5: Preview na conversa
 
-Mostra na conversa:
-- Caminho do arquivo
-- 3-5 highlights do que foi feito (headline, garantia, estrutura de pricing)
-- Pergunta se quer refinar alguma seção
+Mostra:
+
+```
+✅ Salvo em: outputs/lp/lp-{slug}-{YYYYMMDD}-v{n}.md
+📋 Preview:
+   • Headline: "{{texto da headline}}"
+   • Garantia: {{tipo + cláusula}}
+   • Stack: {{N}} bonuses, valor total R$ {{X}}
+   • CTA primário: "{{texto}}"
+   • Status humanizer: ✓ full pass
+
+👉 Próximos passos:
+   1. Mostra ao cliente, captura feedback
+   2. /hormozi-gtm:hooks --produto={{slug}} → testa headlines em ad
+   3. /hormozi-gtm:review --ref=outputs/lp/... → se quiser feedback brutal interno
+```
+
+Termina perguntando se quer refinar alguma seção (sem reabrir o diálogo todo).
 
 ### Modo REFINAR
 

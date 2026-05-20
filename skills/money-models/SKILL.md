@@ -87,6 +87,39 @@ Se não → trabalha pra fazer ficar verdadeiro antes de escalar.
 - Downsell inexistente (perde 70% dos que disseram não)
 - Core offer com margem < 50% (modelo não fecha)
 
+## Ordem de validação pre-launch
+
+Founder iniciante tenta validar 4 níveis simultaneamente, queima capital e não sabe qual nível falhou. A ordem certa é sequencial — só sobe pro próximo quando o anterior atinge gate:
+
+**1. Core Offer (sempre primeiro)**
+- Pergunta: existe demanda e converte?
+- Gate: conversão ≥ 2% em LP fria com tráfego pago + NPS ≥ 7 nos primeiros 20 clientes.
+- Investimento: ~30-90 dias.
+- Se falha aqui, **não construa upsell** — volta pra Value Equation e refaz a oferta.
+
+**2. Upsell (pré-vendido)**
+- Pergunta: existe interesse antes de eu construir?
+- Como validar **sem construir**: survey aos clientes Core ("Se tivesse [upsell] por R$ X, compraria?"), fake door (botão "Comprar upsell" na thank-you page, redireciona pra "em desenvolvimento, garante seu spot") ou pre-sale com desconto.
+- Gate: ≥ 20% dos clientes Core demonstram interesse explícito (survey 4+/5 ou fake door click >20%).
+- Se < 20%, oferta de upsell está errada — itera no upsell, não constrói ainda.
+
+**3. Upsell (lançado pós-checkout)**
+- Pergunta: take rate real bate 20-40%?
+- Gate: ≥ 20% take rate nos primeiros 50 clientes Core. Se Core + Upsell ratio é < 3:1 LTV:CAC ainda, volta pra pricing antes de continuar.
+- Investimento: ~30-60 dias construindo + 30 dias coletando dados.
+
+**4. Continuity / Recorrência**
+- Pergunta: clientes Core+Upsell já demonstraram disposição pra pagar contínuo?
+- Como validar: oferece versão "preview" ou waitlist antes de construir engine de subscription.
+- Gate: ≥ 15% dos clientes Core+Upsell engajam com continuity em 60 dias pós-purchase. Churn em 90 dias ≤ 8%/mês.
+
+**5. Downsell (último)**
+- Pergunta: quanto da audiência que disse não pode ser recuperada?
+- Construa só depois de ter pelo menos 200 no-buys catalogados. Antes disso, downsell é otimização prematura.
+- Gate: recupera ≥ 10% dos no-buys com margem ≥ 30%.
+
+**Princípio:** Cada nível deve **se pagar sozinho** antes de construir o próximo. Se Core não fecha, upsell não conserta. Se upsell não tem take rate, continuity é fantasia.
+
 ## Aplicação por caso de uso
 
 | Caso | Como usar Money Models |

@@ -1,6 +1,6 @@
 ---
 description: Cria ou refina roteiro de vídeo — VSL longo (8-15min) ou short-form (15-60s). Batch mode gera múltiplas variantes. Usa hook framework, VSL 7-step arc, ad copy formula. Humanizer modo full obrigatório.
-argument-hint: "[slug_ou_caminho] [--formato=vsl|reels|shorts|tiktok] [--batch] [--n=N] [--no-humanize]"
+argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--formato=vsl|reels|shorts|tiktok] [--batch] [--n=N] [--no-humanize]"
 ---
 
 # /hormozi-gtm:roteiro
@@ -40,8 +40,16 @@ Pass final: delegate a `humanizer` (modo full).
 ## Pré-requisitos
 
 1. `gtm-context.md` existe → carrega ICP, oferta, brand voice, audience externa, intensidade do tom
-2. Audit recente da oferta? → carrega como `audit_ref` (soft warning se ausente)
-3. Hooks validados? → soft suggestion de rodar `/hormozi-gtm:hooks` se nenhum hook foi escolhido ainda
+2. Audit recente da oferta? → carrega como `audit_ref`. Se ausente, pergunta interativa:
+
+   > "Sua oferta não passou por Value Equation audit nas últimas 2 semanas. Roteiro escrito sobre oferta sem audit frequentemente precisa retrabalho.
+   >
+   > Como prefere seguir?
+   > (1) Rodar `/hormozi-gtm:audit` agora (5min) — recomendado
+   > (2) Seguir mesmo assim — entendo o risco, quero o roteiro hoje
+   > (3) Cancelar — volto depois"
+
+3. Hooks validados? → soft suggestion (não bloqueante) de rodar `/hormozi-gtm:hooks` se nenhum hook foi escolhido. Se usuário pediu format short-form sem hooks prévios, sugere rodar `/hooks` antes pra testar 10-15 variantes em ad antes de escrever roteiro completo.
 
 ## Fluxo
 
@@ -75,13 +83,22 @@ Pass final pelo subagent `humanizer`.
 
 `outputs/roteiro/vsl-{slug}-{YYYYMMDD}-v{n}.md` com frontmatter completo + timestamps + notas de produção.
 
-#### Passo 5: Resumo
+#### Passo 5: Preview na conversa
 
-Mostra:
-- Hook escolhido
-- Mecanismo nomeado
-- CTA final
-- Caminho do arquivo
+```
+✅ Salvo em: outputs/roteiro/vsl-{slug}-{YYYYMMDD}-v{n}.md
+📋 Preview:
+   • Hook (0-15s): "{{texto}}"
+   • Mecanismo nomeado: {{nome}}
+   • CTA final: "{{texto}}"
+   • Duração estimada: {{N}} min
+   • Status humanizer: ✓ full pass
+
+👉 Próximos passos:
+   1. Gravar VSL ou enviar pro time de vídeo
+   2. /hormozi-gtm:hooks --produto={{slug}} → variações de hook pra A/B test
+   3. /hormozi-gtm:review --ref=outputs/roteiro/... → se quiser revisão brutal
+```
 
 ### Formato short-form / Batch
 

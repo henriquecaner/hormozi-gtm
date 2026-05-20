@@ -5,8 +5,8 @@ command: review
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{slug}}
-product: {{slug-do-material}}
+client: {{empresa_slug}}
+product: {{produto_slug}}
 material_revisado: {{caminho_do_material}}
 material_tipo: {{lp | ad | email | proposta | outro}}
 frameworks:

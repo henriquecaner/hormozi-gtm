@@ -1,6 +1,6 @@
 ---
 description: Diagnóstico de oferta via Value Equation — score 1-10 em cada vetor (Dream Outcome, Probability, Time Delay, Effort), identifica gargalo crítico, propõe top 3 alavancas concretas e reescrita da oferta em 1 parágrafo. Pré-requisito recomendado antes de LP e roteiro.
-argument-hint: "[caminho_para_brief_da_oferta_ou_audit_anterior]"
+argument-hint: "[--produto=<slug>] [--ref=<caminho>]"
 ---
 
 # /hormozi-gtm:audit

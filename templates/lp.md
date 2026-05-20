@@ -5,8 +5,8 @@ command: lp
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{slug}}
-product: {{produto-slug}}
+client: {{empresa_slug}}
+product: {{produto_slug}}
 frameworks:
   - grand-slam-offer
   - value-equation
@@ -18,6 +18,7 @@ humanizer_pass: true
 humanizer_mode: full
 audit_ref: {{caminho_ou_null}}
 pricing_ref: {{caminho_ou_null}}
+parent_version: {{caminho_v_anterior_ou_null}}
 ---
 
 # Landing Page — {{produto}}

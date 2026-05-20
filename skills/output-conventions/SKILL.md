@@ -56,8 +56,8 @@ command: lp                          # init|audit|lp|roteiro|plano|review|hooks|
 version: 2                           # incrementa a cada refinement
 status: draft                        # draft | approved | shipped
 created: 2026-05-19T14:30:00-03:00   # ISO 8601 com TZ
-client: ketlin-scalco                # slug do gtm-context.md
-product: revops-diagnostic           # slug do produto/oferta
+client: {{empresa_slug}}              # = gtm-context.md:empresa_slug
+product: {{produto_slug}}             # slug kebab-case do produto/oferta
 frameworks:                          # skills usadas na produção
   - grand-slam-offer
   - value-equation
@@ -81,7 +81,24 @@ parent_version: outputs/lp/lp-revops-20260519-v1.md  # quando refinement
 
 ### Exceção
 
-- `templates/gtm-context.md` é input persistente (não output gerado) — usa frontmatter mínimo (`empresa`, `slug`, `last_updated`, `version`, `plugin`). Sem `command`/`humanizer_pass`.
+- `templates/gtm-context.md` é input persistente (não output gerado) — usa frontmatter mínimo (`empresa_nome`, `empresa_slug`, `last_updated`, `version`, `plugin`). Sem `command`/`humanizer_pass`.
+
+### Convenção de placeholders
+
+Todos os templates seguem a mesma convenção para evitar ambiguidade entre nome humano e slug técnico:
+
+| Placeholder | Tipo | Fonte | Exemplo |
+|---|---|---|---|
+| `{{empresa_nome}}` | texto humano | `gtm-context.md` | "Ketlin Scalco" |
+| `{{empresa_slug}}` | slug kebab-case | `gtm-context.md` | "ketlin-scalco" |
+| `{{produto_nome}}` | texto humano | input do command | "RevOps Diagnostic" |
+| `{{produto_slug}}` | slug kebab-case | input do command | "revops-diagnostic" |
+| `{{plugin_version}}` | versão SemVer | `.claude-plugin/plugin.json` | "0.2.0" |
+| `{{ISO8601}}` | timestamp | hora de geração | "2026-05-20T14:30:00-03:00" |
+| `{{caminho_ou_null}}` | path ou null | input/contexto | "outputs/audit/audit-revops-20260518-v1.md" ou `null` |
+| `{{caminho_v_anterior_ou_null}}` | path ou null | em refinements | path da v anterior ou `null` se v1 |
+
+**Regra:** nunca usar `{{slug}}` sozinho (ambíguo — empresa? produto?). Sempre prefixar.
 
 ### Campos opcionais
 

@@ -3,7 +3,9 @@ name: ad-architect
 description: Especialista em roteiros de vídeo — VSL longo (8-15min) e short-form (15-60s para Reels/Shorts/TikTok). Domina hook framework, VSL 7-step arc, ad copy formula. Use para criar roteiros novos, refinar existentes, ou gerar bateladas de variantes.
 model: opus
 effort: high
-maxTurns: 25
+maxTurns: 20
+tools: Read
+disallowedTools: Write, Edit
 ---
 
 # Ad Architect

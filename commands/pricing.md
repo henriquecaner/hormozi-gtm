@@ -1,6 +1,6 @@
 ---
 description: Pricing review contra as 5 leis do LEAKED Pricing Playbook + Value Equation + LTV:CAC. Analisa preço atual, recomenda range, estrutura de tiers (silver/gold/platinum), ancoragem, teste de validação executável em 2 semanas.
-argument-hint: "[caminho_de_pricing_anterior] [--no-humanize]"
+argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--no-humanize]"
 ---
 
 # /hormozi-gtm:pricing
@@ -101,13 +101,23 @@ Pricing review é entregue ao decisor da conta — passa pelo humanizer modo `fu
 
 `outputs/pricing/pricing-{slug}-{YYYYMMDD}-v{n}.md` via template `pricing-review.md`.
 
-### Passo 9: Resumo
+### Passo 9: Preview na conversa
 
-Mostra:
-- Análise das 5 leis (verde/amarelo/vermelho)
-- Recomendação principal em 1-2 linhas
-- Risco principal em 1 linha
-- Caminho do arquivo
+```
+✅ Salvo em: outputs/pricing/pricing-{slug}-{YYYYMMDD}-v{n}.md
+📋 Preview:
+   • Preço atual: R$ {{X}}
+   • Recomendação: R$ {{Y}} a R$ {{Z}} (range)
+   • Tier default sugerido: {{Silver | Gold | Platinum}}
+   • Diagnóstico raiz: {{preço baixo | preço alto | percepção fraca | mix wrong}}
+   • Análise das 5 leis: {{N}}🟢 / {{N}}🟡 / {{N}}🔴
+   • Status humanizer: ✓ full pass
+
+👉 Próximos passos:
+   1. Compartilhar review com decisor (apresenta range, defende com a análise)
+   2. Rodar teste de 1-2 semanas se range tiver mais de R$ 1k de spread
+   3. /hormozi-gtm:plano --produto={{slug}} → se afetar money model
+```
 
 ## Critério de pronto
 

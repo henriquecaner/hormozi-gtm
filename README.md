@@ -14,8 +14,10 @@ em copy externa.
 
 [![License](https://img.shields.io/badge/license-proprietary-blue)](./LICENSE)
 [![Latest Release](https://img.shields.io/github/v/release/henriquecaner/hormozi-gtm?color=green&label=release)](https://github.com/henriquecaner/hormozi-gtm/releases/latest)
-[![Skills](https://img.shields.io/badge/skills-16-purple)](#cat%C3%A1logo-de-skills)
-[![Commands](https://img.shields.io/badge/commands-8-purple)](#cat%C3%A1logo-de-comandos)
+[![Commands](https://img.shields.io/badge/commands-10-purple)](#cat%C3%A1logo-de-comandos)
+[![Skills](https://img.shields.io/badge/skills-19-purple)](#cat%C3%A1logo-de-skills)
+[![Agents](https://img.shields.io/badge/agents-7-blueviolet)](./agents)
+[![Templates](https://img.shields.io/badge/templates-10-yellow)](./templates)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-D97757)](https://docs.claude.com/en/docs/claude-code)
 [![Claude Cowork](https://img.shields.io/badge/Claude%20Cowork-ready-D97757)](#instala%C3%A7%C3%A3o)
 
@@ -63,10 +65,12 @@ Releases publicados em [github.com/henriquecaner/hormozi-gtm/releases](https://g
 | Comando | Função | Output |
 |---|---|---|
 | `/hormozi-gtm:init` | Cria `gtm-context.md` via entrevista guiada | `gtm-context.md` |
+| `/hormozi-gtm:help` | Matriz de decisão interativa — recomenda command por objetivo | (sem output) |
 | `/hormozi-gtm:audit` | Diagnóstico GTM (oferta + Core Four + pricing + LTV/CAC) | `outputs/audit/audit-*.md` |
 | `/hormozi-gtm:lp` | Landing page de vendas (Grand Slam Offer + VSL hooks) | `outputs/lp/lp-*.md` |
 | `/hormozi-gtm:roteiro` | Roteiro VSL 7-step (ou short-form) | `outputs/roteiro/roteiro-*.md` |
 | `/hormozi-gtm:hooks` | Bateria de 8-12 hooks para ads | `outputs/hooks/hooks-*.md` |
+| `/hormozi-gtm:email` | Sequência email (cold/warm/nurture/re-engagement) 5-7 emails | `outputs/email/email-*.md` |
 | `/hormozi-gtm:pricing` | Revisão de preço contra Pricing Playbook + Value Equation | `outputs/pricing/pricing-*.md` |
 | `/hormozi-gtm:plano` | Plano GTM 90 dias (Core Four split + money model) | `outputs/plano/plano-*.md` |
 | `/hormozi-gtm:review` | Feedback brutal + refinement de output prévio | nova versão `v{n+1}` |
@@ -75,6 +79,9 @@ Releases publicados em [github.com/henriquecaner/hormozi-gtm/releases](https://g
 
 **Frameworks Hormozi** (6)
 `grand-slam-offer` · `value-equation` · `money-models` · `ltv-cac` · `core-four` · `leila-scaling`
+
+**Estratégia (pré-requisitos invisíveis)** (3)
+`niche-selection` · `founder-market-fit` · `market-saturation-pivot`
 
 **Copy + Ads** (7)
 `hook-framework` · `vsl-7-step` · `ad-copy-formula` · `scarcity-urgency` · `guarantees` · `bonus-stacking` · `lead-magnets`

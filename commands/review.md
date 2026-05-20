@@ -1,6 +1,6 @@
 ---
 description: Feedback brutal de material existente (LP, ad, email, proposta, post). Veredito por severidade (LEVE/MÉDIO/CRÍTICO), top 3 fix concretos, reescrita de trechos críticos. Persona Hormozi sem mercy mas com fix construtivo.
-argument-hint: "[caminho_do_material] [--foco=<secao>]"
+argument-hint: "[--ref=<caminho>] [--foco=<secao>] [--full-rewrite]"
 ---
 
 # /hormozi-gtm:review

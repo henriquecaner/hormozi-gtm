@@ -48,6 +48,31 @@ Regras:
 - Silver existe pra não perder budget-conscious
 - Default = Gold (highlight visual na LP)
 
+### Tiering por categoria de produto
+
+Valores são referências de mercado brasileiro (PT-BR, B2B/B2C 2024-2026). Range maior cabe; o que importa é a **proporção** entre tiers (Gold ~3-4x Silver; Platinum ~3-5x Gold).
+
+| Categoria | Silver | Gold (default) | Platinum (decoy) |
+|---|---|---|---|
+| Curso digital self-paced | R$ 297 | R$ 997 | R$ 2.997 |
+| Curso ao vivo (cohort) | R$ 997 | R$ 4.997 | R$ 14.997 |
+| Mastermind / coaching grupo | R$ 4.997 | R$ 19.997 | R$ 59.997 |
+| Consultoria 1:1 (3 meses) | R$ 14.997 | R$ 39.997 | R$ 97.000 |
+| SaaS B2B (mensal) | R$ 499/mês | R$ 1.499/mês | R$ 4.997/mês |
+| SaaS B2B (anual, com desconto) | R$ 4.788/ano | R$ 14.388/ano | R$ 47.971/ano |
+| Serviço high-ticket (3 meses) | R$ 19.997 | R$ 59.997 | R$ 197.000 + continuity |
+| Serviço enterprise (anual) | — | R$ 200k | R$ 500k+ |
+
+**Função decoy do Platinum:**
+
+Platinum **não precisa vender volume** — existe pra que Gold pareça "a escolha óbvia". 10-15% pegam Platinum (alta margem); 60-70% pegam Gold ancorados contra Platinum. Se Gold sozinho fosse R$ 39.997 sem âncora de R$ 97k, conversão cairia 25-40%.
+
+**Sinais de tiering errado:**
+- Tiers parecidos demais (Silver R$ 997, Gold R$ 1.297, Platinum R$ 1.597) → falsa escolha, nada ancora
+- Sem Platinum → Gold parece teto, cliente regateia
+- Sem Silver → perde budget-conscious sem ganhar nada
+- Diferença é só "mais horas/sessões" → commoditização, cliente compara hora a hora
+
 ## Lei 5: Runway maior, ask maior.
 
 Se você atende o cliente por 12 meses, pode cobrar muito mais do que atendimento de 1 mês — porque o anchor é maior e a transformação cumulativa é maior.

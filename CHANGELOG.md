@@ -9,6 +9,54 @@ Todas as mudanças relevantes deste plugin ficam aqui. Formato baseado em [Keep 
 - Comando `/hormozi-gtm:help` com matriz de decisão
 - Hook PostToolUse opcional para flagrar AI-isms residuais
 
+## [0.2.0] — 2026-05-20
+
+### Adicionado
+
+**3 skills novas (estratégia / pré-requisitos invisíveis):**
+- `niche-selection` — 5 vetores de qualidade de nicho (dor, poder de compra, saturação, TAM, acesso) + processo de drilling reversível em 4 passos + armadilhas comuns.
+- `founder-market-fit` — 3 tipos de fit (native expert, customer-turned-coach, researcher-learner) + qual nicho cabe cada um + como construir fit quando você não tem.
+- `market-saturation-pivot` — 4 sinais quantitativos de saturação + gate de pivot (3+ sinais simultâneos) + 4 tipos de pivot + framework de pivot in-place sem perder audience.
+
+**2 commands novos:**
+- `/hormozi-gtm:help` — matriz de decisão interativa em 3 perguntas, recomenda command por objetivo. Resolve onboarding de cliente novo.
+- `/hormozi-gtm:email` — sequência email (cold/warm/nurture/re-engagement) de 5-7 emails com timing, breakup email opcional, humanizer modo full. Tunado para B2B brasileiro.
+
+**1 template novo:**
+- `templates/email-sequence.md` — frontmatter rico + estrutura por tipo de sequência + métricas e critério de iteração.
+
+### Modificado (refinement de prompts)
+
+- `agents/pricing-strategist.md`, `agents/ad-architect.md`: `maxTurns` agora 20 (era 15 e 25 respectivamente).
+- 5 especialistas (`offer`, `ad`, `pricing`, `leads`, `money-model`): `tools: Read` + `disallowedTools: Write, Edit` — só o orquestrador escreve em disco.
+- `skills/humanizer-rules/SKILL.md`: nova seção "Voz Hormozi autêntica vs AI-simulacra" — distingue padrões manter (imperativo direto com prova, rule of three com entidades reais, palavras fortes com prova adjacente) de cortar (falsa autoridade sem número, generalização sem cliente real, conclusão genérica heroica).
+
+### Modificado (refinement de 6 skills existentes)
+
+- `skills/ad-copy-formula/SKILL.md`: adicionada seção "Variações regionais (PT-BR)" com tabela de substituições EN→BR + exemplo cold email B2B SaaS brasileiro.
+- `skills/pricing-playbook/SKILL.md`: tabela "Tiering por categoria de produto" com 8 categorias (curso/SaaS/serviço/mastermind/enterprise) e valores típicos em R$ + explicação da função decoy do Platinum + sinais de tiering errado.
+- `skills/leila-scaling/SKILL.md`: seção "Operacionalização — métrica primária por framework" com 5 métricas mensuráveis + métricas primárias por função (Sales/CS/Ops/Founder/Engineering).
+- `skills/money-models/SKILL.md`: seção "Ordem de validação pre-launch" — 5 passos sequenciais (Core → Upsell pre-validation → Upsell launched → Continuity → Downsell) com gate quantitativo entre cada.
+- `skills/bonus-stacking/SKILL.md`: seção "Naming psychology" com 8 palavras-gatilho (Sistema/Vault/Acelerador/Toolkit/Framework/Playbook/Blueprint/Masterclass) + tabela antes/depois.
+- `skills/scarcity-urgency/SKILL.md`: seção "Comunicando escassez sem soar desesperado" + 4 templates de comunicação por categoria (cohort, capacidade, bonus por window, aumento de preço programado).
+
+### Modificado (UX dos commands)
+
+- 8 commands existentes: `argument-hint` padronizado. Flags compartilhadas: `--produto=<slug>`, `--ref=<caminho>`, `--foco=<seção>`, `--full-rewrite`, `--no-humanize`. Documentado em `CLAUDE.md` seção "Convenção de argumentos".
+- 5 commands que produzem output externo (`lp`, `roteiro`, `hooks`, `pricing`, `plano`): preview block "✅ Salvo em ... 📋 Preview ... 👉 Próximos passos" — usuário não precisa abrir o arquivo pra ver o que saiu.
+- `/hormozi-gtm:lp`, `/hormozi-gtm:roteiro`: soft warning de audit ausente vira pergunta interativa com 3 opções (rodar audit inline / seguir mesmo assim / cancelar).
+
+### Modificado (UX dos templates)
+
+- Placeholders padronizados nos 9 templates + 1 novo: `{{empresa_slug}}` (em vez de `{{slug}}`), `{{produto_slug}}` (em vez de `{{produto-slug}}` com hífen). Documentado em `skills/output-conventions/SKILL.md` na nova seção "Convenção de placeholders".
+- `templates/lp.md`, `templates/vsl.md`, `templates/pricing-review.md`: campo `parent_version: {{caminho_v_anterior_ou_null}}` adicionado ao frontmatter.
+- `templates/gtm-context.md`: campos `empresa: {{empresa}}` / `slug: {{slug}}` renomeados para `empresa_nome: {{empresa_nome}}` / `empresa_slug: {{empresa_slug}}` (consistência com outputs).
+
+### Polimento
+
+- `README.md`: badges agora incluem `agents-7`, `templates-10`, contagens atualizadas (`skills-19`, `commands-10`).
+- `CLAUDE.md`: nova seção "Roadmap" listando [0.3.0], [0.4.0+], "Não planejado".
+
 ## [0.1.3] — 2026-05-20
 
 ### Corrigido (Critical de prompts — Deep Review)

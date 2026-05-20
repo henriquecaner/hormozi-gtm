@@ -5,8 +5,8 @@ command: audit
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{slug}}
-product: {{produto-slug}}
+client: {{empresa_slug}}
+product: {{produto_slug}}
 frameworks:
   - value-equation
   - grand-slam-offer

@@ -1,6 +1,6 @@
 ---
 description: Gera batch de 10-20 variantes de hooks/headlines/subject lines. Mix de ângulos (dream/problem/secret/contrarian/proof). Top 3 do agent ao final com justificativa. Humanizer modo full.
-argument-hint: "[caminho_ou_slug] [--n=N] [--angulo=<dream|problem|secret|contrarian|proof>] [--no-humanize]"
+argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--n=N] [--angulo=<dream|problem|secret|contrarian|proof>] [--no-humanize]"
 ---
 
 # /hormozi-gtm:hooks
@@ -88,12 +88,23 @@ Hooks vão pra cliente — modo full obrigatório.
 
 `outputs/hooks/hooks-{slug}-{YYYYMMDD}-v{n}.md` via template `hooks-batch.md`.
 
-### Passo 7: Resumo
+### Passo 7: Preview na conversa
 
-Mostra:
-- Top 3 hooks com justificativa
-- Sugere plano de teste (fase 1, 2, 3)
-- Caminho do arquivo
+```
+✅ Salvo em: outputs/hooks/hooks-{slug}-{YYYYMMDD}-v{n}.md
+📋 Preview:
+   • Quantidade total: {{N}} hooks
+   • Top 3 escolhidos pelo agent:
+     1. "{{texto}}" — {{ângulo}}, {{critério}}
+     2. "{{texto}}" — {{ângulo}}, {{critério}}
+     3. "{{texto}}" — {{ângulo}}, {{critério}}
+   • Status humanizer: ✓ full pass
+
+👉 Próximos passos:
+   1. Testar top 3 em ads (R$ 200-500/cada, 48h)
+   2. Vencedor vira headline da próxima LP
+   3. /hormozi-gtm:roteiro --produto={{slug}} usando hook vencedor
+```
 
 ## Critério de pronto
 

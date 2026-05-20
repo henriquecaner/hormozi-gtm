@@ -53,6 +53,30 @@ Definida em `skills/output-conventions/SKILL.md`. Detalhes load-bearing:
 - Frontmatter obrigatório: `plugin`, `plugin_version`, `command`, `version`, `status`, `created`, `client`, `product`, `frameworks`, `humanizer_pass`, `humanizer_mode`.
 - `humanizer_pass: false` é gate de release externo.
 
+## Convenção de argumentos
+
+Todos os commands seguem o padrão `--flag=valor`. Não há argumentos posicionais — evita ambiguidade entre "slug do produto" e "caminho de arquivo".
+
+**Flags compartilhadas (mesmo significado em todos os commands):**
+
+| Flag | Função |
+|---|---|
+| `--produto=<slug>` | Slug do produto (kebab-case). Lido de `gtm-context.md` se omitido, ou perguntado no chat. |
+| `--ref=<caminho>` | Caminho para um output anterior (refinar / criar v2). Ex: `--ref=outputs/lp/lp-revops-20260519-v1.md`. |
+| `--foco=<secao>` | Em modo refinar (`--ref`), foca em parte específica do material. Ex: `--foco=hero` na LP. |
+| `--full-rewrite` | Em modo refinar (`--ref`), cria v2 do zero usando o anterior só como `parent_version`. |
+| `--no-humanize` | Pula o humanizer pass (debug ou A/B test). Salva com `humanizer_pass: false`. |
+
+**Flags específicas por command:**
+- `init`: `--refresh` (reabre entrevista mantendo `gtm-context.md` como base).
+- `roteiro`: `--formato=vsl|reels|shorts|tiktok`, `--batch`, `--n=N`.
+- `hooks`: `--n=N`, `--angulo=dream|problem|secret|contrarian|proof`.
+- `lp`: `--skip-audit` (ignora warning de audit ausente).
+- `plano`: `--tipo=empresa|produto`.
+- `email`: `--tipo=cold|warm|nurture|re-engagement`.
+
+**Regra:** se está pensando em adicionar arg posicional novo, transforme em `--flag` primeiro. Evita "esse caminho é referência ou destino?" e mantém o autocomplete do Claude Code útil.
+
 ## Tarefas comuns
 
 ### Validar um comando manualmente
@@ -83,6 +107,27 @@ claude --plugin-dir .   # do diretório raiz do plugin, ou path absoluto se roda
 6. Clientes recebem via `/plugin update hormozi-gtm` (marketplace integrado no mesmo repo).
 
 > Os templates usam `plugin_version: {{plugin_version}}` como placeholder dinâmico. Não precisa editar templates a cada bump — o command lê o valor de `.claude-plugin/plugin.json` na hora de gerar o output.
+
+## Roadmap
+
+### [0.3.0] Expansão funcional (planejado)
+- `/hormozi-gtm:objections` — matriz de objeções por ICP + scripts pra sales call.
+- `/hormozi-gtm:case-study` — case study builder + assets "success wall" pra LPs.
+- `/hormozi-gtm:webinar` — estrutura B2B 30-45min (educacional + venda).
+- `/hormozi-gtm:positioning` — competitive teardown + positioning statement.
+- `/hormozi-gtm:content-hub` — roadmap 30-90 dias de conteúdo orgânico.
+- Skills: `productization`, `content-engine`, `ad-creative-testing`, `sales-sequencing`.
+- Lacunas estruturais: testes de saída entre especialistas, exemplo end-to-end de pipeline, modos lite/full em pricing/leads/ad, recovery/fallback documentado.
+
+### [0.4.0+] Roadmap distante (opcional)
+- `/hormozi-gtm:churn-prevention` — win/loss + retention playbook.
+- `settings.json` customization (cliente declara `humanizer_mode_default`, intensidade Hormozi).
+- Hook `PostToolUse` para flagrar AI-isms residuais (defesa final).
+
+### Não planejado (workflow manual necessário)
+- A/B testing automation (depende de integração com plataformas de ads).
+- CRM sync (manutenção de `gtm-context.md` manual por enquanto).
+- Multi-cliente em paralelo (gtm-context.md é singular por projeto consumidor).
 
 ## Editando conteúdo
 

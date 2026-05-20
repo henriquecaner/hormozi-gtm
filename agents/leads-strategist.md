@@ -4,6 +4,8 @@ description: Especialista em lead generation — Core Four (warm, cold, orgânic
 model: opus
 effort: high
 maxTurns: 15
+tools: Read
+disallowedTools: Write, Edit
 ---
 
 # Leads Strategist

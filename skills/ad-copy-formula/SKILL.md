@@ -99,6 +99,42 @@ Mata variações com CPC > 2x mediana.
 - Tudo em caps lock
 - Emoji em excesso (>1 por linha)
 
+## Variações regionais (PT-BR)
+
+Voz brasileira tolera **menos superlativo** que copy americana. "Revolucionário", "transformador", "alavancar", "destacando-se" são sinais de tradução literal de copy EN e queimam credibilidade no Brasil mais rápido que nos EUA.
+
+**Substituições por mercado:**
+
+| Padrão EN | Tradução literal (ruim) | Adaptação BR (boa) |
+|---|---|---|
+| "transformative results" | "resultados transformadores" | "resultados em 90 dias" / "saiu de R$ X pra R$ Y" |
+| "leverage our expertise" | "alavancar nossa expertise" | "usar o que aprendemos com 14 contas" |
+| "robust solution" | "solução robusta" | "funciona em SaaS B2B com ciclo > 45 dias" |
+| "industry-leading platform" | "plataforma líder do setor" | "uso 3 anos, valido em 6 nichos" |
+| "seamless integration" | "integração transparente" | "instala em 1 hora sem mexer no código" |
+
+Regra prática: se o adjetivo poderia estar em copy de qualquer concorrente, troca por fato verificável.
+
+## Exemplo: B2B SaaS Brasil (cold email, ICP fintech)
+
+> **Subject:** Reduzir setup do Olist Pay de 3 semanas pra 3 dias
+>
+> Vi seu perfil na Olist trabalhando com integração de pagamentos. A maioria das fintechs brasileiras perde 15-20% das transações por objeção de setup inicial (ouvi isso de 6 squads de pricing no último trimestre).
+>
+> A gente montou um framework que corta setup de 3 semanas pra 3 dias via automação do KYC + onboarding com checkout em 1 página. Validado com Stark Bank, Cora e 4 outras.
+>
+> Posso te mandar o case study? PDF de 5 páginas, 10min de leitura.
+>
+> — Henrique, LEVEL
+
+**Por quê funciona:**
+- Subject específico (cliente real, número, prazo)
+- Opener: prova de research + dado quantificado (15-20% perda)
+- Mechanism nomeado (KYC + checkout 1 página)
+- Proof point com nomes reais
+- CTA específico (não "vamos conversar?", e sim "te mando PDF 5 pgs, 10min")
+- Tom direto, sem "transformador" / "revolucionário" / "alavancar"
+
 ## Workflow
 
 1. Define canal (warm / cold / paid)

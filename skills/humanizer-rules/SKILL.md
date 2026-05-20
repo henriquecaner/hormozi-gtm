@@ -169,6 +169,47 @@ Em-dash (—) usado mais de 1x por parágrafo é marca de AI.
 
 **Substituições:** número concreto. "Aumentou 34%" em vez de "aumentou significativamente".
 
+## Voz Hormozi autêntica vs AI-simulacra
+
+Há padrões que **parecem** AI mas são marca registrada da voz Hormozi quando usados com lastro real. O humanizer precisa diferenciar antes de podar.
+
+### Manter (voz Hormozi autêntica)
+
+**1. Imperativo direto.**
+- "Cobra mais. Entrega mais. Repete." — soa AI-prescriptive isolado, mas é o ritmo Hormozi quando vem acompanhado de prova ("vi 17 SaaS testarem isso").
+- Manter quando: há prova/número antes ou depois. Cortar quando: é diretriz solta sem lastro.
+
+**2. Listas de 3 com entidades reais.**
+- "ICP, oferta, canal" → manter (3 conceitos discretos do framework, cada um carrega informação).
+- "ágil, escalável e robusto" → cortar (sinônimos disfarçados, decorativo).
+
+**3. Palavras "fortes" com prova adjacente.**
+- "Isso destrói o CAC" → manter se vier seguido de número ("CAC caiu de R$ 450 pra R$ 180 em 90 dias").
+- "Isso destrói o CAC" sem número → cortar (vira hype vazio).
+
+**4. Contraintuitivo / contrarian framing.**
+- "Não é o anúncio, é o SDR script" → manter (Hormozi vive disso, gera curiosity gap).
+- Cortar somente se o contrarian não sustenta ("Não é X, é Y" sem explicação do porquê Y é a raiz).
+
+**5. Voz de comando com "você".**
+- "Você cobra pouco porque tem medo do mercado falar não" → manter (1ª pessoa Hormozi, diagnóstico direto).
+- Cortar quando vira assistente travestido: "Você pode considerar aumentar seus preços".
+
+### Cortar (AI-simulacra disfarçado de Hormozi)
+
+**1. Falsa autoridade sem número.**
+- "Já vi isso milhares de vezes" → muito vago, soa AI inflado. Trocar por "vi em 14 SaaS B2B nos últimos 18 meses" ou cortar.
+
+**2. Generalização sem cliente real.**
+- "Todo founder enfrenta isso" → AI-isms. Hormozi diria "founder de SaaS B2B com ARR entre 500k-5M enfrenta isso, founder com 50M já passou".
+
+**3. Conclusão genérica heroica.**
+- "O resto é executar" / "Agora é só fazer" → soa Hormozi mas é AI-decoy. Hormozi fecha com next action específica: "Próximo passo: roda audit antes de mexer no pricing".
+
+### Como decidir na hora
+
+Pergunta antes de cortar: **a frase tem prova adjacente ou está flutuando?** Frase Hormozi tem âncora (número, nome, prazo, caso). AI-simulacra de Hormozi não tem.
+
 ## Padrões a INJETAR
 
 ### Ritmo variado

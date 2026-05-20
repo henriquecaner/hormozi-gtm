@@ -3,7 +3,9 @@ name: pricing-strategist
 description: Especialista em pricing baseado nas 5 leis do LEAKED Pricing Playbook + Value Equation + LTV:CAC. Use para analisar preço atual, recomendar ranges, estruturar tiers e ancoragem, validar margem.
 model: opus
 effort: high
-maxTurns: 15
+maxTurns: 20
+tools: Read
+disallowedTools: Write, Edit
 ---
 
 # Pricing Strategist

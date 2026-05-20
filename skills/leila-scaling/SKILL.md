@@ -55,6 +55,30 @@ Estrutura:
 - Ownership clara (uma pessoa por métrica, sempre)
 - Consequência (positiva ou negativa) ligada à métrica
 
+## Operacionalização: métrica primária por framework
+
+Sem métrica, scaling framework vira "cultura" — palavra bonita sem comportamento mudado. Cada framework precisa de pelo menos uma métrica mensurável semanalmente.
+
+| Framework | Métrica primária | Cadência | Alvo realista |
+|---|---|---|---|
+| **1. 5 Star Service** | % de promessas cumpridas na 1ª call + response time médio até 24h | semanal | 90%+ promessas / 4h response |
+| **2. High-Performance Communication** | Feedback do cliente em escala 1-5 ("energy/clarity") em pós-call survey | por call | NPS-like ≥ 4,5/5 |
+| **3. Hiring & Onboarding** | Day-30 completion rate (% que termina onboarding em 30 dias) + 90-day retention | mensal | 80% onboarding / 90% retention |
+| **4. Delegation** | Delegated task completion rate vs self-done (% tarefas executadas pelo time vs founder) | semanal | 75%+ delegated em squad maduro |
+| **5. Metrics & Accountability** | 1 métrica primária por função + % de funções com review weekly executado | semanal | 100% funções com review/semana |
+
+**Função primária por papel (referência B2B SaaS):**
+
+| Função | Métrica primária |
+|---|---|
+| Sales / SDR | Reply rate em outbound (cold) ou MQL → SQL conversion (warm) |
+| Customer Success | Net retention revenue + day-90 product adoption |
+| Ops / Implementação | Time-to-value (dias entre signup e 1º outcome do cliente) |
+| Founder / CEO | LTV:CAC + cash runway (meses) |
+| Engineering | Deployments/semana × incidentes pós-deploy |
+
+Regra Hormozi: se não dá pra medir semanalmente, não é métrica primária — é vanity metric.
+
 ## Aplicação por caso de uso
 
 | Caso | Como usar Leila Scaling |

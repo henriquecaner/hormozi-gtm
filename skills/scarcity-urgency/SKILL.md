@@ -48,6 +48,42 @@ Pergunta-se:
 
 Se você consegue responder essas 3 com fato, sua escassez é genuína. Se precisa inventar a resposta, é fake — não use.
 
+## Comunicando escassez sem soar desesperado
+
+Mesmo escassez genuína vira fake aos olhos do cliente se for comunicada com tom de leilão de TV de madrugada. Padrão errado mata conversão tanto quanto inventar escassez.
+
+**NÃO faça (urgência desesperada — soa fake mesmo se for real):**
+> "Últimas 2 vagas! Não perca! Garanta a sua AGORA!"
+>
+> "⏰ FALTAM 3 HORAS! 🔥 Esta oferta NUNCA mais volta!"
+
+Problemas: caps lock + emoji + ponto de exclamação + "AGORA" + "NUNCA" são marcadores de pressure tactic. Cliente fecha a aba.
+
+**FAÇA (urgência ancorada em fato operacional):**
+> "Próxima turma começa em 12 de agosto. Antes disso, tenho 6 vagas restantes pra garantir 1h por participante por semana — quando essa turma fecha, abrimos a próxima em outubro com lista de espera."
+
+Por quê funciona:
+- Data específica (12 de agosto, não "em breve")
+- Número específico de vagas (6, não "poucas")
+- Razão operacional do limite (1h por participante por semana = capacidade real)
+- Próximo ciclo nomeado (outubro) — mostra que não é "agora ou nunca"
+
+**Templates por categoria:**
+
+**Cohort com data:**
+> "Próxima cohort começa [data]. Vagas: [N]. Quando fecha, próxima é [data próxima]."
+
+**Capacidade de atendimento:**
+> "Atendo no máximo [N] clientes por trimestre porque [razão: horas de mentoria 1:1, turma reduzida, etc.]. Trimestre atual: [vagas]/[total] preenchidas."
+
+**Bonus por window:**
+> "Quem fecha até [data] entra com [bonus específico]. Não é desconto — é [bonus] que sai do pacote depois porque [razão: vou parar de oferecer essa mentoria 1:1, vou empacotar essa skill em produto separado, etc.]."
+
+**Aumento de preço programado:**
+> "Preço sobe para R$ [Y] em [data] porque [razão operacional: nova versão do programa, adição de [feature], mais cases comprovam, etc.]. Quem fecha antes mantém R$ [X]."
+
+**Regra Hormozi:** a comunicação tem que sustentar pergunta "por quê esse limite existe?" com resposta de uma frase que descreve algo do mundo real. Sem isso, é fake mesmo se for tecnicamente verdade.
+
 ## Anatomia de mecanismo válido na LP/ad
 
 ```
