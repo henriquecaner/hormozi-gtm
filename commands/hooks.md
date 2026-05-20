@@ -34,7 +34,7 @@ Pass final: `humanizer` (modo full — hooks vão pro cliente).
 
 ## Pré-requisitos
 
-1. `gtm-context.md` existe → carrega ICP, oferta, transformação
+1. `gtm-context.md` existe → carrega ICP, oferta, transformação, audience externa, intensidade do tom
 2. Senão → pergunta no chat (3 perguntas mínimas)
 
 ## Fluxo

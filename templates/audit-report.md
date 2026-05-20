@@ -1,6 +1,6 @@
 ---
 plugin: hormozi-gtm
-plugin_version: 0.1.0
+plugin_version: {{plugin_version}}
 command: audit
 version: 1
 status: draft

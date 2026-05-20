@@ -1,6 +1,7 @@
 name: Lint hooks
 
 on:
+  workflow_dispatch:
   pull_request:
     paths:
       - "hooks/**"
@@ -21,16 +22,42 @@ jobs:
           python3 <<'PY'
           import json, pathlib, sys
 
+          # SessionStart só aceita type: command ou mcp_tool (doc: code.claude.com/docs/en/hooks)
+          ALLOWED_TYPES = {
+              "SessionStart": {"command", "mcp_tool"},
+              "PreToolUse": {"command", "mcp_tool"},
+              "PostToolUse": {"command", "mcp_tool"},
+              "UserPromptSubmit": {"command", "mcp_tool"},
+              "Notification": {"command", "mcp_tool"},
+              "Stop": {"command", "mcp_tool"},
+              "SubagentStop": {"command", "mcp_tool"},
+          }
+
           errors = []
-          for hook in pathlib.Path("hooks").glob("*.json"):
+          for hook_file in pathlib.Path("hooks").glob("*.json"):
               try:
-                  data = json.loads(hook.read_text(encoding="utf-8"))
+                  data = json.loads(hook_file.read_text(encoding="utf-8"))
               except json.JSONDecodeError as exc:
-                  errors.append(f"{hook}: JSON inválido — {exc}")
+                  errors.append(f"{hook_file}: JSON inválido — {exc}")
                   continue
               if not isinstance(data, dict):
-                  errors.append(f"{hook}: deve ser objeto JSON")
+                  errors.append(f"{hook_file}: deve ser objeto JSON")
                   continue
+              for event, matchers in data.items():
+                  if event not in ALLOWED_TYPES:
+                      errors.append(f"{hook_file}: evento '{event}' não reconhecido")
+                      continue
+                  if not isinstance(matchers, list):
+                      errors.append(f"{hook_file}.{event}: deve ser lista de matchers")
+                      continue
+                  for i, m in enumerate(matchers):
+                      for j, h in enumerate(m.get("hooks", [])):
+                          t = h.get("type")
+                          if t not in ALLOWED_TYPES[event]:
+                              errors.append(
+                                  f"{hook_file}.{event}[{i}].hooks[{j}]: type '{t}' inválido para {event}. "
+                                  f"Permitidos: {sorted(ALLOWED_TYPES[event])}"
+                              )
 
           if errors:
               for e in errors:

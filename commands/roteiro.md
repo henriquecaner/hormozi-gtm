@@ -39,7 +39,7 @@ Pass final: delegate a `humanizer` (modo full).
 
 ## Pré-requisitos
 
-1. `gtm-context.md` existe → carrega ICP, oferta, brand voice
+1. `gtm-context.md` existe → carrega ICP, oferta, brand voice, audience externa, intensidade do tom
 2. Audit recente da oferta? → carrega como `audit_ref` (soft warning se ausente)
 3. Hooks validados? → soft suggestion de rodar `/hormozi-gtm:hooks` se nenhum hook foi escolhido ainda
 

@@ -39,7 +39,7 @@ Pass final: delegate a `humanizer` (modo full, obrigatório).
 
 ## Pré-requisitos
 
-1. `gtm-context.md` existe → carrega ICP, oferta, brand voice, audience externa
+1. `gtm-context.md` existe → carrega ICP, oferta, brand voice, audience externa, intensidade do tom
 2. Se não existe → dispara `/hormozi-gtm:init` antes
 3. Audit recente de oferta (≤14 dias)? → carrega como `audit_ref`
 4. Sem audit recente e sem `--skip-audit` → mostra warning:
@@ -64,7 +64,7 @@ Carrega o que tiver de `gtm-context.md`. Pede o que faltar:
 
 #### Passo 2: Construção
 
-Delegate a `offer-architect` para destilar briefing de oferta. Em seguida, agent principal monta 10 seções via template `lp.md`:
+Delegate a `offer-architect` para destilar briefing de oferta. Em seguida, `hormozi-persona` (orquestrador) recebe o briefing e monta 10 seções via template `lp.md`:
 
 1. Hero (headline + sub + CTA + microcopy)
 2. Agitação do problema (3 sintomas + por que outras soluções falham)

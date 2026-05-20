@@ -34,13 +34,25 @@ jobs:
           echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
           echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
 
-      - name: Verify version matches plugin.json
+      - name: Verify version triple matches (plugin.json + marketplace.json)
         run: |
-          MANIFEST_VERSION=$(python3 -c "import json; print(json.load(open('.claude-plugin/plugin.json'))['version'])")
-          if [ "$MANIFEST_VERSION" != "${{ steps.meta.outputs.version }}" ]; then
-            echo "::error::Tag ${{ steps.meta.outputs.tag }} != plugin.json version $MANIFEST_VERSION"
+          TAG_VERSION="${{ steps.meta.outputs.version }}"
+          PLUGIN_VERSION=$(python3 -c "import json; print(json.load(open('.claude-plugin/plugin.json'))['version'])")
+          MARKET_META=$(python3 -c "import json; print(json.load(open('.claude-plugin/marketplace.json'))['metadata']['version'])")
+          MARKET_PLUGIN=$(python3 -c "import json; print(json.load(open('.claude-plugin/marketplace.json'))['plugins'][0]['version'])")
+          if [ "$PLUGIN_VERSION" != "$TAG_VERSION" ]; then
+            echo "::error::Tag ${{ steps.meta.outputs.tag }} != plugin.json version $PLUGIN_VERSION"
             exit 1
           fi
+          if [ "$MARKET_META" != "$TAG_VERSION" ]; then
+            echo "::error::Tag ${{ steps.meta.outputs.tag }} != marketplace.metadata.version $MARKET_META"
+            exit 1
+          fi
+          if [ "$MARKET_PLUGIN" != "$TAG_VERSION" ]; then
+            echo "::error::Tag ${{ steps.meta.outputs.tag }} != marketplace.plugins[0].version $MARKET_PLUGIN"
+            exit 1
+          fi
+          echo "✓ versions match: $TAG_VERSION (plugin.json, marketplace.metadata, marketplace.plugins[0])"
 
       - name: Extract release notes from CHANGELOG
         id: notes
@@ -64,7 +76,7 @@ jobs:
           zip -r "$OUT" \
             .claude-plugin agents commands skills hooks templates reference \
             README.md CHANGELOG.md LICENSE \
-            -x "*.DS_Store" "*/.git/*" "*/outputs/*"
+            -x "*.DS_Store" "*/.git/*" "*/outputs/*" "*/__pycache__/*"
           echo "ZIP=$OUT" >> "$GITHUB_ENV"
           ls -lh "$OUT"
 

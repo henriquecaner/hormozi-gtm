@@ -85,7 +85,7 @@ Documento interno — modo lite preserva tom direto.
 
 ### Passo 5: Salva
 
-`outputs/plano/plano-{tipo}-{slug}-{YYYYMMDD}-v{n}.md` via template `plano.md`.
+`outputs/plano/plano-{slug}-{YYYYMMDD}-v{n}.md` via template `plano.md`. O discriminador `tipo` (empresa | produto) vai no frontmatter, não no nome do arquivo.
 
 ### Passo 6: Pontos críticos
 

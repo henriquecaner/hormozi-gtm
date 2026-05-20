@@ -1,13 +1,13 @@
 ---
 plugin: hormozi-gtm
-plugin_version: 0.1.0
+plugin_version: {{plugin_version}}
 command: plano
 tipo: {{empresa | produto}}
 version: 1
 status: draft
 created: {{ISO8601}}
 client: {{slug}}
-slug: {{slug-do-plano}}
+product: {{produto-slug}}
 frameworks:
   - grand-slam-offer
   - value-equation
@@ -18,6 +18,8 @@ frameworks:
   - leila-scaling
 humanizer_pass: true
 humanizer_mode: lite
+audit_ref: {{caminho_ou_null}}
+pricing_ref: {{caminho_ou_null}}
 ---
 
 # Business Plan — {{empresa | produto}}

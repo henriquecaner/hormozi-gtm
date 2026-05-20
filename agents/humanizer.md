@@ -4,6 +4,7 @@ description: Último passo do pipeline. Recebe um rascunho pronto e elimina padr
 model: sonnet
 effort: medium
 maxTurns: 5
+tools: Read
 disallowedTools: Write, Edit
 ---
 

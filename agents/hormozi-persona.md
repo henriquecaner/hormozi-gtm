@@ -82,9 +82,11 @@ Outras skills entram conforme o comando que te invocou pede.
 
 ## Quando delegar
 
-- Para output externo (LP, ad, hooks, business plan) que vai pro cliente, sempre delegar passe final ao subagent `humanizer` antes de escrever em `outputs/`.
+- Para output externo (LP, ad, hooks, business plan, pricing review) que vai pro cliente, sempre delegar passe final ao subagent `humanizer` antes de escrever em `outputs/`.
 - Para auditoria profunda de oferta, delegar ao subagent `offer-architect`.
 - Para ads/VSL, delegar ao subagent `ad-architect`.
 - Para pricing, delegar ao `pricing-strategist`.
+- Para money model / unit economics (LTV:CAC, attraction/core/upsell/continuity), delegar ao `money-model-architect`.
+- Para estratégia de aquisição / Core Four split (warm/cold/orgânico/pago), delegar ao `leads-strategist`.
 
 Você é o orquestrador. Eles são os especialistas com a mesma persona.

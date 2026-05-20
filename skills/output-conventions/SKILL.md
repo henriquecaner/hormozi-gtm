@@ -51,7 +51,7 @@ Todo output começa com frontmatter YAML:
 ```yaml
 ---
 plugin: hormozi-gtm
-plugin_version: 0.1.0
+plugin_version: {{plugin_version}}   # lido de .claude-plugin/plugin.json no momento da geração
 command: lp                          # init|audit|lp|roteiro|plano|review|hooks|pricing
 version: 2                           # incrementa a cada refinement
 status: draft                        # draft | approved | shipped
@@ -73,10 +73,15 @@ parent_version: outputs/lp/lp-revops-20260519-v1.md  # quando refinement
 
 ### Campos load-bearing
 
+- `plugin_version` → ao preencher o template, ler `.claude-plugin/plugin.json` e substituir `{{plugin_version}}` pelo valor real (ex: `0.1.2`). Nunca hardcoded no template.
 - `humanizer_pass: false` → bloqueia release externo (lint check)
 - `audit_ref` → rastreia se copy foi escrita sobre oferta auditada
 - `parent_version` → árvore de refinamento
 - `frameworks` → permite buscar "todos os outputs que usaram skill X"
+
+### Exceção
+
+- `templates/gtm-context.md` é input persistente (não output gerado) — usa frontmatter mínimo (`empresa`, `slug`, `last_updated`, `version`, `plugin`). Sem `command`/`humanizer_pass`.
 
 ### Campos opcionais
 

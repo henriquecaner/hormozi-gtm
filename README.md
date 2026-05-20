@@ -135,7 +135,7 @@ SemVer. Mudanças catalogadas em [`CHANGELOG.md`](./CHANGELOG.md). Releases auto
 ## Desenvolvimento local
 
 ```bash
-git clone git@github.com:henriquecaner/hormozi-gtm.git
+git clone https://github.com/henriquecaner/hormozi-gtm.git
 cd hormozi-gtm
 claude --plugin-dir .
 ```

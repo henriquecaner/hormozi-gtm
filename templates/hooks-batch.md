@@ -1,6 +1,6 @@
 ---
 plugin: hormozi-gtm
-plugin_version: 0.1.0
+plugin_version: {{plugin_version}}
 command: hooks
 version: 1
 status: draft
@@ -14,6 +14,7 @@ frameworks:
   - ad-copy-formula
 humanizer_pass: true
 humanizer_mode: full
+audit_ref: {{caminho_ou_null}}
 ---
 
 # Hooks Batch — {{produto}}

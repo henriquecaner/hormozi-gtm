@@ -18,7 +18,7 @@ Especialista: `pricing-strategist`.
 - `value-equation` (validação cruzada)
 - `ltv-cac` (matemática)
 - `money-models` (estrutura de ascension)
-- `humanizer-rules` (modo lite)
+- `humanizer-rules` (modo full — pricing é entregue ao cliente)
 - `output-conventions`
 
 ## Argumentos
@@ -93,7 +93,9 @@ Sempre inclui:
 
 1-3 riscos identificados com mitigação.
 
-### Passo 7: Humanizer (lite)
+### Passo 7: Humanizer (full)
+
+Pricing review é entregue ao decisor da conta — passa pelo humanizer modo `full` (duas passadas, valida ausência de padrões EN e PT-BR).
 
 ### Passo 8: Salva
 
@@ -115,7 +117,7 @@ Mostra:
 - [ ] Teste de validação executável em 1-2 semanas com métrica clara
 - [ ] Riscos identificados com mitigação
 - [ ] Tiering proposto com deliverables explícitos
-- [ ] Humanizer lite aplicado
+- [ ] Humanizer full aplicado
 
 ## Anti-padrões
 

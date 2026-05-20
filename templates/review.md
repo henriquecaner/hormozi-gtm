@@ -1,14 +1,15 @@
 ---
 plugin: hormozi-gtm
-plugin_version: 0.1.0
+plugin_version: {{plugin_version}}
 command: review
 version: 1
 status: draft
 created: {{ISO8601}}
 client: {{slug}}
+product: {{slug-do-material}}
 material_revisado: {{caminho_do_material}}
 material_tipo: {{lp | ad | email | proposta | outro}}
-frameworks_aplicados:
+frameworks:
   - value-equation
   - grand-slam-offer
 humanizer_pass: true

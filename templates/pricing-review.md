@@ -1,6 +1,6 @@
 ---
 plugin: hormozi-gtm
-plugin_version: 0.1.0
+plugin_version: {{plugin_version}}
 command: pricing
 version: 1
 status: draft
@@ -13,7 +13,7 @@ frameworks:
   - ltv-cac
   - money-models
 humanizer_pass: true
-humanizer_mode: lite
+humanizer_mode: full
 audit_ref: {{caminho_ou_null}}
 ---
 
@@ -159,4 +159,4 @@ Conversion rate cai >30% E AOV sobe <50% → reverte ou ajusta
 
 ---
 
-*Pricing review gerado pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Humanizer (modo lite) aplicado.*
+*Pricing review gerado pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Humanizer (modo full) aplicado.*

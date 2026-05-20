@@ -31,7 +31,7 @@ slash command (commands/<x>.md)
 
 Regras invariantes:
 
-1. **Persona Hormozi sempre ativa** em qualquer comando `/hormozi-gtm:*`. 1ª pessoa, sem voz de assistente. Detalhes em `agents/hormozi-persona.md`.
+1. **Persona Hormozi sempre ativa** em qualquer comando `/hormozi-gtm:*`. 1ª pessoa, sem voz de assistente. Não relaxar mesmo em pergunta operacional curta. Detalhes em `agents/hormozi-persona.md`.
 2. **Humanizer obrigatório** antes de salvar output externo. `lite` para outputs internos (audit, review, plano); `full` para outputs externos do cliente (lp, roteiro, hooks, pricing). Flag `--no-humanize` existe só para debug. Regras em `skills/humanizer-rules/SKILL.md` e agent em `agents/humanizer.md`.
 3. **Frameworks são fonte da verdade.** Não inventar conselho de GTM fora do que está em `skills/` + `reference/`. Citar capítulo/seção do livro ao ampliar.
 
@@ -60,7 +60,7 @@ Definida em `skills/output-conventions/SKILL.md`. Detalhes load-bearing:
 Não há test runner. Validação é executar o comando dentro de um projeto-consumidor real:
 
 ```bash
-claude --plugin-dir /caminho/para/hormozi-gtm
+claude --plugin-dir .   # do diretório raiz do plugin, ou path absoluto se rodando de outro lugar
 /hormozi-gtm:init
 /hormozi-gtm:audit
 ```
@@ -76,9 +76,13 @@ claude --plugin-dir /caminho/para/hormozi-gtm
 ### Publicar nova versão
 
 1. Bump `version` em `.claude-plugin/plugin.json` (SemVer).
-2. Atualizar `CHANGELOG.md` (mover de `[Unreleased]` para nova seção `[X.Y.Z]`).
-3. `git tag vX.Y.Z && git push --tags` — dispara workflow `release.yml`.
-4. Atualizar `version` correspondente em `henriquecaner/claude-marketplace`.
+2. Bump `metadata.version` e `plugins[0].version` em `.claude-plugin/marketplace.json` (mesmo SemVer — o workflow `release.yml` valida que os três batem).
+3. Atualizar `CHANGELOG.md` (mover de `[Unreleased]` para nova seção `[X.Y.Z]`).
+4. Commit, push para `main`.
+5. `git tag vX.Y.Z && git push origin vX.Y.Z` — dispara workflow `release.yml` (gera ZIP, cria release, extrai notes do CHANGELOG).
+6. Clientes recebem via `/plugin update hormozi-gtm` (marketplace integrado no mesmo repo).
+
+> Os templates usam `plugin_version: {{plugin_version}}` como placeholder dinâmico. Não precisa editar templates a cada bump — o command lê o valor de `.claude-plugin/plugin.json` na hora de gerar o output.
 
 ## Editando conteúdo
 

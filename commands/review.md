@@ -11,6 +11,15 @@ Feedback brutal mas construtivo. Não é review elogiosa, não é review destrut
 
 Use `hormozi-persona` com mood: direto, sem economizar em diagnóstico, mas sempre com fix.
 
+Após detectar o `material_tipo` (LP, ad, email, pricing, proposta), delegate ao especialista correspondente para o diagnóstico técnico, mantendo a persona como voz de saída:
+
+- `material_tipo: lp` → consulta `offer-architect`
+- `material_tipo: ad` → consulta `ad-architect`
+- `material_tipo: pricing` → consulta `pricing-strategist`
+- `material_tipo: outro` → opera apenas com a persona
+
+O especialista produz o diagnóstico estruturado; a persona escreve a saída na voz Hormozi.
+
 ## Skills ativas
 
 - `value-equation` (se material é LP/ad/copy)
