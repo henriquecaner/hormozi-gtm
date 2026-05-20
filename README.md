@@ -38,22 +38,19 @@ A persona Alex Hormozi fica ativa em todos os comandos. Voz em 1ª pessoa, feedb
 ## Quickstart
 
 ```bash
-# 1. Autenticar no GitHub (uma vez)
-gh auth login
+# 1. Adicionar o marketplace
+/plugin marketplace add henriquecaner/hormozi-gtm
 
-# 2. Adicionar o marketplace privado da LEVEL
-/plugin marketplace add henriquecaner/claude-marketplace
+# 2. Instalar o plugin
+/plugin install hormozi-gtm@hormozi-gtm-marketplace
 
-# 3. Instalar o plugin
-/plugin install hormozi-gtm@level-marketplace
-
-# 4. Dentro do projeto do cliente: bootstrap do contexto
+# 3. Dentro do projeto do cliente: bootstrap do contexto
 /hormozi-gtm:init
 
-# 5. Primeiro diagnóstico
+# 4. Primeiro diagnóstico
 /hormozi-gtm:audit
 
-# 6. Primeiro output externo (com humanizer full)
+# 5. Primeiro output externo (com humanizer full)
 /hormozi-gtm:lp --produto "Nome do produto"
 ```
 
@@ -109,9 +106,8 @@ Flag `--no-humanize` existe para debug e comparação A/B.
 ### Claude Code (CLI ou Desktop)
 
 ```bash
-gh auth login
-/plugin marketplace add henriquecaner/claude-marketplace
-/plugin install hormozi-gtm@level-marketplace
+/plugin marketplace add henriquecaner/hormozi-gtm
+/plugin install hormozi-gtm@hormozi-gtm-marketplace
 ```
 
 ### Claude Cowork (Desktop app)
