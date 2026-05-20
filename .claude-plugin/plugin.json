@@ -7,10 +7,10 @@
     "name": "LEVEL",
     "email": "henrique.caner@jemsystems.com"
   },
-  "homepage": "https://github.com/level-org/hormozi-gtm",
+  "homepage": "https://github.com/henriquecaner/hormozi-gtm",
   "repository": {
     "type": "git",
-    "url": "https://github.com/level-org/hormozi-gtm.git"
+    "url": "https://github.com/henriquecaner/hormozi-gtm.git"
   },
   "license": "proprietary",
   "keywords": [

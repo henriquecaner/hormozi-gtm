@@ -78,7 +78,7 @@ claude --plugin-dir /caminho/para/hormozi-gtm
 1. Bump `version` em `.claude-plugin/plugin.json` (SemVer).
 2. Atualizar `CHANGELOG.md` (mover de `[Unreleased]` para nova seção `[X.Y.Z]`).
 3. `git tag vX.Y.Z && git push --tags` — dispara workflow `release.yml`.
-4. Atualizar `version` correspondente em `level-org/claude-marketplace`.
+4. Atualizar `version` correspondente em `henriquecaner/claude-marketplace`.
 
 ## Editando conteúdo
 

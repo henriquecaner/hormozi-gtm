@@ -1,6 +1,6 @@
 <div align="center">
 
-<a href="https://github.com/level-org/hormozi-gtm">
+<a href="https://github.com/henriquecaner/hormozi-gtm">
   <img src=".github/assets/hero.png" alt="Hormozi GTM — LEVEL Edition · 8 comandos · 16 skills · persona sempre ativa" width="100%"/>
 </a>
 
@@ -13,7 +13,7 @@ persiste entre sessões. Persona Alex Hormozi sempre ativa. Humanizer obrigatór
 em copy externa.
 
 [![License](https://img.shields.io/badge/license-proprietary-blue)](./LICENSE)
-[![Latest Release](https://img.shields.io/github/v/release/level-org/hormozi-gtm?color=green&label=release)](https://github.com/level-org/hormozi-gtm/releases/latest)
+[![Latest Release](https://img.shields.io/github/v/release/henriquecaner/hormozi-gtm?color=green&label=release)](https://github.com/henriquecaner/hormozi-gtm/releases/latest)
 [![Skills](https://img.shields.io/badge/skills-16-purple)](#cat%C3%A1logo-de-skills)
 [![Commands](https://img.shields.io/badge/commands-8-purple)](#cat%C3%A1logo-de-comandos)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-D97757)](https://docs.claude.com/en/docs/claude-code)
@@ -42,7 +42,7 @@ A persona Alex Hormozi fica ativa em todos os comandos. Voz em 1ª pessoa, feedb
 gh auth login
 
 # 2. Adicionar o marketplace privado da LEVEL
-/plugin marketplace add level-org/claude-marketplace
+/plugin marketplace add henriquecaner/claude-marketplace
 
 # 3. Instalar o plugin
 /plugin install hormozi-gtm@level-marketplace
@@ -59,7 +59,7 @@ gh auth login
 
 ## Download
 
-Releases publicados em [github.com/level-org/hormozi-gtm/releases](https://github.com/level-org/hormozi-gtm/releases). Cada release inclui um ZIP pronto para upload no Claude Cowork (veja [Instalação](#instala%C3%A7%C3%A3o)).
+Releases publicados em [github.com/henriquecaner/hormozi-gtm/releases](https://github.com/henriquecaner/hormozi-gtm/releases). Cada release inclui um ZIP pronto para upload no Claude Cowork (veja [Instalação](#instala%C3%A7%C3%A3o)).
 
 ## Catálogo de comandos
 
@@ -110,7 +110,7 @@ Flag `--no-humanize` existe para debug e comparação A/B.
 
 ```bash
 gh auth login
-/plugin marketplace add level-org/claude-marketplace
+/plugin marketplace add henriquecaner/claude-marketplace
 /plugin install hormozi-gtm@level-marketplace
 ```
 
@@ -139,7 +139,7 @@ SemVer. Mudanças catalogadas em [`CHANGELOG.md`](./CHANGELOG.md). Releases auto
 ## Desenvolvimento local
 
 ```bash
-git clone git@github.com:level-org/hormozi-gtm.git
+git clone git@github.com:henriquecaner/hormozi-gtm.git
 cd hormozi-gtm
 claude --plugin-dir .
 ```
@@ -154,7 +154,7 @@ Detalhes de arquitetura em [`CLAUDE.md`](./CLAUDE.md).
 
 ## Autor
 
-[LEVEL](https://github.com/level-org) — Henrique Caner ([henrique.caner@jemsystems.com](mailto:henrique.caner@jemsystems.com)).
+[LEVEL](https://github.com/henriquecaner) — Henrique Caner ([henrique.caner@jemsystems.com](mailto:henrique.caner@jemsystems.com)).
 
 ## Licença
 
