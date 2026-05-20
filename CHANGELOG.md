@@ -9,6 +9,12 @@ Todas as mudanças relevantes deste plugin ficam aqui. Formato baseado em [Keep 
 - Comando `/hormozi-gtm:help` com matriz de decisão
 - Hook PostToolUse opcional para flagrar AI-isms residuais
 
+## [0.4.1] — 2026-05-20
+
+### Corrigido (Critical)
+
+- `release.yml` e `scripts/build-zip.sh` agora incluem `scripts/` no ZIP empacotado. v0.4.0 introduziu hook `post-tool-aiism-check.json` que depende de `scripts/check-aiisms.py`, mas o script não estava no ZIP — hook quebrava silenciosamente em instalações via Cowork (upload ZIP). Cliente instalando via `/plugin marketplace add` no Claude Code não era afetado (clona repo completo).
+
 ## [0.4.0] — 2026-05-20
 
 Foco em **retenção + fechamento high-ticket + defesa final contra AI-isms**. Fecha o ciclo completo de aquisição→fechamento→onboarding→retenção. Plugin agora cobre o pós-venda, não só o pré-venda.

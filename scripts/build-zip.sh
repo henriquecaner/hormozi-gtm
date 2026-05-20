@@ -21,6 +21,7 @@ zip -r "$OUT" \
   commands \
   skills \
   hooks \
+  scripts \
   templates \
   reference \
   README.md \
