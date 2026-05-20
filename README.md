@@ -14,10 +14,10 @@ em copy externa.
 
 [![License](https://img.shields.io/badge/license-proprietary-blue)](./LICENSE)
 [![Latest Release](https://img.shields.io/github/v/release/henriquecaner/hormozi-gtm?color=green&label=release)](https://github.com/henriquecaner/hormozi-gtm/releases/latest)
-[![Commands](https://img.shields.io/badge/commands-15-purple)](#cat%C3%A1logo-de-comandos)
-[![Skills](https://img.shields.io/badge/skills-23-purple)](#cat%C3%A1logo-de-skills)
+[![Commands](https://img.shields.io/badge/commands-17-purple)](#cat%C3%A1logo-de-comandos)
+[![Skills](https://img.shields.io/badge/skills-25-purple)](#cat%C3%A1logo-de-skills)
 [![Agents](https://img.shields.io/badge/agents-7-blueviolet)](./agents)
-[![Templates](https://img.shields.io/badge/templates-15-yellow)](./templates)
+[![Templates](https://img.shields.io/badge/templates-17-yellow)](./templates)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-D97757)](https://docs.claude.com/en/docs/claude-code)
 [![Claude Cowork](https://img.shields.io/badge/Claude%20Cowork-ready-D97757)](#instala%C3%A7%C3%A3o)
 
@@ -79,6 +79,8 @@ Releases publicados em [github.com/henriquecaner/hormozi-gtm/releases](https://g
 | `/hormozi-gtm:webinar` | Estrutura webinar B2B 30-45min (educacional + venda) | `outputs/webinar/*.md` |
 | `/hormozi-gtm:positioning` | Competitive teardown + positioning statement testável | `outputs/positioning/*.md` |
 | `/hormozi-gtm:content-hub` | Roadmap 30-90 dias de conteúdo orgânico | `outputs/content/*.md` |
+| `/hormozi-gtm:churn-prevention` | Win/loss + churn analysis + retention playbook | `outputs/retention/*.md` |
+| `/hormozi-gtm:onboarding-cliente` | Primeiros 30 dias do cliente pós-venda (marcos, touches, triggers) | `outputs/onboarding/*.md` |
 
 ## Catálogo de skills
 
@@ -93,6 +95,9 @@ Releases publicados em [github.com/henriquecaner/hormozi-gtm/releases](https://g
 
 **Aquisição + Conversão (avançado)** (4)
 `content-engine` · `ad-creative-testing` · `sales-sequencing` · `productization`
+
+**Deliverability + Fechamento high-ticket** (2)
+`email-deliverability` · `proposal-architecture`
 
 **Pricing** (1)
 `pricing-playbook`

@@ -9,6 +9,30 @@ Todas as mudanças relevantes deste plugin ficam aqui. Formato baseado em [Keep 
 - Comando `/hormozi-gtm:help` com matriz de decisão
 - Hook PostToolUse opcional para flagrar AI-isms residuais
 
+## [0.4.0] — 2026-05-20
+
+Foco em **retenção + fechamento high-ticket + defesa final contra AI-isms**. Fecha o ciclo completo de aquisição→fechamento→onboarding→retenção. Plugin agora cobre o pós-venda, não só o pré-venda.
+
+### Adicionado — 2 skills (deliverability + fechamento)
+
+- `email-deliverability` — camada técnica abaixo de `/email`. Warm-up de domínio em 4-6 semanas, setup SPF/DKIM/DMARC, 3 domínios secundários estratégia, antispam triggers (palavras + comportamento), métricas que importam (inbox placement, bounce, complaint rate), plano de recovery se domínio queimou.
+- `proposal-architecture` — pricing proposal high-ticket (R$ 30k+) em 7 seções (problema reformulado → mechanism → escopo → prova → investimento → garantia → próximo passo) + 5 padrões anti-comoditização (tier visível, bonus stack ímpar, garantia condicional, comparação com alternativas reais, escassez genuína).
+
+### Adicionado — 2 commands novos + 2 templates
+
+- `/hormozi-gtm:churn-prevention` + `templates/churn-analysis.md` — diagnóstico de churn por tipo (precoce/médio/tardio/voluntário/passivo), categorização por motivo, win/loss interview script (8 perguntas), 4-block retention playbook, sequência winback opcional (`--foco=winback`), impacto financeiro projetado.
+- `/hormozi-gtm:onboarding-cliente` + `templates/client-onboarding.md` — jornada de primeiros 30 dias em 5 marcos (welcome → kickoff → quick win D7 → NPS D14 → mid-point D21 → wrap D30), cadência de touches por ticket, triggers de intervenção quantitativos, métricas de sucesso (% completa marco 5, NPS dia-14, day-90 retention).
+
+### Adicionado — 1 hook + 1 script (defesa final)
+
+- `hooks/post-tool-aiism-check.json` — hook `PostToolUse` matcher `Write|Edit` que dispara `scripts/check-aiisms.py` após cada edição/escrita.
+- `scripts/check-aiisms.py` — Python conservador que escaneia `outputs/*.md` modificados há < 60s buscando padrões AI-isms residuais (PT-BR + EN). Detecta: vocabulário inflado (`transformador`, `revolucionário`, `alavancar`), voz de assistente (`ótima pergunta`, `espero ter ajudado`), conclusões genéricas, em-dash overuse (≥ 3 em 1 parágrafo), hedging. Soft warning — nunca bloqueia.
+
+### Polimento
+
+- `README.md`: badges `commands-17`, `skills-25`, `templates-17`. Catálogo de commands com 2 novos. Nova categoria "Deliverability + Fechamento high-ticket" (2 skills).
+- `CLAUDE.md`: roadmap [0.4.0] sai de planejado. Novo roadmap distante [0.5.0+] foca em multi-cliente, customization via settings.json, export de outputs.
+
 ## [0.3.0] — 2026-05-20
 
 ### Adicionado — 4 skills (aquisição + conversão avançada)

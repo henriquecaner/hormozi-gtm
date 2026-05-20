@@ -110,13 +110,11 @@ claude --plugin-dir .   # do diretório raiz do plugin, ou path absoluto se roda
 
 ## Roadmap
 
-### [0.4.0+] Roadmap distante (opcional)
-- `/hormozi-gtm:churn-prevention` — win/loss + retention playbook.
-- `settings.json` customization (cliente declara `humanizer_mode_default`, intensidade Hormozi).
-- Hook `PostToolUse` para flagrar AI-isms residuais (defesa final).
-- Skill `email-deliverability` — domínio warm-up, reputation, antispam triggers.
-- Skill `proposal-architecture` — pricing proposal de R$ 30k+ (objeção handling embedded).
-- Comando `/hormozi-gtm:onboarding-cliente` — primeiros 30 dias do cliente após assinar.
+### [0.5.0+] Roadmap distante (opcional)
+- `settings.json` customization (cliente declara `humanizer_mode_default`, intensidade Hormozi, preferências de output).
+- Multi-cliente em paralelo (gtm-context.md singular hoje — futuro: `gtm-context-{slug}.md` por cliente).
+- Comando `/hormozi-gtm:export` — empacota outputs de 1 cliente num zip pra entrega.
+- A/B testing automation (integração com plataformas de ads).
 
 ### Não planejado (workflow manual necessário)
 - A/B testing automation (depende de integração com plataformas de ads).

@@ -1,0 +1,13 @@
+{
+  "PostToolUse": [
+    {
+      "matcher": "Write|Edit",
+      "hooks": [
+        {
+          "type": "command",
+          "command": "python3 \"$CLAUDE_PLUGIN_DIR/scripts/check-aiisms.py\" 2>/dev/null || true"
+        }
+      ]
+    }
+  ]
+}
