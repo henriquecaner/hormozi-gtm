@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Marketplace que distribui o plugin Hormozi GTM — 8 comandos, 16 skills, persona Hormozi sempre ativa, humanizer obrigatório em copy externa.",
-    "version": "0.1.0"
+    "version": "0.1.1"
   },
   "plugins": [
     {
       "name": "hormozi-gtm",
       "source": "./",
       "description": "Operação GTM no estilo Alex Hormozi. Plugin Claude Code com ofertas, copy, ads, pricing, business plans e diagnósticos.",
-      "version": "0.1.0",
+      "version": "0.1.1",
       "category": "sales",
       "tags": [
         "hormozi",

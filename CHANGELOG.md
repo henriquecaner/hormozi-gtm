@@ -9,6 +9,14 @@ Todas as mudanças relevantes deste plugin ficam aqui. Formato baseado em [Keep 
 - Comando `/hormozi-gtm:help` com matriz de decisão
 - Hook PostToolUse opcional para flagrar AI-isms residuais
 
+## [0.1.1] — 2026-05-20
+
+### Adicionado
+- `.claude-plugin/marketplace.json` no próprio repo (`source: "./"`) — cliente instala via `/plugin marketplace add henriquecaner/hormozi-gtm` + `/plugin install hormozi-gtm@hormozi-gtm-marketplace`, sem precisar de repo separado.
+
+### Modificado
+- Email de contato atualizado para `caner@thelevel.com.br` em `plugin.json`, `LICENSE` e referências `mailto` no README.
+
 ## [0.1.0] — 2026-05-19
 
 ### Adicionado
