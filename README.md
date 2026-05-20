@@ -154,7 +154,7 @@ Detalhes de arquitetura em [`CLAUDE.md`](./CLAUDE.md).
 
 ## Autor
 
-[LEVEL](https://github.com/henriquecaner) — Henrique Caner ([henrique.caner@jemsystems.com](mailto:henrique.caner@jemsystems.com)).
+[LEVEL](https://github.com/henriquecaner) — Henrique Caner ([caner@thelevel.com.br](mailto:caner@thelevel.com.br)).
 
 ## Licença
 
