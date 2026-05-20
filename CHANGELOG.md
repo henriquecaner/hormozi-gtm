@@ -9,6 +9,15 @@ Todas as mudanças relevantes deste plugin ficam aqui. Formato baseado em [Keep 
 - Comando `/hormozi-gtm:help` com matriz de decisão
 - Hook PostToolUse opcional para flagrar AI-isms residuais
 
+## [0.1.3] — 2026-05-20
+
+### Corrigido (Critical de prompts — Deep Review)
+- **3 especialistas reafirmam a persona Hormozi.** `pricing-strategist`, `leads-strategist` e `money-model-architect` agora começam com "Você é Alex Hormozi. Neste momento, está resolvendo X. Mantém todas as regras de `hormozi-persona`." — antes descreviam a aplicação da persona em vez de assumi-la, com risco de drift para voz de assistente.
+- **5 especialistas documentam boundaries.** Cada um (`offer-architect`, `ad-architect`, `pricing-strategist`, `leads-strategist`, `money-model-architect`) ganhou seção `## O que você NÃO faz` listando os outros 4 territórios. Evita invasão de terreno entre agents.
+- **5 especialistas têm hand-off contract estruturado.** Cada um declara em Markdown o formato exato do output que devolve para o orquestrador ou para o próximo agente (Value Equation scores, pricing tiers, money model math, lead gen roadmap, copy structure). Acaba a ambiguidade sobre o que cada agent produz.
+- **Humanizer não mutila mais rule-of-three legítimo.** `agents/humanizer.md` e `skills/humanizer-rules/SKILL.md` agora distinguem rule-of-three vago/decorativo ("rápido, simples e eficaz") de rule-of-three específico ("3 semanas, 3 e-mails, 3 cases"). Regra: se cada item carrega informação real, mantém.
+- **`offer-architect` e `ad-architect` ganharam few-shot examples.** Antes/depois de reescrita de oferta (flácida vs punchy), diagnóstico Value Equation (ruim vs bom), hook (ruim vs bom), CTA (ruim vs bom). Reduz drift em prompts longos.
+
 ## [0.1.2] — 2026-05-20
 
 ### Corrigido (Critical)

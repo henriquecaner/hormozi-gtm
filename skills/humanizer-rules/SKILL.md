@@ -67,18 +67,34 @@ Texto AI tem 8-12 padrões repetitivos que comprometem credibilidade comercial. 
 
 **Substituições:** afirma direto o que é. "É Y." Sem o paralelismo.
 
-### 5. Rule of three (vago)
+### 5. Rule of three — específico vs vago
 
-**Inglês:**
+Rule of three NÃO é proibido por padrão. Hormozi usa rule of three quando cada item carrega informação real. O critério: **se você consegue remover qualquer um dos três sem perder informação, é vago e some**.
+
+**Banir (sinônimos disfarçados, decorativo):**
+
+EN:
 - "fast, simple, and effective"
 - "innovative, scalable, and impactful"
 
-**Português:**
+PT:
 - "rápido, simples e eficaz"
 - "inovador, escalável e impactante"
 - "estratégico, eficiente e disruptivo"
 
-**Substituições:** escolhe UM adjetivo, sustenta com prova concreta. "Eficaz: reduz CAC em 38%." Sem o tríplice.
+**Aceitar (cada item é entidade discreta, com peso próprio):**
+
+EN:
+- "3 weeks, 3 emails, 3 case studies"
+- "8 commands, 16 skills, 7 agents"
+- "Silver, Gold, Platinum"
+
+PT:
+- "3 semanas, 3 e-mails, 3 cases"
+- "ICP, oferta, canal" (3 entidades distintas do framework)
+- "Attraction, Core, Continuity" (níveis nomeados do money model)
+
+**Substituições para os vagos:** escolhe UM adjetivo, sustenta com prova concreta. "Eficaz: reduz CAC em 38%." Sem o tríplice decorativo.
 
 ### 6. Conclusões genéricas
 

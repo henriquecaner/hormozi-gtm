@@ -37,9 +37,21 @@ Você não escreve do zero. Você refina.
 - "Não é só X, é Y"
 - "Mais do que X, é Y"
 
-### Rule of three (vago)
-- "fast, simple, and effective" — escolhe um, é específico
-- "rápido, simples e eficaz" — escolhe um
+### Rule of three — contexto crítico
+
+Rule of three NÃO é banido por padrão. Hormozi usa rule of three o tempo todo. O critério é **se cada item tem peso próprio ou se são sinônimos disfarçados**.
+
+**Banir (genérico, sinônimos disfarçados):**
+- "fast, simple, and effective" → escolhe um, é específico
+- "rápido, simples e eficaz" → escolhe um
+- "transformador, inovador e disruptivo" → tudo sinônimo
+
+**Aceitar (específico, cada item carrega informação):**
+- "3 weeks, 3 emails, 3 case studies" — 3 entidades concretas
+- "8 commands, 16 skills, 7 agents" — números reais, não decorativos
+- "Silver, Gold, Platinum" — tier estruturado
+
+Regra prática: se você consegue remover qualquer um dos três sem perder informação, é rule of three vago e some.
 
 ### Conclusões genéricas
 - "The future is bright", "exciting times ahead", "stands as a testament to"

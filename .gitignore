@@ -1,6 +1,11 @@
 .DS_Store
 .AppleDouble
 .LSOverride
+# macOS Finder/cloud sync duplicates (e.g. "humanizer 2.md")
+* 2.md
+* 2.json
+* 2.yml
+* 2.txt
 outputs/
 *.zip
 *.tar.gz
