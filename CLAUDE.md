@@ -1,0 +1,88 @@
+# CLAUDE.md — hormozi-gtm
+
+Este arquivo orienta Claude Code (claude.ai/code) ao trabalhar neste repo.
+
+## O que este repo é
+
+Plugin Claude Code da LEVEL — não é uma aplicação executável. Os "artefatos" são Markdown estruturado (slash commands, agents, skills, templates) que outras instâncias do Claude Code carregam. Não há build, lint, test runner ou pacote a instalar.
+
+## Arquitetura
+
+```
+hormozi-gtm/
+├── .claude-plugin/plugin.json      # manifest
+├── commands/                       # 8 slash commands (entry points)
+├── agents/                         # 7 subagents (hormozi-persona + 5 especialistas + humanizer)
+├── skills/                         # 16 skills (frameworks + utilities)
+├── hooks/session-start.json        # banner informativo
+├── templates/                      # skeletons que os comandos preenchem
+└── reference/                      # extratos atribuídos dos livros (fair-use)
+```
+
+**Pipeline canônico de um comando:**
+
+```
+slash command (commands/<x>.md)
+    └─ orquestrador: hormozi-persona (sempre)
+         └─ delegate a especialista: offer-architect | ad-architect | pricing-strategist | leads-strategist | money-model-architect
+              └─ skills carregadas conforme o comando lista em "Skills ativas"
+         └─ último passo: subagent humanizer (lite ou full) — escreve em outputs/
+```
+
+Regras invariantes:
+
+1. **Persona Hormozi sempre ativa** em qualquer comando `/hormozi-gtm:*`. 1ª pessoa, sem voz de assistente. Detalhes em `agents/hormozi-persona.md`.
+2. **Humanizer obrigatório** antes de salvar output externo. `lite` para outputs internos (audit, review, plano); `full` para outputs externos do cliente (lp, roteiro, hooks, pricing). Flag `--no-humanize` existe só para debug. Regras em `skills/humanizer-rules/SKILL.md` e agent em `agents/humanizer.md`.
+3. **Frameworks são fonte da verdade.** Não inventar conselho de GTM fora do que está em `skills/` + `reference/`. Citar capítulo/seção do livro ao ampliar.
+
+## Contrato `gtm-context.md`
+
+Comandos exceto `/hormozi-gtm:init` leem `gtm-context.md` na raiz do projeto-consumidor (não deste repo). É a memória persistente de empresa/cliente: ICP, oferta, brand voice, Core Four split, stage.
+
+- Schema canônico: `templates/gtm-context.md`.
+- Se ausente, comandos disparam `/hormozi-gtm:init` automaticamente antes de prosseguir.
+- Se `last_updated` >30 dias, comandos avisam "contexto stale" e sugerem `--refresh`.
+- Editar fluxos de comando preservando esse contrato — quebrar a auto-detecção quebra todo o plugin.
+
+## Convenção de outputs
+
+Definida em `skills/output-conventions/SKILL.md`. Detalhes load-bearing:
+
+- Caminho: `outputs/<tipo>/<tipo>-<slug>-<YYYYMMDD>-v<n>.md` no projeto-consumidor.
+- Versionamento incrementa. Nunca sobrescrever sem `--overwrite`.
+- Frontmatter obrigatório: `plugin`, `plugin_version`, `command`, `version`, `status`, `created`, `client`, `product`, `frameworks`, `humanizer_pass`, `humanizer_mode`.
+- `humanizer_pass: false` é gate de release externo.
+
+## Tarefas comuns
+
+### Validar um comando manualmente
+
+Não há test runner. Validação é executar o comando dentro de um projeto-consumidor real:
+
+```bash
+claude --plugin-dir /caminho/para/hormozi-gtm
+/hormozi-gtm:init
+/hormozi-gtm:audit
+```
+
+### Adicionar novo comando
+
+1. Criar `commands/<nome>.md` com frontmatter (`description`, `argument-hint`).
+2. Listar persona orquestradora, especialista, skills, template, regra de humanizer.
+3. Adicionar template em `templates/<nome>.md` se output novo.
+4. Atualizar `skills/output-conventions/SKILL.md`.
+5. Bump `version` em `.claude-plugin/plugin.json` + entrada no `CHANGELOG.md`.
+
+### Publicar nova versão
+
+1. Bump `version` em `.claude-plugin/plugin.json` (SemVer).
+2. Atualizar `CHANGELOG.md` (mover de `[Unreleased]` para nova seção `[X.Y.Z]`).
+3. `git tag vX.Y.Z && git push --tags` — dispara workflow `release.yml`.
+4. Atualizar `version` correspondente em `level-org/claude-marketplace`.
+
+## Editando conteúdo
+
+- **Persona** (`agents/hormozi-persona.md`): invariante de voz. Não suavizar.
+- **Humanizer** (`agents/humanizer.md` + `skills/humanizer-rules/SKILL.md`): listas EN+PT-BR de AI-isms. Adicionar padrão novo nos dois arquivos.
+- **Reference** (`reference/*.md`): só extratos curtos (≤10% de capítulo), com atribuição e fair-use disclaimer no topo.
+- **CHANGELOG**: toda mudança em `commands/`, `agents/`, `skills/` ou `templates/` precisa entrada.

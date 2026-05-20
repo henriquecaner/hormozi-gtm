@@ -1,0 +1,79 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag a recriar release (ex: v0.1.0)"
+        required: true
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve tag and version
+        id: meta
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            TAG="${{ inputs.tag }}"
+          else
+            TAG="${GITHUB_REF_NAME}"
+          fi
+          VERSION="${TAG#v}"
+          echo "tag=${TAG}" >> "$GITHUB_OUTPUT"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
+
+      - name: Verify version matches plugin.json
+        run: |
+          MANIFEST_VERSION=$(python3 -c "import json; print(json.load(open('.claude-plugin/plugin.json'))['version'])")
+          if [ "$MANIFEST_VERSION" != "${{ steps.meta.outputs.version }}" ]; then
+            echo "::error::Tag ${{ steps.meta.outputs.tag }} != plugin.json version $MANIFEST_VERSION"
+            exit 1
+          fi
+
+      - name: Extract release notes from CHANGELOG
+        id: notes
+        run: |
+          python3 <<'PY' > release-notes.md
+          import re, pathlib
+          version = "${{ steps.meta.outputs.version }}"
+          text = pathlib.Path("CHANGELOG.md").read_text(encoding="utf-8")
+          pattern = rf"## \[{re.escape(version)}\][^\n]*\n(.*?)(?=\n## \[|\Z)"
+          m = re.search(pattern, text, re.S)
+          if not m:
+              raise SystemExit(f"Versão {version} não encontrada em CHANGELOG.md")
+          print(m.group(1).strip())
+          PY
+          echo "path=release-notes.md" >> "$GITHUB_OUTPUT"
+
+      - name: Build ZIP
+        run: |
+          VERSION="${{ steps.meta.outputs.version }}"
+          OUT="hormozi-gtm-v${VERSION}.zip"
+          zip -r "$OUT" \
+            .claude-plugin agents commands skills hooks templates reference \
+            README.md CHANGELOG.md LICENSE \
+            -x "*.DS_Store" "*/.git/*" "*/outputs/*"
+          echo "ZIP=$OUT" >> "$GITHUB_ENV"
+          ls -lh "$OUT"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.meta.outputs.tag }}
+          name: ${{ steps.meta.outputs.tag }}
+          body_path: release-notes.md
+          files: ${{ env.ZIP }}
+          draft: false
+          prerelease: false

@@ -1,0 +1,28 @@
+{
+  "name": "hormozi-gtm",
+  "displayName": "Hormozi GTM — LEVEL Edition",
+  "version": "0.1.0",
+  "description": "Operação GTM no estilo Alex Hormozi para o time e clientes da LEVEL. Ofertas, copy, ads, pricing, business plans e diagnósticos. Persona sempre ativa. Humanizer obrigatório.",
+  "author": {
+    "name": "LEVEL",
+    "email": "henrique.caner@jemsystems.com"
+  },
+  "homepage": "https://github.com/level-org/hormozi-gtm",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/level-org/hormozi-gtm.git"
+  },
+  "license": "proprietary",
+  "keywords": [
+    "hormozi",
+    "gtm",
+    "copywriting",
+    "offer",
+    "vsl",
+    "landing-page",
+    "pricing",
+    "revops",
+    "level"
+  ],
+  "categories": ["marketing", "sales", "revops"]
+}

@@ -1,0 +1,112 @@
+---
+description: Feedback brutal de material existente (LP, ad, email, proposta, post). Veredito por severidade (LEVE/MÉDIO/CRÍTICO), top 3 fix concretos, reescrita de trechos críticos. Persona Hormozi sem mercy mas com fix construtivo.
+argument-hint: "[caminho_do_material] [--foco=<secao>]"
+---
+
+# /hormozi-gtm:review
+
+Feedback brutal mas construtivo. Não é review elogiosa, não é review destrutiva. Diz o que está fraco, por que mata, e como consertar — com exemplo.
+
+## Carregamento de persona
+
+Use `hormozi-persona` com mood: direto, sem economizar em diagnóstico, mas sempre com fix.
+
+## Skills ativas
+
+- `value-equation` (se material é LP/ad/copy)
+- `grand-slam-offer` (se material é oferta)
+- `hook-framework` (se material tem hook/headline)
+- `ad-copy-formula` (se material é ad)
+- `pricing-playbook` (se material é pricing)
+- `humanizer-rules` (modo lite — review é interno)
+
+## Argumentos
+
+| Argumento | Comportamento |
+|---|---|
+| `caminho_do_material` | Lê arquivo, faz review completa |
+| (vazio) | Pede pra colar material no chat |
+| múltiplos paths | Faz review comparativa |
+| `--foco=<secao>` | Foca em 1 parte do material |
+
+## Pré-requisitos
+
+`gtm-context.md` ajuda mas não é obrigatório. Review pode operar em qualquer material.
+
+## Fluxo
+
+### Passo 1: Identifica tipo
+
+Auto-detecta:
+- Tem headline + CTA + stack de bonuses → LP
+- Tem timestamps + hook → roteiro
+- Tem header de email + subject → email
+- Tem estrutura de proposta comercial → proposta
+- Senão → pergunta ao usuário
+
+Pergunta opcional:
+> "Qual é o objetivo principal desse material? Conversion / awareness / nurturing / educacional / outro?"
+
+### Passo 2: Carrega skills relevantes
+
+Baseado no tipo:
+- LP/ad: value-equation, grand-slam-offer, ad-copy-formula, hook-framework
+- Pricing: pricing-playbook, value-equation
+- Email: ad-copy-formula, hook-framework
+
+### Passo 3: Análise
+
+Estrutura interna:
+
+1. **Veredito** em 1 linha (LEVE / MÉDIO / CRÍTICO)
+2. **O que funciona** (3-5 pontos — calibra credibilidade)
+3. **Problemas em ordem de impacto** (cada um: descrição + por que mata + fix concreto)
+4. **Top 3 se for fazer só 3 coisas**
+5. **Reescrita de 1-2 trechos críticos** (mostra como aplicar fix)
+6. **Diagnóstico Value Equation** (se aplicável)
+7. **Próximos passos**
+
+### Passo 4: Humanizer (lite)
+
+Output interno — modo lite. Mantém tom direto Hormozi cru.
+
+### Passo 5: Salva
+
+`outputs/review/review-{nome-original}-{YYYYMMDD}.md` via template `review.md`.
+
+Note: review não tem `-v{n}` no nome (one-shot). Se for re-review do mesmo material após mudança, vira `-v2`.
+
+### Passo 6: Resumo
+
+Mostra:
+- Veredito + 1 frase
+- Top 3 fix
+- Caminho do arquivo
+
+## Critério de pronto
+
+- [ ] Veredito tem severidade explícita (não "tá ok, só pequenos ajustes")
+- [ ] Pelo menos 1 ponto que funciona (não review só negativa)
+- [ ] Cada problema tem fix concreto (não "melhore a clareza")
+- [ ] Reescrita de pelo menos 1 trecho mostrando como aplicar
+- [ ] Top 3 priorizado (se ele fizer só 3 coisas, são essas)
+- [ ] Não é review elogiosa-vazia ("ficou bom, só ajustes")
+- [ ] Não é review destrutiva-gratuita
+- [ ] Humanizer lite aplicado
+
+## Anti-padrões
+
+- "Bom material!" (zero diagnóstico)
+- "Precisa melhorar a clareza" (sem ação)
+- Listar 15 problemas sem priorizar
+- Reescrever 80% do material (review vira rewriting; usa /lp ou /roteiro pra rewriting)
+- Ser cruel sem ser útil
+
+## Tom
+
+Hormozi review é como amigo competente revisando teu negócio num bar. Vai dizer o que está errado, vai apontar o que vai mudar tua vida se você arrumar, e vai te explicar como arrumar. Sem economizar — mas com fim construtivo.
+
+## Output esperado
+
+Arquivo: 600-1200 palavras
+Conversa: 3-5 linhas (veredito + top 3 + caminho)

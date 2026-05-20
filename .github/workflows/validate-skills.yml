@@ -1,0 +1,67 @@
+name: Validate skills
+
+on:
+  pull_request:
+    paths:
+      - "skills/**"
+      - "agents/**"
+      - "commands/**"
+      - ".github/workflows/validate-skills.yml"
+  push:
+    branches: [main]
+    paths:
+      - "skills/**"
+      - "agents/**"
+      - "commands/**"
+
+jobs:
+  frontmatter:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install PyYAML
+        run: pip install --quiet pyyaml
+
+      - name: Validate SKILL.md and agent/command frontmatter
+        run: |
+          python3 <<'PY'
+          import sys, re, pathlib
+          import yaml
+
+          errors = []
+
+          def check(path, required):
+              text = path.read_text(encoding="utf-8")
+              m = re.match(r"^---\n(.*?)\n---", text, re.S)
+              if not m:
+                  errors.append(f"{path}: frontmatter ausente")
+                  return
+              try:
+                  fm = yaml.safe_load(m.group(1)) or {}
+              except yaml.YAMLError as exc:
+                  errors.append(f"{path}: YAML inválido — {exc}")
+                  return
+              for field in required:
+                  if field not in fm or not fm[field]:
+                      errors.append(f"{path}: campo '{field}' ausente ou vazio")
+
+          for skill in pathlib.Path("skills").rglob("SKILL.md"):
+              check(skill, ["description"])
+
+          for agent in pathlib.Path("agents").glob("*.md"):
+              check(agent, ["name", "description"])
+
+          for cmd in pathlib.Path("commands").glob("*.md"):
+              check(cmd, ["description"])
+
+          if errors:
+              for e in errors:
+                  print(f"::error::{e}")
+              sys.exit(1)
+          print("✓ Frontmatter de skills/agents/commands OK")
+          PY

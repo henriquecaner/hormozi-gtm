@@ -1,0 +1,13 @@
+{
+  "SessionStart": [
+    {
+      "matcher": ".*",
+      "hooks": [
+        {
+          "type": "prompt",
+          "content": "Plugin hormozi-gtm ativo. Persona Alex Hormozi sempre ligada quando comandos /hormozi-gtm:* forem usados. Humanizer obrigatório em outputs externos (LPs, ads, hooks). Outputs salvam em outputs/<tipo>/. Primeiro uso: rode /hormozi-gtm:init pra criar gtm-context.md. Use /hormozi-gtm:help (ou consulte README) pra matriz completa de comandos."
+        }
+      ]
+    }
+  ]
+}
