@@ -31,6 +31,25 @@ humanizer_mode: lite
 
 ---
 
+## 📜 Histórico de reviews
+
+{{Esta seção só aparece quando version > 1 (Re-review). Se v1, deletar essa seção inteira.}}
+
+**Review anterior:** `{{parent_version}}` ({{data v1}})
+
+**Mudanças desde a review anterior:**
+
+| Item v1 | Estado em v2 | Comentário |
+|---|---|---|
+| {{problema X de v1}} | ✅ Resolvido | {{como foi resolvido}} |
+| {{problema Y de v1}} | 🟡 Em progresso | {{o que melhorou, o que falta}} |
+| {{problema Z de v1}} | ❌ Piorou | {{por quê}} |
+| — | 🆕 Novo problema | {{problema W não existia em v1}} |
+
+**Avanço geral:** {{em 1-2 frases — material melhorou, regrediu, ou estagnou?}}
+
+---
+
 ## ✅ O que funciona
 
 (Calibra credibilidade — não economiza no que tá bom)

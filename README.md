@@ -14,10 +14,10 @@ em copy externa.
 
 [![License](https://img.shields.io/badge/license-proprietary-blue)](./LICENSE)
 [![Latest Release](https://img.shields.io/github/v/release/henriquecaner/hormozi-gtm?color=green&label=release)](https://github.com/henriquecaner/hormozi-gtm/releases/latest)
-[![Commands](https://img.shields.io/badge/commands-10-purple)](#cat%C3%A1logo-de-comandos)
-[![Skills](https://img.shields.io/badge/skills-19-purple)](#cat%C3%A1logo-de-skills)
+[![Commands](https://img.shields.io/badge/commands-15-purple)](#cat%C3%A1logo-de-comandos)
+[![Skills](https://img.shields.io/badge/skills-23-purple)](#cat%C3%A1logo-de-skills)
 [![Agents](https://img.shields.io/badge/agents-7-blueviolet)](./agents)
-[![Templates](https://img.shields.io/badge/templates-10-yellow)](./templates)
+[![Templates](https://img.shields.io/badge/templates-15-yellow)](./templates)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-D97757)](https://docs.claude.com/en/docs/claude-code)
 [![Claude Cowork](https://img.shields.io/badge/Claude%20Cowork-ready-D97757)](#instala%C3%A7%C3%A3o)
 
@@ -73,7 +73,12 @@ Releases publicados em [github.com/henriquecaner/hormozi-gtm/releases](https://g
 | `/hormozi-gtm:email` | Sequência email (cold/warm/nurture/re-engagement) 5-7 emails | `outputs/email/email-*.md` |
 | `/hormozi-gtm:pricing` | Revisão de preço contra Pricing Playbook + Value Equation | `outputs/pricing/pricing-*.md` |
 | `/hormozi-gtm:plano` | Plano GTM 90 dias (Core Four split + money model) | `outputs/plano/plano-*.md` |
-| `/hormozi-gtm:review` | Feedback brutal + refinement de output prévio | nova versão `v{n+1}` |
+| `/hormozi-gtm:review` | Feedback brutal + refinement de output prévio (com modo Re-review v1↔v2) | nova versão `v{n+1}` |
+| `/hormozi-gtm:objections` | Matriz de objeções por ICP + scripts pra sales call | `outputs/objections/*.md` |
+| `/hormozi-gtm:case-study` | Case study estruturado + assets derivados (1-parágrafo, 1-linha, quote card) | `outputs/case-studies/*.md` |
+| `/hormozi-gtm:webinar` | Estrutura webinar B2B 30-45min (educacional + venda) | `outputs/webinar/*.md` |
+| `/hormozi-gtm:positioning` | Competitive teardown + positioning statement testável | `outputs/positioning/*.md` |
+| `/hormozi-gtm:content-hub` | Roadmap 30-90 dias de conteúdo orgânico | `outputs/content/*.md` |
 
 ## Catálogo de skills
 
@@ -85,6 +90,9 @@ Releases publicados em [github.com/henriquecaner/hormozi-gtm/releases](https://g
 
 **Copy + Ads** (7)
 `hook-framework` · `vsl-7-step` · `ad-copy-formula` · `scarcity-urgency` · `guarantees` · `bonus-stacking` · `lead-magnets`
+
+**Aquisição + Conversão (avançado)** (4)
+`content-engine` · `ad-creative-testing` · `sales-sequencing` · `productization`
 
 **Pricing** (1)
 `pricing-playbook`

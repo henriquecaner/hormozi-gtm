@@ -110,19 +110,13 @@ claude --plugin-dir .   # do diretório raiz do plugin, ou path absoluto se roda
 
 ## Roadmap
 
-### [0.3.0] Expansão funcional (planejado)
-- `/hormozi-gtm:objections` — matriz de objeções por ICP + scripts pra sales call.
-- `/hormozi-gtm:case-study` — case study builder + assets "success wall" pra LPs.
-- `/hormozi-gtm:webinar` — estrutura B2B 30-45min (educacional + venda).
-- `/hormozi-gtm:positioning` — competitive teardown + positioning statement.
-- `/hormozi-gtm:content-hub` — roadmap 30-90 dias de conteúdo orgânico.
-- Skills: `productization`, `content-engine`, `ad-creative-testing`, `sales-sequencing`.
-- Lacunas estruturais: testes de saída entre especialistas, exemplo end-to-end de pipeline, modos lite/full em pricing/leads/ad, recovery/fallback documentado.
-
 ### [0.4.0+] Roadmap distante (opcional)
 - `/hormozi-gtm:churn-prevention` — win/loss + retention playbook.
 - `settings.json` customization (cliente declara `humanizer_mode_default`, intensidade Hormozi).
 - Hook `PostToolUse` para flagrar AI-isms residuais (defesa final).
+- Skill `email-deliverability` — domínio warm-up, reputation, antispam triggers.
+- Skill `proposal-architecture` — pricing proposal de R$ 30k+ (objeção handling embedded).
+- Comando `/hormozi-gtm:onboarding-cliente` — primeiros 30 dias do cliente após assinar.
 
 ### Não planejado (workflow manual necessário)
 - A/B testing automation (depende de integração com plataformas de ads).

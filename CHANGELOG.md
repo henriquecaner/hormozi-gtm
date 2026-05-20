@@ -9,6 +9,38 @@ Todas as mudanças relevantes deste plugin ficam aqui. Formato baseado em [Keep 
 - Comando `/hormozi-gtm:help` com matriz de decisão
 - Hook PostToolUse opcional para flagrar AI-isms residuais
 
+## [0.3.0] — 2026-05-20
+
+### Adicionado — 4 skills (aquisição + conversão avançada)
+
+- `productization` — transição entre formatos (1:1 → group → cohort → self-paced → SaaS). Gate quantitativo entre cada transição, pricing adjustment por formato, sinais de empacotar cedo demais ou tarde demais.
+- `content-engine` — engine de conteúdo orgânico consistente. Mix saudável (60% educ / 25% entertainment / 15% promo), cadência sustentável vs aspiracional, métricas por mês (lag 3-6 meses até primeiro lead), repurpose plan (1 conteúdo → 4-8 derivados).
+- `ad-creative-testing` — framework de teste estatístico. Matrix (muda 1 elemento por vez), sample size mínimo (R$ 150-1000 por variante), kill criteria objetivo (≥ 1000 impressions + CTR < 50% do best), roadmap de teste 90 dias.
+- `sales-sequencing` — sequência outbound completa (5-step cadence). Timing (1d/3d/7d/14d/30d), 5 ângulos rotacionáveis para não repetir copy, breakup email obrigatório, métricas realistas B2B BR.
+
+### Adicionado — 5 commands + 5 templates
+
+- `/hormozi-gtm:objections` + `templates/objections-matrix.md` — matriz de objeções por ICP. Cada uma categorizada (oferta/preço/timing/trust), reframe em 2 frases, script palavra-por-palavra pra sales call, mitigação na oferta. Top 3 com script completo treinável em role-play.
+- `/hormozi-gtm:case-study` + `templates/case-study.md` — case study com antes/depois numérico auditable, quote exato do cliente, mecanismo nomeado. Gera versão completa + 1-parágrafo + 1-linha + quote card.
+- `/hormozi-gtm:webinar` + `templates/webinar-agenda.md` — estrutura B2B 30-45min em 7 blocos (abertura + diagnóstico + mechanism + cases + oferta + Q&A + CTA). Diferente de VSL direct-response. Inclui plant questions / scripted Q&A para prerecorded.
+- `/hormozi-gtm:positioning` + `templates/positioning-map.md` — competitive teardown com 3-5 competidores, eixos de diferenciação defensáveis, positioning statement testável. Gera hero copy (3 variações) + cold subject (3) + LinkedIn bio + abertura de sales call.
+- `/hormozi-gtm:content-hub` + `templates/content-roadmap.md` — roadmap 30-90 dias de conteúdo orgânico. Tópico × formato × funnel stage × CTA. Calendar semanal + repurpose plan + métricas por mês.
+
+### Modificado — 5 lacunas estruturais fechadas
+
+- `agents/hormozi-persona.md` ganhou:
+  - Seção "Validação antes do hand-off (testes de saída)" — checklist explícito para cada saída de especialista. Orquestrador devolve briefing fraco em vez de improvisar.
+  - "Exemplo end-to-end de pipeline" — caminho completo de `/hormozi-gtm:lp` (request → persona → offer-architect → ad-architect → humanizer → output), 10 passos documentados.
+  - "Recovery / fallback" — o que fazer quando `gtm-context.md` incompleto, `audit_ref` quebrado, briefing fraco, humanizer rejeita, salvamento falha.
+- `agents/{pricing-strategist,leads-strategist,ad-architect}.md` ganharam seção "Modos de operação" (lite vs full) — antes só humanizer diferenciava.
+- `agents/{offer-architect,ad-architect,pricing-strategist,leads-strategist,money-model-architect}.md` ganharam seção "Recovery / fallback" — comportamento explícito quando input necessário está incompleto.
+- `commands/review.md` + `templates/review.md` ganharam **modo Re-review**: detecta versão anterior, pergunta interativa entre "delta apenas" vs "review completa", template ganha seção "Histórico de reviews" com tabela de estado (resolvido / em progresso / piorou / novo).
+
+### Polimento
+
+- `README.md`: badges atualizados (`commands-15`, `skills-23`, `templates-15`), catálogo de commands estendido com os 5 novos, catálogo de skills com nova categoria "Aquisição + Conversão (avançado)".
+- `CLAUDE.md`: seção "Roadmap" atualizada (v0.3.0 sai de planejado, fica só [0.4.0+] como roadmap distante).
+
 ## [0.2.0] — 2026-05-20
 
 ### Adicionado

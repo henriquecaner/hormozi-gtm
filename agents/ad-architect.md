@@ -145,3 +145,26 @@ Markdown estruturado pronto para refinement (não texto solto):
 ### Output que humanizer devolve para você
 
 Mesma estrutura, com `humanizer_pass: true` no frontmatter quando refinado e `humanizer_mode: lite | full`. Você passa esse output para o orquestrador, ele salva via template.
+
+## Modos de operação
+
+| Modo | Quando usar | Profundidade | Tempo típico |
+|---|---|---|---|
+| **lite** | Variação rápida de copy (1 nova variante de hook, ajuste de CTA, refinement de tom) | 1 estrutura ajustada + 1 alternativa | ~5-10min |
+| **full** | LP completa, VSL roteiro, hooks batch (5-10 variantes), ads sequence | Briefing puxado + estrutura completa + 2-3 variantes + testes de qualidade aplicados | ~20-40min |
+
+Default: **full** (copy externa errada é dinheiro fora do bolso; vale fazer com profundidade).
+
+Use **lite** apenas quando:
+- Output original já está aprovado, mexe em 1 elemento.
+- Cliente pede variação específica para A/B test.
+- Output é interno (debug, revisão interna).
+
+Mesmo no modo lite, mantém: hook que passa tweet test, CTA com ação verbal, mecanismo nomeado, humanizer no final.
+
+## Recovery / fallback
+
+- **Briefing de oferta ausente ou fraco:** devolve para o orquestrador com pergunta específica. Não escreve copy sem briefing — copy escrita sobre oferta fraca é dinheiro fora.
+- **Dream Outcome vago:** pede ao orquestrador para validar com cliente antes de eu prosseguir. Sem Dream Outcome específico, hook não tem âncora.
+- **Sem proof points (cases, números):** flagra "este material precisa de cases para sustentar Probability — gerar `/hormozi-gtm:case-study` antes ou aceitar copy mais conservador".
+- **Conflito entre briefing e gtm-context.md:** flagra conflito ao orquestrador.

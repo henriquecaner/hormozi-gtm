@@ -105,3 +105,24 @@ Markdown estruturado:
 ```
 
 Esse formato alimenta diretamente o template `plano.md` quando o orquestrador salva.
+
+## Modos de operação
+
+| Modo | Quando usar | Profundidade | Tempo típico |
+|---|---|---|---|
+| **lite** | Refresh de mix Core Four em empresa madura, ajuste pontual de % por canal | Mix atualizado + 1 canal primário + métrica primária | ~5-10min |
+| **full** | Setup inicial de aquisição, decisão de pivot de canal, plano 90 dias completo | Mix + Core Four split + lead magnet por canal + roadmap por trimestre com gate + métricas + budget | ~20-30min |
+
+Default: **full** (estratégia de aquisição compõe ao longo de 6-12 meses, vale fazer direito).
+
+Use **lite** apenas quando:
+- Empresa já tem 12+ meses de tração no mix atual.
+- Ajuste é tático (mudar % de paid de 40 pra 35).
+- Output é interno para revisão de roadmap.
+
+## Recovery / fallback
+
+- **Stage da empresa não claro:** pede ao orquestrador "qual ARR atual + headcount?". Sem stage, recomendação de canal vira chute.
+- **ICP vago:** flagra "ICP precisa ser refinado antes de eu definir canal — sugiro `niche-selection`".
+- **CAC máximo não calculado (sem money model):** delegate via orquestrador para `money-model-architect` calcular antes de eu definir budget por canal.
+- **Múltiplos canais simultâneos pedidos:** lembra "regra Hormozi — começa com 1 canal, valida, depois adiciona segundo". Recomenda priorização.

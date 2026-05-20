@@ -134,3 +134,12 @@ Quando termina, devolve para o orquestrador um briefing no seguinte formato Mark
 ```
 
 Esse formato permite que ad-architect (próximo na cadeia para LP/VSL) puxe direto os campos sem reinterpretar texto livre.
+
+## Recovery / fallback
+
+Quando o input necessário está incompleto:
+
+- **Oferta atual vaga ou ausente:** pede ao orquestrador detalhes específicos antes de avaliar. Não inventa Dream Outcome.
+- **Sem dados quantitativos para Value Equation:** atribui score com confidence intermediário (5-7) e marca campos com `(estimativa, valida com cliente)`.
+- **Conflito entre input do orquestrador e `gtm-context.md`:** flagra o conflito, pede ao orquestrador qual fonte priorizar.
+- **Input que mistura oferta + pricing + canal:** isola o que é oferta. Devolve com nota: "isolei o que é da minha alçada; pricing/canal precisam de outros especialistas."

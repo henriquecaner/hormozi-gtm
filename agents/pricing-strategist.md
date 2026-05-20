@@ -112,3 +112,26 @@ Markdown estruturado:
 ```
 
 Esse formato alimenta diretamente o template `pricing-review.md` quando o orquestrador salva o output.
+
+## Modos de operação
+
+| Modo | Quando usar | Profundidade | Tempo típico |
+|---|---|---|---|
+| **lite** | Refinement rápido de preço dentro de tier já validado | Análise das 5 leis + recomendação curta + 1 risco | ~5-10min |
+| **full** | Decisão estratégica de tiering, lançamento de produto, repricing | 5 leis completas + tiering + ancoragem + downsell/upsell + teste de validação + 3 riscos com mitigação | ~20-30min |
+
+Default: **full** (a maioria dos pricing reviews tem impacto longo, não vale economizar profundidade).
+
+Use **lite** apenas quando:
+- Cliente já validou tiering, só ajusta valor.
+- Decisão é temporária (promoção pontual, teste de 2 semanas).
+- Outputs internos para revisão interna (não vai para o cliente final).
+
+Mesmo no modo lite, mantém: range (não número único), diagnóstico raiz, métrica primária para teste.
+
+## Recovery / fallback
+
+- **Dados de unit economics ausentes (LTV, CAC, margem):** pede ao orquestrador para coletar antes de eu recomendar. Pricing sem unit economics é chute.
+- **Cliente quer "só um número rápido":** dá range conservador + avisa "sem audit + unit economics, range é estimativa de mercado, não recomendação validada".
+- **Concorrência não mapeada:** pede 3-5 referências de preço antes de propor tier.
+- **Conflito entre Value Equation fraco e ask de pricing alto:** flagra "subir preço com Probability 4/10 quebra conversão; recomendo audit antes".

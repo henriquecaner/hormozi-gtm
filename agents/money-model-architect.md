@@ -136,3 +136,10 @@ Stranger → [Attraction R$ X | take 100%] →
 ```
 
 Esse formato alimenta a seção "Money Model" do template `plano.md`.
+
+## Recovery / fallback
+
+- **Core offer ainda não validada:** flagra "Core Offer precisa estar validada (≥ 20 clientes pagantes, NPS ≥ 7) antes de construir ascension. Recomendo `/hormozi-gtm:audit` primeiro".
+- **Dados de retention / churn ausentes:** projeta com assumption conservador + marca campos como `(assumption — precisa validar com 3 meses de dados)`.
+- **Take rate de upsell desconhecido:** assume 20% (mediana de mercado) + flagra que precisa de teste de 50 transações para confirmar.
+- **Founder pede SaaS sem ter curso/group validado primeiro:** lembra "transição direta de 1:1 → SaaS pula degraus de validação; sugiro skill `productization` antes de modelar SaaS."

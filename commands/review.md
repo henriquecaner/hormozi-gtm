@@ -42,6 +42,40 @@ O especialista produz o diagnóstico estruturado; a persona escreve a saída na 
 
 `gtm-context.md` ajuda mas não é obrigatório. Review pode operar em qualquer material.
 
+## Modo Re-review
+
+Se o `--ref` aponta para um material que **já foi revisado anteriormente** (existe `outputs/review/review-{material}-{data anterior}.md`), entra em modo Re-review:
+
+**Passo R1: Detecta review anterior**
+Procura em `outputs/review/` por arquivo cujo frontmatter tem `material_revisado: {{mesmo path}}`. Pode haver múltiplos (v1, v2, etc.).
+
+**Passo R2: Compara material atual vs review anterior**
+Lê o material como está agora. Compara contra o snapshot que estava sendo revisado quando a review anterior foi escrita.
+
+Auto-detecta o que mudou:
+- Headlines alteradas → relista feedback aplicável
+- Sections removidas/adicionadas → ajusta análise
+- Frontmatter mudou (version, audit_ref) → contextualiza
+
+**Passo R3: Resumo da delta na conversa**
+Mostra antes de seguir:
+
+> "Detectei que esse material foi revisado em {{data}} (review-v1).
+> Desde então, mudaram: {{lista de mudanças concretas}}.
+> A review nova vai incidir sobre:
+> (1) Mudanças desde v1 (delta apenas) — recomendado
+> (2) Review completa do material atual (ignora v1)
+> (3) Cancelar — quero ver review v1 primeiro"
+
+**Passo R4: Review com seção "Histórico"**
+Se usuário escolheu (1), gera review v2 contendo seção "Histórico de reviews" que mostra:
+- Problema X de v1 → estado em v2 (resolvido / pior / igual)
+- Novo problema Y identificado em v2 (não existia em v1)
+
+Frontmatter da review v2:
+- `parent_version: outputs/review/review-{material}-{data}-v1.md`
+- `version: 2`
+
 ## Fluxo
 
 ### Passo 1: Identifica tipo
