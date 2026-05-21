@@ -7,8 +7,8 @@ status: draft
 created: {{ISO8601}}
 client: {{empresa_slug}}
 product: {{produto_slug}}
-case_cliente: {{cliente_caso_nome}}
-case_cliente_slug: {{cliente_caso_slug}}
+case_cliente_nome: {{case_cliente_nome}}
+case_cliente_slug: {{case_cliente_slug}}
 permission: {{public | pseudonym | confidential}}
 frameworks:
   - value-equation
@@ -16,10 +16,11 @@ frameworks:
   - hook-framework
 humanizer_pass: true
 humanizer_mode: full
+audit_ref: {{caminho_ou_null}}
 parent_version: {{caminho_v_anterior_ou_null}}
 ---
 
-# Case Study — {{cliente_caso_nome}}
+# Case Study — {{case_cliente_nome}}
 
 ## TL;DR
 
@@ -31,7 +32,7 @@ parent_version: {{caminho_v_anterior_ou_null}}
 
 ## 1-linha (use em ads / headlines de LP)
 
-> "{{cliente}} reduziu {{métrica}} em {{X}}% em {{tempo}}."
+> "{{case_cliente_nome}} reduziu {{métrica}} em {{X}}% em {{tempo}}."
 
 ---
 
@@ -55,7 +56,7 @@ parent_version: {{caminho_v_anterior_ou_null}}
 
 ### Contexto
 
-{{2-3 parágrafos: quem é {{cliente}}, em qual setor, qual stage (ARR, headcount), o que estava acontecendo antes. Concreto, com números quando possível.}}
+2-3 parágrafos descrevendo: quem é `{{case_cliente_nome}}`, em qual setor, qual stage (ARR, headcount), o que estava acontecendo antes. Concreto, com números quando possível.
 
 ### O problema
 

@@ -11,9 +11,9 @@ Plugin Claude Code da LEVEL — não é uma aplicação executável. Os "artefat
 ```
 hormozi-gtm/
 ├── .claude-plugin/plugin.json      # manifest
-├── commands/                       # 8 slash commands (entry points)
+├── commands/                       # 17 slash commands (entry points)
 ├── agents/                         # 7 subagents (hormozi-persona + 5 especialistas + humanizer)
-├── skills/                         # 16 skills (frameworks + utilities)
+├── skills/                         # 25 skills (frameworks + estratégia + utilities)
 ├── hooks/session-start.json        # banner informativo
 ├── templates/                      # skeletons que os comandos preenchem
 └── reference/                      # extratos atribuídos dos livros (fair-use)
@@ -110,16 +110,16 @@ claude --plugin-dir .   # do diretório raiz do plugin, ou path absoluto se roda
 
 ## Roadmap
 
+> v0.1.x → v0.4.x: encerradas (ver `CHANGELOG.md` para detalhes).
+
 ### [0.5.0+] Roadmap distante (opcional)
 - `settings.json` customization (cliente declara `humanizer_mode_default`, intensidade Hormozi, preferências de output).
 - Multi-cliente em paralelo (gtm-context.md singular hoje — futuro: `gtm-context-{slug}.md` por cliente).
 - Comando `/hormozi-gtm:export` — empacota outputs de 1 cliente num zip pra entrega.
-- A/B testing automation (integração com plataformas de ads).
+- A/B testing automation — integração com plataformas de ads (depende de API externa).
 
 ### Não planejado (workflow manual necessário)
-- A/B testing automation (depende de integração com plataformas de ads).
 - CRM sync (manutenção de `gtm-context.md` manual por enquanto).
-- Multi-cliente em paralelo (gtm-context.md é singular por projeto consumidor).
 
 ## Editando conteúdo
 

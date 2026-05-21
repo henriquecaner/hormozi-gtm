@@ -1,14 +1,14 @@
 <div align="center">
 
 <a href="https://github.com/henriquecaner/hormozi-gtm">
-  <img src=".github/assets/hero.png" alt="Hormozi GTM — LEVEL Edition · 8 comandos · 16 skills · persona sempre ativa" width="100%"/>
+  <img src=".github/assets/hero.png" alt="Hormozi GTM — LEVEL Edition · 17 comandos · 25 skills · persona sempre ativa" width="100%"/>
 </a>
 
 # Hormozi GTM — LEVEL Edition
 
 **Operação GTM no estilo Alex Hormozi para o time e clientes da LEVEL.**
 
-Plugin Claude Code com 8 comandos, 16 skills e contrato `gtm-context.md` que
+Plugin Claude Code com 17 comandos, 25 skills e contrato `gtm-context.md` que
 persiste entre sessões. Persona Alex Hormozi sempre ativa. Humanizer obrigatório
 em copy externa.
 
@@ -35,7 +35,7 @@ A segunda dor é mais cara: copy gerada por IA é reconhecível em segundos. Em-
 
 **Hormozi GTM** resolve as duas em paralelo. O comando `/hormozi-gtm:init` faz uma entrevista guiada e grava `gtm-context.md` na raiz do projeto. Todo comando subsequente lê esse arquivo automaticamente, sem você precisar reintroduzir nada. E todo output destinado ao cliente (LP, roteiro VSL, hooks de ad, pricing) passa por um humanizer dedicado antes de ser salvo, com listas EN e PT-BR de padrões que denunciam IA.
 
-A persona Alex Hormozi fica ativa em todos os comandos. Voz em 1ª pessoa, feedback direto, sem "ótima pergunta" ou "espero ter ajudado". As 16 skills cobrem os frameworks centrais dos livros e do playbook vazado: Grand Slam Offer, Value Equation, Core Four, Money Models, LTV:CAC, Pricing Playbook, 5 Scaling Frameworks da Leila Hormozi.
+A persona Alex Hormozi fica ativa em todos os comandos. Voz em 1ª pessoa, feedback direto, sem "ótima pergunta" ou "espero ter ajudado". As 25 skills cobrem os frameworks centrais dos livros e do playbook vazado: Grand Slam Offer, Value Equation, Core Four, Money Models, LTV:CAC, Pricing Playbook, 5 Scaling Frameworks da Leila Hormozi, e a camada estratégica (niche-selection, founder-market-fit, market-saturation-pivot, productization, content-engine, ad-creative-testing, sales-sequencing, email-deliverability, proposal-architecture).
 
 ## Quickstart
 

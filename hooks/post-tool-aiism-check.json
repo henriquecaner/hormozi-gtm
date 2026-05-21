@@ -1,11 +1,11 @@
 {
   "PostToolUse": [
     {
-      "matcher": "Write|Edit",
+      "matcher": "Write|Edit|MultiEdit",
       "hooks": [
         {
           "type": "command",
-          "command": "python3 \"$CLAUDE_PLUGIN_DIR/scripts/check-aiisms.py\" 2>/dev/null || true"
+          "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/check-aiisms.py\" 2>/dev/null || true"
         }
       ]
     }

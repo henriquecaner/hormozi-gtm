@@ -27,9 +27,7 @@ WINDOW_SECONDS = 60
 PATTERNS_PT = [
     (r"\btransformador(?:a|es|as)?\b", "vocabulário inflado: 'transformador'"),
     (r"\brevolucion(?:ário|ária|ar)\b", "vocabulário inflado: 'revolucionário'"),
-    (r"\binovador(?:a|es|as)?\b(?!\s+(?:produto|tecnologia))", "vocabulário inflado: 'inovador'"),
     (r"\balavancar\b", "AI-vocab: 'alavancar'"),
-    (r"\bmergulhar\b(?!\s+(?:na piscina|no mar))", "AI-vocab figurativo: 'mergulhar'"),
     (r"\bvale ressaltar\b", "AI-filler: 'vale ressaltar'"),
     (r"\bnav(?:egar|egando)\s+(?:os |pelos )?desafios?\b", "AI-vocab: 'navegar desafios'"),
     (r"\bótima pergunta\b", "voz de assistente: 'ótima pergunta'"),
@@ -38,6 +36,9 @@ PATTERNS_PT = [
     (r"\b(?:o futuro é promissor|caminhos brilhantes pela frente)\b", "conclusão genérica AI"),
     (r"\bé um marco\b", "inflated significance: 'é um marco'"),
     (r"\bpoderia potencialmente\b", "hedging excessivo: 'poderia potencialmente'"),
+    # Removidos por taxa alta de falso positivo em PT-BR:
+    # - 'inovador': PT-BR usa substantivo→adjetivo ('produto inovador'), regex tinha lookahead invertido
+    # - 'mergulhar': contextos figurativos legítimos ('mergulhar no projeto') predominam
 ]
 
 PATTERNS_EN = [
@@ -110,6 +111,9 @@ def scan_file(path: Path) -> list[tuple[int, str]]:
     return hits
 
 
+MAX_HITS_PER_FILE = 20
+
+
 def main() -> int:
     cwd = Path.cwd()
     files = find_recent_outputs(cwd)
@@ -123,9 +127,13 @@ def main() -> int:
         any_hits = True
         rel = path.relative_to(cwd)
         print(f"\n⚠️  AI-isms residuais em {rel}:")
-        for line, label in hits:
+        shown = hits[:MAX_HITS_PER_FILE]
+        for line, label in shown:
             loc = f"linha {line}" if line > 0 else "global"
             print(f"   [{loc}] {label}")
+        if len(hits) > MAX_HITS_PER_FILE:
+            suppressed = len(hits) - MAX_HITS_PER_FILE
+            print(f"   ... (+{suppressed} hits suprimidos — re-rode humanizer)")
     if any_hits:
         print(
             "\n→ Considere re-rodar humanizer ou editar manualmente "

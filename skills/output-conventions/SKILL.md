@@ -16,7 +16,15 @@ outputs/
 ├── plano/                   # /hormozi-gtm:plano
 ├── review/                  # /hormozi-gtm:review
 ├── hooks/                   # /hormozi-gtm:hooks
-└── pricing/                 # /hormozi-gtm:pricing
+├── pricing/                 # /hormozi-gtm:pricing
+├── email/                   # /hormozi-gtm:email (cold/warm/nurture/re-engagement)
+├── objections/              # /hormozi-gtm:objections
+├── case-studies/            # /hormozi-gtm:case-study (plural — case studies geram série)
+├── webinar/                 # /hormozi-gtm:webinar
+├── positioning/             # /hormozi-gtm:positioning
+├── content/                 # /hormozi-gtm:content-hub (roadmap de conteúdo)
+├── retention/               # /hormozi-gtm:churn-prevention (churn-analysis + winback)
+└── onboarding/              # /hormozi-gtm:onboarding-cliente
 ```
 
 Se a pasta não existir, criar antes de escrever. Não escrever na raiz do projeto.
@@ -36,6 +44,15 @@ outputs/<tipo>/<tipo>-<slug>-<YYYYMMDD>-v<n>.md
 - `outputs/review/review-lp-cliente-x-20260519.md`
 - `outputs/hooks/hooks-curso-fechamento-20260519-v1.md`
 - `outputs/pricing/pricing-curso-fechamento-20260519-v2.md`
+- `outputs/email/email-cold-revops-diagnostic-20260519-v1.md` (sub-tipo no prefixo)
+- `outputs/objections/objections-revops-diagnostic-20260519-v1.md`
+- `outputs/case-studies/case-study-stark-bank-20260519-v1.md`
+- `outputs/webinar/webinar-revops-diagnostic-20260519-v1.md`
+- `outputs/positioning/positioning-revops-diagnostic-20260519-v1.md`
+- `outputs/content/content-roadmap-revops-diagnostic-20260519-v1.md`
+- `outputs/retention/churn-analysis-revops-diagnostic-20260519-v1.md`
+- `outputs/retention/winback-sequence-revops-diagnostic-20260519-v1.md` (exceção — winback compartilha pasta com churn)
+- `outputs/onboarding/onboarding-revops-diagnostic-20260519-v1.md`
 
 **Regras:**
 - `<slug>` é kebab-case, derivado do produto/oferta/cliente

@@ -22,15 +22,17 @@ jobs:
           python3 <<'PY'
           import json, pathlib, sys
 
-          # SessionStart só aceita type: command ou mcp_tool (doc: code.claude.com/docs/en/hooks)
+          # Tipos válidos por evento (doc: code.claude.com/docs/en/hooks)
+          # PostToolUse, PreToolUse aceitam mais tipos; SessionStart é restrito a command+mcp_tool
+          BASE_TYPES = {"command", "mcp_tool", "http", "prompt", "agent"}
           ALLOWED_TYPES = {
               "SessionStart": {"command", "mcp_tool"},
-              "PreToolUse": {"command", "mcp_tool"},
-              "PostToolUse": {"command", "mcp_tool"},
-              "UserPromptSubmit": {"command", "mcp_tool"},
-              "Notification": {"command", "mcp_tool"},
-              "Stop": {"command", "mcp_tool"},
-              "SubagentStop": {"command", "mcp_tool"},
+              "PreToolUse": BASE_TYPES,
+              "PostToolUse": BASE_TYPES,
+              "UserPromptSubmit": BASE_TYPES,
+              "Notification": BASE_TYPES,
+              "Stop": BASE_TYPES,
+              "SubagentStop": BASE_TYPES,
           }
 
           errors = []

@@ -5,9 +5,37 @@ Todas as mudanças relevantes deste plugin ficam aqui. Formato baseado em [Keep 
 ## [Unreleased]
 
 ### Planejado
-- Onboarding doc específico para clientes da LEVEL
-- Comando `/hormozi-gtm:help` com matriz de decisão
-- Hook PostToolUse opcional para flagrar AI-isms residuais
+- Onboarding doc específico para clientes da LEVEL (guia operacional separado do plugin)
+- `settings.json` customization (cliente declara `humanizer_mode_default`, intensidade Hormozi)
+- Multi-cliente em paralelo (`gtm-context-{slug}.md` por cliente vs singular hoje)
+- `/hormozi-gtm:export` — empacota outputs de 1 cliente em zip pra entrega
+
+## [0.4.2] — 2026-05-20
+
+Hotfix de 5 Critical + 6 Important + 3 Minor descobertos no Deep Review do v0.4.1. Corrige bugs invisíveis em produção (hook nunca rodou desde v0.4.0, contrato humanizer↔orquestrador furado, pastas de output não documentadas, /help apontando para command como roadmap).
+
+### Corrigido (Critical)
+
+- **`hooks/post-tool-aiism-check.json`**: env var `$CLAUDE_PLUGIN_DIR` (inexistente) substituída por `${CLAUDE_PLUGIN_ROOT}` (canônica do Claude Code). Hook não rodou desde v0.4.0 — `||true` engolia FileNotFoundError silenciosamente. Confirmado contra doc oficial em code.claude.com/docs/en/hooks.
+- **`agents/humanizer.md`**: contrato com orquestrador agora explícito. Humanizer emite headline estruturada `humanizer_pass: <bool>` + `humanizer_mode: <lite|full>` antes do texto refinado. Antes, orquestrador validava campos que humanizer nunca prometia devolver.
+- **`skills/output-conventions/SKILL.md`**: árvore de pastas estendida com as 9 pastas de output dos commands novos (`email/`, `objections/`, `case-studies/`, `webinar/`, `positioning/`, `content/`, `retention/`, `onboarding/`). Antes só listava 7 pastas, violando a própria regra "criar pasta antes de escrever".
+- **`commands/help.md`**: retrofit completo para cobrir os 17 commands. Antes dizia "/objections ainda em roadmap" mas command existe desde v0.3.0; sem entrada para email, case-study, webinar, positioning, content-hub, churn-prevention, onboarding-cliente.
+- **`templates/case-study.md`**: placeholder aninhado `{{... {{cliente}} ...}}` que quebrava parser. Substituído por `{{case_cliente_nome}}` consistente com frontmatter. Adicionado campo `audit_ref` ao frontmatter.
+
+### Modificado (Important)
+
+- **`hooks/post-tool-aiism-check.json`**: matcher `Write|Edit` → `Write|Edit|MultiEdit`. Antes, edições multi-bloco bypassavam o gate aiism-check.
+- **`scripts/check-aiisms.py`**: cap de 20 hits por arquivo + linha "(+N hits suprimidos)". Arquivo longo com humanizer pulado não inunda mais o terminal.
+- **`scripts/check-aiisms.py`**: removidos 2 padrões com taxa alta de falso positivo em PT-BR (`inovador` com lookahead invertido — PT usa `produto inovador`; `mergulhar` em contextos figurativos legítimos predominam).
+- **`.github/workflows/lint-hook.yml`**: whitelist de hook types expandida. PostToolUse/PreToolUse/etc agora aceitam `{command, mcp_tool, http, prompt, agent}` (5 tipos da doc oficial). SessionStart mantém `{command, mcp_tool}` (restrito).
+- **`README.md`**: 3 strings stale "8 comandos, 16 skills" atualizadas para "17 comandos, 25 skills" (alt da hero, tagline, parágrafo "O que é").
+- **`CLAUDE.md`**: seção "Arquitetura" atualizada de "8 slash commands / 16 skills" para "17 slash commands / 25 skills".
+
+### Polimento
+
+- **`CHANGELOG.md`** `[Unreleased]/Planejado` limpo: removidos itens já entregues (`/help`, hook PostToolUse). Substituídos por backlog real do v0.5.0+.
+- **`CLAUDE.md`** Roadmap deduplicado: `A/B testing automation` e `Multi-cliente` apareciam em ambas `[0.5.0+]` e `Não planejado`. Cada item agora em uma seção só.
+- **`scripts/build-zip.sh`** + **`.github/workflows/release.yml`**: excludem `* 2.md`, `* 2.json`, `* 2.yml` (duplicates macOS Finder/iCloud). Defesa em profundidade vs falha do `.gitignore`.
 
 ## [0.4.1] — 2026-05-20
 

@@ -27,7 +27,7 @@ zip -r "$OUT" \
   README.md \
   CHANGELOG.md \
   LICENSE \
-  -x "*.DS_Store" "*/.git/*" "*/outputs/*" "*/__pycache__/*" \
+  -x "*.DS_Store" "*/.git/*" "*/outputs/*" "*/__pycache__/*" "* 2.md" "* 2.json" "* 2.yml" "*/* 2.md" "*/* 2.json" "*/* 2.yml" \
   > /dev/null
 
 SIZE=$(du -h "$OUT" | cut -f1)
