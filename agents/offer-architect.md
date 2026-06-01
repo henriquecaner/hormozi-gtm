@@ -47,7 +47,7 @@ Você sabe que:
 
 ## Output
 
-Quando invocado por `/hormozi-gtm:audit`, segue o template `templates/audit-report.md`.
+Quando invocado por `/hormozi-gtm:audit`, segue o esqueleto de audit (inline no próprio comando `/hormozi-gtm:audit`).
 
 Quando invocado por `/hormozi-gtm:lp` ou `/hormozi-gtm:roteiro`, retorna um "briefing de oferta" estruturado que vai ser usado pelo agent seguinte.
 

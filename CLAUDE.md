@@ -4,7 +4,7 @@ Este arquivo orienta Claude Code (claude.ai/code) ao trabalhar neste repo.
 
 ## O que este repo é
 
-Plugin Claude Code da LEVEL — não é uma aplicação executável. Os "artefatos" são Markdown estruturado (slash commands, agents, skills, templates) que outras instâncias do Claude Code carregam. Não há build, lint, test runner ou pacote a instalar.
+Plugin Claude Code da LEVEL — não é uma aplicação executável. Os "artefatos" são Markdown estruturado (slash commands, agents, skills) que outras instâncias do Claude Code carregam. Não há build, lint, test runner ou pacote a instalar.
 
 ## Arquitetura
 
@@ -15,8 +15,8 @@ hormozi-gtm/
 ├── agents/                         # 7 subagents (hormozi-persona + 5 especialistas + humanizer)
 ├── skills/                         # 42 skills (frameworks + estratégia + hormozi-voice + 16 template-* esqueletos)
 ├── hooks/hooks.json                # banner SessionStart + aiism-check PostToolUse (consolidado)
-├── templates/                      # skeletons que os comandos preenchem
 └── reference/                      # extratos atribuídos dos livros (fair-use)
+                                    # (esqueletos de output vivem em skills/template-*; audit é inline)
 ```
 
 **Pipeline canônico de um comando:**
@@ -35,14 +35,14 @@ Regras invariantes:
 2. **Humanizer = gate só de copy externa** (lp, roteiro, hooks, email, case-study, webinar, conteúdo, winback). Diagnóstico/estratégia/interno (audit, review, plano, pricing, objections, positioning, análise de churn, onboarding) e interações ficam **crus, Hormozi brutal**. Modo `lite` removido. Humanizer unifica voz + protege a presa (CTA-ordem, frase-martelo, especificidade agressiva); nunca amacia. Regras em `skills/humanizer-rules/SKILL.md` e `agents/humanizer.md`.
 3. **Frameworks são fonte da verdade.** Não inventar conselho de GTM fora do que está em `skills/` + `reference/`. Citar capítulo/seção do livro ao ampliar.
 4. **Voz brutal (v1.0).** O registro de voz vive em `skills/hormozi-voice/` (exemplos do corpus + regras duras + rubrica de brutalidade 0-10, gate ≥7 para copy externa). Persona, especialistas e humanizer carregam essa skill. Comandos também carregam `hormozi-voice` IN-CONTEXTO — não só via subagent (robustez no Cowork, onde subagent raramente roda).
-5. **Template loading (v1.0).** `${CLAUDE_PLUGIN_ROOT}` NÃO interpola em corpo de command (issue #9354). Cada template virou skill `template-*` (description de-triggerizada) carregada por nome via ferramenta Skill, ou inline (audit). Os `templates/*.md` são a fonte autorada; as skills `template-*` são o espelho carregado em runtime — ao editar um template, regenere a skill correspondente.
+5. **Template loading (v1.0).** `${CLAUDE_PLUGIN_ROOT}` NÃO interpola em corpo de command (issue #9354). Cada template virou skill `template-*` (description de-triggerizada) carregada por nome via ferramenta Skill, ou inline (audit). As skills `template-*` são a **fonte única** do esqueleto (a pasta `templates/` foi removida no 1.0.1 — era duplicação morta); `audit` usa esqueleto inline no próprio comando. Ao mudar o formato de um output, edite a skill `template-<nome>` correspondente.
 6. **Pipeline single-context (v1.0).** Sem gate de tier / "modo GOD" auto-detectado (deep review provou não-confiável e sem ganho de output). Comandos orquestram fases no próprio contexto carregando skills; isolamento de subagent é opt-in, não auto-detecção.
 
 ## Contrato `gtm-context.md`
 
 Comandos exceto `/hormozi-gtm:init` leem `gtm-context.md` na raiz do projeto-consumidor (não deste repo). É a memória persistente de empresa/cliente: ICP, oferta, brand voice, Core Four split, stage.
 
-- Schema canônico: `templates/gtm-context.md`.
+- Schema canônico: skill `template-gtm-context`.
 - Se ausente, comandos disparam `/hormozi-gtm:init` automaticamente antes de prosseguir.
 - Se `last_updated` >30 dias, comandos avisam "contexto stale" e sugerem `--refresh`.
 - Editar fluxos de comando preservando esse contrato — quebrar a auto-detecção quebra todo o plugin.
@@ -96,7 +96,7 @@ claude --plugin-dir .   # do diretório raiz do plugin, ou path absoluto se roda
 
 1. Criar `commands/<nome>.md` com frontmatter (`description`, `argument-hint`).
 2. Listar persona orquestradora, especialista, skills, template, regra de humanizer.
-3. Adicionar template em `templates/<nome>.md` se output novo.
+3. Adicionar skill `template-<nome>` com o esqueleto do output novo (description de-triggerizada), ou inline no command.
 4. Atualizar `skills/output-conventions/SKILL.md`.
 5. Bump `version` em `.claude-plugin/plugin.json` + entrada no `CHANGELOG.md`.
 
@@ -109,7 +109,7 @@ claude --plugin-dir .   # do diretório raiz do plugin, ou path absoluto se roda
 5. `git tag vX.Y.Z && git push origin vX.Y.Z` — dispara workflow `release.yml` (gera ZIP, cria release, extrai notes do CHANGELOG).
 6. Clientes recebem via `/plugin update hormozi-gtm` (marketplace integrado no mesmo repo).
 
-> Os templates usam `plugin_version: {{plugin_version}}` como placeholder dinâmico. Não precisa editar templates a cada bump — o command lê o valor de `.claude-plugin/plugin.json` na hora de gerar o output.
+> Os esqueletos (skills `template-*`) usam `plugin_version: {{plugin_version}}` como placeholder dinâmico. Não precisa editá-los a cada bump — o command lê o valor de `.claude-plugin/plugin.json` na hora de gerar o output.
 
 ## Roadmap
 
@@ -129,4 +129,4 @@ claude --plugin-dir .   # do diretório raiz do plugin, ou path absoluto se roda
 - **Persona** (`agents/hormozi-persona.md`): invariante de voz. Não suavizar.
 - **Humanizer** (`agents/humanizer.md` + `skills/humanizer-rules/SKILL.md`): listas EN+PT-BR de AI-isms. Adicionar padrão novo nos dois arquivos.
 - **Reference** (`reference/*.md`): só extratos curtos (≤10% de capítulo), com atribuição e fair-use disclaimer no topo.
-- **CHANGELOG**: toda mudança em `commands/`, `agents/`, `skills/` ou `templates/` precisa entrada.
+- **CHANGELOG**: toda mudança em `commands/`, `agents/` ou `skills/` (inclui as `template-*`) precisa entrada.

@@ -10,6 +10,22 @@ Todas as mudanças relevantes deste plugin ficam aqui. Formato baseado em [Keep 
 - Multi-cliente em paralelo (`gtm-context-{slug}.md` por cliente vs singular hoje)
 - `/hormozi-gtm:export` — empacota outputs de 1 cliente em zip pra entrega
 
+## [1.0.1] — 2026-06-01
+
+Hygiene pós-1.0: single-source dos esqueletos + CI verde.
+
+### Modificado
+
+- **Templates → fonte única em skills.** Removida a pasta `templates/` (era duplicação morta — o runtime já carregava as skills `template-*`, nunca os arquivos). Conteúdo preservado integralmente nas 16 skills `template-*` + esqueleto inline do `audit`. Elimina o risco de drift (editar um template sem efeito). `build-zip.sh`, `release.yml`, `README.md`, `CLAUDE.md` e `output-conventions` atualizados.
+
+### CI
+
+- **`lint-hook.yml`** agora entende o wrapper de plugin `hooks/hooks.json` (`{"hooks": {...}}` + `description`), não só o formato legado de eventos no topo do JSON.
+
+### Nota (by-design, não é bug)
+
+- O warning do `claude plugin validate` — "CLAUDE.md na raiz não é carregado como contexto" — é **esperado e mantido de propósito**: esse `CLAUDE.md` é doc de desenvolvimento (carregado quando se abre o repo no Claude Code CLI/IDE), não contexto destinado ao consumidor do plugin. Renomeá-lo quebraria sua função de dev-context. Não há ação.
+
 ## [1.0.0] — 2026-06-01
 
 Release maior: conserta a instalação (que travava no Cowork e no CLI), faz os hooks de fato carregarem, resolve o carregamento de template, e — o principal — **brutaliza a voz** (o output saía "copywriter caprichado", não Hormozi). Tudo validado empiricamente (CLI + diagnoses). Arquitetura simplificada: pipeline single-context, sem gate de tier (o "modo GOD com subagent auto-detectado" foi cortado após deep review provar que era frágil e não melhorava o output).

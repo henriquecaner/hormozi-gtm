@@ -74,7 +74,7 @@ jobs:
           VERSION="${{ steps.meta.outputs.version }}"
           OUT="hormozi-gtm-v${VERSION}.zip"
           zip -r "$OUT" \
-            .claude-plugin agents commands skills hooks scripts templates reference \
+            .claude-plugin agents commands skills hooks scripts reference \
             README.md CHANGELOG.md LICENSE \
             -x "*.DS_Store" "*/.git/*" "*/outputs/*" "*/__pycache__/*" "* 2.md" "* 2.json" "* 2.yml" "*/* 2.md" "*/* 2.json" "*/* 2.yml"
           echo "ZIP=$OUT" >> "$GITHUB_ENV"

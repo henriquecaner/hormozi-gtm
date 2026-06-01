@@ -6,14 +6,14 @@
   },
   "metadata": {
     "description": "Marketplace do plugin Hormozi GTM — operação GTM no estilo Alex Hormozi: ofertas, copy, ads, pricing, planos e diagnósticos. Persona sempre ativa, voz brutal, humanizer só em copy externa.",
-    "version": "1.0.0"
+    "version": "1.0.1"
   },
   "plugins": [
     {
       "name": "hormozi-gtm",
       "source": "./",
       "description": "Operação GTM no estilo Alex Hormozi. Plugin Claude Code com ofertas, copy, ads, pricing, business plans e diagnósticos.",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "category": "sales",
       "tags": [
         "hormozi",

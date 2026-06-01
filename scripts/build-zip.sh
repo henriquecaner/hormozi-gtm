@@ -22,7 +22,6 @@ zip -r "$OUT" \
   skills \
   hooks \
   scripts \
-  templates \
   reference \
   README.md \
   CHANGELOG.md \

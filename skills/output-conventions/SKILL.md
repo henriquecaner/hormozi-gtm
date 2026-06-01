@@ -98,11 +98,11 @@ parent_version: outputs/lp/lp-revops-20260519-v1.md  # quando refinement
 
 ### Exceção
 
-- `templates/gtm-context.md` é input persistente (não output gerado) — usa frontmatter mínimo (`empresa_nome`, `empresa_slug`, `last_updated`, `version`, `plugin`). Sem `command`/`humanizer_pass`.
+- O schema do `gtm-context.md` (input persistente, não output gerado) vive na skill `template-gtm-context` — usa frontmatter mínimo (`empresa_nome`, `empresa_slug`, `last_updated`, `version`, `plugin`). Sem `command`/`humanizer_pass`.
 
 ### Convenção de placeholders
 
-Todos os templates seguem a mesma convenção para evitar ambiguidade entre nome humano e slug técnico:
+Todos os esqueletos (skills `template-*`) seguem a mesma convenção para evitar ambiguidade entre nome humano e slug técnico:
 
 | Placeholder | Tipo | Fonte | Exemplo |
 |---|---|---|---|

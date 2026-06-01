@@ -15,7 +15,6 @@ Plugin Claude Code com 17 comandos, 42 skills (frameworks Hormozi + registro de 
 [![Commands](https://img.shields.io/badge/commands-17-purple)](#cat%C3%A1logo-de-comandos)
 [![Skills](https://img.shields.io/badge/skills-42-purple)](#cat%C3%A1logo-de-skills)
 [![Agents](https://img.shields.io/badge/agents-7-blueviolet)](#pipeline-de-agents)
-[![Templates](https://img.shields.io/badge/templates-17-yellow)](./templates)
 [![Hooks](https://img.shields.io/badge/hooks-2-orange)](#hooks)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-D97757)](https://docs.claude.com/en/docs/claude-code)
 [![Claude Cowork](https://img.shields.io/badge/Claude%20Cowork-ready-D97757)](#instala%C3%A7%C3%A3o)
@@ -140,8 +139,8 @@ Mais cenários em `/hormozi-gtm:help`.
 **Operacional + voz** (3)
 `output-conventions` · `humanizer-rules` · `hormozi-voice` (registro de voz brutal + rubrica de brutalidade 0-10)
 
-**Esqueletos de output** (16)
-16 skills `template-*` — cada comando carrega o esqueleto do seu output via ferramenta Skill (carregamento confiável, funciona no CLI e no Cowork).
+**Esqueletos de output** (16) — internos, carregados pelo comando via ferramenta Skill (confiável no CLI e no Cowork)
+`template-gtm-context` · `template-lp` · `template-vsl` · `template-ad-short` · `template-hooks-batch` · `template-email-sequence` · `template-case-study` · `template-webinar-agenda` · `template-content-roadmap` · `template-churn-analysis` · `template-review` · `template-plano` · `template-pricing-review` · `template-objections-matrix` · `template-positioning-map` · `template-client-onboarding`
 
 Skills carregam só quando o comando declara em `Skills ativas`. `output-conventions` e `humanizer-rules` rodam em todo output externo.
 
