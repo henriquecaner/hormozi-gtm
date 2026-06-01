@@ -45,7 +45,10 @@ jobs:
               if not isinstance(data, dict):
                   errors.append(f"{hook_file}: deve ser objeto JSON")
                   continue
-              for event, matchers in data.items():
+              # Plugin hooks.json usa wrapper {"hooks": {EVENT: [...]}} (+ "description" opcional).
+              # Aceita também o formato legado (eventos no topo) por compatibilidade.
+              events = data["hooks"] if isinstance(data.get("hooks"), dict) else data
+              for event, matchers in events.items():
                   if event not in ALLOWED_TYPES:
                       errors.append(f"{hook_file}: evento '{event}' não reconhecido")
                       continue
