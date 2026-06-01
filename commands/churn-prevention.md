@@ -9,15 +9,23 @@ Aquisição cara virou dado (CAC sempre subindo). Retenção é onde fica margem
 
 ## Carregamento de persona
 
-Use `hormozi-persona` para orquestrar. Delegate ao `money-model-architect` para análise de impacto financeiro (LTV, churn ratio), e ao `offer-architect` se a raiz for problema de oferta original (Probability fraca → cliente desiste cedo). Pass final pelo `humanizer` modo **lite** (output é interno para o time, não pra cliente externo).
+Use `hormozi-persona` para orquestrar. Delegate ao `money-model-architect` para análise de impacto financeiro (LTV, churn ratio), e ao `offer-architect` se a raiz for problema de oferta original (Probability fraca → cliente desiste cedo).
+
+**Carregue a skill `hormozi-gtm:hormozi-voice` via ferramenta Skill no próprio fluxo do comando e imite o registro** — não dependa só do subagent (no Cowork ele pode não rodar). Toda saída em 1ª pessoa Hormozi-mode, sem voz de assistente: número e verbo no lugar de adjetivo de marketing, diagnóstico na cara do cliente.
+
+**Escopo de humanizer (modo misto):**
+- **Análise de churn** (`--foco=churn` / `--foco=retention` e o output `churn-analysis`): diagnóstico interno → sai **cru, sem humanizer**.
+- **Sequência de winback** (`--foco=winback` e o output `winback-sequence`): copy externa pro cliente que saiu → **humanizer modo full**, e só sai com **brutalidade ≥7 na rubrica da `hormozi-voice`**.
 
 ## Skills ativas
 
+- `hormozi-voice` (registro de voz brutal — carregada explicitamente no fluxo)
+- `template-churn-analysis` (esqueleto do output de análise de churn)
 - `leila-scaling` (5 Star Service framework — operação de retenção)
 - `value-equation` (diagnostica se Probability/Effort estavam fracos)
 - `money-models` (impacto financeiro do churn)
 - `ltv-cac` (matemática de retenção)
-- `humanizer-rules` (modo lite)
+- `humanizer-rules` (modo full — só na sequência de winback; a análise de churn sai crua)
 - `output-conventions`
 
 ## Argumentos
@@ -163,13 +171,17 @@ Projeção:
 - Impacto em ARR/12 meses: R$ {{W}}
 ```
 
-### Passo 8: Humanizer (lite)
+### Passo 8: Escopo de humanizer (modo misto)
+
+**Análise de churn (`churn-analysis`) — voz crua (sem humanizer).** É diagnóstico interno: NÃO passa por humanizer. Sai cru, Hormozi brutal, direto. No frontmatter do output: `humanizer_pass: false`, `humanizer_mode: n/a`, `voz: crua`.
+
+**Sequência de winback (`winback-sequence`) — humanizer modo full.** É copy externa pro cliente que saiu: passa pelo humanizer modo full e só sai com brutalidade ≥7 na rubrica da `hormozi-voice`. No frontmatter desse output: `humanizer_pass: true`, `humanizer_mode: full`.
 
 ### Passo 9: Salva
 
-`outputs/retention/churn-analysis-{produto_slug}-{YYYYMMDD}-v{n}.md` via template `churn-analysis.md`.
+Carregue a skill `hormozi-gtm:template-churn-analysis` via ferramenta Skill e preencha o esqueleto. Salva em `outputs/retention/churn-analysis-{produto_slug}-{YYYYMMDD}-v{n}.md`.
 
-Se `--foco=winback`: também salva `outputs/retention/winback-sequence-{produto_slug}-{YYYYMMDD}-v{n}.md` (estrutura herdada de `email-sequence.md`).
+Se `--foco=winback`: também salva `outputs/retention/winback-sequence-{produto_slug}-{YYYYMMDD}-v{n}.md`. Carregue a skill `hormozi-gtm:template-email-sequence` via ferramenta Skill e preencha o esqueleto (a sequência de winback herda a estrutura de email-sequence).
 
 ### Passo 10: Preview na conversa
 
@@ -180,7 +192,7 @@ Se `--foco=winback`: também salva `outputs/retention/winback-sequence-{produto_
    • Motivo dominante: {{tipo}} ({{N}}% dos casos)
    • Quick wins identificados: {{N}}
    • Impacto financeiro de retention 90d: R$ {{X}}
-   • Status humanizer: ✓ lite pass
+   • Status humanizer: voz crua (sem humanizer) — winback, se gerado, sai com humanizer full
 
 👉 Próximos passos:
    1. Rodar 5-10 win/loss interviews esta semana (script no output)

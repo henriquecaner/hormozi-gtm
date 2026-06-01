@@ -11,10 +11,12 @@ Inicializa o contexto persistente da empresa/cliente que vai usar os outros coma
 
 Use o subagent `hormozi-persona` como voz. Toda saída em 1ª pessoa. Sem voz de assistente.
 
+Carregue a skill `hormozi-gtm:hormozi-voice` via ferramenta Skill e imite o registro (não dependa só do subagent — no Cowork ele pode não rodar). `init` é interação/setup: voz crua, sem humanizer.
+
 ## Skills ativas
 
+- `hormozi-voice` (registro de voz — carregar in-contexto; init é interação crua, sem humanizer)
 - `output-conventions` (segue convenção de naming e frontmatter)
-- `humanizer-rules` (modo lite — output é interno, ficar firme no tom direto)
 
 ## Argumentos
 
@@ -49,7 +51,7 @@ Pergunta extra opcional:
 
 ### Passo 3: Gera gtm-context.md
 
-Carrega `${CLAUDE_PLUGIN_ROOT}/templates/gtm-context.md` como base. Preenche com inputs do usuário. Salva em `gtm-context.md` na raiz do projeto.
+Carregue a skill `hormozi-gtm:template-gtm-context` via ferramenta Skill e use o bloco dela como schema canônico. Preencha com os inputs do usuário. Salve em `gtm-context.md` na raiz do projeto consumidor.
 
 ### Passo 4: Resumo + próximos passos
 

@@ -14,6 +14,8 @@ Money model: delegate a `money-model-architect`.
 Pricing: delegate a `pricing-strategist`.
 Aquisição: delegate a `leads-strategist`.
 
+Carregue a skill `hormozi-gtm:hormozi-voice` via ferramenta Skill e imite o registro (não dependa só do subagent — no Cowork ele pode não rodar).
+
 ## Skills ativas
 
 - `money-models` (4 níveis: attraction/core/upsell/continuity)
@@ -23,7 +25,8 @@ Aquisição: delegate a `leads-strategist`.
 - `leila-scaling` (operação, hiring, métricas)
 - `grand-slam-offer` (oferta core)
 - `value-equation` (validação de oferta)
-- `humanizer-rules` (modo lite — documento interno)
+- `hormozi-voice`
+- `template-plano`
 - `output-conventions`
 
 ## Argumentos
@@ -79,13 +82,13 @@ Sempre incluir:
 
 Se ratio <3:1, plano sinaliza explicitamente como risco crítico e sugere fix antes de escalar.
 
-### Passo 4: Humanizer (lite)
+### Voz crua (sem humanizer)
 
-Documento interno — modo lite preserva tom direto.
+plano é interno — NÃO passa por humanizer. Sai cru, Hormozi brutal, direto.
 
 ### Passo 5: Salva
 
-`outputs/plano/plano-{slug}-{YYYYMMDD}-v{n}.md` via template `plano.md`. O discriminador `tipo` (empresa | produto) vai no frontmatter, não no nome do arquivo.
+`outputs/plano/plano-{slug}-{YYYYMMDD}-v{n}.md`. Carregue a skill `hormozi-gtm:template-plano` via ferramenta Skill e preencha o esqueleto. O discriminador `tipo` (empresa | produto) vai no frontmatter, não no nome do arquivo.
 
 ### Passo 6: Preview na conversa
 
@@ -97,7 +100,7 @@ Documento interno — modo lite preserva tom direto.
    • Payback: {{N}} dias (alvo < 30)
    • Riscos identificados: {{N}}
    • Recomendação contraintuitiva: "{{texto curto}}"
-   • Status humanizer: ✓ lite pass
+   • Voz: crua (sem humanizer)
 
 👉 Próximos passos:
    1. Validar projeções com unit economics reais (3 meses de dados)
@@ -114,7 +117,7 @@ Documento interno — modo lite preserva tom direto.
 - [ ] Métricas semanais e mensais definidas
 - [ ] Roadmap 30-60-90 tem ações executáveis (não diretrizes vagas)
 - [ ] Riscos identificados com mitigação
-- [ ] Humanizer lite aplicado
+- [ ] Voz crua (sem humanizer) — output interno
 
 ## Anti-padrões
 

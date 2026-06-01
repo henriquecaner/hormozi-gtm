@@ -5,15 +5,15 @@
     "email": "caner@thelevel.com.br"
   },
   "metadata": {
-    "description": "Marketplace que distribui o plugin Hormozi GTM — 8 comandos, 16 skills, persona Hormozi sempre ativa, humanizer obrigatório em copy externa.",
-    "version": "0.4.2"
+    "description": "Marketplace do plugin Hormozi GTM — operação GTM no estilo Alex Hormozi: ofertas, copy, ads, pricing, planos e diagnósticos. Persona sempre ativa, voz brutal, humanizer só em copy externa.",
+    "version": "1.0.0"
   },
   "plugins": [
     {
       "name": "hormozi-gtm",
       "source": "./",
       "description": "Operação GTM no estilo Alex Hormozi. Plugin Claude Code com ofertas, copy, ads, pricing, business plans e diagnósticos.",
-      "version": "0.4.2",
+      "version": "1.0.0",
       "category": "sales",
       "tags": [
         "hormozi",

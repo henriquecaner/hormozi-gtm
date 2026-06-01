@@ -11,8 +11,14 @@ Sequência de emails que faz lead frio virar lead quente, ou lead morno virar op
 
 Use `hormozi-persona` para orquestrar. Delegate copy específico ao `ad-architect` (que escreve cada email no tom Hormozi 1ª pessoa). Pass final pelo `humanizer` modo **full** (output externo entregue a leads do cliente).
 
+Carregue a skill `hormozi-voice` via ferramenta Skill e **imite o registro** (ritmo, 1ª pessoa com aposta pessoal, CTA-ordem, número no lugar de adjetivo). Não dependa só do subagent `ad-architect`/`hormozi-persona` — no Cowork ele pode não rodar, então a voz precisa estar carregada in-contexto neste comando.
+
+**Esta é copy externa (vai para o lead do cliente): cada email só sai com brutalidade ≥7 na rubrica da `hormozi-voice`.** Subject e CTA abaixo de 7 são reescritos antes de entregar.
+
 ## Skills ativas
 
+- `hormozi-voice` (registro de voz brutal — carregar in-contexto e imitar)
+- `template-email-sequence` (esqueleto do output — carregar in-contexto no Passo 7)
 - `hook-framework` (subject + opener de cada email)
 - `ad-copy-formula` (estrutura do corpo)
 - `value-equation` (ancoragem nos benefícios)
@@ -99,7 +105,7 @@ Inclui no output:
 
 ### Passo 7: Salva
 
-`outputs/email/email-{tipo}-{produto_slug}-{YYYYMMDD}-v{n}.md` via template `email-sequence.md`.
+Carregue a skill `hormozi-gtm:template-email-sequence` via ferramenta Skill e preencha o esqueleto com a sequência gerada. Salva em `outputs/email/email-{tipo}-{produto_slug}-{YYYYMMDD}-v{n}.md`.
 
 ### Passo 8: Preview na conversa
 

@@ -1,6 +1,6 @@
 ---
 description: Matriz de objeções por ICP. Cada objeção mapeada com root cause (oferta / preço / timing), reframe em 2 frases, script palavra-por-palavra pra sales call, mitigação na oferta. Para consultor em sales call e founder mapeando objeções recorrentes.
-argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--segmento=<icp_subset>] [--no-humanize]"
+argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--segmento=<icp_subset>]"
 ---
 
 # /hormozi-gtm:objections
@@ -9,15 +9,18 @@ Matriz operacional de objeções. Não é "lista de respostas prontas" — é di
 
 ## Carregamento de persona
 
-Use `hormozi-persona` para orquestrar. Delegate ao `offer-architect` se a objeção raiz é de oferta, `pricing-strategist` se é de preço. Pass final pelo `humanizer` modo **full** (scripts vão pra cliente usar em sales call).
+Use `hormozi-persona` para orquestrar. Delegate ao `offer-architect` se a objeção raiz é de oferta, `pricing-strategist` se é de preço.
+
+Carregue a skill `hormozi-voice` via ferramenta Skill e **imite o registro** (número e verbo, zero adjetivo de marketing, reframe na cara do prospect). Não dependa só do subagent — no Cowork ele pode não rodar; a voz tem que vir carregada in-contexto neste comando. A matriz de objeções é diagnóstico interno e cru: scripts diretos, sem amaciar.
 
 ## Skills ativas
 
+- `hormozi-voice` (sempre — registro de voz carregado in-contexto)
+- `template-objections-matrix` (sempre — esqueleto do output)
 - `value-equation` (diagnóstico de objeção)
 - `grand-slam-offer` (mitigação na oferta)
 - `pricing-playbook` (objeções de preço)
 - `guarantees` (reframe via garantia)
-- `humanizer-rules` (modo full)
 - `output-conventions`
 
 ## Argumentos
@@ -28,7 +31,6 @@ Use `hormozi-persona` para orquestrar. Delegate ao `offer-architect` se a objeç
 | `--produto=<slug>` | Slug do produto (lê de gtm-context.md) |
 | `--ref=<caminho>` | Refinar matriz existente |
 | `--segmento=<icp_subset>` | Foca em sub-segmento do ICP (ex: SaaS B2B fintech) |
-| `--no-humanize` | Pula humanizer (debug) |
 
 ## Pré-requisitos
 
@@ -67,13 +69,15 @@ Para top 3-5 objeções:
 - Reframe (2-3 frases)
 - Pergunta de fechamento ("isso faz sentido? quer que a gente continue?")
 
-### Passo 5: Humanizer (full)
+### Passo 5: Voz crua (sem humanizer)
 
-Scripts vão pra cliente usar em sales call ao vivo. Voz precisa estar limpa, sem AI-isms que destruiriam credibilidade.
+objections é interno — NÃO passa por humanizer. Sai cru, Hormozi brutal, direto. Mantenha o registro de `hormozi-voice`: número e verbo, reframe na cara do prospect, sem amaciar. Os scripts palavra-por-palavra carregam essa voz direta — o consultor adapta o tom na sales call ao vivo.
 
 ### Passo 6: Salva
 
-`outputs/objections/objections-{produto_slug}-{YYYYMMDD}-v{n}.md` via template `objections-matrix.md`.
+Carregue a skill `hormozi-gtm:template-objections-matrix` via ferramenta Skill e preencha o esqueleto. Salva em `outputs/objections/objections-{produto_slug}-{YYYYMMDD}-v{n}.md`.
+
+No frontmatter do output (já refletido no esqueleto): `humanizer_pass: false`, `humanizer_mode: n/a`, `voz: crua`.
 
 ### Passo 7: Preview na conversa
 
@@ -87,7 +91,7 @@ Scripts vão pra cliente usar em sales call ao vivo. Voz precisa estar limpa, se
      - Timing: {{N}} ({{N}}%)
      - Trust: {{N}} ({{N}}%)
    • Top 3 objeções com script completo: ✓
-   • Status humanizer: ✓ full pass
+   • Voz: crua (diagnóstico interno, sem humanizer)
 
 👉 Próximos passos:
    1. Treinar SDR/closer nos top 3 scripts (role-play 30min)
@@ -102,7 +106,7 @@ Scripts vão pra cliente usar em sales call ao vivo. Voz precisa estar limpa, se
 - [ ] Top 3 têm script palavra-por-palavra
 - [ ] Diagnóstico cruzado: maioria das objeções são oferta? preço? timing?
 - [ ] Mitigação na oferta listada (mudanças sugeridas para reduzir essas objeções aparecerem)
-- [ ] Humanizer full aplicado
+- [ ] Voz crua mantida (sem humanizer — diagnóstico interno)
 
 ## Anti-padrões
 

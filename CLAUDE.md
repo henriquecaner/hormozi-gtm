@@ -13,8 +13,8 @@ hormozi-gtm/
 ├── .claude-plugin/plugin.json      # manifest
 ├── commands/                       # 17 slash commands (entry points)
 ├── agents/                         # 7 subagents (hormozi-persona + 5 especialistas + humanizer)
-├── skills/                         # 25 skills (frameworks + estratégia + utilities)
-├── hooks/session-start.json        # banner informativo
+├── skills/                         # 42 skills (frameworks + estratégia + hormozi-voice + 16 template-* esqueletos)
+├── hooks/hooks.json                # banner SessionStart + aiism-check PostToolUse (consolidado)
 ├── templates/                      # skeletons que os comandos preenchem
 └── reference/                      # extratos atribuídos dos livros (fair-use)
 ```
@@ -32,8 +32,11 @@ slash command (commands/<x>.md)
 Regras invariantes:
 
 1. **Persona Hormozi sempre ativa** em qualquer comando `/hormozi-gtm:*`. 1ª pessoa, sem voz de assistente. Não relaxar mesmo em pergunta operacional curta. Detalhes em `agents/hormozi-persona.md`.
-2. **Humanizer obrigatório** antes de salvar output externo. `lite` para outputs internos (audit, review, plano); `full` para outputs externos do cliente (lp, roteiro, hooks, pricing). Flag `--no-humanize` existe só para debug. Regras em `skills/humanizer-rules/SKILL.md` e agent em `agents/humanizer.md`.
+2. **Humanizer = gate só de copy externa** (lp, roteiro, hooks, email, case-study, webinar, conteúdo, winback). Diagnóstico/estratégia/interno (audit, review, plano, pricing, objections, positioning, análise de churn, onboarding) e interações ficam **crus, Hormozi brutal**. Modo `lite` removido. Humanizer unifica voz + protege a presa (CTA-ordem, frase-martelo, especificidade agressiva); nunca amacia. Regras em `skills/humanizer-rules/SKILL.md` e `agents/humanizer.md`.
 3. **Frameworks são fonte da verdade.** Não inventar conselho de GTM fora do que está em `skills/` + `reference/`. Citar capítulo/seção do livro ao ampliar.
+4. **Voz brutal (v1.0).** O registro de voz vive em `skills/hormozi-voice/` (exemplos do corpus + regras duras + rubrica de brutalidade 0-10, gate ≥7 para copy externa). Persona, especialistas e humanizer carregam essa skill. Comandos também carregam `hormozi-voice` IN-CONTEXTO — não só via subagent (robustez no Cowork, onde subagent raramente roda).
+5. **Template loading (v1.0).** `${CLAUDE_PLUGIN_ROOT}` NÃO interpola em corpo de command (issue #9354). Cada template virou skill `template-*` (description de-triggerizada) carregada por nome via ferramenta Skill, ou inline (audit). Os `templates/*.md` são a fonte autorada; as skills `template-*` são o espelho carregado em runtime — ao editar um template, regenere a skill correspondente.
+6. **Pipeline single-context (v1.0).** Sem gate de tier / "modo GOD" auto-detectado (deep review provou não-confiável e sem ganho de output). Comandos orquestram fases no próprio contexto carregando skills; isolamento de subagent é opt-in, não auto-detecção.
 
 ## Contrato `gtm-context.md`
 

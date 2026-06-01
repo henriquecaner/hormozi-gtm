@@ -11,6 +11,8 @@ Feedback brutal mas construtivo. Não é review elogiosa, não é review destrut
 
 Use `hormozi-persona` com mood: direto, sem economizar em diagnóstico, mas sempre com fix.
 
+Carregue a skill `hormozi-voice` via ferramenta Skill e **imite o registro** (número e verbo, zero adjetivo de marketing, diagnóstico na cara do leitor). Não dependa só do subagent — no Cowork ele pode não rodar; a voz tem que vir carregada in-contexto neste comando. Review é diagnóstico interno e cru: a voz fica afiada, sem amaciar. (As reescritas de trecho dentro do output carregam essa voz; não é preciso aplicar gate de release externo aqui — review é interno.)
+
 Após detectar o `material_tipo` (LP, ad, email, pricing, proposta), delegate ao especialista correspondente para o diagnóstico técnico, mantendo a persona como voz de saída:
 
 - `material_tipo: lp` → consulta `offer-architect`
@@ -22,12 +24,13 @@ O especialista produz o diagnóstico estruturado; a persona escreve a saída na 
 
 ## Skills ativas
 
+- `hormozi-voice` (sempre — registro de voz carregado in-contexto)
+- `template-review` (sempre — esqueleto do output)
 - `value-equation` (se material é LP/ad/copy)
 - `grand-slam-offer` (se material é oferta)
 - `hook-framework` (se material tem hook/headline)
 - `ad-copy-formula` (se material é ad)
 - `pricing-playbook` (se material é pricing)
-- `humanizer-rules` (modo lite — review é interno)
 
 ## Argumentos
 
@@ -109,13 +112,15 @@ Estrutura interna:
 6. **Diagnóstico Value Equation** (se aplicável)
 7. **Próximos passos**
 
-### Passo 4: Humanizer (lite)
+### Passo 4: Voz crua (sem humanizer)
 
-Output interno — modo lite. Mantém tom direto Hormozi cru.
+Review é diagnóstico interno — **NÃO passa por humanizer**. Sai cru, Hormozi brutal, direto. (Humanizer é gate só de copy externa; aqui ele amaciaria justo onde o diagnóstico tem que ser mais afiado.) Mantenha o registro de `hormozi-voice`: número e verbo, zero adjetivo de marketing, problema na cara do leitor. As reescritas de trecho dentro do output já carregam essa voz.
 
 ### Passo 5: Salva
 
-`outputs/review/review-{nome-original}-{YYYYMMDD}.md` via template `review.md`.
+Carregue a skill `hormozi-gtm:template-review` via ferramenta Skill e preencha o esqueleto. Salva em `outputs/review/review-{nome-original}-{YYYYMMDD}.md`.
+
+No frontmatter do output (já refletido no esqueleto): `humanizer_pass: false`, `humanizer_mode: n/a`, `voz: crua`.
 
 Note: review não tem `-v{n}` no nome (one-shot). Se for re-review do mesmo material após mudança, vira `-v2`.
 

@@ -1,19 +1,19 @@
 <div align="center">
 
 <a href="https://github.com/henriquecaner/hormozi-gtm">
-  <img src=".github/assets/hero.png" alt="Hormozi GTM — LEVEL Edition · 17 comandos · 25 skills · persona sempre ativa" width="100%"/>
+  <img src=".github/assets/hero.png" alt="Hormozi GTM — LEVEL Edition · 17 comandos · voz Hormozi brutal · persona sempre ativa" width="100%"/>
 </a>
 
 # Hormozi GTM — LEVEL Edition
 
 **Operação GTM no estilo Alex Hormozi para o time e clientes da LEVEL.**
 
-Plugin Claude Code com 17 comandos, 25 skills, 7 subagents especializados e contrato `gtm-context.md` que persiste entre sessões. Persona Hormozi sempre ativa. Humanizer obrigatório em copy externa.
+Plugin Claude Code com 17 comandos, 42 skills (frameworks Hormozi + registro de voz + esqueletos de output), 7 subagents especializados e contrato `gtm-context.md` que persiste entre sessões. Persona Hormozi sempre ativa, voz brutal calibrada por rubrica. Humanizer só em copy externa.
 
 [![License](https://img.shields.io/badge/license-proprietary-blue)](./LICENSE)
 [![Latest Release](https://img.shields.io/github/v/release/henriquecaner/hormozi-gtm?color=green&label=release)](https://github.com/henriquecaner/hormozi-gtm/releases/latest)
 [![Commands](https://img.shields.io/badge/commands-17-purple)](#cat%C3%A1logo-de-comandos)
-[![Skills](https://img.shields.io/badge/skills-25-purple)](#cat%C3%A1logo-de-skills)
+[![Skills](https://img.shields.io/badge/skills-42-purple)](#cat%C3%A1logo-de-skills)
 [![Agents](https://img.shields.io/badge/agents-7-blueviolet)](#pipeline-de-agents)
 [![Templates](https://img.shields.io/badge/templates-17-yellow)](./templates)
 [![Hooks](https://img.shields.io/badge/hooks-2-orange)](#hooks)
@@ -137,8 +137,11 @@ Mais cenários em `/hormozi-gtm:help`.
 **Pricing** (1)
 `pricing-playbook`
 
-**Operacional** (2)
-`output-conventions` · `humanizer-rules`
+**Operacional + voz** (3)
+`output-conventions` · `humanizer-rules` · `hormozi-voice` (registro de voz brutal + rubrica de brutalidade 0-10)
+
+**Esqueletos de output** (16)
+16 skills `template-*` — cada comando carrega o esqueleto do seu output via ferramenta Skill (carregamento confiável, funciona no CLI e no Cowork).
 
 Skills carregam só quando o comando declara em `Skills ativas`. `output-conventions` e `humanizer-rules` rodam em todo output externo.
 

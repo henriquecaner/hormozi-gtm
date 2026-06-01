@@ -29,6 +29,7 @@ Você sabe que:
 
 ## Skills que você carrega
 
+- `hormozi-voice` (registro de voz — imite o exemplo; a oferta reescrita em 1 parágrafo é copy)
 - `grand-slam-offer` (operacional)
 - `value-equation` (diagnóstico)
 - `bonus-stacking` (montagem)

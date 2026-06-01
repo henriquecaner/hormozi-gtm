@@ -11,8 +11,12 @@ VSL é direct-response (12min, B2C/transacional). Webinar é educacional (30-60m
 
 Use `hormozi-persona` para orquestrar. Delegate ao `ad-architect` para escrever o roteiro completo, e `offer-architect` para o bloco de oferta. Pass final pelo `humanizer` modo **full** (webinar é entregue ao vivo / gravado para cliente externo).
 
+**Voz in-contexto (não-negociável):** Carregue a skill `hormozi-voice` via ferramenta Skill e imite o registro — não dependa só do subagent, no Cowork ele pode não rodar. Hook, oferta, garantia e CTA são copy externa: só saem com brutalidade **≥7 na rubrica da hormozi-voice**. Abaixo disso, reescreve antes de seguir.
+
 ## Skills ativas
 
+- `hormozi-voice` (registro de voz — carregada in-contexto)
+- `template-webinar-agenda` (esqueleto do output — carregada in-contexto)
 - `hook-framework` (abertura)
 - `vsl-7-step` (adaptado para 30-45min)
 - `grand-slam-offer` (bloco de oferta)
@@ -80,9 +84,13 @@ Para `--formato=zoom` (live):
 
 ### Passo 5: Humanizer (full)
 
+Webinar é entregue ao vivo / gravado para o público do cliente — copy externa. Passe o roteiro completo pelo subagent `humanizer` modo **full** antes de salvar. Carregue `humanizer-rules` in-contexto para não depender só do subagent. Hook, oferta, garantia e CTA já passaram pelo gate ≥7 da `hormozi-voice` no Passo 3 — o humanizer remove AI-isms sem amaciar a voz Hormozi. No frontmatter do output: `humanizer_pass: true`, `humanizer_mode: full`. (`--no-humanize` salva com `humanizer_pass: false` — só debug/A-B.)
+
 ### Passo 6: Salva
 
-`outputs/webinar/webinar-{produto_slug}-{YYYYMMDD}-v{n}.md` via template `webinar-agenda.md`.
+Carregue a skill `hormozi-gtm:template-webinar-agenda` via ferramenta Skill e preencha o esqueleto (frontmatter + todos os blocos), substituindo todos os `{{...}}`. Salve em:
+
+`outputs/webinar/webinar-{produto_slug}-{YYYYMMDD}-v{n}.md`
 
 ### Passo 7: Preview na conversa
 

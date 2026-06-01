@@ -13,10 +13,14 @@ Orquestrador: `hormozi-persona`.
 Especialista: `ad-architect`.
 Pass final: `humanizer` (modo full — hooks vão pro cliente).
 
+**Carregamento de voz IN-CONTEXTO (obrigatório):** carregue a skill `hormozi-voice` via ferramenta Skill e imite o registro — não dependa só do subagent (no Cowork ele pode não rodar). Hooks são copy externa: cada hook só sai com **brutalidade ≥7 na rubrica da hormozi-voice**. Abaixo de 7, reescreve antes de listar.
+
 ## Skills ativas
 
+- `hormozi-voice` (registro de voz brutal + rubrica 0-10 — carregada in-contexto)
 - `hook-framework` (central — 3 tipos canônicos + ângulos extras)
 - `ad-copy-formula` (estrutura por canal)
+- `template-hooks-batch` (esqueleto do output — carregada in-contexto)
 - `humanizer-rules` (modo full)
 - `output-conventions`
 
@@ -82,11 +86,11 @@ Ranqueia e justifica top 3 com critério específico (não "achei melhor"). Cada
 
 ### Passo 5: Humanizer (full)
 
-Hooks vão pra cliente — modo full obrigatório.
+Hooks são copy externa — modo full obrigatório. Passe os hooks pelo subagent `humanizer` (modo full) E confira contra `humanizer-rules`. Mesmo após o humanizer, cada hook tem que manter brutalidade ≥7 na rubrica da `hormozi-voice` — humanizer remove AI-ism, não amacia a voz. Frontmatter sai com `humanizer_pass: true` / `humanizer_mode: full`.
 
 ### Passo 6: Salva
 
-`outputs/hooks/hooks-{slug}-{YYYYMMDD}-v{n}.md` via template `hooks-batch.md`.
+Carregue a skill `hormozi-gtm:template-hooks-batch` via ferramenta Skill e preencha o esqueleto. Salva em `outputs/hooks/hooks-{slug}-{YYYYMMDD}-v{n}.md`.
 
 ### Passo 7: Preview na conversa
 
@@ -113,6 +117,7 @@ Hooks vão pra cliente — modo full obrigatório.
 - [ ] Nenhum hook genérico ("descubra o segredo")
 - [ ] Top 3 do agent com critério explícito
 - [ ] Plano de teste sugerido
+- [ ] Brutalidade ≥7 na rubrica da `hormozi-voice` em cada hook (copy externa)
 - [ ] Humanizer full aplicado
 - [ ] Arquivo salvo com frontmatter
 

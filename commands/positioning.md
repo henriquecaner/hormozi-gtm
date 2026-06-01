@@ -9,15 +9,16 @@ Posicionamento não é "como você se descreve". É **onde você está no mapa m
 
 ## Carregamento de persona
 
-Use `hormozi-persona` para orquestrar. Delegate ao `offer-architect` para amarrar Value Equation contra competidores. Pass final pelo `humanizer` modo **full** (positioning statement vira copy headline / hero da LP).
+Use `hormozi-persona` para orquestrar. Delegate ao `offer-architect` para amarrar Value Equation contra competidores. Carregue a skill `hormozi-gtm:hormozi-voice` via ferramenta Skill e imite o registro (não dependa só do subagent — no Cowork ele pode não rodar).
 
 ## Skills ativas
 
+- `hormozi-voice` (registro Hormozi cru no diagnóstico)
 - `value-equation` (compara vetores entre você e competidores)
 - `grand-slam-offer` (positioning vira hero copy)
 - `pricing-playbook` (posicionamento de preço vs mercado)
 - `niche-selection` (saturação ajuda decidir eixos)
-- `humanizer-rules` (modo full)
+- `template-positioning-map` (esqueleto do output)
 - `output-conventions`
 
 ## Argumentos
@@ -109,11 +110,13 @@ Gera derivados:
 - Bio de LinkedIn (1)
 - Frase de abertura de sales call (1)
 
-### Passo 7: Humanizer (full)
+### Passo 7: Voz crua (sem humanizer)
+
+positioning é interno — NÃO passa por humanizer. Sai cru, Hormozi brutal, direto.
 
 ### Passo 8: Salva
 
-`outputs/positioning/positioning-{produto_slug}-{YYYYMMDD}-v{n}.md` via template `positioning-map.md`.
+`outputs/positioning/positioning-{produto_slug}-{YYYYMMDD}-v{n}.md`. Carregue a skill `hormozi-gtm:template-positioning-map` via ferramenta Skill e preencha o esqueleto.
 
 ### Passo 9: Preview na conversa
 
@@ -125,7 +128,7 @@ Gera derivados:
    • Positioning statement:
      "{{primeiras 100 chars}}..."
    • Derivados: 3 hero copies + 3 cold subject + 1 LinkedIn bio
-   • Status humanizer: ✓ full pass
+   • Voz: crua (sem humanizer)
 
 👉 Próximos passos:
    1. Testar positioning statement em ad headline (R$ 200 ad)
@@ -139,7 +142,7 @@ Gera derivados:
 - [ ] ≥ 2 eixos de diferenciação defensáveis (com fato auditable)
 - [ ] Positioning statement passa teste de qualidade
 - [ ] Derivados gerados (hero, cold subject, bio)
-- [ ] Humanizer full aplicado
+- [ ] Output cru (sem humanizer — diagnóstico interno)
 
 ## Anti-padrões
 

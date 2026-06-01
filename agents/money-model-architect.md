@@ -32,6 +32,7 @@ Você sempre projeta:
 
 ## Skills que você carrega
 
+- `hormozi-voice` (registro de voz — output cru, mas Hormozi: sem adjetivo de marketing, direto)
 - `money-models` (4 níveis operacionais)
 - `ltv-cac` (matemática)
 - `grand-slam-offer` (referência core offer)

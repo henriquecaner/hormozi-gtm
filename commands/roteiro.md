@@ -13,8 +13,13 @@ Orquestrador: `hormozi-persona`.
 Análise: delegate a `ad-architect`.
 Pass final: delegate a `humanizer` (modo full).
 
+**ANTES de escrever qualquer coisa, chame a ferramenta Skill para carregar `hormozi-gtm:hormozi-voice` e imite o registro** (não dependa só do subagent — no Cowork ele pode não rodar). Roteiro é copy externa: o output vai pro público do cliente. Copy só sai com brutalidade **≥7 na rubrica da `hormozi-voice`** — hook, CTA e oferta em 1ª pessoa, número e verbo no lugar de adjetivo de marketing, reversão de risco visível. Abaixo de 7, reescreve antes de entregar.
+
 ## Skills ativas
 
+- `hormozi-voice` (registro de voz — carregar via Skill in-contexto)
+- `template-vsl` (esqueleto do output VSL longo — carregar via Skill in-contexto)
+- `template-ad-short` (esqueleto do output short-form/batch — carregar via Skill in-contexto)
 - `hook-framework` (crítico — primeiros 3s)
 - `vsl-7-step` (para formato VSL longo)
 - `ad-copy-formula` (estrutura warm/cold/paid)
@@ -65,7 +70,7 @@ Pergunta:
 
 #### Passo 2: Construção
 
-Delegate a `ad-architect`. Constrói os 7 atos via template `vsl.md`:
+Delegate a `ad-architect`. Carregue a skill `hormozi-gtm:template-vsl` via ferramenta Skill e preencha o esqueleto. Constrói os 7 atos:
 
 1. Hook (0-15s)
 2. Story (15s-2min)
@@ -77,7 +82,7 @@ Delegate a `ad-architect`. Constrói os 7 atos via template `vsl.md`:
 
 #### Passo 3: Humanizer (full)
 
-Pass final pelo subagent `humanizer`.
+Antes do humanizer, valide o roteiro contra a rubrica da `hormozi-voice` (gate ≥7): hook com especificidade, CTA-ordem com consequência, número no lugar de adjetivo, reversão de risco visível. Só então pass final pelo subagent `humanizer` (modo full) — ele remove AI-isms sem amaciar a voz.
 
 #### Passo 4: Salva
 
@@ -128,9 +133,11 @@ Ranqueia as variantes e justifica top 3 com critério específico (não "achei m
 
 #### Passo 4: Humanizer (full)
 
+Valide cada variante contra a rubrica da `hormozi-voice` (gate ≥7) antes de passar pelo subagent `humanizer` (modo full).
+
 #### Passo 5: Salva
 
-`outputs/roteiro/short-{slug}-{YYYYMMDD}-v{n}.md` via template `ad-short.md`.
+Carregue a skill `hormozi-gtm:template-ad-short` via ferramenta Skill e preencha o esqueleto. Salva em `outputs/roteiro/short-{slug}-{YYYYMMDD}-v{n}.md`.
 
 #### Passo 6: Plano de teste
 

@@ -168,9 +168,16 @@ Cada projeto decide. README explica trade-off.
 
 Recomendado mas opcional: cada output tem seção `## TL;DR` no topo (após frontmatter) com 2-3 linhas resumindo o entregável. Ajuda quando alguém abre o arquivo 3 semanas depois.
 
+## Invariante: telemetria nunca entra no arquivo
+
+A telemetria de orquestração (plano de fases, narração de transição entre fases, marcador de modo) é **estritamente do canal de conversa**. NUNCA é serializada no arquivo de `outputs/` nem no frontmatter. O arquivo contém só o deliverable.
+
+`--quiet` apenas silencia a conversa — não é o que protege o arquivo. O arquivo é protegido por esta regra, independente de flags. Se uma fase do comando produzir log de orquestração, esse log fica na conversa e é descartado antes de salvar.
+
 ## Anti-padrões
 
 - Salvar output sem frontmatter
+- Serializar telemetria de orquestração (plano/narração de fase) dentro do arquivo de output
 - Sobrescrever sem `--overwrite` explícito
 - Nomear arquivo sem incluir `v{n}`
 - Salvar na raiz do projeto em vez de `outputs/<tipo>/`

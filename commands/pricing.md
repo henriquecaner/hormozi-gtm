@@ -12,13 +12,16 @@ Análise de pricing — não chute, não "intuição de mercado". Aplica as 5 le
 Orquestrador: `hormozi-persona`.
 Especialista: `pricing-strategist`.
 
+Carregue a skill `hormozi-gtm:hormozi-voice` via ferramenta Skill e imite o registro (não dependa só do subagent — no Cowork ele pode não rodar).
+
 ## Skills ativas
 
 - `pricing-playbook` (central — 5 leis)
 - `value-equation` (validação cruzada)
 - `ltv-cac` (matemática)
 - `money-models` (estrutura de ascension)
-- `humanizer-rules` (modo full — pricing é entregue ao cliente)
+- `hormozi-voice` (registro de voz crua)
+- `template-pricing-review` (esqueleto do output)
 - `output-conventions`
 
 ## Argumentos
@@ -93,13 +96,13 @@ Sempre inclui:
 
 1-3 riscos identificados com mitigação.
 
-### Passo 7: Humanizer (full)
+### Voz crua (sem humanizer)
 
-Pricing review é entregue ao decisor da conta — passa pelo humanizer modo `full` (duas passadas, valida ausência de padrões EN e PT-BR).
+pricing é interno — NÃO passa por humanizer. Sai cru, Hormozi brutal, direto.
 
 ### Passo 8: Salva
 
-`outputs/pricing/pricing-{slug}-{YYYYMMDD}-v{n}.md` via template `pricing-review.md`.
+`outputs/pricing/pricing-{slug}-{YYYYMMDD}-v{n}.md`. Carregue a skill `hormozi-gtm:template-pricing-review` via ferramenta Skill e preencha o esqueleto.
 
 ### Passo 9: Preview na conversa
 
@@ -111,7 +114,7 @@ Pricing review é entregue ao decisor da conta — passa pelo humanizer modo `fu
    • Tier default sugerido: {{Silver | Gold | Platinum}}
    • Diagnóstico raiz: {{preço baixo | preço alto | percepção fraca | mix wrong}}
    • Análise das 5 leis: {{N}}🟢 / {{N}}🟡 / {{N}}🔴
-   • Status humanizer: ✓ full pass
+   • Voz: crua (sem humanizer)
 
 👉 Próximos passos:
    1. Compartilhar review com decisor (apresenta range, defende com a análise)
@@ -127,7 +130,6 @@ Pricing review é entregue ao decisor da conta — passa pelo humanizer modo `fu
 - [ ] Teste de validação executável em 1-2 semanas com métrica clara
 - [ ] Riscos identificados com mitigação
 - [ ] Tiering proposto com deliverables explícitos
-- [ ] Humanizer full aplicado
 
 ## Anti-padrões
 

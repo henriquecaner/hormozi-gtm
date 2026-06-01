@@ -13,8 +13,12 @@ Orquestrador: `hormozi-persona`.
 Análise de oferta: delegate a `offer-architect` (carrega briefing).
 Pass final: delegate a `humanizer` (modo full, obrigatório).
 
+**Voz (carregamento in-contexto, não-negociável):** carregue a skill `hormozi-voice` via ferramenta Skill e imite o registro (ritmo, atitude, frase-martelo). Não dependa só do subagent `hormozi-persona` — no Cowork o subagent pode não rodar, e a voz precisa estar carregada no próprio fluxo do comando. Como esta LP é **copy externa**, ela só sai com **brutalidade ≥7 na rubrica da `hormozi-voice`** — pontue headline, sub, CTAs e corpo antes de salvar e reescreva o que ficar abaixo de 7.
+
 ## Skills ativas
 
+- `hormozi-voice` (registro de voz — carregar in-contexto, ver Carregamento de persona)
+- `template-lp` (esqueleto do output — carregar via Skill no Passo 2)
 - `grand-slam-offer` (oferta como núcleo)
 - `value-equation` (cada seção aumenta 1+ vetor)
 - `bonus-stacking` (seção 5)
@@ -73,7 +77,7 @@ Carrega o que tiver de `gtm-context.md`. Pede o que faltar:
 
 #### Passo 2: Construção
 
-Delegate a `offer-architect` para destilar briefing de oferta. Em seguida, `hormozi-persona` (orquestrador) recebe o briefing e monta 10 seções via template `lp.md`:
+Delegate a `offer-architect` para destilar briefing de oferta. Carregue a skill `hormozi-gtm:template-lp` via ferramenta Skill e preencha o esqueleto. Em seguida, `hormozi-persona` (orquestrador) recebe o briefing e monta as 10 seções sobre esse esqueleto:
 
 1. Hero (headline + sub + CTA + microcopy)
 2. Agitação do problema (3 sintomas + por que outras soluções falham)

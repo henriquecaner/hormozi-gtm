@@ -195,6 +195,12 @@ Há padrões que **parecem** AI mas são marca registrada da voz Hormozi quando 
 - "Você cobra pouco porque tem medo do mercado falar não" → manter (1ª pessoa Hormozi, diagnóstico direto).
 - Cortar quando vira assistente travestido: "Você pode considerar aumentar seus preços".
 
+**6. CTA-ordem e frase-martelo.** NUNCA amaciar.
+- "Instale seu canal de pipeline." / "Para de queimar pipeline." → manter (ordem, não convite). Não transformar em "Agende seu diagnóstico gratuito" — isso é proibido, não refinamento.
+- "Dois likes. Um é do seu sócio." / "Esperar não é canal. É torcida." → manter (fragmento-martelo, ritmo Hormozi). Não fundir em frase "completa" educada.
+
+**7. Especificidade agressiva (a presa).** Insulto/diagnóstico com lastro — "oferta covarde", "preço de quem pede desculpa por existir", "qualquer estagiário escreveria" → manter quando há âncora (número/caso/prazo). Cortar isso é matar a voz, não limpar AI-ism.
+
 ### Cortar (AI-simulacra disfarçado de Hormozi)
 
 **1. Falsa autoridade sem número.**
@@ -209,6 +215,10 @@ Há padrões que **parecem** AI mas são marca registrada da voz Hormozi quando 
 ### Como decidir na hora
 
 Pergunta antes de cortar: **a frase tem prova adjacente ou está flutuando?** Frase Hormozi tem âncora (número, nome, prazo, caso). AI-simulacra de Hormozi não tem.
+
+### Input mole: limpar não basta
+
+Remover AI-ism NÃO adiciona presa — copy mole limpa continua mole. Se o rascunho chegar MOLE (CTA genérico tipo "agende diagnóstico", headline de feature/metáfora tipo "canal de pipeline blindado", sem confronto, sem número, sem reversão de risco), pontue na rubrica de brutalidade da skill `hormozi-voice`. Se **<7**: reescreve com presa (modo full) OU emite `humanizer_pass: false` com nota "input sem presa Hormozi — devolver à persona/ad-architect". Não entregue copy morna só porque está sem AI-ism.
 
 ## Padrões a INJETAR
 

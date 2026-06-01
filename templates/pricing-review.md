@@ -12,8 +12,9 @@ frameworks:
   - value-equation
   - ltv-cac
   - money-models
-humanizer_pass: true
-humanizer_mode: full
+humanizer_pass: false
+humanizer_mode: n/a
+voz: crua
 audit_ref: {{caminho_ou_null}}
 parent_version: {{caminho_v_anterior_ou_null}}
 ---
@@ -160,4 +161,4 @@ Conversion rate cai >30% E AOV sobe <50% → reverte ou ajusta
 
 ---
 
-*Pricing review gerado pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Humanizer (modo full) aplicado.*
+*Pricing review gerado pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Voz crua, sem humanizer (output interno/diagnóstico).*

@@ -1,6 +1,6 @@
 ---
 description: Roadmap 30-90 dias de conteúdo orgânico. Tópico × formato × funnel stage × CTA. Mix saudável (60% educacional, 25% entertainment, 15% promocional). Para founder/consultor que quer organic compondo ao longo de 6-18 meses, não 1 post viral.
-argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--duracao=30|60|90] [--plataforma=linkedin|instagram|youtube|x] [--no-humanize]"
+argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--duracao=30|60|90] [--plataforma=linkedin|instagram|youtube|x]"
 ---
 
 # /hormozi-gtm:content-hub
@@ -9,7 +9,11 @@ Plano operacional de conteúdo. Não é "ideias de post" — é roadmap de cadê
 
 ## Carregamento de persona
 
-Use `hormozi-persona` para orquestrar. Delegate ao `ad-architect` para destilar tópicos em formato consumível. Pass final pelo `humanizer` modo **lite** (roadmap é interno, posts individuais vão pelo `full` na hora de produzir).
+Use `hormozi-persona` para orquestrar. Delegate ao `ad-architect` para destilar tópicos em formato consumível.
+
+Carregue a skill `hormozi-voice` via ferramenta Skill e **imite o registro** (não dependa só do subagent — no Cowork ele pode não rodar). O roadmap é diagnóstico/estratégia interna: voz crua, número e verbo, zero adjetivo de marketing, direto na cara. Sem ≥7, sem humanizer aqui.
+
+As **peças de conteúdo produzidas DEPOIS** a partir deste roadmap são copy externa. Quando forem produzidas (em outros comandos: `/hormozi-gtm:hooks`, `/hormozi-gtm:roteiro`), copy externa só sai com **brutalidade ≥7 na rubrica da hormozi-voice** e passa por humanizer full. Este comando, porém, só entrega o roadmap — cru.
 
 ## Skills ativas
 
@@ -17,7 +21,8 @@ Use `hormozi-persona` para orquestrar. Delegate ao `ad-architect` para destilar 
 - `hook-framework` (cada tópico vira hook potencial)
 - `ad-copy-formula` (formatos curtos)
 - `leila-scaling` (cadência sustentável vs aspiracional)
-- `humanizer-rules` (modo lite)
+- `hormozi-voice` (registro de voz — carregar in-contexto e imitar)
+- `template-content-roadmap` (esqueleto do output — carregar in-contexto)
 - `output-conventions`
 
 ## Argumentos
@@ -29,7 +34,6 @@ Use `hormozi-persona` para orquestrar. Delegate ao `ad-architect` para destilar 
 | `--ref=<caminho>` | Refinar roadmap existente |
 | `--duracao=30\|60\|90` | Período do roadmap em dias (default 90) |
 | `--plataforma=linkedin\|instagram\|youtube\|x` | Plataforma primária. Pode ser múltipla. |
-| `--no-humanize` | Pula humanizer |
 
 ## Pré-requisitos
 
@@ -103,13 +107,17 @@ Define métricas primárias por mês:
 - Mês 3-4: DM inbound + profile views
 - Mês 6+: leads/mês via organic
 
-### Passo 8: Humanizer (lite)
+### Passo 8: Voz crua (sem humanizer)
 
-Lite — roadmap é interno, não vai pra cliente do cliente.
+Roadmap é diagnóstico/estratégia interna — **NÃO passa por humanizer**. Sai cru, Hormozi direto. (Humanizer é gate só de copy externa; aqui ele amaciaria justo a voz que precisa estar afiada.) Mantenha o registro da `hormozi-voice`: número e verbo, zero adjetivo de marketing, cadência realista na cara do founder.
+
+As peças de conteúdo geradas a partir deste roadmap (posts, hooks, roteiros) são copy externa e passam por humanizer full **na hora de produzir**, em outros comandos.
 
 ### Passo 9: Salva
 
-`outputs/content/content-roadmap-{produto_slug}-{YYYYMMDD}-v{n}.md` via template `content-roadmap.md`.
+Carregue a skill `hormozi-gtm:template-content-roadmap` via ferramenta Skill e preencha o esqueleto (substitua todos os `{{...}}`). Salve em:
+
+`outputs/content/content-roadmap-{produto_slug}-{YYYYMMDD}-v{n}.md`
 
 ### Passo 10: Preview na conversa
 
@@ -121,7 +129,7 @@ Lite — roadmap é interno, não vai pra cliente do cliente.
    • Cadência: {{N}} posts/semana
    • Total de conteúdos no roadmap: {{N}}
    • Mix: {{N}}% educ / {{N}}% entertain / {{N}}% promo
-   • Status humanizer: ✓ lite pass
+   • Voz: crua (roadmap interno, sem humanizer)
 
 👉 Próximos passos:
    1. Bloqueia 4-6h/semana no calendar para produção
@@ -137,7 +145,7 @@ Lite — roadmap é interno, não vai pra cliente do cliente.
 - [ ] Calendar por semana preenchido
 - [ ] Repurpose plan para conteúdos principais
 - [ ] Métricas primárias por mês definidas
-- [ ] Humanizer lite aplicado
+- [ ] Voz crua aplicada (roadmap interno — sem humanizer; frontmatter humanizer_pass: false / humanizer_mode: n/a / voz: crua)
 
 ## Anti-padrões
 

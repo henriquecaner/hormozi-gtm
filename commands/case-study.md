@@ -11,8 +11,12 @@ Case study é a moeda de Probability no Value Equation. Sem case study sólido, 
 
 Use `hormozi-persona` para orquestrar. Delegate ao `offer-architect` para amarrar antes/depois no Value Equation. Pass final pelo `humanizer` modo **full** (case study vai pra LP/ad/email externos).
 
+Carregue a skill `hormozi-voice` e imite o registro (não dependa só do subagent — no Cowork ele pode não rodar). Copy externa só sai com brutalidade ≥7 na rubrica da `hormozi-voice`.
+
 ## Skills ativas
 
+- `hormozi-voice` (registro de voz — carregar in-contexto antes de escrever)
+- `template-case-study` (esqueleto do output — carregar via Skill tool)
 - `value-equation` (antes/depois mapeado nos 4 vetores)
 - `grand-slam-offer` (case valida promessa da oferta)
 - `ad-copy-formula` (formatos curtos derivados)
@@ -78,7 +82,7 @@ Delegate ao `ad-architect` para escrever a narrativa do case (4-6 parágrafos), 
 
 ### Passo 6: Salva
 
-`outputs/case-studies/case-study-{cliente_slug}-{YYYYMMDD}-v{n}.md` via template `case-study.md`.
+Carregue a skill `hormozi-gtm:template-case-study` via ferramenta Skill e preencha o esqueleto. Salva em `outputs/case-studies/case-study-{cliente_slug}-{YYYYMMDD}-v{n}.md`.
 
 ### Passo 7: Preview na conversa
 

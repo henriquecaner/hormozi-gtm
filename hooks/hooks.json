@@ -1,0 +1,27 @@
+{
+  "description": "hormozi-gtm: banner de SessionStart + check de AI-isms pós-Write/Edit em outputs/.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "startup",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'Plugin hormozi-gtm ativo. Persona Alex Hormozi sempre ligada quando comandos /hormozi-gtm:* forem usados. Humanizer obrigatório em outputs externos (LPs, ads, hooks, pricing). Outputs salvam em outputs/<tipo>/. Primeiro uso: rode /hormozi-gtm:init para criar gtm-context.md.'"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 \"${CLAUDE_PLUGIN_ROOT}/scripts/check-aiisms.py\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  }
+}

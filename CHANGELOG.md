@@ -10,6 +10,33 @@ Todas as mudanças relevantes deste plugin ficam aqui. Formato baseado em [Keep 
 - Multi-cliente em paralelo (`gtm-context-{slug}.md` por cliente vs singular hoje)
 - `/hormozi-gtm:export` — empacota outputs de 1 cliente em zip pra entrega
 
+## [1.0.0] — 2026-06-01
+
+Release maior: conserta a instalação (que travava no Cowork e no CLI), faz os hooks de fato carregarem, resolve o carregamento de template, e — o principal — **brutaliza a voz** (o output saía "copywriter caprichado", não Hormozi). Tudo validado empiricamente (CLI + diagnoses). Arquitetura simplificada: pipeline single-context, sem gate de tier (o "modo GOD com subagent auto-detectado" foi cortado após deep review provar que era frágil e não melhorava o output).
+
+### Corrigido (Critical)
+
+- **`.claude-plugin/plugin.json`**: campo `repository` era objeto `{type,url}`; o schema do Claude Code exige **string**. Era o que travava `/plugin install` (reproduzido: "invalid manifest — repository: expected string, received object"). Esse é o bug que impedia a instalação.
+- **Hooks não carregavam**: estavam em dois arquivos soltos (`session-start.json`, `post-tool-aiism-check.json`). Claude Code só descobre `hooks/hooks.json` (+ wrapper `"hooks": {}`). Consolidados em `hooks/hooks.json`; banner de SessionStart e check de AI-isms agora disparam (provado). Corrige a afirmação falsa do CHANGELOG [0.4.2] de que o hook tinha sido consertado — não tinha (arquivo nunca era lido).
+- **Carregamento de template quebrado (`${CLAUDE_PLUGIN_ROOT}`)**: a variável não interpola no corpo markdown de commands (issue oficial anthropics/claude-code#9354). Resolvido: cada template virou uma **skill** (`skills/template-*`, descrição de-triggerizada) carregada por nome via ferramenta Skill, ou inline no corpo (audit). `init`/`audit` deixaram de apontar para o path morto.
+
+### Adicionado
+
+- **`skills/hormozi-voice/`**: fonte única do registro de voz — exemplos reais do corpus + 8 regras duras (CTA-ordem, zero adjetivo de marketing, ataca a crença antes de oferecer, reversão de risco visível) + **rubrica de brutalidade 0-10** (gate ≥7 para copy externa). Persona, ad-architect, os 5 especialistas e o humanizer carregam essa skill.
+- **16 skills `template-*`**: cada output ganhou esqueleto carregável (single-source do formato).
+- Carregamento de voz **in-contexto** em todo command (não depende só do subagent — robustez no Cowork, onde subagent "raramente roda").
+
+### Modificado
+
+- **Humanizer = gate só de copy externa** (lp, roteiro, hooks, email, case-study, webinar, conteúdo, winback). Diagnóstico/estratégia/interno (`audit`, `review`, `plano`, `pricing`, `objections`, `positioning`, análise de churn, `onboarding`, interações) ficam **crus, Hormozi brutal**. Humanizer agora também **unifica a voz** e **protege a presa** (CTA-ordem, frase-martelo, especificidade agressiva — nunca amacia).
+- **Invariante de channel-split**: telemetria de orquestração nunca entra no arquivo de `outputs/` (só na conversa).
+- Persona: registro por **exemplo concreto**, não adjetivo (a causa-raiz da voz morna).
+
+### Removido
+
+- **Modo `lite` do humanizer** (humanizar de leve o interno amaciava justo onde a voz tem que ser mais crua).
+- **Gate de tier / "modo GOD" auto-detectado**: deep review provou que a auto-introspecção de ferramenta era não-confiável e não melhorava o output. Isolamento de subagent vira opt-in, não auto-detecção.
+
 ## [0.4.2] — 2026-05-20
 
 Hotfix de 5 Critical + 6 Important + 3 Minor descobertos no Deep Review do v0.4.1. Corrige bugs invisíveis em produção (hook nunca rodou desde v0.4.0, contrato humanizer↔orquestrador furado, pastas de output não documentadas, /help apontando para command como roadmap).

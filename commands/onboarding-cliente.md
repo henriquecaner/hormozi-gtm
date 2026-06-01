@@ -9,14 +9,15 @@ Churn em < 30 dias é o mais barato de reverter — só requer estrutura de onbo
 
 ## Carregamento de persona
 
-Use `hormozi-persona` para orquestrar. Delegate ao `leads-strategist` para encaixar onboarding como engine de retention (não só como UX). Pass final pelo `humanizer` modo **lite** (output é interno para o time operacional).
+Use `hormozi-persona` para orquestrar. Carregue a skill `hormozi-gtm:hormozi-voice` via ferramenta Skill e imite o registro (não dependa só do subagent — no Cowork ele pode não rodar). Delegate ao `leads-strategist` para encaixar onboarding como engine de retention (não só como UX).
 
 ## Skills ativas
 
+- `hormozi-voice`
 - `leila-scaling` (5 Star Service framework — pilar do onboarding)
 - `value-equation` (Time Delay — quanto antes o cliente vê valor, melhor)
 - `output-conventions`
-- `humanizer-rules` (modo lite)
+- `template-client-onboarding`
 
 ## Argumentos
 
@@ -114,11 +115,13 @@ Define thresholds que disparam ação:
 - **% de touches respondidos:** alvo ≥ 70%.
 - **Day-90 retention** (correlacionada): alvo ≥ 85% se onboarding funcionou.
 
-### Passo 7: Humanizer (lite)
+### Passo 7: Voz crua (sem humanizer)
+
+onboarding-cliente é interno — NÃO passa por humanizer. Sai cru, Hormozi brutal, direto.
 
 ### Passo 8: Salva
 
-`outputs/onboarding/onboarding-{produto_slug}-{YYYYMMDD}-v{n}.md` via template `client-onboarding.md`.
+`outputs/onboarding/onboarding-{produto_slug}-{YYYYMMDD}-v{n}.md`. Carregue a skill `hormozi-gtm:template-client-onboarding` via ferramenta Skill e preencha o esqueleto.
 
 ### Passo 9: Preview na conversa
 
@@ -131,7 +134,7 @@ Define thresholds que disparam ação:
    • Touches totais: {{N}} ({{email + calls + in-app}})
    • Quick win definido para D7: ✓
    • Triggers de intervenção: {{N}}
-   • Status humanizer: ✓ lite pass
+   • Voz: crua (sem humanizer — output interno)
 
 👉 Próximos passos:
    1. Treinar CS lead nos triggers (role-play 30min)
@@ -147,7 +150,7 @@ Define thresholds que disparam ação:
 - [ ] Touches por marco com formato (email/call/in-app) definidos
 - [ ] Triggers de intervenção com threshold quantitativo
 - [ ] Métricas de sucesso + owner único
-- [ ] Humanizer lite aplicado
+- [ ] Voz crua (sem humanizer — output interno)
 
 ## Anti-padrões
 

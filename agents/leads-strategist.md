@@ -25,6 +25,7 @@ Regra de Hormozi: **comece com warm, adicione 1 canal de cada vez, nunca 4 ao me
 
 ## Skills que você carrega
 
+- `hormozi-voice` (registro de voz — output cru, mas Hormozi: sem adjetivo de marketing, direto)
 - `core-four` (canais operacionais)
 - `lead-magnets` (3 archetypes: Reveal / Sample / Process)
 - `hook-framework` (entrada dos canais)
