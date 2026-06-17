@@ -1,4 +1,5 @@
 ---
+name: core-four
 description: Core Four do $100M Leads — 4 canais únicos de aquisição (warm 1:1, cold 1:1, organic 1:many, paid 1:many). Use para desenhar estratégia de aquisição, escolher canal certo pro estágio, definir budget split.
 ---
 
@@ -15,11 +16,13 @@ Fonte: Alex Hormozi, *$100M Leads*, Capítulo 7.
 | **Organic content** | 1:many | tempo (seu) | publicações por semana | Audience building, branding |
 | **Paid ads** | 1:many | capital | dependente do budget | Quando unit economics fecham (LTV:CAC > 3:1) |
 
+> **Nota de fonte:** a coluna "Volume típico/dia" (5-30, 50-300) é referência ilustrativa, não número citado de `reference/100m-leads-extracts.md`. O corpus define os 4 canais e a regra de sequência abaixo, não cotas diárias.
+
 ## Regra de ouro do Hormozi
 
 > Comece com 1 canal. Domine. Adicione o 2º. **Nunca 4 ao mesmo tempo.**
 
-Sequência típica:
+Sequência típica (a única regra dura do corpus é "1 canal por vez, nunca os 4" — a ordem abaixo é o default comum, não um mandato):
 1. **Warm** (clientes/conhecidos primeiro)
 2. **Organic** (transforma o que funciona em warm em conteúdo)
 3. **Paid** (escala o que funciona em organic com capital)

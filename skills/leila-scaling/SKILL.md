@@ -1,4 +1,5 @@
 ---
+name: leila-scaling
 description: 5 Scaling Frameworks da Leila Hormozi — 5 Star Service, High-Performance Communication, Hiring & Onboarding, Delegation, Metrics & Accountability. Use para projetar operação que escala sem virar empresa medíocre.
 ---
 

@@ -1,4 +1,5 @@
 ---
+name: vsl-7-step
 description: VSL 7-step arc do Hormozi — estrutura canônica de Video Sales Letter de 8-15min. Use ao criar roteiro VSL novo, refinar VSL existente, ou validar se VSL passa nos 7 atos.
 ---
 

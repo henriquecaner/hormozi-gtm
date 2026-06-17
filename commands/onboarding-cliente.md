@@ -1,6 +1,6 @@
 ---
 description: Primeiros 30 dias do cliente pós-venda. Cadência de touches estruturada, quick wins early para validar decisão de compra, marcos de valor visível. Reduz churn precoce (< 30 dias) em 40-60% típico. Para consultoria, agência, programa cohort, SaaS B2B mid-market.
-argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--duracao=14|30|60] [--no-humanize]"
+argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--duracao=14|30|60]"
 ---
 
 # /hormozi-gtm:onboarding-cliente
@@ -27,7 +27,6 @@ Use `hormozi-persona` para orquestrar. Carregue a skill `hormozi-gtm:hormozi-voi
 | `--produto=<slug>` | Slug do produto |
 | `--ref=<caminho>` | Refinar onboarding existente |
 | `--duracao=14\|30\|60` | Janela de onboarding (default 30 dias) |
-| `--no-humanize` | Pula humanizer |
 
 ## Pré-requisitos
 

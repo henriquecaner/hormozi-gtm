@@ -1,4 +1,5 @@
 ---
+name: guarantees
 description: 4 tipos de guarantee do $100M Offers — Money-back, Results-based, Time-based, Performance. Use para reduzir risco percebido na LP, aumentar Probability na Value Equation, justificar preço alto.
 ---
 

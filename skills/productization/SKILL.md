@@ -1,4 +1,5 @@
 ---
+name: productization
 description: Transição de serviço 1:1 para produto packaged (1:many → group → digital → self-serve). Quando passar entre formatos, como validar antes de empacotar, pricing adjustment por formato, sinais de que você empacotou cedo demais ou tarde demais.
 ---
 

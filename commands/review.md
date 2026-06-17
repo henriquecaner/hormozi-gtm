@@ -140,7 +140,7 @@ Mostra:
 - [ ] Top 3 priorizado (se ele fizer só 3 coisas, são essas)
 - [ ] Não é review elogiosa-vazia ("ficou bom, só ajustes")
 - [ ] Não é review destrutiva-gratuita
-- [ ] Humanizer lite aplicado
+- [ ] Saiu cru — review é diagnóstico interno, não passa por humanizer
 
 ## Anti-padrões
 

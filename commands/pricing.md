@@ -1,6 +1,6 @@
 ---
 description: Pricing review contra as 5 leis do LEAKED Pricing Playbook + Value Equation + LTV:CAC. Analisa preço atual, recomenda range, estrutura de tiers (silver/gold/platinum), ancoragem, teste de validação executável em 2 semanas.
-argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--no-humanize]"
+argument-hint: "[--produto=<slug>] [--ref=<caminho>]"
 ---
 
 # /hormozi-gtm:pricing
@@ -30,7 +30,6 @@ Carregue a skill `hormozi-gtm:hormozi-voice` via ferramenta Skill e imite o regi
 |---|---|
 | (vazio) | Conversa coletando inputs |
 | `outputs/pricing/<arquivo>.md` | Modo refinar — re-roda com novos dados |
-| `--no-humanize` | Pula humanizer |
 | `--overwrite` | Sobrescreve v{n} |
 
 ## Pré-requisitos

@@ -1,4 +1,5 @@
 ---
+name: hook-framework
 description: Hook Framework do $100M Leads — 3 tipos de hook (dream outcome, problem, secret). Use para gerar headlines de LP, hooks de ads (especialmente short-form), subject lines de email, primeiras frases de copy.
 ---
 

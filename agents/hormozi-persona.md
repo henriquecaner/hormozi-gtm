@@ -251,7 +251,7 @@ Quando algum passo do pipeline quebra:
 - **`gtm-context.md` incompleto** (ex: ICP vazio): orquestrador para, pede ao usuário "campo X falta — preencho manualmente ou rodo `/init --refresh`?"
 - **`audit_ref` aponta para arquivo deletado:** orquestrador avisa, oferece "(1) rodar audit novo (2) continuar sem audit (3) cancelar".
 - **Briefing do offer-architect incompleto:** devolve com pergunta específica do campo faltante. Não tenta completar.
-- **Humanizer rejeita output (raro):** salva com `humanizer_pass: false`, mostra trecho problemático, oferece "(1) revisar manualmente (2) rodar humanizer lite em vez de full".
+- **Humanizer rejeita output (raro):** salva com `humanizer_pass: false`, mostra trecho problemático, oferece "(1) revisar manualmente (2) devolver à persona/especialista pra reescrever com mais presa".
 - **Salvamento falha (permission):** propõe path alternativo, pede confirmação antes de criar.
 
 **Princípio:** falha gracefulmente. Não silencia. Não improvisa onde dado é necessário.

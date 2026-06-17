@@ -1,4 +1,5 @@
 ---
+name: proposal-architecture
 description: Pricing proposal high-ticket (R$ 30k+) com objection handling embedded. Estrutura de 7 seções (problema reformulado, mechanism, escopo, prova, investimento, garantia, próximo passo) + 5 padrões anti-comoditização. Pra consultor / agência fechando deals onde a proposta é o documento que fecha (ou perde) a conta.
 ---
 

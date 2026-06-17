@@ -1,4 +1,5 @@
 ---
+name: lead-magnets
 description: 3 archetypes de lead magnet do $100M Leads — Reveal Problems, Samples & Trials, One Step Of Process. Use ao desenhar lead magnet do zero, escolher delivery method, escrever copy de captura.
 ---
 

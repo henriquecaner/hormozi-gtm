@@ -1,4 +1,5 @@
 ---
+name: ad-copy-formula
 description: Formula de ad copy do $100M Leads — estrutura de copy para warm, cold e paid ads com variações por canal. Use ao escrever copy de ad em texto (Facebook, Google, LinkedIn, email), legenda de short-form, anúncios de leads.
 ---
 

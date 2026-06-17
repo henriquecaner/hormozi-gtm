@@ -1,4 +1,5 @@
 ---
+name: sales-sequencing
 description: Sequência de outbound completa — 5-step cadence (initial + follow 1 + follow 2 + reframe + close), timing (1d/3d/7d/14d/30d), como variar contexto entre touches sem repetir copy, when to kill. Para founder que manda email frio único e desiste.
 ---
 

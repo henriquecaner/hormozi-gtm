@@ -1,4 +1,5 @@
 ---
+name: output-conventions
 description: Convenções de naming, estrutura de pasta e frontmatter dos outputs gerados pelo plugin hormozi-gtm. Use sempre antes de escrever arquivo final em outputs/ para garantir consistência, versionamento e rastreabilidade.
 ---
 
@@ -69,7 +70,7 @@ Todo output começa com frontmatter YAML:
 ---
 plugin: hormozi-gtm
 plugin_version: {{plugin_version}}   # lido de .claude-plugin/plugin.json no momento da geração
-command: lp                          # init|audit|lp|roteiro|plano|review|hooks|pricing
+command: lp                          # init|audit|lp|roteiro|plano|review|hooks|pricing|email|objections|case-study|webinar|positioning|content-hub|churn-prevention|onboarding-cliente
 version: 2                           # incrementa a cada refinement
 status: draft                        # draft | approved | shipped
 created: 2026-05-19T14:30:00-03:00   # ISO 8601 com TZ
@@ -80,8 +81,9 @@ frameworks:                          # skills usadas na produção
   - value-equation
   - bonus-stacking
   - guarantees
-humanizer_pass: true                 # se humanizer foi aplicado (full ou lite)
-humanizer_mode: full                 # full | lite
+humanizer_pass: true                 # true só em copy externa; false em output interno/diagnóstico
+humanizer_mode: full                 # full (copy externa) | n/a (interno/cru)
+voz: humanizada                      # humanizada (copy externa) | crua (interno/diagnóstico)
 audit_ref: outputs/audit/audit-ketlin-20260518-v1.md  # se aplicável
 pricing_ref: outputs/pricing/pricing-revops-20260518-v1.md  # se aplicável
 parent_version: outputs/lp/lp-revops-20260519-v1.md  # quando refinement
@@ -91,7 +93,7 @@ parent_version: outputs/lp/lp-revops-20260519-v1.md  # quando refinement
 ### Campos load-bearing
 
 - `plugin_version` → ao preencher o template, ler `.claude-plugin/plugin.json` e substituir `{{plugin_version}}` pelo valor real (ex: `0.1.2`). Nunca hardcoded no template.
-- `humanizer_pass: false` → bloqueia release externo (lint check)
+- `humanizer_pass: false` → bloqueia release externo (lint check). É o estado correto de todo output interno/diagnóstico (audit, review, plano, pricing, objections, positioning, análise de churn, onboarding) — esses saem `humanizer_mode: n/a` e `voz: crua`, nunca passam por humanizer. Copy externa (lp, roteiro, hooks, email, case-study, webinar, conteúdo, winback) sai `humanizer_pass: true` / `humanizer_mode: full` / `voz: humanizada`. (O modo `lite` foi descontinuado no v1.0.)
 - `audit_ref` → rastreia se copy foi escrita sobre oferta auditada
 - `parent_version` → árvore de refinamento
 - `frameworks` → permite buscar "todos os outputs que usaram skill X"

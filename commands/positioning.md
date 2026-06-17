@@ -1,6 +1,6 @@
 ---
 description: Competitive teardown + positioning statement. Mapeia 3-5 concorrentes diretos (features, preço, persona, mensagem), identifica eixos de diferenciação, propõe positioning statement testável. Para founder que vai entrar em nicho com competidores estabelecidos ou que sente sua mensagem "indistinguível".
-argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--competidores=<N>] [--no-humanize]"
+argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--competidores=<N>]"
 ---
 
 # /hormozi-gtm:positioning
@@ -29,7 +29,6 @@ Use `hormozi-persona` para orquestrar. Delegate ao `offer-architect` para amarra
 | `--produto=<slug>` | Slug do produto |
 | `--ref=<caminho>` | Refinar positioning existente |
 | `--competidores=<N>` | Quantidade de competidores a mapear (default 4) |
-| `--no-humanize` | Pula humanizer |
 
 ## Pré-requisitos
 

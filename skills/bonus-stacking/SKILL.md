@@ -1,4 +1,5 @@
 ---
+name: bonus-stacking
 description: Bonus stacking do $100M Offers — como montar stack de bonuses que multiplica valor percebido sem inflar preço. Use ao construir Grand Slam Offer, LP, ou ao recomendar como reforçar oferta fraca.
 ---
 

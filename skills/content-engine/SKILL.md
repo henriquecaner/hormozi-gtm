@@ -1,4 +1,5 @@
 ---
+name: content-engine
 description: Engine de conteúdo orgânico consistente — 3 tipos (educational, entertainment, promotional), cadência sustentável, métricas que importam, lag esperado de 3-6 meses antes de gerar lead de fato. Para founders/consultores que querem aquisição não-paga compondo ao longo do tempo.
 ---
 

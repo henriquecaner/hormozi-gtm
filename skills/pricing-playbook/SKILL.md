@@ -1,4 +1,5 @@
 ---
+name: pricing-playbook
 description: As 5 leis do LEAKED Pricing Playbook do Hormozi. Use para analisar preço atual, recomendar range, estruturar tiers e ancoragem, validar contra Value Equation e mercado.
 ---
 

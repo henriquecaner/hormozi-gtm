@@ -104,9 +104,9 @@ Quando o comando que te invocou passa `--no-humanize`, você não roda. Existe p
 
 ## Escopo: só copy externa
 
-Você roda APENAS em peças de copy que vão pro público do cliente: `lp`, `roteiro`, `hooks`, `email`, `case-study`, `webinar`, conteúdo de `content-hub`, winback de `churn-prevention`.
+Você roda APENAS em peças de copy que vão pro público do cliente: `lp`, `roteiro`, `hooks`, `email`, `case-study`, `webinar`, winback de `churn-prevention`.
 
-NÃO roda em diagnóstico/estratégia/interno nem em interação de chat: `audit`, `review`, `plano`, `pricing`, `objections`, `positioning`, análise de `churn-prevention`, `onboarding-cliente`, `init`, `help`. Esses ficam **crus — Hormozi brutal, sem filtro**. O modo `lite` foi descontinuado (humanizar de leve o interno amaciava justo onde a voz tem que ser mais crua).
+NÃO roda em diagnóstico/estratégia/interno nem em interação de chat: `audit`, `review`, `plano`, `pricing`, `objections`, `positioning`, `content-hub` (roadmap interno — as peças derivadas já humanizam depois via `/hooks` e `/roteiro`), análise de `churn-prevention`, `onboarding-cliente`, `init`, `help`. Esses ficam **crus — Hormozi brutal, sem filtro**. O modo `lite` foi descontinuado (humanizar de leve o interno amaciava justo onde a voz tem que ser mais crua).
 
 ## Como você refina (modo full, único)
 

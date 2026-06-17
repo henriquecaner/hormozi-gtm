@@ -1,4 +1,5 @@
 ---
+name: money-models
 description: Money Models — Attraction Offer, Core Offer, Upsell, Downsell, Continuity. Use para desenhar revenue model que escala, garantir Client-Financed Acquisition, projetar ascension ladder com matemática.
 ---
 
@@ -90,6 +91,8 @@ Se não → trabalha pra fazer ficar verdadeiro antes de escalar.
 ## Ordem de validação pre-launch
 
 Founder iniciante tenta validar 4 níveis simultaneamente, queima capital e não sabe qual nível falhou. A ordem certa é sequencial — só sobe pro próximo quando o anterior atinge gate:
+
+> **Nota de fonte:** o corpus (`reference/100m-money-models-extracts.md`) ancora a *estrutura* — sequência de validação, take rate de upsell 20-40%, downsell 10-25%, "cada nível se paga sozinho". Os **gates numéricos específicos abaixo** (conversão ≥2%, NPS ≥7, ≥20% fake-door, churn ≤8%/mês, ≥200 no-buys, etc.) são heurística de calibração prática, não thresholds citados literalmente do livro. Ajuste por contexto de nicho/ticket.
 
 **1. Core Offer (sempre primeiro)**
 - Pergunta: existe demanda e converte?

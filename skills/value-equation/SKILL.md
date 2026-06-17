@@ -1,5 +1,6 @@
 ---
-description: Value Equation do $100M Offers. Use para diagnosticar qualquer oferta nos 4 vetores (Dream Outcome × Probability ÷ Effort × Time Delay) antes de escrever copy. Identifica qual vetor é o gargalo crítico e gera score numérico justificado.
+name: value-equation
+description: Value Equation do $100M Offers. Use para diagnosticar qualquer oferta nos 4 vetores ((Dream Outcome × Probability) ÷ (Effort × Time Delay)) antes de escrever copy. Identifica qual vetor é o gargalo crítico e gera score numérico justificado.
 ---
 
 # Value Equation

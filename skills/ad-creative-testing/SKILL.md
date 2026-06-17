@@ -1,4 +1,5 @@
 ---
+name: ad-creative-testing
 description: Framework de teste estatístico de creatives. Matrix de teste (muda 1 elemento por vez), sample size necessário, kill criteria com number, scale winner vs pivot creative inteiro. Para founder que gasta R$ 200 em ad e perde fé — esta skill ensina quanto investir mínimo pra ter sinal real.
 ---
 

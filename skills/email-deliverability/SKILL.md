@@ -1,4 +1,5 @@
 ---
+name: email-deliverability
 description: Deliverability de cold/warm email — warm-up de domínio (4-6 semanas), SPF/DKIM/DMARC setup, reputation management, antispam triggers a evitar. Complementa /hormozi-gtm:email. Para founder que vai lançar outbound em escala (50+ emails/dia) e não quer queimar domínio principal.
 ---
 

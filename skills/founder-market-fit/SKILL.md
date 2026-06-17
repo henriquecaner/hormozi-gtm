@@ -1,4 +1,5 @@
 ---
+name: founder-market-fit
 description: Pré-requisito invisível de toda oferta. Sem founder-market fit, garantia parece blefe, mechanism parece teoria, autoridade some. Define 3 tipos de fit (native expert, customer-turned-coach, researcher-learner), qual nicho cada tipo cabe, e como construir credibilidade quando você ainda não tem fit nativo.
 ---
 

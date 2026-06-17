@@ -1,4 +1,5 @@
 ---
+name: ltv-cac
 description: Matemática de unit economics — LTV (Lifetime Value), LTGP (Lifetime Gross Profit), CAC (Customer Acquisition Cost), payback period, ratio. Use para validar viabilidade de modelo, calibrar pricing e justificar (ou matar) ads.
 ---
 
@@ -42,6 +43,8 @@ Payback = CAC / (Profit Mensal por Cliente)
 - `< 30 dias` — Client-Financed Acquisition. Paid scaling ilimitado.
 - `30-90 dias` — saudável se capital permite.
 - `> 90 dias` — risco de cash crunch ao escalar.
+
+> **Nota de fonte:** os thresholds canônicos do corpus (`reference/100m-leads-extracts.md`) são **ratio ≥ 3:1** e **payback ≤ 30 dias**. As faixas intermediárias (1:1–3:1, 3:1–5:1, >5:1, 30–90, >90) são calibração prática/heurística para diagnóstico — não números citados literalmente do livro.
 
 ## Como modelar do zero
 

@@ -1,4 +1,5 @@
 ---
+name: scarcity-urgency
 description: Scarcity e urgency genuínos — Hormozi distingue entre escassez fake (mata credibilidade) e escassez real (multiplica conversão). Use ao montar oferta, LP ou ad que precisa de mecanismo de fechamento.
 ---
 

@@ -1,4 +1,5 @@
 ---
+name: humanizer-rules
 description: Regras completas do Humanizer em PT-BR e EN — lista de padrões AI a remover e substituições. Use sempre como último passo do pipeline antes de salvar output externo. Base de operação do subagent humanizer.
 ---
 
@@ -246,12 +247,13 @@ Quando o conteúdo é Hormozi-mode: "Eu...", "A gente...", "O que eu vi com 12 c
 - "Tem cliente onde a gente errou e quebrou contrato"
 - "A teoria diz X, mas na prática Y acontece 30% das vezes"
 
-## Versão "lite" vs "full"
+## Escopo: só copy externa
 
-- **Lite (outputs internos:** audit, review, plano): remove só em-dash overuse, rule of three e AI vocab. Mantém tom direto Hormozi cru.
-- **Full (outputs externos pra cliente:** LP, ad, hooks, business plan): aplica TODA a lista.
+O humanizer roda **apenas em copy externa de cliente** (lp, roteiro, hooks, email, case-study, webinar, peças de conteúdo, winback). Aí aplica TODA a lista.
 
-Comando que invoca humanizer passa flag indicando qual versão.
+Output interno/diagnóstico (audit, review, plano, pricing, objections, positioning, análise de churn, onboarding) **não passa por humanizer** — sai cru, Hormozi brutal, sem filtro. Esses saem com `humanizer_pass: false` / `humanizer_mode: n/a`.
+
+> O modo `lite` foi descontinuado no v1.0. Não existe mais "humanizer parcial": ou é copy externa (full), ou é interno (cru, sem humanizer).
 
 ## Quando NÃO humanizar
 

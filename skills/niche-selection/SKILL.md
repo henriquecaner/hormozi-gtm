@@ -1,4 +1,5 @@
 ---
+name: niche-selection
 description: Critério Hormozi para escolher nicho. 5 vetores de qualidade (dor, poder de compra, saturação, TAM viável, mensagem), processo de drilling reversível (testa 3-4 antes de commitar), armadilhas comuns. Pré-requisito invisível de toda a oferta — sem nicho certo, Grand Slam não salva.
 ---
 

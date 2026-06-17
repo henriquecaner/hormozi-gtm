@@ -1,4 +1,5 @@
 ---
+name: grand-slam-offer
 description: Framework de Grand Slam Offer do livro $100M Offers. Use quando criar oferta nova, refatorar oferta existente, ou montar copy que vende a oferta (LP, ad, email). Cobre os 5 componentes — dream outcome, problemas, soluções, bonuses, garantias — e como nomear a oferta.
 ---
 

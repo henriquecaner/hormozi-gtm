@@ -1,4 +1,5 @@
 ---
+name: market-saturation-pivot
 description: Detecta quando seu canal/nicho saturou e quando pivotar. Métricas concretas (CAC trend, reply rate, CTR), 3 sinais simultâneos como gate de pivot, framework de pivot in-place sem perder audience.
 ---
 

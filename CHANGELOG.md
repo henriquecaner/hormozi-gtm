@@ -4,6 +4,18 @@ Todas as mudanças relevantes deste plugin ficam aqui. Formato baseado em [Keep 
 
 ## [Unreleased]
 
+### Corrigido
+
+- **Resíduos do modo `lite` (descontinuado no v1.0) eliminados.** `skills/humanizer-rules/SKILL.md` documentava lite/full e atribuía "lite" a audit/review/plano — contradizia o invariante (interno = cru, externo = full). Reescrita a seção de escopo. `commands/review.md` tinha checklist "Humanizer lite aplicado" contra o próprio corpo. `skills/output-conventions/SKILL.md`: enum `humanizer_mode` corrigido (`full | lite` → `full | n/a`), documentado o campo `voz: crua` e a convenção de output interno, e refresh do enum `command:` (8 → 16 valores).
+- **`--no-humanize` removido dos 4 commands internos** (plano, positioning, pricing, onboarding-cliente) onde era no-op — esses nunca humanizam. Flag permanece só nos commands de copy externa. CLAUDE.md atualizado.
+- **Conflito de classificação do content-hub resolvido.** `agents/humanizer.md` listava "conteúdo de content-hub" como copy externa, mas o command e o template tratam o roadmap como interno/cru (as peças derivadas humanizam depois via /hooks e /roteiro). Alinhado para interno.
+- **`value-equation` description:** fórmula `Dream × Probability ÷ Effort × Time Delay` (avaliava errado matematicamente) corrigida para `(Dream × Probability) ÷ (Effort × Time Delay)`. Corpo já estava certo.
+
+### Modificado
+
+- **Disclaimer de fonte em números heurísticos.** `skills/ltv-cac`, `skills/money-models` e `skills/core-four` apresentavam benchmarks numéricos (faixas de ratio/payback, gates de validação pre-launch, volume/dia, sequência de canais) como se fossem citados do corpus. Adicionada nota distinguindo o que está nos extracts do que é calibração prática derivada — respeita o invariante "não inventar fora de skills/+reference/".
+- **Frontmatter `name:` adicionado às 25 skills de framework** que só tinham `description:` — consistência com as skills `template-*` e `hormozi-voice`. Zero impacto funcional (loader derivava o nome da pasta).
+
 ### Planejado
 - Onboarding doc específico para clientes da LEVEL (guia operacional separado do plugin)
 - `settings.json` customization (cliente declara `humanizer_mode_default`, intensidade Hormozi)

@@ -1,6 +1,6 @@
 ---
 description: Business plan completo (3000-6000 palavras) para empresa ou produto. Estrutura em 10 seções — sumário, mercado, oferta, money model, pricing, aquisição, operação, métricas, riscos, roadmap 30-60-90. Usa Money Models, LTV:CAC, Core Four, Pricing Playbook, Leila Scaling.
-argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--tipo=empresa|produto] [--no-humanize]"
+argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--tipo=empresa|produto]"
 ---
 
 # /hormozi-gtm:plano
@@ -38,7 +38,6 @@ Carregue a skill `hormozi-gtm:hormozi-voice` via ferramenta Skill e imite o regi
 | `outputs/plano/<arquivo>.md` | Modo refinar — pergunta qual seção atualizar |
 | `--tipo=empresa` | Plano de empresa completa |
 | `--tipo=produto` | Plano de produto/SKU específico |
-| `--no-humanize` | Pula humanizer |
 | `--overwrite` | Sobrescreve v{n} |
 
 ## Pré-requisitos

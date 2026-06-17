@@ -68,7 +68,7 @@ Todos os commands seguem o padrão `--flag=valor`. Não há argumentos posiciona
 | `--ref=<caminho>` | Caminho para um output anterior (refinar / criar v2). Ex: `--ref=outputs/lp/lp-revops-20260519-v1.md`. |
 | `--foco=<secao>` | Em modo refinar (`--ref`), foca em parte específica do material. Ex: `--foco=hero` na LP. |
 | `--full-rewrite` | Em modo refinar (`--ref`), cria v2 do zero usando o anterior só como `parent_version`. |
-| `--no-humanize` | Pula o humanizer pass (debug ou A/B test). Salva com `humanizer_pass: false`. |
+| `--no-humanize` | Pula o humanizer pass (debug ou A/B test). Salva com `humanizer_pass: false`. **Só existe nos commands de copy externa** (lp, roteiro, hooks, email, case-study, webinar, content-hub→peças, churn-prevention→winback). Nos commands internos/diagnóstico (audit, review, plano, pricing, objections, positioning, onboarding) a flag não existe — eles já saem crus, nunca humanizam. |
 
 **Flags específicas por command:**
 - `init`: `--refresh` (reabre entrevista mantendo `gtm-context.md` como base).
