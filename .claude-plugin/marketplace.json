@@ -5,15 +5,15 @@
     "email": "caner@thelevel.com.br"
   },
   "metadata": {
-    "description": "Marketplace do plugin Hormozi GTM — operação GTM no estilo Alex Hormozi: ofertas, copy, ads, pricing, planos e diagnósticos. Persona sempre ativa, voz brutal, humanizer só em copy externa.",
-    "version": "1.0.1"
+    "description": "Marketplace for the Hormozi GTM plugin — Alex Hormozi-style GTM operation: offers, copy, ads, pricing, plans, and diagnostics. Persona always on, brutal voice, humanizer on external copy only.",
+    "version": "2.0.0"
   },
   "plugins": [
     {
       "name": "hormozi-gtm",
       "source": "./",
-      "description": "Operação GTM no estilo Alex Hormozi. Plugin Claude Code com ofertas, copy, ads, pricing, business plans e diagnósticos.",
-      "version": "1.0.1",
+      "description": "Alex Hormozi-style GTM operation. A Claude Code plugin with offers, copy, ads, pricing, business plans, and diagnostics.",
+      "version": "2.0.0",
       "category": "sales",
       "tags": [
         "hormozi",

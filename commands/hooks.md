@@ -1,135 +1,137 @@
 ---
-description: Gera batch de 10-20 variantes de hooks/headlines/subject lines. Mix de ângulos (dream/problem/secret/contrarian/proof). Top 3 do agent ao final com justificativa. Humanizer modo full.
-argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--n=N] [--angulo=<dream|problem|secret|contrarian|proof>] [--no-humanize]"
+description: Generates a batch of 10-20 hook/headline/subject-line variants. Mix of angles (dream/problem/secret/contrarian/proof). Agent picks the top 3 at the end with reasoning. Humanizer full mode.
+argument-hint: "[--product=<slug>] [--ref=<path>] [--n=N] [--angle=<dream|problem|secret|contrarian|proof>] [--no-humanize]"
 ---
 
 # /hormozi-gtm:hooks
 
-Gera bateladas de hooks/headlines/subject lines para testes A/B. Por padrão 15 variantes cobrindo 5 ângulos.
+Generates batches of hooks/headlines/subject lines for A/B testing. Default is 15 variants covering 5 angles.
 
-## Carregamento de persona
+## Persona loading
 
-Orquestrador: `hormozi-persona`.
-Especialista: `ad-architect`.
-Pass final: `humanizer` (modo full — hooks vão pro cliente).
+Orchestrator: `hormozi-persona`.
+Specialist: `ad-architect`.
+Final pass: `humanizer` (full mode — hooks go to the client).
 
-**Carregamento de voz IN-CONTEXTO (obrigatório):** carregue a skill `hormozi-voice` via ferramenta Skill e imite o registro — não dependa só do subagent (no Cowork ele pode não rodar). Hooks são copy externa: cada hook só sai com **brutalidade ≥7 na rubrica da hormozi-voice**. Abaixo de 7, reescreve antes de listar.
+**IN-CONTEXT voice loading (mandatory):** load the `hormozi-voice` skill via the Skill tool and imitate the register — don't rely on the subagent alone (in Cowork it may not run). Hooks are external copy: each hook only ships at **brutality ≥7 on the hormozi-voice rubric**. Below 7, rewrite before listing.
 
-## Skills ativas
+Generate all client-facing copy in the language set in gtm-context `language` (default English). The voice and brutality rules are language-independent and apply in every language.
 
-- `hormozi-voice` (registro de voz brutal + rubrica 0-10 — carregada in-contexto)
-- `hook-framework` (central — 3 tipos canônicos + ângulos extras)
-- `ad-copy-formula` (estrutura por canal)
-- `template-hooks-batch` (esqueleto do output — carregada in-contexto)
-- `humanizer-rules` (modo full)
+## Active skills
+
+- `hormozi-voice` (brutal voice register + 0-10 rubric — loaded in-context)
+- `hook-framework` (core — 3 canonical types + extra angles)
+- `ad-copy-formula` (per-channel structure)
+- `template-hooks-batch` (output skeleton — loaded in-context)
+- `humanizer-rules` (full mode)
 - `output-conventions`
 
-## Argumentos
+## Arguments
 
-| Argumento | Comportamento |
+| Argument | Behavior |
 |---|---|
-| (vazio) | Pega oferta do `gtm-context.md` |
-| `slug` | Slug do produto/oferta |
-| `outputs/lp/<arquivo>.md` | Gera hooks pra refinar headline desse material |
-| `--n=N` | Quantidade total (default 15) |
-| `--angulo=<tipo>` | Foca em 1 ângulo (gera N do mesmo tipo) |
-| `--no-humanize` | Pula humanizer |
-| `--overwrite` | Sobrescreve v{n} |
+| (empty) | Pulls the offer from `gtm-context.md` |
+| `slug` | Product/offer slug |
+| `outputs/lp/<file>.md` | Generates hooks to refine that asset's headline |
+| `--n=N` | Total count (default 15) |
+| `--angle=<type>` | Focuses on 1 angle (generates N of the same type) |
+| `--no-humanize` | Skips the humanizer |
+| `--overwrite` | Overwrites v{n} |
 
-## Pré-requisitos
+## Prerequisites
 
-1. `gtm-context.md` existe → carrega ICP, oferta, transformação, audience externa, intensidade do tom
-2. Senão → pergunta no chat (3 perguntas mínimas)
+1. `gtm-context.md` exists → loads ICP, offer, transformation, external audience, tone intensity
+2. Otherwise → asks in chat (3 questions minimum)
 
-## Fluxo
+## Flow
 
-### Passo 1: Coleta inputs (se necessário)
+### Step 1: Collect inputs (if needed)
 
-Se `gtm-context.md` está completo, pula direto pro Passo 2.
+If `gtm-context.md` is complete, skip straight to Step 2.
 
-Senão pergunta:
-1. ICP (1 frase específica)
-2. Oferta (o que vende)
-3. Transformação prometida (em quanto tempo, quem vira o quê)
+Otherwise ask:
+1. ICP (1 specific sentence)
+2. Offer (what you sell)
+3. Promised transformation (in what timeframe, who becomes what)
 
-### Passo 2: Estratégia de mix
+### Step 2: Mix strategy
 
-Default: distribuição em 5 ângulos
+Default: spread across 5 angles
 - Dream outcome (3-5 hooks)
 - Problem (3-5 hooks)
 - Secret (3-5 hooks)
 - Contrarian (2-3 hooks)
 - Proof (2-3 hooks)
 
-Se `--angulo=X`, gera N do mesmo tipo.
+If `--angle=X`, generate N of the same type.
 
-### Passo 3: Geração
+### Step 3: Generation
 
-Delegate a `ad-architect`. Para cada hook:
+Delegate to `ad-architect`. For each hook:
 
-- Frase (com especificidade numérica quando possível)
-- Ângulo
-- Mecanismo (qual emoção/pensamento aciona)
-- Onde usar (LP headline / ad short / email subject / etc.)
+- The line (with numeric specificity where possible)
+- Angle
+- Mechanism (which emotion/thought it triggers)
+- Where to use it (LP headline / short ad / email subject / etc.)
 
-Aplica os 3 testes de qualidade:
-- Especificidade numérica
+Run the 3 quality tests:
+- Numeric specificity
 - Tweet test
 - Curiosity gap
 
-### Passo 4: Top 3 do agent
+### Step 4: Agent's top 3
 
-Ranqueia e justifica top 3 com critério específico (não "achei melhor"). Cada top 3 tem:
-- Frase completa
-- Por que é o top
-- Onde testar primeiro (plataforma + formato)
+Ranks and justifies the top 3 with a specific criterion (not "I liked it best"). Each of the top 3 has:
+- Full line
+- Why it's a top pick
+- Where to test it first (platform + format)
 
-### Passo 5: Humanizer (full)
+### Step 5: Humanizer (full)
 
-Hooks são copy externa — modo full obrigatório. Passe os hooks pelo subagent `humanizer` (modo full) E confira contra `humanizer-rules`. Mesmo após o humanizer, cada hook tem que manter brutalidade ≥7 na rubrica da `hormozi-voice` — humanizer remove AI-ism, não amacia a voz. Frontmatter sai com `humanizer_pass: true` / `humanizer_mode: full`.
+Hooks are external copy — full mode is mandatory. Pass the hooks through the `humanizer` subagent (full mode) AND check them against `humanizer-rules`. Even after the humanizer, each hook has to hold brutality ≥7 on the `hormozi-voice` rubric — the humanizer strips AI-isms, it doesn't soften the voice. Frontmatter ships with `humanizer_pass: true` / `humanizer_mode: full`.
 
-### Passo 6: Salva
+### Step 6: Save
 
-Carregue a skill `hormozi-gtm:template-hooks-batch` via ferramenta Skill e preencha o esqueleto. Salva em `outputs/hooks/hooks-{slug}-{YYYYMMDD}-v{n}.md`.
+Load the `hormozi-gtm:template-hooks-batch` skill via the Skill tool and fill in the skeleton. Save to `outputs/hooks/hooks-{slug}-{YYYYMMDD}-v{n}.md`.
 
-### Passo 7: Preview na conversa
+### Step 7: Preview in the conversation
 
 ```
-✅ Salvo em: outputs/hooks/hooks-{slug}-{YYYYMMDD}-v{n}.md
+✅ Saved to: outputs/hooks/hooks-{slug}-{YYYYMMDD}-v{n}.md
 📋 Preview:
-   • Quantidade total: {{N}} hooks
-   • Top 3 escolhidos pelo agent:
-     1. "{{texto}}" — {{ângulo}}, {{critério}}
-     2. "{{texto}}" — {{ângulo}}, {{critério}}
-     3. "{{texto}}" — {{ângulo}}, {{critério}}
-   • Status humanizer: ✓ full pass
+   • Total count: {{N}} hooks
+   • Top 3 picked by the agent:
+     1. "{{text}}" — {{angle}}, {{criterion}}
+     2. "{{text}}" — {{angle}}, {{criterion}}
+     3. "{{text}}" — {{angle}}, {{criterion}}
+   • Humanizer status: ✓ full pass
 
-👉 Próximos passos:
-   1. Testar top 3 em ads (R$ 200-500/cada, 48h)
-   2. Vencedor vira headline da próxima LP
-   3. /hormozi-gtm:roteiro --produto={{slug}} usando hook vencedor
+👉 Next steps:
+   1. Test the top 3 in ads ($200-500 each, 48h)
+   2. Winner becomes the headline of the next LP
+   3. /hormozi-gtm:script --product={{slug}} using the winning hook
 ```
 
-## Critério de pronto
+## Done criteria
 
-- [ ] Mix de ângulos (não 15 hooks só de dor) — exceto se `--angulo=` foi passado
-- [ ] Especificidade numérica em pelo menos 60% dos hooks
-- [ ] Nenhum hook genérico ("descubra o segredo")
-- [ ] Top 3 do agent com critério explícito
-- [ ] Plano de teste sugerido
-- [ ] Brutalidade ≥7 na rubrica da `hormozi-voice` em cada hook (copy externa)
-- [ ] Humanizer full aplicado
-- [ ] Arquivo salvo com frontmatter
+- [ ] Mix of angles (not 15 pain-only hooks) — unless `--angle=` was passed
+- [ ] Numeric specificity in at least 60% of the hooks
+- [ ] No generic hook ("discover the secret")
+- [ ] Agent's top 3 with an explicit criterion
+- [ ] Suggested test plan
+- [ ] Brutality ≥7 on the `hormozi-voice` rubric for every hook (external copy)
+- [ ] Humanizer full applied
+- [ ] File saved with frontmatter
 
-## Anti-padrões
+## Anti-patterns
 
-- "Descubra o segredo de X" (genérico)
-- "Você quer ganhar mais?" (yes/no genérico)
-- Hooks que dependem de contexto perdido
-- Top 3 sem justificativa específica ("achei melhor")
-- Mix homogêneo (15 dream outcomes) sem usuário pedir
+- "Discover the secret to X" (generic)
+- "Want to make more money?" (generic yes/no)
+- Hooks that depend on lost context
+- Top 3 with no specific justification ("I liked it best")
+- Homogeneous mix (15 dream outcomes) without the user asking for it
 
-## Output esperado
+## Expected output
 
-Arquivo: tabela de N hooks + top 3 + plano de teste (~500-800 palavras)
-Conversa: top 3 + caminho (~5 linhas)
+File: table of N hooks + top 3 + test plan (~500-800 words)
+Conversation: top 3 + path (~5 lines)

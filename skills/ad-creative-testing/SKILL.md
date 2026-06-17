@@ -1,171 +1,171 @@
 ---
 name: ad-creative-testing
-description: Framework de teste estatístico de creatives. Matrix de teste (muda 1 elemento por vez), sample size necessário, kill criteria com number, scale winner vs pivot creative inteiro. Para founder que gasta R$ 200 em ad e perde fé — esta skill ensina quanto investir mínimo pra ter sinal real.
+description: Statistical creative-testing framework. Test matrix (change 1 element at a time), required sample size, kill criteria with a number, scale winner vs. pivot the whole creative. For the founder who spends $200 on an ad and loses faith — this skill teaches the minimum you have to invest to get a real signal.
 ---
 
 # Ad Creative Testing
 
-Fonte: Alex Hormozi, *$100M Leads* (Cap. 4, "Ad Mechanics") + cross-reference com `ad-copy-formula` e `hook-framework`.
+Source: Alex Hormozi, *$100M Leads* (Ch. 4, "Ad Mechanics") + cross-reference with `ad-copy-formula` and `hook-framework`.
 
-## Por que essa skill existe
+## Why this skill exists
 
-`ad-copy-formula` ensina **o que escrever** num ad. Esta cobre **como testar sistematicamente** para descobrir qual versão funciona, com sample size estatístico e kill criteria objetivo. Sem isso, founder gasta R$ 200 num ad, vê resultado ruim, perde fé, e ataca o problema errado (acha que é copy quando pode ser audience, ou vice-versa).
+`ad-copy-formula` teaches **what to write** in an ad. This one covers **how to test it systematically** to find out which version works, with statistical sample size and objective kill criteria. Without it, a founder spends $200 on an ad, sees a bad result, loses faith, and attacks the wrong problem (thinks it's the copy when it might be the audience, or vice versa).
 
-A maioria dos founders brasileiros mata creative no dia 1-2 antes de ter sinal estatístico. Quem testa sistemática descobre o vencedor 3x mais rápido com o mesmo budget.
+Most founders kill a creative on day 1-2, before there's a statistical signal. The ones who test systematically find the winner 3x faster on the same budget.
 
-## Matrix de teste — muda 1 elemento por vez
+## Test matrix — change 1 element at a time
 
-Você só consegue isolar qual elemento moveu o resultado se mudar 1 de cada vez. Mudar 3 ao mesmo tempo é apostar, não testar.
+You can only isolate which element moved the result if you change 1 at a time. Changing 3 at once is gambling, not testing.
 
-**Hierarquia de elementos (do mais impactante ao menos):**
+**Element hierarchy (most impactful to least):**
 
-1. **Hook (primeiros 3 segundos)** — 50-70% do CTR vem daqui.
-2. **Audience / segmentação** — 20-30%.
-3. **Creative format (vídeo vs imagem vs carrossel)** — 10-20%.
-4. **CTA e copy de corpo** — 5-15%.
-5. **Detalhes visuais (cor, font, thumbnail)** — 2-5%.
+1. **Hook (first 3 seconds)** — 50-70% of CTR comes from here.
+2. **Audience / targeting** — 20-30%.
+3. **Creative format (video vs. image vs. carousel)** — 10-20%.
+4. **CTA and body copy** — 5-15%.
+5. **Visual details (color, font, thumbnail)** — 2-5%.
 
-**Regra:** otimiza top-down. Não mexe em font enquanto hook está fraco.
+**Rule:** optimize top-down. Don't touch the font while the hook is weak.
 
-**Matrix exemplo:**
+**Example matrix:**
 
 ```
-Variável            Variação A           Variação B           Variação C
-Hook                "Reduzir CAC 38%"    "Stop perder leads"  "O erro do SDR"
+Variable            Variation A          Variation B          Variation C
+Hook                "Cut CAC 38%"        "Stop losing leads"  "The SDR mistake"
 Audience            ICP-1                ICP-2                ICP-1
-Format              Vídeo 15s            Vídeo 15s            Vídeo 15s
-CTA                 "Ver PDF"            "Ver PDF"            "Ver PDF"
+Format              15s video            15s video            15s video
+CTA                 "Get the PDF"        "Get the PDF"        "Get the PDF"
 ```
 
-Vai testar **só Hook** (3 variações). Audience constante (controle). Format constante. CTA constante. Quando descobre Hook vencedor, troca pra ele, então testa Audience com Hook fixo.
+You're testing **Hook only** (3 variations). Audience constant (control). Format constant. CTA constant. Once you find the winning Hook, switch to it, then test Audience with the Hook fixed.
 
-## Sample size — quanto investir pra ter sinal real
+## Sample size — how much to invest to get a real signal
 
-Sample size mínimo depende do CTR/conversion rate esperado. Heurística por estágio:
+Minimum sample size depends on the expected CTR/conversion rate. Heuristic by stage:
 
-| Estágio do teste | Investimento mínimo por variante | Por que esse valor |
+| Test stage | Minimum investment per variant | Why that number |
 |---|---|---|
-| **Hook test (3-5 variantes)** | R$ 150-300 cada | Suficiente para 1000-2000 impressions, identifica winner se CTR diff ≥ 30% |
-| **Audience test (2-4 segmentos)** | R$ 300-500 cada | Precisa amostra maior para isolar audience effect |
-| **Creative format test** | R$ 500-1000 cada | Format affects engagement signal, precisa mais impressions |
-| **Full funnel (com conversão)** | R$ 1k-3k cada | Precisa 20-50 conversões para ratio confiável |
+| **Hook test (3-5 variants)** | $150-300 each | Enough for 1,000-2,000 impressions, identifies a winner if CTR diff ≥ 30% |
+| **Audience test (2-4 segments)** | $300-500 each | Needs a larger sample to isolate the audience effect |
+| **Creative format test** | $500-1,000 each | Format affects the engagement signal, needs more impressions |
+| **Full funnel (with conversion)** | $1k-3k each | Needs 20-50 conversions for a reliable ratio |
 
-**Regra de bolso:** se você não consegue investir o mínimo, **não teste ainda**. Espera ter budget. Teste subdimensionado dá falso sinal.
+**Rule of thumb:** if you can't invest the minimum, **don't test yet**. Wait until you have the budget. An underpowered test gives a false signal.
 
-**Cálculo simples (Hook test):**
-- CTR baseline esperado: ~1-2% em ads frios.
-- Para detectar diff de 30% no CTR (ex: 1.5% → 2%): precisa ~500-1000 cliques por variante.
-- 1.5% × 1000 cliques = 67k impressions. Em paid social: ~R$ 200-300.
+**Simple calculation (Hook test):**
+- Expected baseline CTR: ~1-2% on cold ads.
+- To detect a 30% CTR difference (e.g., 1.5% → 2%): you need ~500-1,000 clicks per variant.
+- 1.5% × 1,000 clicks = 67k impressions. On paid social: ~$200-300.
 
-## Kill criteria — quando matar uma variante
+## Kill criteria — when to kill a variant
 
-Founder mata muito cedo (12h, 50 impressions) ou muito tarde (continua 7 dias com performance horrível). Critério objetivo:
+Founders kill too early (12h, 50 impressions) or too late (run it 7 days with horrible performance). Objective criterion:
 
-**Mata a variante quando:**
-1. ≥ 1000 impressions acumuladas (sample suficiente)
-2. **E** CTR < 50% do best performer
-3. **E** sem melhora nos últimos 250 impressions
+**Kill the variant when:**
+1. ≥ 1,000 accumulated impressions (sufficient sample)
+2. **AND** CTR < 50% of the best performer
+3. **AND** no improvement in the last 250 impressions
 
-Exemplo:
+Example:
 ```
-Variante A: 2.1% CTR (best performer, 1200 impressions)
-Variante B: 1.8% CTR (1150 impressions) → keep, dentro da margem
-Variante C: 0.8% CTR (1050 impressions) → KILL (< 50% do A, sem improvement)
+Variant A: 2.1% CTR (best performer, 1,200 impressions)
+Variant B: 1.8% CTR (1,150 impressions) → keep, within margin
+Variant C: 0.8% CTR (1,050 impressions) → KILL (< 50% of A, no improvement)
 ```
 
-**Não mata baseado em:**
-- 1 dia de dados (timing/dia da semana afeta).
-- "Sentimento" (gosto pessoal).
-- Comentários de 3 amigos.
+**Don't kill based on:**
+- 1 day of data (timing/day of week affects it).
+- "Feel" (personal taste).
+- Comments from 3 friends.
 
-## Scale winner vs pivot creative inteiro
+## Scale winner vs. pivot the whole creative
 
-Depois de encontrar winner, decisão crítica: dobra investimento ou questiona se creative inteiro precisa pivot?
+After you find a winner, the critical decision: double down, or question whether the whole creative needs a pivot?
 
-**Scale winner quando:**
-- Winner tem ROAS > 2.5x consistente por ≥ 3 dias.
-- CTR > média do nicho (Meta Ads B2B: > 1.5%).
-- Custo por lead < 50% do LTV target.
+**Scale the winner when:**
+- Winner has consistent ROAS > 2.5x for ≥ 3 days.
+- CTR > niche average (Meta Ads B2B: > 1.5%).
+- Cost per lead < 50% of LTV target.
 
-**Pivot creative inteiro quando:**
-- Mesmo winner tem ROAS < 1.5x.
-- Todos os hooks têm CTR < 1%.
-- Múltiplos testes não destravam.
+**Pivot the whole creative when:**
+- Even the winner has ROAS < 1.5x.
+- All hooks have CTR < 1%.
+- Multiple tests don't break through.
 
-**Sinais de que é problema de oferta, não de creative:**
-- CTR alto (>2%) mas conversão baixa (<3%) — copy do ad atrai, oferta não fecha.
-- Vários winners ao longo de meses, ROAS sempre apertado — oferta vale 1/3 do preço, não é creative.
+**Signs it's an offer problem, not a creative problem:**
+- High CTR (>2%) but low conversion (<3%) — the ad copy attracts, the offer doesn't close.
+- Multiple winners over months, ROAS always tight — the offer is worth 1/3 of the price; it's not the creative.
 
-**Fix:** volta para `grand-slam-offer` ou `value-equation`. Creative não conserta oferta fraca.
+**Fix:** go back to `grand-slam-offer` or `value-equation`. A creative doesn't fix a weak offer.
 
-## Cadência de teste sustentável
+## Sustainable testing cadence
 
-Founder brasileiro tenta testar tudo numa semana e queima budget. Cadência realista:
+Founders try to test everything in one week and burn the budget. Realistic cadence:
 
-| Maturidade do account | Cadência |
+| Account maturity | Cadence |
 |---|---|
-| Início (mês 1-2) | 1 teste de hook a cada 1-2 semanas (4-6 variantes total/mês) |
-| Mid (mês 3-6) | 1 teste de hook + 1 teste secundário por semana |
-| Mature (mês 6+) | Pipeline de teste contínuo, 3-5 variantes novas/semana sempre rodando |
+| Early (month 1-2) | 1 hook test every 1-2 weeks (4-6 variants total/month) |
+| Mid (month 3-6) | 1 hook test + 1 secondary test per week |
+| Mature (month 6+) | Continuous test pipeline, 3-5 new variants/week always running |
 
-**Princípio:** testes precisam de tempo para acumular sample. Acelerar antes da hora destrói signal.
+**Principle:** tests need time to accumulate a sample. Rushing before then destroys the signal.
 
-## Anti-padrões
+## Anti-patterns
 
-**1. Matar variante no dia 1 com 200 impressions.**
-Sample não é estatística — você está vendo sorte.
+**1. Killing a variant on day 1 with 200 impressions.**
+The sample isn't statistical — you're watching luck.
 
-**2. Mudar 3 elementos de uma vez.**
-"Mudei hook + audience + CTA, CTR caiu 50%". Não sabe qual elemento foi.
+**2. Changing 3 elements at once.**
+"Changed hook + audience + CTA, CTR dropped 50%." You don't know which element did it.
 
-**3. Não documentar o que testou.**
-3 meses depois, refaz o mesmo teste já feito.
+**3. Not documenting what you tested.**
+3 months later, you re-run the same test you already ran.
 
-**4. Testar audience sem testar hook primeiro.**
-Audience perfeita com hook ruim ainda dá CTR ruim. Hook é primeiro.
+**4. Testing audience without testing the hook first.**
+A perfect audience with a bad hook still gives bad CTR. Hook comes first.
 
-**5. "Vou testar tudo no Instagram primeiro".**
-Plataforma afeta tudo. Hook que funciona no Meta Ads não funciona no LinkedIn Ads. Teste em cada plataforma separadamente.
+**5. "I'll test everything on Instagram first."**
+The platform affects everything. A hook that works on Meta Ads doesn't work on LinkedIn Ads. Test on each platform separately.
 
-**6. Comparar creative seu vs concorrente sem mesma audience.**
-Audience diferente, ROAS diferente. Não é comparável.
+**6. Comparing your creative vs. a competitor's without the same audience.**
+Different audience, different ROAS. Not comparable.
 
-**7. Manter loser por afinidade pessoal.**
-"Mas eu gosto desse criativo." Mercado decide, não você.
+**7. Keeping a loser out of personal attachment.**
+"But I like that creative." The market decides, not you.
 
-## Roadmap de teste — primeiros 90 dias
+## Test roadmap — first 90 days
 
-**Mês 1: Hook hunt**
-- Semana 1: 4 hooks dramáticos diferentes (R$ 200 cada = R$ 800).
-- Semana 2: top 2 hooks vs 2 novos (R$ 800).
-- Semana 3-4: refina hook vencedor com micro-variações.
+**Month 1: Hook hunt**
+- Week 1: 4 different dramatic hooks ($200 each = $800).
+- Week 2: top 2 hooks vs. 2 new ones ($800).
+- Week 3-4: refine the winning hook with micro-variations.
 
-**Mês 2: Audience hunt**
-- Hook fixo (vencedor).
-- 3-4 audiences diferentes (ICP-1 broad, ICP-1 narrow, ICP-2, lookalike).
-- R$ 300-500 por audience.
+**Month 2: Audience hunt**
+- Hook fixed (the winner).
+- 3-4 different audiences (ICP-1 broad, ICP-1 narrow, ICP-2, lookalike).
+- $300-500 per audience.
 
-**Mês 3: Format + CTA**
-- Audience + hook fixos.
-- Testa vídeo 15s vs 30s vs imagem.
-- Testa CTA "Ver PDF" vs "Quero saber" vs "Aceito auditoria".
+**Month 3: Format + CTA**
+- Audience + hook fixed.
+- Test 15s video vs. 30s vs. image.
+- Test CTA "Get the PDF" vs. "Tell me more" vs. "Book the audit".
 
-Ao final dos 90 dias, você tem combinação winning sólida e pode escalar com confiança.
+By the end of the 90 days, you have a solid winning combination and can scale with confidence.
 
-## Aplicação por caso de uso
+## Application by use case
 
-| Caso | Como usar |
+| Case | How to use |
 |---|---|
-| `/hormozi-gtm:hooks` | Output são 8-12 hooks — esta skill orienta como testar (sample size, kill criteria) |
-| `/hormozi-gtm:plano` em founder rodando paid | Inclui orçamento de teste no roadmap de aquisição |
-| ROAS apertando em campanhas → pivot ou refinar? | Skill ajuda diagnosticar: hook? audience? oferta? |
+| `/hormozi-gtm:hooks` | Output is 8-12 hooks — this skill guides how to test them (sample size, kill criteria) |
+| `/hormozi-gtm:plan` for a founder running paid | Includes a test budget in the acquisition roadmap |
+| ROAS tightening on campaigns → pivot or refine? | Skill helps diagnose: hook? audience? offer? |
 
-## Quando NÃO entra
+## When it does NOT apply
 
-- Founder antes de primeiros 50 leads pagos (não tem data para testar).
-- Negócio 100% organic / referência (não roda paid).
-- Conversão de site / pricing test → use `pricing-playbook`.
+- Founder before their first 50 paid leads (no data to test).
+- 100% organic / referral business (doesn't run paid).
+- Site conversion / pricing test → use `pricing-playbook`.
 
-## Referência detalhada
+## Detailed reference
 
-`reference/100m-leads-extracts.md` cap. 4 ("Ad Mechanics").
+`reference/100m-leads-extracts.md` ch. 4 ("Ad Mechanics").

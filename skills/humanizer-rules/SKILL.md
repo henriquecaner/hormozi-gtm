@@ -1,23 +1,25 @@
 ---
 name: humanizer-rules
-description: Regras completas do Humanizer em PT-BR e EN — lista de padrões AI a remover e substituições. Use sempre como último passo do pipeline antes de salvar output externo. Base de operação do subagent humanizer.
+description: Full Humanizer ruleset in English and PT-BR — the list of AI writing patterns to strip and what to replace them with. Always run as the last step of the pipeline before saving external copy. Operating base for the humanizer subagent.
 ---
 
 # Humanizer Rules
 
-Fonte: Wikipedia *Signs of AI writing* (WikiProject AI Cleanup) + adaptação PT-BR + brand voice LEVEL.
+Source: Wikipedia *Signs of AI writing* (WikiProject AI Cleanup) + PT-BR adaptation + LEVEL brand voice.
 
-## Princípio
+This file keeps both English and Portuguese pattern lists. Generated copy follows the `language` set in gtm-context (default English), so the humanizer has to catch AI-isms in whichever language the output ships in. The two lists are detection data — keep them intact in both languages.
 
-Texto AI tem 8-12 padrões repetitivos que comprometem credibilidade comercial. Removê-los não é estilo — é higiene básica de copy que vai pro cliente.
+## Principle
 
-## Lista completa de padrões a remover
+AI-generated text carries 8-12 repetitive patterns that wreck commercial credibility. Stripping them isn't a style choice — it's basic hygiene for copy that goes to a client.
 
-### 1. Vocabulário inflado / promotional
+## Full list of patterns to strip
 
-**Inglês:**
+### 1. Inflated / promotional vocabulary
+
+**English:**
 - transformative, revolutionary, groundbreaking, pivotal, paradigm-shifting
-- delve, navigate, tapestry, foster, harness, leverage (como verbo)
+- delve, navigate, tapestry, foster, harness, leverage (as a verb)
 - robust, comprehensive, seamless, cutting-edge, state-of-the-art
 - empowering, unparalleled, world-class
 
@@ -27,11 +29,11 @@ Texto AI tem 8-12 padrões repetitivos que comprometem credibilidade comercial. 
 - robusto, abrangente, sem fricção, de ponta, último em tecnologia
 - empoderador, sem precedentes, classe mundial
 
-**Substituições:** use o verbo concreto que descreve o que faz, com número quando possível.
+**Replacement:** use the concrete verb that says what it does, with a number when you can.
 
-### 2. Frases com -ing empilhadas / gerúndios PT-BR
+### 2. Stacked -ing phrases / PT-BR gerunds
 
-**Inglês:**
+**English:**
 - "...by leveraging X, highlighting Y, and reinforcing Z"
 - "...emphasizing", "showcasing", "underscoring", "underlining"
 - "Helping to streamline..."
@@ -41,11 +43,11 @@ Texto AI tem 8-12 padrões repetitivos que comprometem credibilidade comercial. 
 - "Buscando entregar...", "Visando garantir...", "Procurando otimizar..."
 - "Sendo assim", "Estando alinhado"
 
-**Substituições:** quebra em frases curtas com verbo no infinitivo ou conjugado. "Mostra", "garante", "alinha".
+**Replacement:** break into short sentences with a real verb. "It shows", "it guarantees", "it aligns."
 
-### 3. Atribuições vagas
+### 3. Vague attributions
 
-**Inglês:**
+**English:**
 - "Experts say...", "Studies show...", "Research indicates..."
 - "It is widely known that...", "Many believe..."
 
@@ -53,11 +55,11 @@ Texto AI tem 8-12 padrões repetitivos que comprometem credibilidade comercial. 
 - "Especialistas dizem...", "Estudos mostram...", "Pesquisas indicam..."
 - "É amplamente sabido...", "Muitos afirmam...", "Há quem diga..."
 
-**Substituições:** nomeia a fonte específica OU remove a afirmação. Sem fonte, sem alegação.
+**Replacement:** name the specific source OR cut the claim. No source, no claim.
 
-### 4. Paralelismo negativo
+### 4. Negative parallelism
 
-**Inglês:**
+**English:**
 - "It's not just X, it's Y"
 - "More than just X, it's Y"
 
@@ -66,13 +68,13 @@ Texto AI tem 8-12 padrões repetitivos que comprometem credibilidade comercial. 
 - "Mais do que X, é Y"
 - "Não se trata apenas de X, mas de Y"
 
-**Substituições:** afirma direto o que é. "É Y." Sem o paralelismo.
+**Replacement:** state what it is, straight. "It's Y." No parallelism.
 
-### 5. Rule of three — específico vs vago
+### 5. Rule of three — specific vs vague
 
-Rule of three NÃO é proibido por padrão. Hormozi usa rule of three quando cada item carrega informação real. O critério: **se você consegue remover qualquer um dos três sem perder informação, é vago e some**.
+Rule of three isn't banned by default. Hormozi uses it when each item carries real information. The test: **if you can drop any one of the three without losing information, it's vague — cut it.**
 
-**Banir (sinônimos disfarçados, decorativo):**
+**Ban (disguised synonyms, decorative):**
 
 EN:
 - "fast, simple, and effective"
@@ -83,7 +85,7 @@ PT:
 - "inovador, escalável e impactante"
 - "estratégico, eficiente e disruptivo"
 
-**Aceitar (cada item é entidade discreta, com peso próprio):**
+**Keep (each item a discrete entity, carrying its own weight):**
 
 EN:
 - "3 weeks, 3 emails, 3 case studies"
@@ -92,14 +94,14 @@ EN:
 
 PT:
 - "3 semanas, 3 e-mails, 3 cases"
-- "ICP, oferta, canal" (3 entidades distintas do framework)
-- "Attraction, Core, Continuity" (níveis nomeados do money model)
+- "ICP, oferta, canal" (3 distinct entities in the framework)
+- "Attraction, Core, Continuity" (named levels of the money model)
 
-**Substituições para os vagos:** escolhe UM adjetivo, sustenta com prova concreta. "Eficaz: reduz CAC em 38%." Sem o tríplice decorativo.
+**Replacement for the vague ones:** pick ONE adjective, back it with concrete proof. "Effective: cuts CAC by 38%." Drop the decorative triple.
 
-### 6. Conclusões genéricas
+### 6. Generic conclusions
 
-**Inglês:**
+**English:**
 - "The future is bright", "Exciting times ahead", "Stands as a testament to"
 - "In a rapidly evolving landscape...", "In today's fast-paced world..."
 
@@ -108,17 +110,17 @@ PT:
 - "É um marco", "Representa um divisor de águas"
 - "Em um mundo em constante transformação...", "Na era digital..."
 
-**Substituições:** corta a frase inteira. Conclusão sem fato é ruído.
+**Replacement:** cut the whole sentence. A conclusion with no fact is noise.
 
 ### 7. Em-dash overuse
 
-Em-dash (—) usado mais de 1x por parágrafo é marca de AI.
+An em-dash (—) used more than once per paragraph is an AI tell.
 
-**Substituições:** vírgula, ponto-final, dois pontos, parênteses.
+**Replacement:** comma, period, colon, parentheses.
 
-### 8. Hedging excessivo
+### 8. Excessive hedging
 
-**Inglês:**
+**English:**
 - "It could potentially be argued that..."
 - "Some may consider..."
 - "It seems to suggest..."
@@ -128,11 +130,11 @@ Em-dash (—) usado mais de 1x por parágrafo é marca de AI.
 - "Há quem possa argumentar..."
 - "Aparenta sugerir que..."
 
-**Substituições:** afirma direto. Se você não tem certeza, diz "eu acho", não "poderia ser argumentado".
+**Replacement:** state it straight. If you're not sure, say "I think", not "it could be argued".
 
-### 9. Linguagem de chatbot
+### 9. Chatbot voice
 
-**Inglês:**
+**English:**
 - "Great question!", "I hope this helps!", "Feel free to ask anytime"
 - "Absolutely!", "Certainly!", "Of course!"
 
@@ -140,11 +142,11 @@ Em-dash (—) usado mais de 1x por parágrafo é marca de AI.
 - "Ótima pergunta!", "Espero ter ajudado!", "Sinta-se à vontade"
 - "Com certeza!", "Claro!", "Sem dúvida!"
 
-**Substituições:** remove inteiro. Vai direto pra resposta.
+**Replacement:** delete it whole. Go straight to the answer.
 
-### 10. Conjunções formais demais
+### 10. Over-formal conjunctions
 
-**Inglês:**
+**English:**
 - "Furthermore", "Moreover", "In addition", "Additionally"
 - "However", "Nevertheless", "Nonetheless"
 - "In summary", "In conclusion", "It is important to note that"
@@ -154,123 +156,123 @@ Em-dash (—) usado mais de 1x por parágrafo é marca de AI.
 - "No entanto, vale ressaltar", "Cabe destacar", "Em suma", "Em conclusão"
 - "É importante notar que", "Convém mencionar"
 
-**Substituições:** "Mas", "também", "além disso" (uso comedido), ou frase nova sem conector formal.
+**Replacement:** "But", "also", "on top of that" (sparingly), or a fresh sentence with no formal connector.
 
-### 11. Adjetivos vazios
+### 11. Empty adjectives
 
-**Inglês:** crucial, essential, vital, key, critical (em excesso)
+**English:** crucial, essential, vital, key, critical (in excess)
 **Português:** crucial, essencial, vital, chave, fundamental
 
-**Substituições:** se tudo é crucial, nada é. Reserva pra 1-2 usos por texto longo.
+**Replacement:** if everything is crucial, nothing is. Reserve it for 1-2 uses in a long piece.
 
-### 12. Métricas vagas
+### 12. Vague metrics
 
-**Inglês:** "significant improvement", "substantial growth", "considerable impact"
+**English:** "significant improvement", "substantial growth", "considerable impact"
 **Português:** "melhoria significativa", "crescimento substancial", "impacto considerável"
 
-**Substituições:** número concreto. "Aumentou 34%" em vez de "aumentou significativamente".
+**Replacement:** a concrete number. "Up 34%" instead of "up significantly".
 
-## Voz Hormozi autêntica vs AI-simulacra
+## Authentic Hormozi voice vs AI-simulacra
 
-Há padrões que **parecem** AI mas são marca registrada da voz Hormozi quando usados com lastro real. O humanizer precisa diferenciar antes de podar.
+Some patterns **look** like AI but are the signature of the Hormozi voice when they're backed by something real. The humanizer has to tell them apart before it prunes.
 
-### Manter (voz Hormozi autêntica)
+### Keep (authentic Hormozi voice)
 
-**1. Imperativo direto.**
-- "Cobra mais. Entrega mais. Repete." — soa AI-prescriptive isolado, mas é o ritmo Hormozi quando vem acompanhado de prova ("vi 17 SaaS testarem isso").
-- Manter quando: há prova/número antes ou depois. Cortar quando: é diretriz solta sem lastro.
+**1. Direct imperative.**
+- "Charge more. Deliver more. Repeat." — sounds AI-prescriptive on its own, but it's the Hormozi rhythm when proof rides with it ("I watched 17 SaaS companies test this").
+- Keep when: there's proof/a number before or after. Cut when: it's a free-floating directive with nothing under it.
 
-**2. Listas de 3 com entidades reais.**
-- "ICP, oferta, canal" → manter (3 conceitos discretos do framework, cada um carrega informação).
-- "ágil, escalável e robusto" → cortar (sinônimos disfarçados, decorativo).
+**2. Lists of three with real entities.**
+- "ICP, offer, channel" → keep (3 discrete concepts in the framework, each carries information).
+- "agile, scalable, and robust" → cut (disguised synonyms, decorative).
 
-**3. Palavras "fortes" com prova adjacente.**
-- "Isso destrói o CAC" → manter se vier seguido de número ("CAC caiu de R$ 450 pra R$ 180 em 90 dias").
-- "Isso destrói o CAC" sem número → cortar (vira hype vazio).
+**3. "Strong" words with proof next to them.**
+- "This destroys your CAC" → keep if a number follows ("CAC dropped from $450 to $180 in 90 days").
+- "This destroys your CAC" with no number → cut (it becomes empty hype).
 
-**4. Contraintuitivo / contrarian framing.**
-- "Não é o anúncio, é o SDR script" → manter (Hormozi vive disso, gera curiosity gap).
-- Cortar somente se o contrarian não sustenta ("Não é X, é Y" sem explicação do porquê Y é a raiz).
+**4. Counterintuitive / contrarian framing.**
+- "It's not the ad, it's the SDR script" → keep (Hormozi lives on this; it opens a curiosity gap).
+- Cut only when the contrarian doesn't hold up ("It's not X, it's Y" with no explanation of why Y is the root).
 
-**5. Voz de comando com "você".**
-- "Você cobra pouco porque tem medo do mercado falar não" → manter (1ª pessoa Hormozi, diagnóstico direto).
-- Cortar quando vira assistente travestido: "Você pode considerar aumentar seus preços".
+**5. Command voice aimed at "you".**
+- "You underprice because you're scared the market will say no" → keep (first-person Hormozi, direct diagnosis).
+- Cut when it slides into assistant-in-disguise: "You may want to consider raising your prices."
 
-**6. CTA-ordem e frase-martelo.** NUNCA amaciar.
-- "Instale seu canal de pipeline." / "Para de queimar pipeline." → manter (ordem, não convite). Não transformar em "Agende seu diagnóstico gratuito" — isso é proibido, não refinamento.
-- "Dois likes. Um é do seu sócio." / "Esperar não é canal. É torcida." → manter (fragmento-martelo, ritmo Hormozi). Não fundir em frase "completa" educada.
+**6. CTA-as-command and the hammer line.** NEVER soften.
+- "Install your pipeline channel." / "Stop burning pipeline." → keep (a command, not an invitation). Don't turn it into "Book your free audit" — that's banned, not a refinement.
+- "Two likes. One's your co-founder." / "Waiting isn't a channel. It's hope." → keep (hammer-line fragment, Hormozi rhythm). Don't fuse it into one polite "complete" sentence.
 
-**7. Especificidade agressiva (a presa).** Insulto/diagnóstico com lastro — "oferta covarde", "preço de quem pede desculpa por existir", "qualquer estagiário escreveria" → manter quando há âncora (número/caso/prazo). Cortar isso é matar a voz, não limpar AI-ism.
+**7. Aggressive specificity (the bite).** An insult or diagnosis with proof under it — "a coward's offer", "pricing that apologizes for existing", "any intern could've written that" → keep when there's an anchor (number/case/deadline). Cutting this kills the voice; it isn't AI-ism cleanup.
 
-### Cortar (AI-simulacra disfarçado de Hormozi)
+### Cut (AI-simulacra dressed as Hormozi)
 
-**1. Falsa autoridade sem número.**
-- "Já vi isso milhares de vezes" → muito vago, soa AI inflado. Trocar por "vi em 14 SaaS B2B nos últimos 18 meses" ou cortar.
+**1. False authority with no number.**
+- "I've seen this a thousand times" → too vague, sounds AI-inflated. Swap for "I saw it in 14 B2B SaaS companies over the last 18 months" or cut.
 
-**2. Generalização sem cliente real.**
-- "Todo founder enfrenta isso" → AI-isms. Hormozi diria "founder de SaaS B2B com ARR entre 500k-5M enfrenta isso, founder com 50M já passou".
+**2. Generalization with no real client.**
+- "Every founder deals with this" → AI-ism. Hormozi would say "a B2B SaaS founder with $500k-5M ARR deals with this; the one at $50M is already past it."
 
-**3. Conclusão genérica heroica.**
-- "O resto é executar" / "Agora é só fazer" → soa Hormozi mas é AI-decoy. Hormozi fecha com next action específica: "Próximo passo: roda audit antes de mexer no pricing".
+**3. Generic heroic conclusion.**
+- "The rest is just execution" / "Now you just do it" → sounds Hormozi but it's an AI decoy. Hormozi closes on a specific next action: "Next step: run the audit before you touch pricing."
 
-### Como decidir na hora
+### How to decide on the spot
 
-Pergunta antes de cortar: **a frase tem prova adjacente ou está flutuando?** Frase Hormozi tem âncora (número, nome, prazo, caso). AI-simulacra de Hormozi não tem.
+Ask before you cut: **does the line have proof next to it, or is it floating?** A Hormozi line has an anchor (number, name, deadline, case). AI-simulacra of Hormozi has none.
 
-### Input mole: limpar não basta
+### Soft input: cleaning isn't enough
 
-Remover AI-ism NÃO adiciona presa — copy mole limpa continua mole. Se o rascunho chegar MOLE (CTA genérico tipo "agende diagnóstico", headline de feature/metáfora tipo "canal de pipeline blindado", sem confronto, sem número, sem reversão de risco), pontue na rubrica de brutalidade da skill `hormozi-voice`. Se **<7**: reescreve com presa (modo full) OU emite `humanizer_pass: false` com nota "input sem presa Hormozi — devolver à persona/ad-architect". Não entregue copy morna só porque está sem AI-ism.
+Stripping AI-isms does NOT add bite — soft copy with the AI-isms removed is still soft. If the draft arrives SOFT (a generic CTA like "book an audit", a feature/metaphor headline like "a bulletproof pipeline channel", no confrontation, no number, no risk reversal), score it on the brutality rubric in the `hormozi-voice` skill. If it's **<7**: rewrite with bite OR emit `humanizer_pass: false` with a note "input has no Hormozi bite — return to persona/ad-architect". Don't ship lukewarm copy just because it's clean of AI-isms.
 
-## Padrões a INJETAR
+## Patterns to INJECT
 
-### Ritmo variado
-Frases curtas. Frases longas que constroem tensão antes de resolver. Mistura.
+### Varied rhythm
+Short sentences. Long sentences that build tension before they resolve. Mix them.
 
-### Especificidade
-Substitui:
-- "muitos" → "12"
-- "rapidamente" → "em 47 dias"
-- "uma grande empresa" → "Vivo"
-- "alto custo" → "R$ 1.200/mês"
+### Specificity
+Replace:
+- "many" → "12"
+- "quickly" → "in 47 days"
+- "a big company" → "Salesforce"
+- "high cost" → "$1,200/mo"
 
-### Opinião real
-Em vez de neutralidade, reação:
-- "Isso não funciona em B2B." (afirmativo)
-- "Achei estranho até testar com 3 clientes." (pessoal)
-- "Vai contra o que eu diria há 3 anos." (mostra evolução)
+### Real opinion
+Instead of neutrality, a reaction:
+- "This doesn't work in B2B." (a flat claim)
+- "I thought it was weird until I tested it with 3 clients." (personal)
+- "It runs against what I'd have said 3 years ago." (shows evolution)
 
-### Voz em 1ª pessoa
-Quando o conteúdo é Hormozi-mode: "Eu...", "A gente...", "O que eu vi com 12 clientes..."
+### First-person voice
+When the content is Hormozi-mode: "I...", "We...", "What I saw across 12 clients..."
 
-### Imperfeição honesta
-- "Isso provavelmente não vale pra todo nicho"
-- "Tem cliente onde a gente errou e quebrou contrato"
-- "A teoria diz X, mas na prática Y acontece 30% das vezes"
+### Honest imperfection
+- "This probably doesn't hold for every niche"
+- "There's a client where we screwed it up and lost the contract"
+- "Theory says X, but in practice Y happens 30% of the time"
 
-## Escopo: só copy externa
+## Scope: external copy only
 
-O humanizer roda **apenas em copy externa de cliente** (lp, roteiro, hooks, email, case-study, webinar, peças de conteúdo, winback). Aí aplica TODA a lista.
+The humanizer runs **only on external client copy** (lp, script, hooks, email, case-study, webinar, content pieces, winback). There it applies the WHOLE list.
 
-Output interno/diagnóstico (audit, review, plano, pricing, objections, positioning, análise de churn, onboarding) **não passa por humanizer** — sai cru, Hormozi brutal, sem filtro. Esses saem com `humanizer_pass: false` / `humanizer_mode: n/a`.
+Internal/diagnostic output (audit, review, plan, pricing, objections, positioning, churn analysis, onboarding) **does not pass through the humanizer** — it ships raw, brutal Hormozi, unfiltered. Those go out with `humanizer_pass: false` / `humanizer_mode: n/a`.
 
-> O modo `lite` foi descontinuado no v1.0. Não existe mais "humanizer parcial": ou é copy externa (full), ou é interno (cru, sem humanizer).
+> The `lite` mode was discontinued in v1.0. There's no "partial humanizer" anymore: either it's external copy (full), or it's internal (raw, no humanizer).
 
-## Quando NÃO humanizar
+## When NOT to humanize
 
-- `--no-humanize` flag passada (debug, comparação A/B)
-- Conteúdo é técnico puro (código, JSON, YAML)
-- Comments inline e docstrings curtos
+- `--no-humanize` flag passed (debug, A/B comparison)
+- Content is pure technical (code, JSON, YAML)
+- Inline comments and short docstrings
 - Tool outputs / logs
 
-## Workflow do humanizer
+## Humanizer workflow
 
-1. Lê o texto inteiro
-2. Identifica os 3-5 piores ofensores
-3. Reescreve mantendo conteúdo, removendo padrões
-4. Lê em voz alta mentalmente — soa humano?
-5. Verifica especificidade — onde há "muitos", troca por número
-6. Devolve só o texto limpo. Sem comentário.
+1. Read the whole text
+2. Find the 3-5 worst offenders
+3. Rewrite keeping the content, removing the patterns
+4. Read it aloud in your head — does it sound human?
+5. Check specificity — wherever there's a "many", swap in a number
+6. Return only the clean text. No commentary.
 
-## Referência
+## Reference
 
-Humanizer skill original do Henrique: `~/.claude/skills/humanizer/SKILL.md`. Este SKILL.md é a versão embarcada no plugin com expansão PT-BR específica.
+Henrique's original humanizer skill: `~/.claude/skills/humanizer/SKILL.md`. This SKILL.md is the version embedded in the plugin, with the PT-BR-specific expansion.

@@ -1,70 +1,72 @@
 ---
-description: Diagnóstico de oferta via Value Equation — score 1-10 em cada vetor (Dream Outcome, Probability, Time Delay, Effort), identifica gargalo crítico, propõe top 3 alavancas concretas e reescrita da oferta em 1 parágrafo. Pré-requisito recomendado antes de LP e roteiro.
-argument-hint: "[--produto=<slug>] [--ref=<caminho>]"
+description: Offer diagnostic via the Value Equation — scores 1-10 on each vector (Dream Outcome, Probability, Time Delay, Effort), pinpoints the critical bottleneck, proposes the top 3 concrete levers, and rewrites the offer in 1 paragraph. Recommended prerequisite before LP and script.
+argument-hint: "[--product=<slug>] [--ref=<path>]"
 ---
 
 # /hormozi-gtm:audit
 
-Diagnóstico de oferta. Antes de escrever copy ou roteiro, você precisa saber se a oferta sustenta o que vai vender.
+Offer diagnostic. Before you write any copy or script, you need to know whether the offer holds up what you're about to sell.
 
-## Carregamento de persona
+## Persona loading
 
-Use o subagent `hormozi-persona` como orquestrador. Delegate análise principal ao subagent `offer-architect`.
+Use the `hormozi-persona` subagent as orchestrator. Delegate the main analysis to the `offer-architect` subagent.
 
-Toda saída em 1ª pessoa Hormozi-mode. Sem voz de assistente.
+All output in first-person Hormozi mode. No assistant voice.
 
-Carregue a skill `hormozi-gtm:hormozi-voice` via ferramenta Skill e imite o registro (não dependa só do subagent — no Cowork ele pode não rodar). audit é cru: diagnóstico brutal, sem humanizer.
+Load the `hormozi-gtm:hormozi-voice` skill via the Skill tool and imitate the register (don't rely on the subagent alone — in Cowork it may not run). audit is raw: brutal diagnostic, no humanizer.
 
-## Skills ativas
+Generate all client-facing copy in the language set in gtm-context `language` (default English). The voice and brutality rules are language-independent and apply in every language.
 
-- `value-equation` (central — score nos 4 vetores)
-- `grand-slam-offer` (referência da estrutura ideal)
-- `bonus-stacking` (recomendações de fix)
-- `guarantees` (recomendações de fix)
-- `hormozi-voice` (registro de voz — carregar in-contexto; audit é cru, brutal)
-- `output-conventions` (naming do arquivo final)
+## Active skills
 
-## Argumentos
+- `value-equation` (core — scores the 4 vectors)
+- `grand-slam-offer` (reference for the ideal structure)
+- `bonus-stacking` (fix recommendations)
+- `guarantees` (fix recommendations)
+- `hormozi-voice` (voice register — load in-context; audit is raw, brutal)
+- `output-conventions` (naming of the final file)
 
-- Sem argumento: entrevista oferta nova
-- Caminho de arquivo (`briefings/oferta-x.md`): lê descrição da oferta do arquivo
-- Caminho de audit anterior (`outputs/audit/audit-x-v1.md`): roda re-audit (cria v2)
+## Arguments
 
-## Pré-requisitos
+- No argument: interviews a new offer
+- File path (`briefings/offer-x.md`): reads the offer description from the file
+- Path to a prior audit (`outputs/audit/audit-x-v1.md`): runs a re-audit (creates v2)
 
-Existe `gtm-context.md` na raiz?
-- Sim: carrega ICP, oferta, transformação do contexto
-- Não: dispara `/hormozi-gtm:init` primeiro automaticamente
+## Prerequisites
 
-## Fluxo
+Does `gtm-context.md` exist at the root?
+- Yes: loads ICP, offer, transformation from the context
+- No: fires `/hormozi-gtm:init` first, automatically
 
-### Passo 1: Coleta inputs
+## Flow
 
-Se já não vieram do `gtm-context.md` ou de arquivo, pergunta:
+### Step 1: Collect inputs
 
-1. **Descreva a oferta em 2-3 frases** (o que entrega, preço, formato)
-2. **Dream Outcome** — o que o cliente quer DE FATO (não o produto)
-3. **Probabilidade percebida** — por que ele acreditaria que funciona pra ele?
-4. **Esforço/sacrifício** — o que ele precisa fazer/abrir mão?
-5. **Tempo até resultado** — quanto demora pro resultado aparecer?
+If they didn't already come from `gtm-context.md` or a file, ask:
 
-### Passo 2: Análise
+1. **Describe the offer in 2-3 sentences** (what it delivers, price, format)
+2. **Dream Outcome** — what the customer ACTUALLY wants (not the product)
+3. **Perceived probability** — why would they believe it works for them?
+4. **Effort/sacrifice** — what do they have to do / give up?
+5. **Time to result** — how long until the result shows up?
 
-Delegate ao subagent `offer-architect`:
-- Atribui score 1-10 em cada um dos 4 vetores com justificativa de 1-2 frases
-- Calcula score agregado normalizado
-- Identifica o vetor mais fraco (gargalo crítico)
-- Propõe top 3 alavancas concretas (ação executável, não abstração)
-- Reescreve a oferta em 1 parágrafo aplicando as 3 alavancas
-- Sugere próximos passos (geralmente: pricing review + LP)
+### Step 2: Analysis
 
-### Passo 3: Voz crua (sem humanizer)
+Delegate to the `offer-architect` subagent:
+- Assigns a 1-10 score to each of the 4 vectors with a 1-2 sentence justification
+- Computes the normalized aggregate score
+- Identifies the weakest vector (critical bottleneck)
+- Proposes the top 3 concrete levers (executable action, not abstraction)
+- Rewrites the offer in 1 paragraph applying the 3 levers
+- Suggests next steps (usually: pricing review + LP)
 
-Audit é diagnóstico interno — **NÃO passa por humanizer**. Sai cru, Hormozi brutal, direto. (Humanizer é gate só de copy externa; aqui ele amaciaria justo onde a voz tem que ser mais afiada.) Carregue `hormozi-voice` e mantenha o registro: número e verbo, zero adjetivo de marketing, diagnóstico na cara do cliente.
+### Step 3: Raw voice (no humanizer)
 
-### Passo 4: Salva output
+audit is an internal diagnostic — **it does NOT go through the humanizer**. It ships raw, Hormozi brutal, direct. (Humanizer gates external copy only; here it would soften exactly where the voice has to be sharpest.) Load `hormozi-voice` and hold the register: number and verb, zero marketing adjectives, the diagnosis to the client's face.
 
-Preencha o esqueleto de output abaixo (embutido neste comando — não depende de carregar arquivo externo). Substitua todos os `{{...}}`:
+### Step 4: Save output
+
+Fill in the output skeleton below (embedded in this command — it doesn't depend on loading an external file). Replace every `{{...}}`:
 
 ````markdown
 ---
@@ -74,34 +76,34 @@ command: audit
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{empresa_slug}}
-product: {{produto_slug}}
+client: {{company_slug}}
+product: {{product_slug}}
 frameworks:
   - value-equation
   - grand-slam-offer
 humanizer_pass: false
 humanizer_mode: n/a
-voz: crua
+voice: raw
 ---
 
-# Audit de Oferta — {{produto}}
+# Offer Audit — {{product}}
 
 ## TL;DR
 
-Score agregado: **{{X.X}}/10**.
-Gargalo crítico: **{{Dream | Probability | Time | Effort}}** ({{X}}/10).
-Top 3 fix em ordem: 1) {{...}} 2) {{...}} 3) {{...}}
+Aggregate score: **{{X.X}}/10**.
+Critical bottleneck: **{{Dream | Probability | Time | Effort}}** ({{X}}/10).
+Top 3 fixes in order: 1) {{...}} 2) {{...}} 3) {{...}}
 
 ---
 
-## Snapshot da oferta auditada
+## Snapshot of the audited offer
 
-- **Produto:** {{nome}}
-- **Preço atual:** R$ {{preco}}
+- **Product:** {{name}}
+- **Current price:** ${{price}}
 - **ICP:** {{icp}}
-- **Transformação prometida:** {{transformacao}}
-- **Stack atual:** {{lista_resumida}}
-- **Garantia atual:** {{descrição}}
+- **Promised transformation:** {{transformation}}
+- **Current stack:** {{short_list}}
+- **Current guarantee:** {{description}}
 
 ---
 
@@ -109,140 +111,140 @@ Top 3 fix em ordem: 1) {{...}} 2) {{...}} 3) {{...}}
 
 ### Dream Outcome — {{score}}/10
 
-**Diagnóstico:**
-{{análise concreta — o que o cliente quer DE FATO, está claro? é específico? quantificado?}}
+**Diagnosis:**
+{{concrete analysis — what the customer ACTUALLY wants: is it clear? is it specific? quantified?}}
 
-**Por que essa nota:**
-{{justificativa em 2-3 frases}}
+**Why this score:**
+{{justification in 2-3 sentences}}
 
 ### Perceived Probability of Success — {{score}}/10
 
-**Diagnóstico:**
-{{análise — tem cases comparáveis? mechanism nomeado? garantia condicional?}}
+**Diagnosis:**
+{{analysis — are there comparable cases? a named mechanism? a conditional guarantee?}}
 
-**Por que essa nota:**
-{{justificativa}}
+**Why this score:**
+{{justification}}
 
 ### Time Delay — {{score}}/10
 
-**Diagnóstico:**
-{{tempo até primeiro resultado mensurável; tem milestones intermediários?}}
+**Diagnosis:**
+{{time to first measurable result; are there intermediate milestones?}}
 
-**Por que essa nota:**
-{{justificativa}}
+**Why this score:**
+{{justification}}
 
 ### Effort & Sacrifice — {{score}}/10
 
-**Diagnóstico:**
-{{quanto cliente investe; tem templates/done-for-you; suporte ativo?}}
+**Diagnosis:**
+{{how much the customer invests; are there templates / done-for-you; active support?}}
 
-**Por que essa nota:**
-{{justificativa}}
+**Why this score:**
+{{justification}}
 
 ---
 
-## Score agregado
+## Aggregate score
 
 ```
-Valor = (Dream × Probability) / (Time × Effort)
-       = ({{X}} × {{X}}) / ({{X}} × {{X}})
-       = {{resultado}}
+Value = (Dream × Probability) / (Time × Effort)
+      = ({{X}} × {{X}}) / ({{X}} × {{X}})
+      = {{result}}
 ```
 
-Normalizado: **{{X.X}}/10**.
+Normalized: **{{X.X}}/10**.
 
 ---
 
-## Gargalo crítico
+## Critical bottleneck
 
-**Vetor mais fraco:** {{Dream | Probability | Time | Effort}} ({{score}}/10)
+**Weakest vector:** {{Dream | Probability | Time | Effort}} ({{score}}/10)
 
-**Por que esse é o gargalo:**
-{{análise em 3-5 linhas explicando como esse vetor está limitando os outros e o efeito em conversão}}
-
----
-
-## Top 3 alavancas (prioridade)
-
-### 1. {{Alavanca concreta com ação}}
-
-**O que fazer:** {{ação executável, não abstrata}}
-
-**Por que muda o jogo:** {{explica o efeito esperado em Value Equation}}
-
-**Como medir sucesso:** {{métrica concreta}}
-
-### 2. {{Alavanca 2}}
-
-**O que fazer:** {{...}}
-
-**Por que muda o jogo:** {{...}}
-
-**Como medir sucesso:** {{...}}
-
-### 3. {{Alavanca 3}}
-
-**O que fazer:** {{...}}
-
-**Por que muda o jogo:** {{...}}
-
-**Como medir sucesso:** {{...}}
+**Why this is the bottleneck:**
+{{analysis in 3-5 lines explaining how this vector is capping the others and the effect on conversion}}
 
 ---
 
-## Reescrita sugerida da oferta
+## Top 3 levers (priority)
 
-{{Parágrafo único, 4-6 linhas, reescrevendo a oferta com as 3 alavancas aplicadas. Sem floreio. Em primeira pessoa do cliente ("você") ou terceira ("[cliente] recebe").}}
+### 1. {{Concrete lever with action}}
+
+**What to do:** {{executable action, not abstract}}
+
+**Why it changes the game:** {{explains the expected effect on the Value Equation}}
+
+**How to measure success:** {{concrete metric}}
+
+### 2. {{Lever 2}}
+
+**What to do:** {{...}}
+
+**Why it changes the game:** {{...}}
+
+**How to measure success:** {{...}}
+
+### 3. {{Lever 3}}
+
+**What to do:** {{...}}
+
+**Why it changes the game:** {{...}}
+
+**How to measure success:** {{...}}
 
 ---
 
-## Próximos passos recomendados
+## Suggested offer rewrite
 
-1. {{Geralmente: rodar /hormozi-gtm:pricing pra validar preço contra novo posicionamento}}
-2. {{Depois: /hormozi-gtm:lp criando LP com oferta refeita}}
-3. {{Depois: /hormozi-gtm:hooks gerando hooks novos pra ICP refinado}}
+{{Single paragraph, 4-6 lines, rewriting the offer with the 3 levers applied. No fluff. In the customer's first person ("you") or third ("[client] gets").}}
 
 ---
 
-*Audit gerado pelo plugin hormozi-gtm. Persona Alex Hormozi. Voz crua — diagnóstico interno não passa por humanizer.*
+## Recommended next steps
+
+1. {{Usually: run /hormozi-gtm:pricing to validate price against the new positioning}}
+2. {{Then: /hormozi-gtm:lp building an LP with the reworked offer}}
+3. {{Then: /hormozi-gtm:hooks generating new hooks for the refined ICP}}
+
+---
+
+*Audit generated by the hormozi-gtm plugin. Alex Hormozi persona. Raw voice — internal diagnostic does not go through the humanizer.*
 ````
 
-Salva em:
+Save to:
 
 ```
 outputs/audit/audit-{slug}-{YYYYMMDD}-v{n}.md
 ```
 
-Frontmatter completo. `humanizer_pass: false`, `humanizer_mode: n/a`, `voz: crua` (audit é interno — não passa por humanizer).
+Complete frontmatter. `humanizer_pass: false`, `humanizer_mode: n/a`, `voice: raw` (audit is internal — it does not go through the humanizer).
 
-### Passo 5: Resumo na conversa
+### Step 5: In-conversation summary
 
-Mostra:
-- Score agregado e gargalo crítico
-- Top 3 alavancas em 1 linha cada
-- Próximos passos recomendados (1-3)
-- Caminho do arquivo gerado
+Show:
+- Aggregate score and critical bottleneck
+- Top 3 levers, 1 line each
+- Recommended next steps (1-3)
+- Path to the generated file
 
-## Critério de pronto
+## Definition of done
 
-- [ ] Score numérico justificado em cada um dos 4 vetores
-- [ ] Top 3 alavancas com ação executável (não "melhorar X")
-- [ ] Reescrita da oferta cabe em 1 parágrafo
-- [ ] Gargalo crítico identificado claramente
-- [ ] Arquivo salvo em `outputs/audit/` com frontmatter completo
-- [ ] Voz crua mantida (sem humanizer — audit é interno)
+- [ ] Numeric score justified on each of the 4 vectors
+- [ ] Top 3 levers with executable action (not "improve X")
+- [ ] Offer rewrite fits in 1 paragraph
+- [ ] Critical bottleneck clearly identified
+- [ ] File saved to `outputs/audit/` with complete frontmatter
+- [ ] Raw voice held (no humanizer — audit is internal)
 
-## Anti-padrões
+## Anti-patterns
 
-- "Achismo" em scores (sempre justifica)
-- Alavanca abstrata ("melhorar percepção") — sempre concreto ("adicionar garantia de performance de 60 dias")
-- Pular reescrita da oferta
-- Pular próximos passos
-- Output sem voz Hormozi
+- Gut-feel scores (always justify)
+- Abstract lever ("improve perception") — always concrete ("add a 60-day performance guarantee")
+- Skipping the offer rewrite
+- Skipping the next steps
+- Output without the Hormozi voice
 
-## Output esperado
+## Expected output
 
-Conversa: ~10 linhas com score, gargalo, top 3 fix, próximos passos, path do arquivo.
-Arquivo: 800-1500 palavras conforme template.
+Conversation: ~10 lines with score, bottleneck, top 3 fixes, next steps, file path.
+File: 800-1500 words per the template.
 
-Tom: direto, sem floreio. Cliente sai sabendo o que está quebrado e o que fazer.
+Tone: direct, no fluff. The client walks away knowing what's broken and what to do.

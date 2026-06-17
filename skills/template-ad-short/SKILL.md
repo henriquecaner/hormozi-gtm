@@ -1,161 +1,162 @@
 ---
 name: template-ad-short
-description: "Esqueleto interno do output short-form/batch do comando /hormozi-gtm:roteiro. Carregado pelo comando, não para uso direto."
+description: "Internal skeleton for the short-form/batch output of the /hormozi-gtm:script command. Loaded by the command, not for direct use."
 ---
 
-# Template — Short-form / batch (roteiro)
+# Template — Short-form / batch (script)
 
-Esqueleto canônico do output short-form (15-60s, batch de variantes) do comando `/hormozi-gtm:roteiro`. O comando carrega esta skill e preenche o esqueleto abaixo com os inputs do usuário. Reproduza a estrutura exata: frontmatter + todas as variantes + placeholders `{{...}}`.
+Canonical skeleton for the short-form output (15-60s, batch of variants) of the `/hormozi-gtm:script` command. The command loads this skill and fills the skeleton below with the user's inputs. Reproduce the exact structure: frontmatter + every variant + `{{...}}` placeholders.
 
 `````markdown
 ---
 plugin: hormozi-gtm
 plugin_version: {{plugin_version}}
-command: roteiro
-formato: short
+command: script
+format: short
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{empresa_slug}}
-product: {{produto_slug}}
-quantidade_variantes: {{N}}
-plataforma_principal: {{reels | tiktok | shorts}}
+client: {{company_slug}}
+product: {{product_slug}}
+variant_count: {{N}}
+primary_platform: {{reels | tiktok | shorts}}
 frameworks:
   - hook-framework
   - ad-copy-formula
 humanizer_pass: true
 humanizer_mode: full
-audit_ref: {{caminho_ou_null}}
+language: {{language}}
+audit_ref: {{path_or_null}}
 ---
 
-# Roteiro Short-Form (batch) — {{produto}}
+# Short-Form Script (batch) — {{product}}
 
 ## TL;DR
 
-{{N}} variantes geradas, cobrindo {{X}} ângulos (dor/desejo/curiosidade/contrarian/prova).
-Duração por variante: 15-60s (versões curta e longa de cada).
-Top 3 do agent: {{listados ao final}}
+{{N}} variants generated, covering {{X}} angles (pain/desire/curiosity/contrarian/proof).
+Length per variant: 15-60s (a short and a long cut of each).
+Agent's top 3: {{listed at the end}}
 
 ---
 
-## Variantes
+## Variants
 
-### Variante 1 — Ângulo: {{dor | desejo | curiosidade | contrarian | prova}}
+### Variant 1 — Angle: {{pain | desire | curiosity | contrarian | proof}}
 
 **Hook (0-3s):**
-{{frase de impacto — testável isoladamente como tweet}}
+{{impact line — testable on its own as a tweet}}
 
-**Versão 30s:**
+**30s cut:**
 
 ```
 [0-3s] HOOK
-{{visual: enquadramento, ação}}
-"{{fala literal}}"
+{{visual: framing, action}}
+"{{exact line}}"
 
-[3-20s] TENSÃO
+[3-20s] TENSION
 {{visual}}
-"{{fala}}"
+"{{line}}"
 
 [20-25s] PAYOFF
 {{visual}}
-"{{fala}}"
+"{{line}}"
 
 [25-30s] CTA
 {{visual}}
-"{{ação verbal específica}}"
+"{{specific verbal action}}"
 ```
 
-**Versão 60s (expandida):**
+**60s cut (expanded):**
 
 ```
 [0-3s] HOOK
-[3-15s] CONTEXTO
-[15-40s] DESENVOLVIMENTO (mechanism + 1 case curto)
-[40-55s] PAYOFF + OFERTA
+[3-15s] CONTEXT
+[15-40s] DEVELOPMENT (mechanism + 1 short case)
+[40-55s] PAYOFF + OFFER
 [55-60s] CTA
 ```
 
-**Texto on-screen:**
-- {{frase 1}}
-- {{frase 2}}
+**On-screen text:**
+- {{line 1}}
+- {{line 2}}
 - {{CTA}}
 
-**Música/áudio:** {{sugestão}}
+**Music/audio:** {{suggestion}}
 
 ---
 
-### Variante 2 — Ângulo: {{...}}
+### Variant 2 — Angle: {{...}}
 
-{{Repetir estrutura acima}}
+{{Repeat the structure above}}
 
 ---
 
-### Variante 3 — Ângulo: {{...}}
+### Variant 3 — Angle: {{...}}
 
 {{...}}
 
 ---
 
-### Variante 4 — Ângulo: {{...}}
+### Variant 4 — Angle: {{...}}
 
 {{...}}
 
 ---
 
-### Variante 5 — Ângulo: {{...}}
+### Variant 5 — Angle: {{...}}
 
 {{...}}
 
 ---
 
-### Variante 6 — Ângulo: {{...}}
+### Variant 6 — Angle: {{...}}
 
 {{...}}
 
 ---
 
-## 🏆 Top 3 do agent
+## 🏆 Agent's top 3
 
-### 🥇 Variante {{#}} — {{nome curto}}
-**Por que:** {{justificativa específica — ex: "hook tem especificidade numérica + reframe contraintuitivo. Tem maior chance de stop scroll"}}
+### 🥇 Variant {{#}} — {{short name}}
+**Why:** {{specific rationale — e.g. "hook has numeric specificity + a counterintuitive reframe. Best odds of stopping the scroll"}}
 
-### 🥈 Variante {{#}} — {{nome curto}}
-**Por que:** {{justificativa}}
+### 🥈 Variant {{#}} — {{short name}}
+**Why:** {{rationale}}
 
-### 🥉 Variante {{#}} — {{nome curto}}
-**Por que:** {{justificativa}}
-
----
-
-## ✅ Teste de qualidade aplicado
-
-Para cada variante:
-- [x] Funciona muted com legenda? (legendas substituem áudio)
-- [x] Hook lê isoladamente como tweet?
-- [x] CTA tem ação verbal específica (não "saiba mais")?
-- [x] Sem promessa vazia
-- [x] Mechanism nomeado quando aplicável
+### 🥉 Variant {{#}} — {{short name}}
+**Why:** {{rationale}}
 
 ---
 
-## 📊 Sequenciamento sugerido pra teste
+## ✅ Quality test applied
 
-**Dia 1-3:** rodar variantes 1, 2, 3 com mesmo budget
-**Dia 4-7:** rodar variantes 4, 5, 6 com mesmo budget
-**Dia 8:** consolidar resultados. Top 2 escalam, resto mata.
-
-**Métrica primária:** custo por LP visit
-**Métrica secundária:** retention curve nos primeiros 3s
-
----
-
-## 🔄 Próximos passos
-
-1. Filmar primeiro hook das 3 variantes top antes do resto (testa só com hook gravado, se 0% retention já mata)
-2. Variar visual mantendo copy quando 2+ variantes performam similar
-3. Refinar com `/hormozi-gtm:hooks --foco=variante_winner` se quiser mais variantes do ângulo vencedor
+For each variant:
+- [x] Works muted with captions? (captions stand in for audio)
+- [x] Hook reads on its own as a tweet?
+- [x] CTA has a specific verbal action (not "learn more")?
+- [x] No empty promise
+- [x] Mechanism named when it applies
 
 ---
 
-*Batch gerado pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Humanizer (modo full) aplicado.*
+## 📊 Suggested test sequencing
+
+**Day 1-3:** run variants 1, 2, 3 on the same budget
+**Day 4-7:** run variants 4, 5, 6 on the same budget
+**Day 8:** consolidate results. Top 2 scale, the rest die.
+
+**Primary metric:** cost per LP visit
+**Secondary metric:** retention curve in the first 3s
+
+---
+
+## 🔄 Next steps
+
+1. Shoot the first hook of the top 3 variants before the rest (test the recorded hook alone — if retention is 0% it dies right there)
+2. Vary the visual while keeping the copy when 2+ variants perform similarly
+3. Refine with `/hormozi-gtm:hooks --focus=variante_winner` if you want more variants of the winning angle
+
+---
+
+*Batch generated by the hormozi-gtm plugin. Alex Hormozi persona applied. Humanizer (full mode) applied.*
 `````

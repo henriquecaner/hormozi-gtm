@@ -1,117 +1,117 @@
 ---
 name: bonus-stacking
-description: Bonus stacking do $100M Offers — como montar stack de bonuses que multiplica valor percebido sem inflar preço. Use ao construir Grand Slam Offer, LP, ou ao recomendar como reforçar oferta fraca.
+description: Bonus stacking from $100M Offers — how to build a bonus stack that multiplies perceived value without inflating price. Use when building a Grand Slam Offer, an LP, or recommending how to strengthen a weak offer.
 ---
 
 # Bonus Stacking
 
-Fonte: Alex Hormozi, *$100M Offers*, Capítulos 11-13.
+Source: Alex Hormozi, *$100M Offers*, Chapters 11-13.
 
-## Por que stack de bonuses funciona
+## Why a bonus stack works
 
-Cada bonus aumenta valor percebido **sem aumentar preço cobrado**. Cliente compara stack total vs preço — não bonus individual vs preço.
+Each bonus raises perceived value **without raising the price charged**. The customer compares the total stack vs. the price — not an individual bonus vs. the price.
 
-Regra: valor percebido total dos bonuses ≥ 3-5x o preço cobrado.
+Rule: total perceived value of the bonuses ≥ 3-5x the price charged.
 
-## Quantidade: sempre ímpar
+## Quantity: always odd
 
-3, 5 ou 7 bonuses. Razão: ímpar parece curado; par parece arbitrário.
+3, 5, or 7 bonuses. Reason: odd looks curated; even looks arbitrary.
 
-- **3 bonuses:** ticket baixo (R$ 100-1.000)
-- **5 bonuses:** ticket médio (R$ 1.000-10.000)
-- **7 bonuses:** ticket alto (R$ 10.000+)
+- **3 bonuses:** low deal size ($100-1,000)
+- **5 bonuses:** mid deal size ($1,000-10,000)
+- **7 bonuses:** high-ticket ($10,000+)
 
-## Anatomia de um bonus que converte
+## Anatomy of a bonus that converts
 
-Cada bonus tem 5 elementos:
+Each bonus has 5 elements:
 
-1. **Nome próprio** (não "PDF de bônus")
-2. **Valor percebido em R$** (ancorado em mercado, defensável)
-3. **O que entrega** (entregável concreto)
-4. **Por que existe** (qual problema adicional resolve)
-5. **Quando o cliente usa** (no fluxo da transformação)
+1. **A proper name** (not "bonus PDF")
+2. **A perceived value in $** (anchored to the market, defensible)
+3. **What it delivers** (a concrete deliverable)
+4. **Why it exists** (which additional problem it solves)
+5. **When the customer uses it** (where it fits in the transformation)
 
-### Exemplo de bonus mal feito
-> "Bônus: comunidade no Discord"
+### Example of a badly done bonus
+> "Bonus: Discord community"
 
-### Exemplo de bonus bem feito
-> **Bônus #3: Vault de Scripts de Objeção (valor R$ 1.997)**
-> 47 scripts validados pra cada objeção comum em SaaS B2B brasileiro, organizados por categoria (preço, timing, autoridade, urgência). Você usa no momento da call, copia, cola no chat com o lead.
+### Example of a well done bonus
+> **Bonus #3: Objection Script Vault (value $1,997)**
+> 47 validated scripts for every common objection in B2B SaaS, organized by category (price, timing, authority, urgency). You use it during the call — copy, paste into the chat with the lead.
 
-## Ordem do stack (psicologia)
+## Stack order (psychology)
 
-Coloca o bonus mais valioso percebido em **2º ou 3º lugar**, não primeiro.
+Put the highest perceived-value bonus in **2nd or 3rd position**, not first.
 
-Razão: primeiro bonus é lido com atenção máxima mas com ceticismo inicial. Segundo bonus chega quando leitor já está em modo "isso é mais valor que esperava". Quanto melhor o segundo, mais empolgação compõe pro terceiro.
+Reason: the first bonus is read with maximum attention but with initial skepticism. The second bonus lands when the reader is already in "this is more value than I expected" mode. The better the second one, the more excitement compounds into the third.
 
 ## Trim & Stack
 
-Antes de stackar, faz **trim**: remove componentes da oferta principal que pareciam centrais mas pesam mais como bonus.
+Before stacking, do a **trim**: pull out components of the core offer that seemed central but carry more weight as a bonus.
 
-Exemplo:
-- Oferta: "Curso + Comunidade + Mentoria + Templates + Suporte"
-- Trim: "Curso" como core; resto stackado como bonus 1, 2, 3, 4
-- Resultado: oferta core parece mais limpa, bonuses parecem extras enormes
+Example:
+- Offer: "Course + Community + Mentorship + Templates + Support"
+- Trim: "Course" as core; the rest stacked as bonus 1, 2, 3, 4
+- Result: the core offer looks cleaner, the bonuses look like huge extras
 
-## Naming psychology — como nomear bonus
+## Naming psychology — how to name a bonus
 
-Nome do bonus carrega 50-80% da percepção de valor antes do cliente ler o detalhe. Bonus mal nomeado é descartável; bonus bem nomeado vira ancoragem.
+The bonus name carries 50-80% of the perceived value before the customer reads the detail. A badly named bonus is disposable; a well named one becomes an anchor.
 
-**Padrões que **NÃO** usar:**
-- "Extra X" → soa commodity, intercambiável.
-- "Bônus: [coisa genérica]" → sem nome próprio, mente do cliente não fixa.
-- "Material complementar" → administrativo, parece anexo de PDF.
-- "X (gratuito)" → atrai atenção pro fato de ser grátis, sugere baixo valor.
+**Patterns to **NOT** use:**
+- "Extra X" → sounds like a commodity, interchangeable.
+- "Bonus: [generic thing]" → no proper name, the customer's mind doesn't latch on.
+- "Supplementary material" → administrative, reads like a PDF attachment.
+- "X (free)" → draws attention to the fact that it's free, suggests low value.
 
-**Padrões que **funcionam** — estrutura `[Palavra-gatilho] de [Especificidade]`:**
+**Patterns that **work** — structure `[Trigger word] of/for [Specificity]`:**
 
-| Palavra-gatilho | O que implica | Exemplo bom |
+| Trigger word | What it implies | Good example |
 |---|---|---|
-| **Sistema** | Repetível, encapsulado, estruturado | "Sistema de Onboarding de Clientes em 7 Passos" |
-| **Vault** | Curation, exclusividade, acesso restrito | "Vault de Scripts Validados — 47 emails" |
-| **Acelerador** | Tempo economizado, atalho legítimo | "Acelerador de Setup — sai de 3 sem pra 3 dias" |
-| **Toolkit** | Complexidade encapsulada em pacote pronto | "Toolkit Premium de Email Sequences — 23 templates" |
-| **Framework** | Metodologia proprietária, repetível | "Framework de Pricing em 5 Leis" |
-| **Playbook** | Operacional, passo-a-passo executável | "Playbook de Cold Outreach B2B SaaS" |
-| **Blueprint** | Plano completo, do zero ao pronto | "Blueprint de Lançamento de SaaS em 90 dias" |
-| **Masterclass** | Profundidade, expertise concentrada | "Masterclass de Negociação Enterprise (3h)" |
+| **System** | Repeatable, encapsulated, structured | "7-Step Client Onboarding System" |
+| **Vault** | Curation, exclusivity, restricted access | "Vault of Validated Scripts — 47 emails" |
+| **Accelerator** | Time saved, a legitimate shortcut | "Setup Accelerator — go from 3 weeks to 3 days" |
+| **Toolkit** | Complexity encapsulated in a ready-made package | "Premium Email Sequences Toolkit — 23 templates" |
+| **Framework** | Proprietary methodology, repeatable | "The 5-Law Pricing Framework" |
+| **Playbook** | Operational, step-by-step, executable | "B2B SaaS Cold Outreach Playbook" |
+| **Blueprint** | Complete plan, from zero to done | "90-Day SaaS Launch Blueprint" |
+| **Masterclass** | Depth, concentrated expertise | "Enterprise Negotiation Masterclass (3h)" |
 
-**Antes/depois:**
+**Before/after:**
 
-| Bonus fraco | Bonus forte |
+| Weak bonus | Strong bonus |
 |---|---|
-| "Bônus: templates de email" | "Toolkit Premium de Email Sequences — 47 templates validados em 14 contas (R$ 1.997 valor)" |
-| "Suporte por 30 dias" | "Acelerador 30 Dias — acesso direto via WhatsApp, resposta em até 4h úteis (R$ 4.997 valor)" |
-| "Material extra" | "Vault de Scripts Validados — 47 emails frios + 23 follow-ups testados em 6 nichos (R$ 2.997 valor)" |
-| "Curso de presentes" | "Masterclass de Pricing — gravação de 3h com 7 estudos de caso reais (R$ 1.497 valor)" |
+| "Bonus: email templates" | "Premium Email Sequences Toolkit — 47 templates validated across 14 accounts ($1,997 value)" |
+| "30 days of support" | "30-Day Accelerator — direct access via chat, response within 4 business hours ($4,997 value)" |
+| "Extra material" | "Vault of Validated Scripts — 47 cold emails + 23 follow-ups tested across 6 niches ($2,997 value)" |
+| "Gift course" | "Pricing Masterclass — 3h recording with 7 real case studies ($1,497 value)" |
 
-**Regra:** se você pode trocar o nome do seu bonus pelo nome do bonus de um concorrente sem perder coerência, o nome está fraco.
+**Rule:** if you can swap your bonus name for a competitor's bonus name without losing coherence, the name is weak.
 
-## Anti-padrões
+## Anti-patterns
 
-- Bonus que parece custar nada (PDF de 2 páginas sem nome próprio)
-- Valor percebido inflado sem ancoragem ("valor R$ 5.000" sem justificar)
-- Mais de 7 bonuses (vira ruído, cliente para de ler)
-- Bonus que é parte essencial do core (não é bonus, é fragmentação)
-- Bonus genérico ("acesso à comunidade") sem mecanismo de uso
+- A bonus that looks like it costs nothing (a 2-page PDF with no proper name)
+- Perceived value inflated with no anchor ("$5,000 value" with no justification)
+- More than 7 bonuses (turns into noise, the customer stops reading)
+- A bonus that's an essential part of the core (it's not a bonus, it's fragmentation)
+- A generic bonus ("community access") with no use mechanism
 
 ## Workflow
 
-1. Lista todos os componentes que cliente recebe na oferta
-2. Identifica o core (1 entregável central que justifica preço sozinho)
-3. Trima 3-7 componentes para virar bonuses
-4. Para cada bonus: nome próprio + valor R$ + entregável + problema resolvido + momento de uso
-5. Calcula valor stack total: alvo 3-5x preço
-6. Ordena bonus #2 ou #3 como o mais valioso percebido
+1. List every component the customer receives in the offer
+2. Identify the core (1 central deliverable that justifies the price on its own)
+3. Trim 3-7 components into bonuses
+4. For each bonus: proper name + $ value + deliverable + problem solved + moment of use
+5. Calculate total stack value: target 3-5x the price
+6. Order bonus #2 or #3 as the highest perceived value
 
-## Aplicação por caso de uso
+## Application by use case
 
-| Caso | Uso |
+| Case | Use |
 |---|---|
-| LP de vendas | Seção dedicada de bonuses com cards visíveis, valor R$ por bonus, total destacado |
-| Roteiro de ad | Stack revelado nos últimos 30s antes do CTA; recap de valor total |
-| Business plan | Bonus structure da core offer documentada como parte do design da oferta |
+| Sales LP | Dedicated bonus section with visible cards, $ value per bonus, total highlighted |
+| Ad script | Stack revealed in the last 30s before the CTA; recap of total value |
+| Business plan | Core-offer bonus structure documented as part of the offer design |
 
-## Referência detalhada
+## Detailed reference
 
-Veja `reference/100m-offers-extracts.md` (seção Bonus Stacking).
+See `reference/100m-offers-extracts.md` (Bonus Stacking section).

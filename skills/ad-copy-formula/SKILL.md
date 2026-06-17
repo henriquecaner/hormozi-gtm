@@ -1,159 +1,159 @@
 ---
 name: ad-copy-formula
-description: Formula de ad copy do $100M Leads — estrutura de copy para warm, cold e paid ads com variações por canal. Use ao escrever copy de ad em texto (Facebook, Google, LinkedIn, email), legenda de short-form, anúncios de leads.
+description: Ad copy formula from $100M Leads — copy structure for warm, cold, and paid ads with per-channel variations. Use when writing text ad copy (Facebook, Google, LinkedIn, email), short-form captions, or lead ads.
 ---
 
 # Ad Copy Formula
 
-Fonte: Alex Hormozi, *$100M Leads*, Capítulo 4 (Ad Mechanics).
+Source: Alex Hormozi, *$100M Leads*, Chapter 4 (Ad Mechanics).
 
-## Estrutura base
+## Base structure
 
 ```
 [Attention] → [Problem/Outcome] → [Mechanism] → [Social Proof] → [CTA + Reason to act now]
 ```
 
-Mesma estrutura serve aos 3 contextos (warm / cold / paid), com calibragem diferente.
+The same structure serves all 3 contexts (warm / cold / paid), with different calibration.
 
-## Variação 1: Warm (1:1, audience te conhece)
+## Variation 1: Warm (1:1, audience knows you)
 
-**Características:**
-- Story-driven OK (audience te dá benefit of the doubt)
-- Pode pular Mechanism explícito (já confia em você)
-- Social proof opcional (já é a prova)
-- Tom direto, pessoal
+**Characteristics:**
+- Story-driven is fine (the audience gives you the benefit of the doubt)
+- Can skip explicit Mechanism (they already trust you)
+- Social proof optional (you're already the proof)
+- Direct, personal tone
 
-**Estrutura warm:**
+**Warm structure:**
 ```
-1 frase com problema/outcome específico
-+ Story ou contexto (1-2 frases)
-+ Oferta + CTA direto
-```
-
-**Exemplo (DM/email warm):**
-> "Lembra do problema que você comentou sobre fechar deal de R$ 50k+ via SDR?
-> Acabei de gravar um workshop de 12min mostrando o sistema que funcionou pros últimos 12 clientes meus.
-> Quer ver? Te mando o link."
-
-## Variação 2: Cold (1:1, audience não te conhece)
-
-**Características:**
-- Curto (3-5 linhas máximo)
-- Specifica ICP imediato
-- Problem-first (não story)
-- Mechanism nomeado pra estabelecer autoridade
-- CTA baixa fricção (não pede compra direta)
-
-**Estrutura cold:**
-```
-ICP-specific opener (1 linha)
-+ Problema concreto (1 linha)
-+ Mechanism / solução (1 linha)
-+ CTA de baixa fricção (1 linha)
+1 line with a specific problem/outcome
++ Story or context (1-2 lines)
++ Offer + direct CTA
 ```
 
-**Exemplo (cold email):**
-> "Vi que você é Head of Sales na [empresa]. SaaS B2B na faixa de 100-500k MRR geralmente perde 40% das oportunidades em objeção de preço.
-> A gente desenvolveu um sistema de reframe (Sistema R.A.M.P.) que reverteu isso em 12 empresas no último ano.
-> Posso te mandar o playbook em PDF? São 8 páginas, leva 15min pra ler."
+**Example (warm DM/email):**
+> "Remember the problem you mentioned about closing $50k+ deals through your SDRs?
+> I just recorded a 12-minute workshop showing the system that worked for my last 12 clients.
+> Want it? I'll send the link."
 
-## Variação 3: Paid (1:many, feed)
+## Variation 2: Cold (1:1, audience doesn't know you)
 
-**Características:**
-- Hook visual (image/video) + headline + sub-headline + CTA
-- Headline pode ser testada isoladamente
-- Copy curto (Facebook/IG) ou estruturado (LinkedIn ads)
-- CTA pra LP (não pede compra no ad)
+**Characteristics:**
+- Short (3-5 lines max)
+- Names the ICP immediately
+- Problem-first (not story)
+- Mechanism named to establish authority
+- Low-friction CTA (doesn't ask for the sale directly)
 
-**Estrutura paid:**
+**Cold structure:**
 ```
-HEADLINE (5-12 palavras, dream outcome ou problem hook)
-SUB-HEADLINE (1-2 frases com especificidade)
-CTA (3-5 palavras, ação verbal)
+ICP-specific opener (1 line)
++ Concrete problem (1 line)
++ Mechanism / solution (1 line)
++ Low-friction CTA (1 line)
 ```
 
-**Exemplo (Facebook/IG):**
-> **Headline:** "Closer de SaaS fechando R$ 50k+ sem cold email"
-> **Sub-headline:** "Sistema R.A.M.P. em 8 passos — usado por 12 closers que saíram de R$ 8k pra R$ 23k MRR em 47 dias"
-> **CTA:** "Ver workshop gratuito"
+**Example (cold email):**
+> "Saw you're Head of Sales at [company]. B2B SaaS in the 100-500k MRR range usually loses 40% of opportunities to price objection.
+> We built a reframe system (the R.A.M.P. System) that flipped that in 12 companies last year.
+> Can I send you the playbook PDF? It's 8 pages, 15 minutes to read."
+
+## Variation 3: Paid (1:many, feed)
+
+**Characteristics:**
+- Visual hook (image/video) + headline + sub-headline + CTA
+- Headline can be tested in isolation
+- Short copy (Facebook/IG) or structured (LinkedIn ads)
+- CTA points to the LP (doesn't ask for the sale in the ad)
+
+**Paid structure:**
+```
+HEADLINE (5-12 words, dream outcome or problem hook)
+SUB-HEADLINE (1-2 sentences with specificity)
+CTA (3-5 words, action verb)
+```
+
+**Example (Facebook/IG):**
+> **Headline:** "SaaS closers landing $50k+ deals without cold email"
+> **Sub-headline:** "The R.A.M.P. System in 8 steps — used by 12 closers who went from $8k to $23k MRR in 47 days"
+> **CTA:** "Watch the free workshop"
 
 ## A/B testing
 
-Para cada variação, gera 5-10 versões mudando 1 elemento:
-- Versões 1-3: muda só headline
-- Versões 4-6: muda só hook (image/video)
-- Versões 7-9: muda só CTA
+For each variation, generate 5-10 versions changing 1 element:
+- Versions 1-3: change headline only
+- Versions 4-6: change hook only (image/video)
+- Versions 7-9: change CTA only
 
-Roda paralelo, mede:
+Run in parallel, measure:
 - **CPC** (cost per click)
 - **CTR** (click-through rate)
-- **CVR** (conversion rate na LP destino)
+- **CVR** (conversion rate on the destination LP)
 
-Mata variações com CPC > 2x mediana.
+Kill any variation with CPC > 2x the median.
 
-## Anti-padrões
+## Anti-patterns
 
-- Copy genérico ("descubra o segredo")
-- Hook sem especificidade
-- CTA "saiba mais" (sem ação verbal)
-- Promessa vazia sem mechanism
-- Tudo em caps lock
-- Emoji em excesso (>1 por linha)
+- Generic copy ("discover the secret")
+- Hook with no specificity
+- "Learn more" CTA (no action verb)
+- Empty promise with no mechanism
+- All caps
+- Too many emoji (>1 per line)
 
-## Variações regionais (PT-BR)
+## Localizing the voice per market
 
-Voz brasileira tolera **menos superlativo** que copy americana. "Revolucionário", "transformador", "alavancar", "destacando-se" são sinais de tradução literal de copy EN e queimam credibilidade no Brasil mais rápido que nos EUA.
+Superlative tolerance varies by market. In some markets, copy translated literally from US English — "transformative", "leverage", "standing out", "revolutionary" — burns credibility faster than it does in the US, because it reads as a translated ad, not a native one. When the target market isn't US English, calibrate the superlative load down and lean harder on verifiable facts.
 
-**Substituições por mercado:**
+The substitution principle is universal: trade the adjective any competitor could also claim for a fact only you can prove.
 
-| Padrão EN | Tradução literal (ruim) | Adaptação BR (boa) |
-|---|---|---|
-| "transformative results" | "resultados transformadores" | "resultados em 90 dias" / "saiu de R$ X pra R$ Y" |
-| "leverage our expertise" | "alavancar nossa expertise" | "usar o que aprendemos com 14 contas" |
-| "robust solution" | "solução robusta" | "funciona em SaaS B2B com ciclo > 45 dias" |
-| "industry-leading platform" | "plataforma líder do setor" | "uso 3 anos, valido em 6 nichos" |
-| "seamless integration" | "integração transparente" | "instala em 1 hora sem mexer no código" |
+| Marketing adjective (weak) | Verifiable fact (strong) |
+|---|---|
+| "transformative results" | "results in 90 days" / "went from $X to $Y" |
+| "leverage our expertise" | "use what we learned across 14 accounts" |
+| "robust solution" | "works for B2B SaaS with cycles > 45 days" |
+| "industry-leading platform" | "3 years in use, validated across 6 niches" |
+| "seamless integration" | "installs in 1 hour without touching your code" |
 
-Regra prática: se o adjetivo poderia estar em copy de qualquer concorrente, troca por fato verificável.
+Rule of thumb: if the adjective could appear in any competitor's copy, swap it for a verifiable fact. This is hormozi-voice rule #1 — number + verb, never an adjective.
 
-## Exemplo: B2B SaaS Brasil (cold email, ICP fintech)
+## Example: B2B SaaS (cold email, fintech ICP)
 
-> **Subject:** Reduzir setup do Olist Pay de 3 semanas pra 3 dias
+> **Subject:** Cut [product] setup from 3 weeks to 3 days
 >
-> Vi seu perfil na Olist trabalhando com integração de pagamentos. A maioria das fintechs brasileiras perde 15-20% das transações por objeção de setup inicial (ouvi isso de 6 squads de pricing no último trimestre).
+> Saw your profile working on payments integration at [company]. Most fintechs lose 15-20% of transactions to initial-setup objection (heard that from 6 pricing squads last quarter).
 >
-> A gente montou um framework que corta setup de 3 semanas pra 3 dias via automação do KYC + onboarding com checkout em 1 página. Validado com Stark Bank, Cora e 4 outras.
+> We built a framework that cuts setup from 3 weeks to 3 days via KYC automation + single-page checkout onboarding. Validated with [reference client], [reference client], and 4 others.
 >
-> Posso te mandar o case study? PDF de 5 páginas, 10min de leitura.
+> Can I send you the case study? 5-page PDF, 10-minute read.
 >
-> — Henrique, LEVEL
+> — [Name], [Company]
 
-**Por quê funciona:**
-- Subject específico (cliente real, número, prazo)
-- Opener: prova de research + dado quantificado (15-20% perda)
-- Mechanism nomeado (KYC + checkout 1 página)
-- Proof point com nomes reais
-- CTA específico (não "vamos conversar?", e sim "te mando PDF 5 pgs, 10min")
-- Tom direto, sem "transformador" / "revolucionário" / "alavancar"
+**Why it works:**
+- Specific subject (real client, number, timeframe)
+- Opener: proof of research + a quantified data point (15-20% loss)
+- Named mechanism (KYC + single-page checkout)
+- Proof point with real names
+- Specific CTA (not "let's chat?", but "I'll send a 5-page PDF, 10 min")
+- Direct tone, no "transformative" / "revolutionary" / "leverage"
 
 ## Workflow
 
-1. Define canal (warm / cold / paid)
-2. Define oferta + ICP target
-3. Escolhe ângulo do hook (use skill `hook-framework`)
-4. Escreve estrutura base
-5. Gera 3-5 variações para A/B
-6. Passa pelo humanizer
-7. Roda teste, mata losers, escala winner
+1. Define the channel (warm / cold / paid)
+2. Define the offer + target ICP
+3. Choose the hook angle (use skill `hook-framework`)
+4. Write the base structure
+5. Generate 3-5 variations for A/B
+6. Run it through the humanizer
+7. Run the test, kill losers, scale the winner
 
-## Aplicação por caso de uso
+## Application by use case
 
-| Caso | Uso |
+| Case | Use |
 |---|---|
-| LP de vendas | Headline da LP herda do ad winner |
-| Roteiro de ad | Copy do roteiro espelha estrutura ad formula |
-| Hooks batch | Hooks gerados são input pra primeiro elemento (Attention) |
+| Sales LP | The LP headline inherits from the winning ad |
+| Ad script | The script copy mirrors the ad formula structure |
+| Hooks batch | Generated hooks are input for the first element (Attention) |
 
-## Referência detalhada
+## Detailed reference
 
-Veja `reference/100m-leads-extracts.md` (seção Ad Mechanics).
+See `reference/100m-leads-extracts.md` (Ad Mechanics section).

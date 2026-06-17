@@ -1,273 +1,274 @@
 ---
 name: template-client-onboarding
-description: "Esqueleto interno do output do comando /hormozi-gtm:onboarding-cliente. Carregado pelo comando, não para uso direto."
+description: "Internal skeleton for the /hormozi-gtm:client-onboarding command output. Loaded by the command, not for direct use."
 ---
 
 # Template — client-onboarding.md
 
-Esqueleto canônico do output de onboarding de cliente. O comando `/hormozi-gtm:onboarding-cliente` carrega esta skill e preenche o esqueleto abaixo com os inputs do usuário. Reproduza a estrutura exata: frontmatter + todas as seções + placeholders `{{...}}`.
+Canonical skeleton for the client-onboarding output. The `/hormozi-gtm:client-onboarding` command loads this skill and fills the skeleton below with the user's inputs. Reproduce the exact structure: frontmatter + every section + `{{...}}` placeholders.
 
-> **Voz crua.** O onboarding é material interno/diagnóstico para o time operacional — **não passa por humanizer**. O frontmatter reflete isso: `humanizer_pass: false`, `humanizer_mode: n/a`, `voz: crua`.
+> **Raw voice.** Onboarding is internal/diagnostic material for the operations team — it **does not go through the humanizer**. The frontmatter reflects that: `humanizer_pass: false`, `humanizer_mode: n/a`, `voice: raw`.
 
 ````markdown
 ---
 plugin: hormozi-gtm
 plugin_version: {{plugin_version}}
-command: onboarding-cliente
+command: client-onboarding
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{empresa_slug}}
-product: {{produto_slug}}
-duracao_dias: {{14 | 30 | 60 | 90}}
-tipo: {{self-serve | guided | done-with-you | done-for-you}}
-ticket_medio_faixa: {{<5k | 5k-30k | >30k | enterprise}}
+client: {{company_slug}}
+product: {{product_slug}}
+duration_days: {{14 | 30 | 60 | 90}}
+type: {{self-serve | guided | done-with-you | done-for-you}}
+avg_ticket_range: {{<5k | 5k-30k | >30k | enterprise}}
 frameworks:
   - leila-scaling
   - value-equation
 humanizer_pass: false
 humanizer_mode: n/a
-voz: crua
-parent_version: {{caminho_v_anterior_ou_null}}
+voice: raw
+language: {{language}}
+parent_version: {{prior_version_path_or_null}}
 ---
 
-# Onboarding de Cliente — {{produto_nome}}
+# Client Onboarding — {{product_name}}
 
-## Visão geral
+## Overview
 
-**Duração total:** {{N}} dias
-**Tipo:** {{self-serve | guided | done-with-you | done-for-you}}
-**Ticket médio:** R$ {{faixa}}
-**Time-to-first-value alvo:** {{N}} dias
-**Owner principal:** {{cargo}}
+**Total length:** {{N}} days
+**Type:** {{self-serve | guided | done-with-you | done-for-you}}
+**Average deal size:** ${{range}}
+**Target time-to-first-value:** {{N}} days
+**Primary owner:** {{role}}
 
 ---
 
-## Estrutura por marcos
+## Structure by milestone
 
-### Marco 0 — Welcome (Dia 0, hora 0)
+### Milestone 0 — Welcome (Day 0, hour 0)
 
-**Trigger:** assinatura confirmada (contrato / pagamento).
+**Trigger:** signature confirmed (contract / payment).
 
 **Touch:**
-- Email automático em até 5min
-- (R$ 30k+) Mensagem pessoal do founder em 24h
+- Automated email within 5 min
+- ($30k+ deals) Personal message from the founder within 24h
 
-**Conteúdo do welcome email:**
+**Welcome email content:**
 ```
-Subject: Bem-vindo — próximos 30 dias com {{produto_nome}}
+Subject: Welcome — your next 30 days with {{product_name}}
 
-[Nome],
+[Name],
 
-Decisão tomada. Próximas semanas vão definir se foi a certa.
-Aqui está o que acontece a partir de agora:
+Decision made. The next few weeks decide whether it was the right one.
+Here's what happens from now on:
 
-1. [Marco 1] em até 3 dias
-2. [Quick win] visível até dia 7
-3. [Mid-point] no dia 21
-4. [Wrap] no dia 30 com NPS
+1. [Milestone 1] within 3 days
+2. [Quick win] visible by day 7
+3. [Mid-point] on day 21
+4. [Wrap] on day 30 with NPS
 
-Próxima ação: [link para agendar kickoff call] — escolha um horário nos próximos 3 dias.
+Next action: [link to schedule the kickoff call] — pick a time in the next 3 days.
 
-Qualquer dúvida, responda este email. Resposta em até 4h úteis.
+Any questions, reply to this email. Response within 4 business hours.
 
-[Nome do CS lead]
+[CS lead name]
 ```
 
-**Métrica:** % que abre + clica o link em 24h. Alvo ≥ 80%.
+**Metric:** % who open + click the link within 24h. Target ≥ 80%.
 
 ---
 
-### Marco 1 — Kickoff (Dia 1-3)
+### Milestone 1 — Kickoff (Day 1-3)
 
-**Trigger:** cliente agendou via link do welcome.
+**Trigger:** client scheduled via the welcome link.
 
-**Touch:** call de 45-60min com CS lead + cliente.
+**Touch:** 45-60 min call with the CS lead + client.
 
 **Agenda:**
-1. (5min) Recap do que foi vendido. Realinha expectativa.
-2. (10min) Cliente conta contexto atual + objetivo principal em 1 frase.
-3. (15min) CS lead apresenta plano dos 30 dias com marcos.
-4. (15min) Coleta inputs necessários para Marco 2 (quick win).
-5. (5min) Próximos passos + agenda Marco 3.
+1. (5 min) Recap of what was sold. Realign expectations.
+2. (10 min) Client gives current context + the main goal in 1 sentence.
+3. (15 min) CS lead presents the 30-day plan with milestones.
+4. (15 min) Collect the inputs needed for Milestone 2 (quick win).
+5. (5 min) Next steps + schedule Milestone 3.
 
-**Output da call:**
-- Documento de 1 página com objetivo + plano + responsabilidades + próximos marcos.
-- Enviado ao cliente em até 24h pós-call.
+**Call output:**
+- A 1-page doc with goal + plan + responsibilities + next milestones.
+- Sent to the client within 24h after the call.
 
-**Métrica:** % de calls que aconteceu em < 5 dias da venda. Alvo ≥ 90%.
+**Metric:** % of calls that happened within 5 days of the sale. Target ≥ 90%.
 
 ---
 
-### Marco 2 — Quick win (Dia 7)
+### Milestone 2 — Quick win (Day 7)
 
-**O elemento mais importante de todo o onboarding.**
+**The most important element of the entire onboarding.**
 
-**Quick win deve ser:**
-- Visível (cliente mostra pra chefe/time)
-- Atribuível (ficou claro que foi por causa de você)
-- Em até 7 dias
-- Modesto se necessário (mais importante existir do que ser transformador)
+**The quick win must be:**
+- Visible (the client shows it to their boss/team)
+- Attributable (clearly because of you)
+- Within 7 days
+- Modest if it has to be (it matters more that it exists than that it's transformational)
 
-**Exemplos por categoria:**
+**Examples by category:**
 
-| Categoria | Quick win típico |
+| Category | Typical quick win |
 |---|---|
-| Consultoria growth | Auditoria de funil com 5 ações imediatas + ranking |
-| Consultoria pricing | Recomendação de range + tiering proposto + teste de 14 dias |
-| SaaS B2B | Primeiro dashboard configurado com dado real do cliente |
-| Cohort educacional | Primeiro framework documentado + aplicado a caso do aluno |
-| Done-for-you | Primeira entrega tangível (LP rascunho, copy V1, etc.) |
+| Growth consulting | Funnel audit with 5 immediate actions + ranking |
+| Pricing consulting | Recommended range + proposed tiering + 14-day test |
+| B2B SaaS | First dashboard configured with the client's real data |
+| Education cohort | First framework documented + applied to the student's case |
+| Done-for-you | First tangible deliverable (LP draft, copy V1, etc.) |
 
 **Touch:**
-- Email com entrega do quick win + 1 frase resumindo valor.
-- (R$ 30k+) Loom de 5min do CS apresentando o quick win.
+- Email delivering the quick win + 1 sentence summing up the value.
+- ($30k+ deals) 5-min Loom from CS presenting the quick win.
 
-**Métrica:** % de clientes que recebem quick win confirmado em D7. Alvo ≥ 95%.
+**Metric:** % of clients who get a confirmed quick win by D7. Target ≥ 95%.
 
 ---
 
-### Marco 3 — Check-in NPS (Dia 14)
+### Milestone 3 — NPS check-in (Day 14)
 
-**Trigger:** automático D14.
+**Trigger:** automated at D14.
 
 **Touch:**
-- Survey curto (3 perguntas)
-- (R$ 30k+) Call de 30min se NPS < 8
+- Short survey (3 questions)
+- ($30k+ deals) 30-min call if NPS < 8
 
 **Survey:**
-1. "Em escala 0-10, qual a chance de recomendar {{produto}} para um colega?"
-2. "O que mais te impressionou positivamente nas primeiras 2 semanas?"
-3. "O que você mudaria, se algo? (resposta opcional)"
+1. "On a scale of 0-10, how likely are you to recommend {{product}} to a colleague?"
+2. "What impressed you most in the first 2 weeks?"
+3. "What would you change, if anything? (optional)"
 
-**Métrica:** % que responde survey. Alvo ≥ 70%. NPS médio alvo ≥ 8.
+**Metric:** % who answer the survey. Target ≥ 70%. Target average NPS ≥ 8.
 
-**Trigger de intervenção:** NPS < 7 → call obrigatória do CS lead em 48h.
+**Intervention trigger:** NPS < 7 → mandatory CS lead call within 48h.
 
 ---
 
-### Marco 4 — Mid-point review (Dia 21)
+### Milestone 4 — Mid-point review (Day 21)
 
-**Trigger:** D21 automático.
+**Trigger:** automated at D21.
 
-**Touch:** call de 30min com CS lead.
+**Touch:** 30-min call with the CS lead.
 
 **Agenda:**
-1. (5min) Recap do que foi entregue até agora vs o que foi prometido.
-2. (10min) Cliente compartilha o que está funcionando + o que não está.
-3. (10min) Realinhamento das próximas 4-8 semanas pós-onboarding.
-4. (5min) Confirma próximos marcos.
+1. (5 min) Recap of what's been delivered so far vs what was promised.
+2. (10 min) Client shares what's working + what isn't.
+3. (10 min) Realign the next 4-8 weeks post-onboarding.
+4. (5 min) Confirm next milestones.
 
-**Output:** documento curto de mid-point com o que foi acordado.
+**Output:** short mid-point doc with what was agreed.
 
-**Métrica:** % de mid-point reviews realizados. Alvo ≥ 90%.
+**Metric:** % of mid-point reviews held. Target ≥ 90%.
 
 ---
 
-### Marco 5 — Wrap-up + NPS formal (Dia 30)
+### Milestone 5 — Wrap-up + formal NPS (Day 30)
 
-**Trigger:** D30 automático.
+**Trigger:** automated at D30.
 
 **Touch:**
-- Email com summary do que foi alcançado nos primeiros 30 dias
-- NPS formal (Net Promoter Score + 2 perguntas abertas)
-- Transição para fase operacional / continuity
+- Email with a summary of what was achieved in the first 30 days
+- Formal NPS (Net Promoter Score + 2 open questions)
+- Transition to the operational / continuity phase
 
-**Conteúdo do wrap-up:**
+**Wrap-up content:**
 ```
-Subject: 30 dias — onde estamos e o que vem agora
+Subject: 30 days — where we are and what's next
 
-[Nome],
+[Name],
 
-30 dias atrás você começou conosco. Aqui está o que rolou:
+30 days ago you started with us. Here's what happened:
 
-✅ [Marco 1]: [resultado concreto]
-✅ [Marco 2]: [quick win entregue]
-✅ [Marco 3]: [progresso em métrica]
-✅ [Marco 4]: [next phase alinhada]
+✅ [Milestone 1]: [concrete result]
+✅ [Milestone 2]: [quick win delivered]
+✅ [Milestone 3]: [progress on a metric]
+✅ [Milestone 4]: [next phase aligned]
 
-NPS rápido: [link]
+Quick NPS: [link]
 
-Próxima fase (dias 31-90):
-- [O que continua]
-- [Cadência nova de touches]
-- [Próximo grande marco]
+Next phase (days 31-90):
+- [What continues]
+- [New touch cadence]
+- [Next big milestone]
 
-[Owner] continua como ponto principal de contato.
+[Owner] stays your main point of contact.
 
-[Founder ou CS lead]
+[Founder or CS lead]
 ```
 
-**Métrica:** NPS dia-30 ≥ 8. % que completa todos os 5 marcos ≥ 90%.
+**Metric:** day-30 NPS ≥ 8. % who complete all 5 milestones ≥ 90%.
 
 ---
 
-## Triggers de intervenção
+## Intervention triggers
 
-| Threshold | Quem age | Em quanto tempo |
+| Threshold | Who acts | How fast |
 |---|---|---|
-| Não respondeu welcome em 48h | CS lead | DM direta em 4h úteis |
-| Não compareceu kickoff | CS lead | Reagenda + tira temperatura por SMS/WhatsApp |
-| Marco 2 (D7) sem quick win confirmado | CS lead + Founder | Escalation interna em 24h |
-| NPS dia-14 < 7 | CS lead + Founder | Call obrigatória em 48h |
-| 0 logins (SaaS) em 10 dias | Automated trigger + CS | DM em 24h |
-| 2+ tickets em 7 dias | CS sênior assume | Escalation imediata |
-| NPS dia-30 < 6 | Founder direto | Call de retention em 72h |
+| No reply to welcome within 48h | CS lead | Direct DM within 4 business hours |
+| No-show at kickoff | CS lead | Reschedule + take the temperature by text/messaging |
+| Milestone 2 (D7) with no confirmed quick win | CS lead + Founder | Internal escalation within 24h |
+| Day-14 NPS < 7 | CS lead + Founder | Mandatory call within 48h |
+| 0 logins (SaaS) in 10 days | Automated trigger + CS | DM within 24h |
+| 2+ tickets in 7 days | Senior CS takes over | Immediate escalation |
+| Day-30 NPS < 6 | Founder directly | Retention call within 72h |
 
 ---
 
-## Cadência de touches (overview)
+## Touch cadence (overview)
 
-| Dia | Touch | Tipo | Owner |
+| Day | Touch | Type | Owner |
 |---|---|---|---|
-| 0 | Welcome email | Automated | Sistema |
-| 1-3 | Kickoff call | Call 45min | CS lead |
-| 7 | Quick win delivery | Email + (Loom se >R$30k) | CS lead |
+| 0 | Welcome email | Automated | System |
+| 1-3 | Kickoff call | 45-min call | CS lead |
+| 7 | Quick win delivery | Email + (Loom if >$30k) | CS lead |
 | 14 | NPS check-in | Survey | Automated |
-| 21 | Mid-point review | Call 30min | CS lead |
-| 30 | Wrap-up + NPS formal | Email + Survey | CS lead + Founder |
+| 21 | Mid-point review | 30-min call | CS lead |
+| 30 | Wrap-up + formal NPS | Email + Survey | CS lead + Founder |
 
-Para R$ 30k+: adicionar weekly check-in em D7, D14, D21, D28 (4 calls extras).
+For $30k+ deals: add a weekly check-in at D7, D14, D21, D28 (4 extra calls).
 
 ---
 
-## Métricas de sucesso
+## Success metrics
 
-| Métrica | Alvo | Por que importa |
+| Metric | Target | Why it matters |
 |---|---|---|
-| % completam marco 5 (D30) | ≥ 90% | Onboarding funcionando |
-| NPS dia-14 | ≥ 8 | Cliente vê valor early |
-| Time-to-quick-win | ≤ 7 dias | Marco 2 entregue |
-| % de touches respondidos | ≥ 70% | Engagement saudável |
-| Day-90 retention | ≥ 85% | Correlacionada com onboarding bom |
-| Churn em <30 dias | < 5% | Reflexo direto do onboarding |
+| % completing milestone 5 (D30) | ≥ 90% | Onboarding is working |
+| Day-14 NPS | ≥ 8 | Client sees value early |
+| Time-to-quick-win | ≤ 7 days | Milestone 2 delivered |
+| % of touches answered | ≥ 70% | Healthy engagement |
+| Day-90 retention | ≥ 85% | Correlated with good onboarding |
+| Churn in <30 days | < 5% | Direct reflection of onboarding |
 
 ---
 
-## Owners e cadência interna
+## Owners and internal cadence
 
-- **Owner principal:** {{cargo, 1 pessoa}}
-- **Backup:** {{cargo}}
-- **Founder envolvido em:** kickoff (≥ R$ 30k) + NPS dia-30 (todos).
-- **Squad review:** semanal (5min de "onde estão os clientes em onboarding").
-- **Founders review:** mensal (qual a saúde média do onboarding atual).
-
----
-
-## Anti-padrões a evitar
-
-- Welcome genérico sem expectativa concreta
-- Sem kickoff call (cliente fica perdido)
-- Quick win frágil (cliente não mostra pra ninguém)
-- Touch sem propósito (email só "tá tudo bem?" sem agregar)
-- Sem trigger automatizado (cliente em risco passa)
-- Onboarding longo demais para ticket pequeno
-- Onboarding curto demais para programa longo
-- Sem NPS formal (sem como medir saúde)
-- Owner diluído (CS, suporte, founder — todos = ninguém)
-- Esquecer transição para fase operacional (cliente sente abandono em D31)
+- **Primary owner:** {{role, 1 person}}
+- **Backup:** {{role}}
+- **Founder involved in:** kickoff (≥ $30k) + day-30 NPS (all).
+- **Squad review:** weekly (5 min of "where are the clients in onboarding").
+- **Founders review:** monthly (what's the average health of current onboarding).
 
 ---
 
-*Onboarding gerado pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Saída crua, sem humanizer.*
+## Anti-patterns to avoid
+
+- Generic welcome with no concrete expectation
+- No kickoff call (the client is lost)
+- Fragile quick win (the client shows it to no one)
+- Touch with no purpose (an email that just says "everything okay?" and adds nothing)
+- No automated trigger (an at-risk client slips through)
+- Onboarding too long for a small deal
+- Onboarding too short for a long program
+- No formal NPS (no way to measure health)
+- Diluted owner (CS, support, founder — everyone = no one)
+- Forgetting the transition to the operational phase (the client feels abandoned at D31)
+
+---
+
+*Onboarding generated by the hormozi-gtm plugin. Alex Hormozi persona applied. Raw output, no humanizer.*
 ````

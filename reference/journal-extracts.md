@@ -1,49 +1,49 @@
-# $100M Journal — Extratos atribuídos
+# $100M Journal — Attributed Excerpts
 
-**Fonte:** Alex Hormozi, *$100M Journal*, Acquisition.com.
+**Source:** Alex Hormozi, *$100M Journal*, Acquisition.com.
 
-> **Fair use disclaimer:** Excertos curtos para fins instrucionais transformativos no plugin hormozi-gtm. Material original é propriedade intelectual de Alex Hormozi.
+> **Fair use disclaimer:** Short excerpts for transformative instructional purposes inside the hormozi-gtm plugin. The original material is the intellectual property of Alex Hormozi.
 
 ---
 
-## Princípios operacionais cross-cutting
+## Cross-cutting operating principles
 
-O Journal serve como caderno de exercícios — não fonte de framework novo, mas reforço de aplicação. Pontos que aparecem repetidamente:
+The Journal is a workbook — not a source of new frameworks, but a drill on applying them. Points that show up again and again:
 
-### Especificidade > Generalidade
+### Specificity > generality
 
-- "Vou aumentar vendas" → ruim
-- "Vou fechar 7 deals de R$ 50k+ até DD/MM via outbound LinkedIn" → bom
+- "I'm going to grow sales" → bad
+- "I'm going to close 7 deals of $50k+ by MM/DD via LinkedIn outbound" → good
 
-Aplicação no plugin: outputs sempre forçam números, nomes, datas.
+In the plugin: outputs always force numbers, names, dates.
 
-### O constraint principal vence
+### The main constraint wins
 
-Se você tem 10 problemas e arruma 9, o 1 que ficou determina tudo. Identifica O constraint (singular) e foca lá.
+If you have 10 problems and fix 9, the 1 you left determines everything. Find THE constraint (singular) and put your weight there.
 
-Aplicação no plugin: comando `/audit` identifica o vetor mais fraco da Value Equation e prioriza top 3 fix daquele vetor.
+In the plugin: `/audit` finds the weakest vector in the Value Equation and prioritizes the top 3 fixes for that vector.
 
-### Decision velocity > Decision quality
+### Decision velocity > decision quality
 
-Decisão rápida razoável > decisão lenta perfeita. Maior parte das decisões é reversível.
+A fast, reasonable decision beats a slow, perfect one. Most decisions are reversible.
 
-Aplicação no plugin: comandos não bloqueiam. Sempre soft warning + opção de seguir.
+In the plugin: commands don't block. Always a soft warning plus the option to proceed.
 
-### Compound > Linear
+### Compound > linear
 
-Pequenas ações repetidas vencem grandes ações isoladas. Cadência > intensidade.
+Small actions repeated beat big actions in isolation. Cadence beats intensity.
 
-Aplicação no plugin: roadmap 30-60-90 prioriza cadência sustentável sobre sprint épico.
+In the plugin: the 30-60-90 roadmap favors a sustainable cadence over a hero sprint.
 
 ### Truth tellers > yes men
 
-Pessoas que dizem a verdade sobre teu negócio são raras. Valorize-as.
+People who tell you the truth about your business are rare. Treasure them.
 
-Aplicação no plugin: `/review` é feedback brutal. Não economiza diagnóstico.
+In the plugin: `/review` is brutal feedback. It doesn't pull the diagnosis.
 
 ---
 
-## Frases pinadas
+## Pinned lines
 
 > "If you're going to start a business, the offer is the first thing that needs to work."
 
@@ -55,13 +55,13 @@ Aplicação no plugin: `/review` é feedback brutal. Não economiza diagnóstico
 
 ---
 
-## Como usar este journal nos comandos
+## How to use this journal in the commands
 
-- `/audit` invoca Value Equation com precisão (constraint principal)
-- `/plano` força especificidade em meta 12 meses
-- `/review` aplica truth-teller mode sem economia
-- Todos os comandos aplicam: especificidade > generalidade
+- `/audit` runs the Value Equation with precision (the main constraint)
+- `/plan` forces specificity in the 12-month goal
+- `/review` applies truth-teller mode with no mercy
+- Every command applies: specificity > generality
 
 ---
 
-*Material completo em Hormozi/References/BOOKS + JOURNALS/$100M Journal.pdf.*
+*Full material in Hormozi/References/BOOKS + JOURNALS/$100M Journal.pdf.*

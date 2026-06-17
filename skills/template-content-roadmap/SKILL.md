@@ -1,13 +1,13 @@
 ---
 name: template-content-roadmap
-description: "Esqueleto interno do output do comando /hormozi-gtm:content-hub. Carregado pelo comando, não para uso direto."
+description: "Internal output skeleton for the /hormozi-gtm:content-hub command. Loaded by the command, not for direct use."
 ---
 
 # Template — content-roadmap.md
 
-Esqueleto canônico do output do comando `/hormozi-gtm:content-hub`. O comando carrega esta skill e preenche o esqueleto abaixo com os inputs do usuário. Reproduza a estrutura exata: frontmatter + todas as seções + placeholders `{{...}}`.
+Canonical output skeleton for the `/hormozi-gtm:content-hub` command. The command loads this skill and fills the skeleton below with the user's inputs. Reproduce the exact structure: frontmatter + every section + `{{...}}` placeholders.
 
-O roadmap é diagnóstico/estratégia interna — sai cru, sem humanizer. O frontmatter já carrega `humanizer_pass: false`, `humanizer_mode: n/a`, `voz: crua`. (As peças de conteúdo produzidas DEPOIS, a partir deste roadmap, são copy externa e passam por humanizer full na hora de produzir.)
+The roadmap is internal diagnostic/strategy — it ships raw, no humanizer. The frontmatter already carries `humanizer_pass: false`, `humanizer_mode: n/a`, `voice: raw`. (The content pieces produced LATER, from this roadmap, are external copy and go through full humanizer at production time.)
 
 ```markdown
 ---
@@ -17,12 +17,12 @@ command: content-hub
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{empresa_slug}}
-product: {{produto_slug}}
-duracao_dias: {{30 | 60 | 90}}
-plataforma_primaria: {{linkedin | instagram | youtube | x}}
-plataformas_secundarias: [{{lista ou vazio}}]
-cadencia_posts_semana: {{N}}
+client: {{company_slug}}
+product: {{product_slug}}
+duration_days: {{30 | 60 | 90}}
+primary_platform: {{linkedin | instagram | youtube | x}}
+secondary_platforms: [{{list or empty}}]
+posts_per_week: {{N}}
 frameworks:
   - content-engine
   - hook-framework
@@ -30,181 +30,182 @@ frameworks:
   - leila-scaling
 humanizer_pass: false
 humanizer_mode: n/a
-voz: crua
-parent_version: {{caminho_v_anterior_ou_null}}
+voice: raw
+language: {{language}}
+parent_version: {{path_to_previous_v_or_null}}
 ---
 
-# Content Roadmap — {{produto_nome}}
+# Content Roadmap — {{product_name}}
 
-## Visão geral
+## Overview
 
-**Período:** {{N}} dias
-**Plataforma primária:** {{nome}}
-**Plataformas secundárias:** {{nomes ou "nenhuma"}}
-**Cadência sustentável:** {{N}} posts/semana
-**Total de conteúdos planejados:** {{N}}
+**Period:** {{N}} days
+**Primary platform:** {{name}}
+**Secondary platforms:** {{names or "none"}}
+**Sustainable cadence:** {{N}} posts/week
+**Total content planned:** {{N}}
 
-**Mix planejado:**
-- Educacional: {{N}}% ({{X}} posts)
+**Planned mix:**
+- Educational: {{N}}% ({{X}} posts)
 - Entertainment/Contrarian: {{N}}% ({{X}} posts)
-- Promocional: {{N}}% ({{X}} posts)
+- Promotional: {{N}}% ({{X}} posts)
 
 ---
 
-## Tema central do período
+## Central theme for the period
 
-**Pillar message:** {{1 frase que conecta toda a produção do período. Ex: "Founder de SaaS B2B pode reduzir ciclo de venda em 60% sem trocar SDR ou aumentar budget."}}
+**Pillar message:** {{1 sentence that connects all output for the period. Ex: "A B2B SaaS founder can cut sales-cycle length 60% without swapping SDRs or raising budget."}}
 
 ---
 
-## Tópicos por funnel stage
+## Topics by funnel stage
 
-### Awareness (problema reconhecível)
+### Awareness (recognizable problem)
 
-1. {{Tópico — ex: "Por que ciclo de venda B2B fica 90+ dias mesmo com bom produto"}}
+1. {{Topic — ex: "Why B2B sales cycles stay 90+ days even with a good product"}}
 2. {{...}}
 3. {{...}}
 
-### Consideration (análise de método/framework)
+### Consideration (method/framework breakdown)
 
-1. {{Tópico — ex: "Os 3 elementos do SDR script que mais impactam taxa de conversão"}}
+1. {{Topic — ex: "The 3 elements of the SDR script that move conversion most"}}
 2. {{...}}
 3. {{...}}
 
-### Decision (case study, FAQ, comparação)
+### Decision (case study, FAQ, comparison)
 
-1. {{Case — Stark Bank cortou ciclo de 90 para 28 dias em 3 meses}}
-2. {{FAQ — "É possível aplicar isso sem trocar o time?"}}
-3. {{Comparação — "Consultoria de growth vs. workshop interno"}}
+1. {{Case — Acme Corp cut its cycle from 90 to 28 days in 3 months}}
+2. {{FAQ — "Can I apply this without swapping the team?"}}
+3. {{Comparison — "Growth consultancy vs. internal workshop"}}
 
 ### Retention (advocacy)
 
-1. {{Dica operacional — só para quem já é cliente, mas gera advocacy via share}}
+1. {{Operational tip — only for existing clients, but drives advocacy via shares}}
 
 ---
 
-## Calendar semanal
+## Weekly calendar
 
-### Semana 1
+### Week 1
 
-| Dia | Plataforma | Tópico | Funnel stage | Formato | CTA |
+| Day | Platform | Topic | Funnel stage | Format | CTA |
 |---|---|---|---|---|---|
-| {{seg}} | {{LinkedIn}} | {{tópico}} | {{stage}} | {{post longo}} | {{nenhum / soft}} |
-| {{qua}} | {{LinkedIn}} | {{tópico}} | {{stage}} | {{carrossel}} | {{...}} |
-| {{sex}} | {{LinkedIn}} | {{tópico}} | {{stage}} | {{post curto}} | {{...}} |
+| {{Mon}} | {{LinkedIn}} | {{topic}} | {{stage}} | {{long post}} | {{none / soft}} |
+| {{Wed}} | {{LinkedIn}} | {{topic}} | {{stage}} | {{carousel}} | {{...}} |
+| {{Fri}} | {{LinkedIn}} | {{topic}} | {{stage}} | {{short post}} | {{...}} |
 
-### Semana 2
+### Week 2
 
-[mesma estrutura]
+[same structure]
 
-### Semana 3
-
-[...]
-
-### Semana 4
+### Week 3
 
 [...]
 
-(Continua para todo o período definido.)
+### Week 4
+
+[...]
+
+(Continues for the full defined period.)
 
 ---
 
 ## Repurpose plan
 
-Para cada conteúdo principal (vídeo longo ou artigo de 1500+ palavras), produz:
+For each pillar piece (long video or 1500+ word article), produce:
 
-| Origem | LinkedIn | Instagram | YouTube | X | Newsletter |
+| Source | LinkedIn | Instagram | YouTube | X | Newsletter |
 |---|---|---|---|---|---|
-| Artigo Pricing Playbook | 1 post longo | 1 carrossel | 1 vídeo curto 5min | 1 thread 8 tweets | 1 section |
-| Framework SDR script | 1 post curto | 2 Reels 60s | 1 vídeo 12min | 1 thread 6 tweets | 1 section |
+| Pricing Playbook article | 1 long post | 1 carousel | 1 short 5min video | 1 thread (8 tweets) | 1 section |
+| SDR script framework | 1 short post | 2 Reels (60s) | 1 12min video | 1 thread (6 tweets) | 1 section |
 
-Princípio: 1 conteúdo principal → 4-8 derivados consumindo audience diferente.
-
----
-
-## Formatos por plataforma
-
-### LinkedIn (primária)
-
-| Formato | Frequência | Comprimento | Função |
-|---|---|---|---|
-| Post longo (educacional) | 2x/semana | 1500-2500 chars | Autoridade |
-| Carrossel | 1x/semana | 6-10 slides | Save-friendly |
-| Story / quick take | 1x/semana | 300-600 chars | Engagement |
-
-### Instagram (secundária, se aplicável)
-
-| Formato | Frequência | Comprimento | Função |
-|---|---|---|---|
-| Reel 60s | 2x/semana | 60s | Reach orgânico |
-| Carrossel | 1x/semana | 5-10 slides | Save |
-| Story | diária | n/a | Conexão diária |
+Principle: 1 pillar piece → 4-8 derivatives reaching a different audience.
 
 ---
 
-## Métricas e cadência de review
+## Formats by platform
 
-### Mês 1-2 (foundation)
+### LinkedIn (primary)
 
-**Métricas primárias:**
-- Reach total
-- Save rate por post
+| Format | Frequency | Length | Role |
+|---|---|---|---|
+| Long post (educational) | 2x/week | 1500-2500 chars | Authority |
+| Carousel | 1x/week | 6-10 slides | Save-friendly |
+| Story / quick take | 1x/week | 300-600 chars | Engagement |
+
+### Instagram (secondary, if applicable)
+
+| Format | Frequency | Length | Role |
+|---|---|---|---|
+| Reel 60s | 2x/week | 60s | Organic reach |
+| Carousel | 1x/week | 5-10 slides | Save |
+| Story | daily | n/a | Daily connection |
+
+---
+
+## Metrics and review cadence
+
+### Month 1-2 (foundation)
+
+**Primary metrics:**
+- Total reach
+- Save rate per post
 - Profile views
 
-**Alvo realista:**
-- Reach crescendo 10-20%/mês
-- Save rate > 2% em educacional
-- Profile views 50+/post de média
+**Realistic target:**
+- Reach growing 10-20%/month
+- Save rate > 2% on educational
+- 50+ profile views/post on average
 
-**Review semanal:** vendo top 1 e bottom 1 da semana, registra padrão.
+**Weekly review:** look at the week's top 1 and bottom 1, log the pattern.
 
-### Mês 3-4 (consistency + first leads)
+### Month 3-4 (consistency + first leads)
 
-**Métricas primárias:**
-- DM inbound qualificado / semana
-- Link clicks (lead magnet ou LP)
+**Primary metrics:**
+- Qualified inbound DMs / week
+- Link clicks (lead magnet or LP)
 - 1-3 first deals via organic
 
-**Alvo:**
-- 2-5 DMs inbound qualificados/semana
-- 1-3 primeiros clientes via organic
+**Target:**
+- 2-5 qualified inbound DMs/week
+- 1-3 first clients via organic
 
-### Mês 6+ (canal estável)
+### Month 6+ (stable channel)
 
-**Métricas primárias:**
-- Leads/mês via organic
+**Primary metrics:**
+- Leads/month via organic
 - CAC via organic vs paid
-- % do revenue atribuído ao organic
+- % of revenue attributed to organic
 
-**Alvo:**
-- 20-50 leads/mês
-- CAC organic < 50% do paid
-- Organic responde por 20-40% dos novos clientes
-
----
-
-## Princípios operacionais
-
-1. **Cadência sustentável > viral.** 50 posts médios > 1 viral + 49 ruins.
-2. **1 plataforma primária primeiro.** Não dilui em 4 plataformas no mês 1.
-3. **Documentar > Inventar.** Cada framework usado em projeto vira tópico.
-4. **Repurpose obsessivo.** 1 conteúdo principal → 4-8 derivados.
-5. **Lag 3-6 meses até primeiro lead.** Quem para no mês 2 não colhe.
-6. **Founder-voice obrigatória.** Audience compra pessoa, não marca.
+**Target:**
+- 20-50 leads/month
+- Organic CAC < 50% of paid
+- Organic accounts for 20-40% of new clients
 
 ---
 
-## Anti-padrões a evitar
+## Operating principles
 
-- Cadência aspiracional (1 post/dia sem time)
-- Esperar viral em vez de compound
-- Pedir feedback de amigos em vez de medir mercado
-- Comparar com criadores 5+ anos à frente
-- Plataforma errada para ICP
-- Postar e não engajar com comentários
-- Sem métricas → sem ajuste
+1. **Sustainable cadence > viral.** 50 average posts > 1 viral + 49 bad ones.
+2. **One primary platform first.** Don't spread across 4 platforms in month 1.
+3. **Document > Invent.** Every framework used on a project becomes a topic.
+4. **Obsessive repurpose.** 1 pillar piece → 4-8 derivatives.
+5. **3-6 month lag to the first lead.** Whoever quits in month 2 never reaps it.
+6. **Founder-voice required.** The audience buys a person, not a brand.
 
 ---
 
-*Content roadmap gerado pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Voz crua — diagnóstico interno não passa por humanizer.*
+## Anti-patterns to avoid
+
+- Aspirational cadence (1 post/day with no team)
+- Waiting for viral instead of compounding
+- Asking friends for feedback instead of measuring the market
+- Comparing yourself to creators 5+ years ahead
+- Wrong platform for the ICP
+- Posting and never engaging with comments
+- No metrics → no adjustment
+
+---
+
+*Content roadmap generated by the hormozi-gtm plugin. Alex Hormozi persona applied. Raw voice — internal diagnostic does not go through humanizer.*
 ```

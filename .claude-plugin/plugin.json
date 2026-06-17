@@ -1,8 +1,8 @@
 {
   "name": "hormozi-gtm",
   "displayName": "Hormozi GTM — LEVEL Edition",
-  "version": "1.0.1",
-  "description": "Operação GTM no estilo Alex Hormozi para o time e clientes da LEVEL. Ofertas, copy, ads, pricing, business plans e diagnósticos. Persona sempre ativa. Humanizer obrigatório.",
+  "version": "2.0.0",
+  "description": "Alex Hormozi-style GTM operation for LEVEL's team and clients. Offers, copy, ads, pricing, business plans, and diagnostics. Persona always on. Humanizer required on external copy.",
   "author": {
     "name": "LEVEL",
     "email": "caner@thelevel.com.br"

@@ -1,11 +1,11 @@
 ---
 name: template-lp
-description: "Esqueleto interno do output do comando /hormozi-gtm:lp. Carregado pelo comando, não para uso direto."
+description: "Internal output skeleton for the /hormozi-gtm:lp command. Loaded by the command, not for direct use."
 ---
 
 # Template — landing page (lp)
 
-Esqueleto canônico do output da landing page de vendas long-form. O comando `/hormozi-gtm:lp` carrega esta skill e preenche o esqueleto abaixo com os inputs do usuário. Reproduza a estrutura exata: frontmatter + as 10 seções (hero → agitação → oferta → quem é você → stack → garantia → prova → preço → FAQ → CTA final) + placeholders `{{...}}`.
+Canonical skeleton for the long-form sales landing page output. The `/hormozi-gtm:lp` command loads this skill and fills the skeleton below with the user's inputs. Reproduce the exact structure: frontmatter + the 10 sections (hero → agitation → offer → who you are → stack → guarantee → proof → price → FAQ → final CTA) + `{{...}}` placeholders.
 
 ```markdown
 ---
@@ -15,8 +15,8 @@ command: lp
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{empresa_slug}}
-product: {{produto_slug}}
+client: {{company_slug}}
+product: {{product_slug}}
 frameworks:
   - grand-slam-offer
   - value-equation
@@ -26,172 +26,173 @@ frameworks:
   - ad-copy-formula
 humanizer_pass: true
 humanizer_mode: full
-audit_ref: {{caminho_ou_null}}
-pricing_ref: {{caminho_ou_null}}
-parent_version: {{caminho_v_anterior_ou_null}}
+language: {{language}}
+audit_ref: {{path_or_null}}
+pricing_ref: {{path_or_null}}
+parent_version: {{prior_version_path_or_null}}
 ---
 
-# Landing Page — {{produto}}
+# Landing Page — {{product}}
 
 ## TL;DR
 
-Headline central: {{...}}
-Conversão alvo: {{...}}
-CTA principal: {{...}}
+Core headline: {{...}}
+Target conversion: {{...}}
+Primary CTA: {{...}}
 
 ---
 
 ## 1. Hero
 
 ### Headline (H1)
-{{Dream outcome hook com especificidade — 8-15 palavras}}
+{{Dream outcome hook with specificity — 8-15 words}}
 
 ### Sub-headline
-{{1-2 frases expandindo o hook com mecanismo + tempo + proof angle}}
+{{1-2 sentences expanding the hook with mechanism + time + proof angle}}
 
-### CTA primário
-{{Ação verbal específica — 3-5 palavras}}
+### Primary CTA
+{{Specific verb action — 3-5 words}}
 
-### Microcopy abaixo do CTA
-{{1 linha removendo objeção: "Sem cartão de crédito" / "Primeira sessão gratuita" / "Aceita até DD/MM"}}
-
----
-
-## 2. Agitação do problema
-
-### Sintomas concretos (3 dores específicas do ICP)
-
-**Você {{sintoma 1 — situação concreta}}.**
-{{Expansão de 2-3 linhas com cenário reconhecível}}
-
-**Você {{sintoma 2}}.**
-{{Expansão}}
-
-**Você {{sintoma 3}}.**
-{{Expansão}}
-
-### Por que outras soluções falham
-{{Parágrafo de 4-6 linhas mostrando diagnóstico contra-intuitivo das alternativas}}
+### Microcopy below the CTA
+{{1 line killing an objection: "No credit card" / "First session free" / "Taking clients through MM/DD"}}
 
 ---
 
-## 3. Apresentação da oferta (Grand Slam Offer)
+## 2. Problem agitation
 
-### Apresentando: {{Nome da Oferta}}
-{{1 parágrafo descrevendo a oferta principal — não 12 módulos, mas a transformação central}}
+### Concrete symptoms (3 specific ICP pains)
 
-### O que você recebe
+**You {{symptom 1 — concrete situation}}.**
+{{2-3 line expansion with a scenario they recognize}}
 
-- {{Deliverable 1 — nome próprio}}: {{descrição em 1 frase}}
-- {{Deliverable 2}}: {{descrição}}
-- {{Deliverable 3}}: {{descrição}}
-- {{Deliverable 4}}: {{descrição}}
+**You {{symptom 2}}.**
+{{Expansion}}
 
----
+**You {{symptom 3}}.**
+{{Expansion}}
 
-## 4. Quem é você / por que ouvir
-
-{{Story em 2-3 parágrafos — origem do método, conflito real, resultado. Especificidade. Sem inflar.}}
+### Why other solutions fail
+{{4-6 line paragraph showing a counterintuitive diagnosis of the alternatives}}
 
 ---
 
-## 5. Stack de bonuses
+## 3. Offer reveal (Grand Slam Offer)
 
-### Bônus #1: {{Nome próprio}} (valor R$ {{X}})
-{{Descrição — o que entrega, qual problema adicional resolve, momento de uso}}
+### Introducing: {{Offer Name}}
+{{1 paragraph describing the core offer — not 12 modules, but the central transformation}}
 
-### Bônus #2: {{Nome próprio}} (valor R$ {{X}})
-{{Descrição}}
+### What you get
 
-### Bônus #3: {{Nome próprio mais valioso percebido}} (valor R$ {{X}})
-{{Descrição mais detalhada — esse é o âncora}}
-
-### Bônus #4: {{Nome próprio}} (valor R$ {{X}})
-{{Descrição}}
-
-### Bônus #5: {{Nome próprio}} (valor R$ {{X}})
-{{Descrição}}
-
-**Valor total dos bonuses: R$ {{X (alvo: 3-5x preço da oferta)}}**
+- {{Deliverable 1 — proper name}}: {{1-sentence description}}
+- {{Deliverable 2}}: {{description}}
+- {{Deliverable 3}}: {{description}}
+- {{Deliverable 4}}: {{description}}
 
 ---
 
-## 6. Garantia
+## 4. Who you are / why listen to you
 
-### {{Nome da Garantia}}
-
-{{Condições executáveis claras — o que cliente precisa fazer, métrica mensurável, tempo, compensação concreta}}
-
-**Como pedir:** {{processo simples, 1-2 passos}}
+{{Story in 2-3 paragraphs — origin of the method, the real conflict, the result. Specificity. No inflation.}}
 
 ---
 
-## 7. Prova social
+## 5. Bonus stack
 
-### Cases comparáveis
+### Bonus #1: {{Proper name}} (value ${{X}})
+{{Description — what it delivers, what extra problem it solves, when it gets used}}
 
-**{{Cliente 1 — nome + papel + empresa}}**
-> "{{depoimento literal}}"
-**Resultado:** {{antes/depois numérico}}
+### Bonus #2: {{Proper name}} (value ${{X}})
+{{Description}}
 
-**{{Cliente 2}}**
-> "{{depoimento literal}}"
-**Resultado:** {{antes/depois numérico}}
+### Bonus #3: {{Highest perceived-value name}} (value ${{X}})
+{{Longer description — this one is the anchor}}
 
-**{{Cliente 3}}**
-> "{{depoimento literal}}"
-**Resultado:** {{antes/depois numérico}}
+### Bonus #4: {{Proper name}} (value ${{X}})
+{{Description}}
 
----
+### Bonus #5: {{Proper name}} (value ${{X}})
+{{Description}}
 
-## 8. Pricing + ancoragem
-
-### Investimento
-
-**Valor total se comprado separado:** R$ {{X — soma stack + bonuses}}
-
-**Seu investimento hoje:** R$ {{Y}}
-
-**Ou em até {{N}}x de R$ {{Z}}**
-
-### CTA secundário
-{{Repetição do CTA principal}}
-
-### Microcopy de fechamento
-{{"Após o pagamento, você cai numa página de aplicação. Eu respondo em 24h."}}
+**Total bonus value: ${{X (target: 3-5x the offer price)}}**
 
 ---
 
-## 9. FAQ (objeções mapeadas)
+## 6. Guarantee
 
-**P: {{Objeção 1 típica — ex: 'Funciona pro meu nicho?'}}**
-R: {{Resposta direta com case + evidência}}
+### {{Guarantee Name}}
 
-**P: {{Objeção 2 — ex: 'Tempo eu não tenho'}}**
-R: {{Resposta com tempo real exigido}}
+{{Clear, executable conditions — what the client has to do, a measurable metric, the timeframe, the concrete payout}}
 
-**P: {{Objeção 3 — ex: 'E se não der certo?'}}**
-R: {{Recap da garantia}}
-
-**P: {{Objeção 4 — ex: 'Por que esse preço?'}}**
-R: {{Justificativa por ROI, não por horas/módulos}}
-
-**P: {{Objeção 5}}**
-R: {{...}}
+**How to claim it:** {{simple process, 1-2 steps}}
 
 ---
 
-## 10. CTA final + urgência
+## 7. Social proof
 
-### Próxima turma começa em {{DD/MM/AAAA}}
+### Comparable cases
 
-{{Razão genuína da escassez — capacidade real, ciclo natural, próximo gatilho de mudança}}
+**{{Client 1 — name + role + company}}**
+> "{{verbatim testimonial}}"
+**Result:** {{numeric before/after}}
 
-**Vagas disponíveis:** {{X de Y}}
+**{{Client 2}}**
+> "{{verbatim testimonial}}"
+**Result:** {{numeric before/after}}
 
-### {{CTA principal}}
+**{{Client 3}}**
+> "{{verbatim testimonial}}"
+**Result:** {{numeric before/after}}
 
 ---
 
-*Landing page gerada pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Humanizer (modo full) aplicado.*
+## 8. Pricing + anchoring
+
+### Investment
+
+**Total value if bought separately:** ${{X — stack + bonuses}}
+
+**Your investment today:** ${{Y}}
+
+**Or up to {{N}}x of ${{Z}}**
+
+### Secondary CTA
+{{Repeat the primary CTA}}
+
+### Closing microcopy
+{{"After payment you land on an application page. I respond within 24h."}}
+
+---
+
+## 9. FAQ (mapped objections)
+
+**Q: {{Typical objection 1 — e.g. 'Does it work for my niche?'}}**
+A: {{Direct answer with case + evidence}}
+
+**Q: {{Objection 2 — e.g. 'I don't have the time'}}**
+A: {{Answer with the real time required}}
+
+**Q: {{Objection 3 — e.g. 'What if it doesn't work?'}}**
+A: {{Recap the guarantee}}
+
+**Q: {{Objection 4 — e.g. 'Why this price?'}}**
+A: {{Justify by ROI, not by hours/modules}}
+
+**Q: {{Objection 5}}**
+A: {{...}}
+
+---
+
+## 10. Final CTA + urgency
+
+### Next cohort starts {{MM/DD/YYYY}}
+
+{{Genuine reason for the scarcity — real capacity, a natural cycle, the next change trigger}}
+
+**Spots available:** {{X of Y}}
+
+### {{Primary CTA}}
+
+---
+
+*Landing page generated by the hormozi-gtm plugin. Alex Hormozi persona applied. Humanizer (full mode) applied.*
 ```

@@ -1,172 +1,174 @@
 ---
-description: Cria ou refina landing page de vendas long-form (2000-3500 palavras). Usa Grand Slam Offer, Value Equation, bonus stacking, scarcity/urgency, guarantees. Humanizer modo full obrigatório. Soft warning se sem audit recente.
-argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--foco=<secao>] [--skip-audit] [--no-humanize]"
+description: Creates or refines a long-form sales landing page (2000-3500 words). Uses Grand Slam Offer, Value Equation, bonus stacking, scarcity/urgency, guarantees. Humanizer full mode mandatory. Soft warning if there's no recent audit.
+argument-hint: "[--product=<slug>] [--ref=<path>] [--focus=<section>] [--skip-audit] [--no-humanize]"
 ---
 
 # /hormozi-gtm:lp
 
-Constrói landing page de vendas estruturada em 10 seções (hero → agitação → oferta → quem é você → stack → garantia → prova → preço → FAQ → CTA final). Cada seção aplica frameworks específicos.
+Builds a sales landing page structured in 10 sections (hero → agitation → offer → who you are → stack → guarantee → proof → pricing → FAQ → final CTA). Each section applies specific frameworks.
 
-## Carregamento de persona
+## Persona loading
 
-Orquestrador: `hormozi-persona`.
-Análise de oferta: delegate a `offer-architect` (carrega briefing).
-Pass final: delegate a `humanizer` (modo full, obrigatório).
+Orchestrator: `hormozi-persona`.
+Offer analysis: delegate to `offer-architect` (loads the briefing).
+Final pass: delegate to `humanizer` (full mode, mandatory).
 
-**Voz (carregamento in-contexto, não-negociável):** carregue a skill `hormozi-voice` via ferramenta Skill e imite o registro (ritmo, atitude, frase-martelo). Não dependa só do subagent `hormozi-persona` — no Cowork o subagent pode não rodar, e a voz precisa estar carregada no próprio fluxo do comando. Como esta LP é **copy externa**, ela só sai com **brutalidade ≥7 na rubrica da `hormozi-voice`** — pontue headline, sub, CTAs e corpo antes de salvar e reescreva o que ficar abaixo de 7.
+**Voice (in-context loading, non-negotiable):** load the `hormozi-voice` skill via the Skill tool and imitate the register (rhythm, attitude, hammer line). Don't rely on the `hormozi-persona` subagent alone — in Cowork the subagent may not run, and the voice needs to be loaded inside the command's own flow. Since this LP is **external copy**, it only ships at **brutality ≥7 on the `hormozi-voice` rubric** — score the headline, sub, CTAs, and body before saving and rewrite anything below 7.
 
-## Skills ativas
+Generate all client-facing copy in the language set in gtm-context `language` (default English). The voice and brutality rules are language-independent and apply in every language.
 
-- `hormozi-voice` (registro de voz — carregar in-contexto, ver Carregamento de persona)
-- `template-lp` (esqueleto do output — carregar via Skill no Passo 2)
-- `grand-slam-offer` (oferta como núcleo)
-- `value-equation` (cada seção aumenta 1+ vetor)
-- `bonus-stacking` (seção 5)
-- `scarcity-urgency` (seções 6 e 10)
-- `guarantees` (seção 6)
+## Active skills
+
+- `hormozi-voice` (voice register — load in-context, see Persona loading)
+- `template-lp` (output skeleton — load via Skill in Step 2)
+- `grand-slam-offer` (offer as the core)
+- `value-equation` (each section raises 1+ vector)
+- `bonus-stacking` (section 5)
+- `scarcity-urgency` (sections 6 and 10)
+- `guarantees` (section 6)
 - `hook-framework` (headline + sub-headline)
 - `ad-copy-formula` (microcopy, CTAs)
-- `humanizer-rules` (modo full)
+- `humanizer-rules` (full mode)
 - `output-conventions`
 
-## Argumentos
+## Arguments
 
-| Argumento | Comportamento |
+| Argument | Behavior |
 |---|---|
-| (vazio) | Cria nova LP. Pede slug do produto. |
-| `slug` | Cria nova LP com slug informado |
-| `outputs/lp/<arquivo>.md` | Modo refinar — lê arquivo, pergunta o que melhorar, cria v{n+1} |
-| `--section=<nome>` | Em modo refinar, foca em 1 seção (hero, agitacao, oferta, quem-voce, stack, garantia, prova, preco, faq, cta) |
-| `--skip-audit` | Pula o soft warning de audit inexistente |
-| `--no-humanize` | Pula o pass do humanizer (debug, comparação A/B) |
-| `--overwrite` | Sobrescreve v{n} em vez de criar v{n+1} |
+| (empty) | Creates a new LP. Asks for the product slug. |
+| `slug` | Creates a new LP with the given slug |
+| `outputs/lp/<file>.md` | Refine mode — reads the file, asks what to improve, creates v{n+1} |
+| `--focus=<section>` | In refine mode, focuses on 1 section (hero, agitation, offer, who-you-are, stack, guarantee, proof, price, faq, cta) |
+| `--skip-audit` | Skips the soft warning for a missing audit |
+| `--no-humanize` | Skips the humanizer pass (debug, A/B comparison) |
+| `--overwrite` | Overwrites v{n} instead of creating v{n+1} |
 
-## Pré-requisitos
+## Prerequisites
 
-1. `gtm-context.md` existe → carrega ICP, oferta, brand voice, audience externa, intensidade do tom
-2. Se não existe → dispara `/hormozi-gtm:init` antes
-3. Audit recente de oferta (≤14 dias)? → carrega como `audit_ref`
-4. Sem audit recente e sem `--skip-audit` → pergunta interativa (não warning passivo):
+1. `gtm-context.md` exists → loads ICP, offer, brand voice, external audience, tone intensity
+2. If it doesn't exist → fires `/hormozi-gtm:init` first
+3. Recent offer audit (≤14 days)? → loads it as `audit_ref`
+4. No recent audit and no `--skip-audit` → interactive prompt (not a passive warning):
 
-> "Sua oferta não passou por Value Equation audit nas últimas 2 semanas. Copy escrita sobre oferta sem audit recente frequentemente precisa retrabalho.
+> "Your offer hasn't been through a Value Equation audit in the last 2 weeks. Copy written on an offer with no recent audit often needs rework.
 >
-> Como prefere seguir?
-> (1) Rodar `/hormozi-gtm:audit` agora (5min) — recomendado, LP fica muito melhor
-> (2) Seguir mesmo assim — entendo o risco, quero a LP hoje
-> (3) Cancelar — vou rodar audit em sessão separada e volto"
+> How do you want to proceed?
+> (1) Run `/hormozi-gtm:audit` now (5min) — recommended, the LP comes out much better
+> (2) Go ahead anyway — I get the risk, I want the LP today
+> (3) Cancel — I'll run the audit in a separate session and come back"
 
-Se (1): roda `/hormozi-gtm:audit` inline, salva audit, carrega `audit_ref` automaticamente, continua o fluxo de LP.
-Se (2): segue, mas grava `audit_ref: null` no frontmatter com nota.
-Se (3): sai limpo, sem criar arquivo.
+If (1): runs `/hormozi-gtm:audit` inline, saves the audit, loads `audit_ref` automatically, continues the LP flow.
+If (2): proceeds, but writes `audit_ref: null` in the frontmatter with a note.
+If (3): exits clean, without creating a file.
 
-## Fluxo
+## Flow
 
-### Modo CRIAR
+### CREATE mode
 
-#### Passo 1: Coleta inputs
+#### Step 1: Collect inputs
 
-Carrega o que tiver de `gtm-context.md`. Pede o que faltar:
-- ICP (obrigatório)
-- Oferta principal (obrigatório)
-- Preço (obrigatório)
-- Transformação prometida — em quanto tempo, quem vira o quê (obrigatório)
-- Prova social disponível (opcional)
-- Garantia atual ou pretendida (opcional)
-- Bônus disponíveis (opcional — agent sugere se não tem)
-- Urgência/escassez genuína (opcional — agent flag se inventado)
+Loads whatever it can from `gtm-context.md`. Asks for what's missing:
+- ICP (required)
+- Main offer (required)
+- Price (required)
+- Promised transformation — in what timeframe, who becomes what (required)
+- Available social proof (optional)
+- Current or intended guarantee (optional)
+- Available bonuses (optional — agent suggests if there are none)
+- Genuine urgency/scarcity (optional — agent flags it if invented)
 
-#### Passo 2: Construção
+#### Step 2: Build
 
-Delegate a `offer-architect` para destilar briefing de oferta. Carregue a skill `hormozi-gtm:template-lp` via ferramenta Skill e preencha o esqueleto. Em seguida, `hormozi-persona` (orquestrador) recebe o briefing e monta as 10 seções sobre esse esqueleto:
+Delegate to `offer-architect` to distill the offer briefing. Load the `hormozi-gtm:template-lp` skill via the Skill tool and fill in the skeleton. Then `hormozi-persona` (orchestrator) takes the briefing and builds the 10 sections on top of that skeleton:
 
 1. Hero (headline + sub + CTA + microcopy)
-2. Agitação do problema (3 sintomas + por que outras soluções falham)
-3. Apresentação da oferta (Grand Slam)
-4. Quem é você / por que ouvir (story)
-5. Stack de bonuses (3-5 ímpar com valor R$)
-6. Garantia (condicional + métrica + compensação)
-7. Prova social (3+ cases comparáveis)
-8. Pricing + ancoragem
-9. FAQ (4-6 objeções mapeadas)
-10. CTA final + urgência genuína
+2. Problem agitation (3 symptoms + why other solutions fail)
+3. Offer presentation (Grand Slam)
+4. Who you are / why listen (story)
+5. Bonus stack (3-5, odd count, with $ value)
+6. Guarantee (conditional + metric + compensation)
+7. Social proof (3+ comparable cases)
+8. Pricing + anchoring
+9. FAQ (4-6 mapped objections)
+10. Final CTA + genuine urgency
 
-#### Passo 3: Humanizer pass (full)
+#### Step 3: Humanizer pass (full)
 
-Delegate ao subagent `humanizer`. Aplica todas as regras (não só lite).
+Delegate to the `humanizer` subagent. Apply all the rules.
 
-#### Passo 4: Salva output
+#### Step 4: Save output
 
-Salva em `outputs/lp/lp-{slug}-{YYYYMMDD}-v1.md` com frontmatter completo.
+Saves to `outputs/lp/lp-{slug}-{YYYYMMDD}-v1.md` with complete frontmatter.
 
-#### Passo 5: Preview na conversa
+#### Step 5: Preview in the conversation
 
-Mostra:
+Shows:
 
 ```
-✅ Salvo em: outputs/lp/lp-{slug}-{YYYYMMDD}-v{n}.md
+✅ Saved to: outputs/lp/lp-{slug}-{YYYYMMDD}-v{n}.md
 📋 Preview:
-   • Headline: "{{texto da headline}}"
-   • Garantia: {{tipo + cláusula}}
-   • Stack: {{N}} bonuses, valor total R$ {{X}}
-   • CTA primário: "{{texto}}"
-   • Status humanizer: ✓ full pass
+   • Headline: "{{headline text}}"
+   • Guarantee: {{type + clause}}
+   • Stack: {{N}} bonuses, total value ${{X}}
+   • Primary CTA: "{{text}}"
+   • Humanizer status: ✓ full pass
 
-👉 Próximos passos:
-   1. Mostra ao cliente, captura feedback
-   2. /hormozi-gtm:hooks --produto={{slug}} → testa headlines em ad
-   3. /hormozi-gtm:review --ref=outputs/lp/... → se quiser feedback brutal interno
+👉 Next steps:
+   1. Show it to the client, capture feedback
+   2. /hormozi-gtm:hooks --product={{slug}} → test headlines in ads
+   3. /hormozi-gtm:review --ref=outputs/lp/... → if you want brutal internal feedback
 ```
 
-Termina perguntando se quer refinar alguma seção (sem reabrir o diálogo todo).
+Ends by asking whether to refine any section (without reopening the whole dialogue).
 
-### Modo REFINAR
+### REFINE mode
 
-#### Passo 1: Lê arquivo existente
+#### Step 1: Read the existing file
 
-Carrega frontmatter + conteúdo. Identifica versão, frameworks já aplicados, audit_ref, parent_version.
+Loads frontmatter + content. Identifies version, frameworks already applied, audit_ref, parent_version.
 
-#### Passo 2: Diagnóstico
+#### Step 2: Diagnosis
 
-Pergunta:
-> "O que quer melhorar? (1) headline (2) oferta (3) garantia (4) prova social (5) stack de bonuses (6) FAQ (7) reescrever tudo (8) outro"
+Asks:
+> "What do you want to improve? (1) headline (2) offer (3) guarantee (4) social proof (5) bonus stack (6) FAQ (7) rewrite everything (8) other"
 
-Ou se `--section=<nome>` foi passado, vai direto pra seção.
+Or if `--focus=<section>` was passed, goes straight to the section.
 
-#### Passo 3: Refinement
+#### Step 3: Refinement
 
-Aplica mudança mantendo o resto. Re-roda humanizer.
+Applies the change while keeping the rest. Re-runs the humanizer.
 
-#### Passo 4: Salva v{n+1}
+#### Step 4: Save v{n+1}
 
-Salva em mesma pasta com `v{n+1}`. Frontmatter aponta `parent_version` para `v{n}`.
+Saves to the same folder as `v{n+1}`. Frontmatter points `parent_version` to `v{n}`.
 
-#### Passo 5: Diff resumido
+#### Step 5: Summary diff
 
-Mostra:
-- O que mudou (1 linha por mudança)
-- Caminho do novo arquivo
+Shows:
+- What changed (1 line per change)
+- Path of the new file
 
-## Critério de pronto
+## Done criteria
 
-- [ ] Headline passa em 3 testes (especificidade numérica + tweet test + curiosity gap)
-- [ ] Oferta tem stack visível (3-5 bonuses ímpares)
-- [ ] Pelo menos 1 garantia condicional (não "satisfação garantida")
-- [ ] CTA repetido 3+ vezes
-- [ ] Nenhuma frase genérica ("transforme sua vida", "alcance seu potencial")
-- [ ] Humanizer full aplicado (sem em-dash overuse, sem rule of three, sem AI vocab)
-- [ ] Arquivo salvo em `outputs/lp/` com frontmatter completo
-- [ ] Próximos passos sugeridos (geralmente: `/hormozi-gtm:hooks` pra testar headlines)
+- [ ] Headline passes the 3 tests (numeric specificity + tweet test + curiosity gap)
+- [ ] Offer has a visible stack (3-5 bonuses, odd count)
+- [ ] At least 1 conditional guarantee (not "satisfaction guaranteed")
+- [ ] CTA repeated 3+ times
+- [ ] No generic line ("transform your life", "reach your potential")
+- [ ] Humanizer full applied (no em-dash overuse, no rule of three, no AI vocab)
+- [ ] File saved to `outputs/lp/` with complete frontmatter
+- [ ] Suggested next steps (usually: `/hormozi-gtm:hooks` to test headlines)
 
-## Anti-padrões
+## Anti-patterns
 
-- Pular Value Equation audit antes (LP em cima de oferta fraca = dinheiro fora)
-- Bonus genérico ("acesso à comunidade")
-- Garantia genérica ("satisfação garantida")
-- CTA "saiba mais" (sem ação verbal)
-- Tom de copywriter clichê (use 1ª pessoa Hormozi)
-- Inventar escassez fake (usa skill `scarcity-urgency` pra checar genuíno)
+- Skipping the Value Equation audit first (an LP on top of a weak offer = money out the door)
+- Generic bonus ("community access")
+- Generic guarantee ("satisfaction guaranteed")
+- "Learn more" CTA (no action verb)
+- Cliché copywriter tone (use first-person Hormozi)
+- Inventing fake scarcity (use the `scarcity-urgency` skill to check it's genuine)
 
-## Output esperado
+## Expected output
 
-Arquivo: 2000-3500 palavras, estruturado em 10 seções com headers H2.
-Conversa: 5-10 linhas com highlights + caminho + próximos passos.
+File: 2000-3500 words, structured in 10 sections with H2 headers.
+Conversation: 5-10 lines with highlights + path + next steps.

@@ -1,11 +1,11 @@
 ---
 name: template-hooks-batch
-description: "Esqueleto interno do output do comando /hormozi-gtm:hooks. Carregado pelo comando, não para uso direto."
+description: "Internal output skeleton for the /hormozi-gtm:hooks command. Loaded by the command, not for direct use."
 ---
 
 # Template — hooks-batch.md
 
-Esqueleto canônico do output de batch de hooks. O comando `/hormozi-gtm:hooks` carrega esta skill e preenche o esqueleto abaixo com as variantes geradas. Reproduza a estrutura exata: frontmatter + todas as seções + placeholders `{{...}}`. A tabela cresce/encolhe conforme `--n` e `--angulo`.
+Canonical output skeleton for a batch of hooks. The `/hormozi-gtm:hooks` command loads this skill and fills the skeleton below with the generated variants. Reproduce the exact structure: frontmatter + every section + `{{...}}` placeholders. The table grows/shrinks with `--n` and `--angle`.
 
 ```markdown
 ---
@@ -15,110 +15,111 @@ command: hooks
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{empresa_slug}}
-product: {{produto_slug}}
-quantidade: {{N}}
-angulos: [dream, problem, secret, contrarian, proof]
+client: {{company_slug}}
+product: {{product_slug}}
+count: {{N}}
+angles: [dream, problem, secret, contrarian, proof]
 frameworks:
   - hook-framework
   - ad-copy-formula
 humanizer_pass: true
 humanizer_mode: full
-audit_ref: {{caminho_ou_null}}
+language: {{language}}
+audit_ref: {{path_or_null}}
 ---
 
-# Hooks Batch — {{produto}}
+# Hooks Batch — {{product}}
 
 ## TL;DR
 
-{{N}} hooks gerados, distribuídos em {{X}} ângulos.
-Top 3 do agent listados ao final com justificativa.
+{{N}} hooks generated, spread across {{X}} angles.
+The agent's top 3 are listed at the end with rationale.
 
 ---
 
-## 📊 Tabela completa
+## 📊 Full table
 
-| # | Hook | Ângulo | Mecanismo | Onde usar |
-|---|------|--------|-----------|-----------|
-| 1 | {{frase}} | dream | {{aspiração}} | LP headline |
-| 2 | {{frase}} | dream | {{aspiração}} | ad short |
-| 3 | {{frase}} | dream | {{aspiração}} | email subject |
-| 4 | {{frase}} | problem | {{reframe}} | ad cold |
-| 5 | {{frase}} | problem | {{reframe}} | LP H1 |
-| 6 | {{frase}} | problem | {{reframe}} | post LinkedIn |
-| 7 | {{frase}} | secret | {{curiosity gap}} | email subject |
-| 8 | {{frase}} | secret | {{curiosity gap}} | YouTube title |
-| 9 | {{frase}} | secret | {{curiosity gap}} | ad paid |
-| 10 | {{frase}} | contrarian | {{shock}} | post LinkedIn |
-| 11 | {{frase}} | contrarian | {{shock}} | ad short |
-| 12 | {{frase}} | contrarian | {{shock}} | LP H2 |
-| 13 | {{frase}} | proof | {{authority}} | ad paid |
-| 14 | {{frase}} | proof | {{authority}} | LP testimonial header |
-| 15 | {{frase}} | proof | {{authority}} | retargeting ad |
-
----
-
-## 🏆 Top 3 do agent
-
-### 🥇 #{{N}} — {{título curto do ângulo}}
-
-> "{{hook completo}}"
-
-**Por que é o top:** {{justificativa específica — não "mais forte" mas "tem especificidade numérica + reframe contraintuitivo + curiosity gap"}}
-
-**Onde testar primeiro:** {{plataforma + formato}}
+| # | Hook | Angle | Mechanism | Where to use |
+|---|------|-------|-----------|--------------|
+| 1 | {{line}} | dream | {{aspiration}} | LP headline |
+| 2 | {{line}} | dream | {{aspiration}} | short ad |
+| 3 | {{line}} | dream | {{aspiration}} | email subject |
+| 4 | {{line}} | problem | {{reframe}} | cold ad |
+| 5 | {{line}} | problem | {{reframe}} | LP H1 |
+| 6 | {{line}} | problem | {{reframe}} | LinkedIn post |
+| 7 | {{line}} | secret | {{curiosity gap}} | email subject |
+| 8 | {{line}} | secret | {{curiosity gap}} | YouTube title |
+| 9 | {{line}} | secret | {{curiosity gap}} | paid ad |
+| 10 | {{line}} | contrarian | {{shock}} | LinkedIn post |
+| 11 | {{line}} | contrarian | {{shock}} | short ad |
+| 12 | {{line}} | contrarian | {{shock}} | LP H2 |
+| 13 | {{line}} | proof | {{authority}} | paid ad |
+| 14 | {{line}} | proof | {{authority}} | LP testimonial header |
+| 15 | {{line}} | proof | {{authority}} | retargeting ad |
 
 ---
 
-### 🥈 #{{N}} — {{título curto}}
+## 🏆 Agent's top 3
 
-> "{{hook completo}}"
+### 🥇 #{{N}} — {{short title of the angle}}
 
-**Por que:** {{...}}
+> "{{full hook}}"
 
-**Onde testar primeiro:** {{...}}
+**Why it's the top:** {{specific rationale — not "strongest" but "has numeric specificity + counterintuitive reframe + curiosity gap"}}
 
----
-
-### 🥉 #{{N}} — {{título curto}}
-
-> "{{hook completo}}"
-
-**Por que:** {{...}}
-
-**Onde testar primeiro:** {{...}}
+**Where to test first:** {{platform + format}}
 
 ---
 
-## ✅ Critérios de qualidade aplicados
+### 🥈 #{{N}} — {{short title}}
 
-Cada hook passou nos 3 testes:
-- [x] **Especificidade numérica:** tem número (idade, valor, tempo, %, quantidade)
-- [x] **Tweet test:** lê isoladamente como tweet
-- [x] **Curiosity gap:** leitor precisa saber o que vem depois
+> "{{full hook}}"
 
----
+**Why:** {{...}}
 
-## 🧪 Plano de teste sugerido
-
-**Fase 1 (semana 1):**
-Rodar Top 3 com mesmo budget e plataforma. Mata o pior em CTR após 200 impressions.
-
-**Fase 2 (semana 2):**
-Top 2 sobreviventes contra 3 hooks da metade (#4-9). Mata 2 piores.
-
-**Fase 3 (semana 3):**
-Winner geral vai pra escala. Gera 5 variações dele com `/hormozi-gtm:hooks --foco=<ângulo do winner>`.
+**Where to test first:** {{...}}
 
 ---
 
-## 🔄 Próximos passos
+### 🥉 #{{N}} — {{short title}}
 
-1. Filme/teste os 3 top primeiro
-2. Se nenhum dos top 3 funcionar, prova que ICP ou oferta tem problema — rodar `/hormozi-gtm:audit`
-3. Se algum funcionar, escalar variações com `--foco` no ângulo vencedor
+> "{{full hook}}"
+
+**Why:** {{...}}
+
+**Where to test first:** {{...}}
 
 ---
 
-*Hooks gerados pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Humanizer (modo full) aplicado.*
+## ✅ Quality criteria applied
+
+Every hook passed the 3 tests:
+- [x] **Numeric specificity:** has a number (age, dollar amount, time, %, quantity)
+- [x] **Tweet test:** reads standalone as a tweet
+- [x] **Curiosity gap:** the reader needs to know what comes next
+
+---
+
+## 🧪 Suggested test plan
+
+**Phase 1 (week 1):**
+Run the top 3 on the same budget and platform. Kill the worst on CTR after 200 impressions.
+
+**Phase 2 (week 2):**
+The 2 surviving against 3 hooks from the middle (#4-9). Kill the 2 worst.
+
+**Phase 3 (week 3):**
+The overall winner goes to scale. Generate 5 variations of it with `/hormozi-gtm:hooks --focus=<winner's angle>`.
+
+---
+
+## 🔄 Next steps
+
+1. Shoot/test the top 3 first
+2. If none of the top 3 work, it's proof the ICP or offer has a problem — run `/hormozi-gtm:audit`
+3. If one works, scale variations with `--focus` on the winning angle
+
+---
+
+*Hooks generated by the hormozi-gtm plugin. Alex Hormozi persona applied. Humanizer (full mode) applied.*
 ```

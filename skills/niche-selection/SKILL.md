@@ -1,141 +1,141 @@
 ---
 name: niche-selection
-description: Critério Hormozi para escolher nicho. 5 vetores de qualidade (dor, poder de compra, saturação, TAM viável, mensagem), processo de drilling reversível (testa 3-4 antes de commitar), armadilhas comuns. Pré-requisito invisível de toda a oferta — sem nicho certo, Grand Slam não salva.
+description: Hormozi's criteria for picking a niche. 5 quality vectors (pain, buying power, saturation, viable TAM, reach), a reversible drilling process (test 3-4 before committing), and common traps. The invisible prerequisite behind every offer — pick the wrong niche and no Grand Slam Offer can save it.
 ---
 
 # Niche Selection
 
-Fonte: Alex Hormozi, *$100M Offers* (Caps. 1-2, "Pricing & Niching") + *$100M Leads* (Cap. 2-3, "Who's Your Customer").
+Source: Alex Hormozi, *$100M Offers* (Ch. 1-2, "Pricing & Niching") + *$100M Leads* (Ch. 2-3, "Who's Your Customer").
 
-## Por que essa skill existe
+## Why this skill exists
 
-Toda outra skill do plugin assume que o nicho já foi escolhido. Mas a maior parte das ofertas fracas não é problema de copy, pricing ou bonuses — é problema de nicho. Founder brasileiro escolhe "fofo" (gosta do tema, conhece pessoas, é nicho pequeno onde acha que vai dominar fácil) em vez de escolher por critério econômico.
+Every other skill in the plugin assumes the niche is already chosen. But most weak offers aren't a copy, pricing, or bonus problem — they're a niche problem. Founders pick "cute" (they like the topic, they know some people, it's a small niche they figure they'll dominate easily) instead of picking on economics.
 
-Nicho errado mata tudo. Você pode ter Grand Slam Offer perfeita, garantia condicional matadora, hook genial — se o nicho não tem dor real ou poder de compra, nada funciona.
+The wrong niche kills everything. You can have a perfect Grand Slam Offer, a killer conditional guarantee, a brilliant hook — if the niche has no real pain or no buying power, none of it works.
 
-## Os 5 vetores de qualidade de nicho
+## The 5 niche-quality vectors
 
-Avalie cada vetor de 1-10. Nicho viável precisa **≥ 7 em 4 dos 5** (não precisa ser 10 em todos, mas falha em 2+ vetores é red flag).
+Score each vector 1-10. A viable niche needs **≥ 7 on 4 of the 5** (you don't need a 10 across the board, but failing 2+ vectors is a red flag).
 
-### 1. Intensidade da dor
+### 1. Pain intensity
 
-Quão urgente, frequente e visível é o problema que você resolve?
+How urgent, frequent, and visible is the problem you solve?
 
-- **10/10:** cliente acorda pensando nisso. Custa dinheiro/tempo todo dia. Tentou várias soluções, todas falharam.
-- **5/10:** cliente reconhece o problema mas pode adiar. "Seria bom resolver."
-- **1/10:** cliente nem sabe que tem o problema. "Talvez algum dia."
+- **10/10:** the customer wakes up thinking about it. It costs money or time every single day. They've tried several fixes; all failed.
+- **5/10:** the customer recognizes the problem but can put it off. "Would be nice to solve."
+- **1/10:** the customer doesn't even know they have the problem. "Maybe someday."
 
-**Pergunta diagnóstica:** se você cobrasse 10x do preço atual, o cliente ainda compraria? Se "sim" → dor alta. Se "nem com desconto" → dor baixa.
+**Diagnostic question:** if you charged 10x your current price, would the customer still buy? If "yes" → high pain. If "not even at a discount" → low pain.
 
-### 2. Poder de compra
+### 2. Buying power
 
-Quanto o cliente pode pagar sem aprovação de outra pessoa ou orçamento complexo?
+How much can the customer pay without someone else's sign-off or a complex budget process?
 
-- **10/10:** founder de SaaS B2B com ARR > 1M, executivo C-level, profissional liberal com agenda lotada. Decisão própria, ticket alto OK.
-- **5/10:** gerente intermediário com orçamento limitado, founder solo bootstrapado, profissional sênior CLT.
-- **1/10:** estudante, recém-formado, micro-empreendedor sem fluxo de caixa.
+- **10/10:** B2B SaaS founder with ARR > $1M, a C-level executive, a self-employed professional with a packed calendar. Their own call, high deal size is fine.
+- **5/10:** a mid-level manager with a tight budget, a bootstrapped solo founder, a salaried senior professional.
+- **1/10:** a student, a recent grad, a micro-business with no cash flow.
 
-**Pergunta diagnóstica:** qual o ticket médio que o nicho paga hoje pra resolver problemas correlatos? Se já paga R$ 10k+ pra concorrente/substituto, poder de compra está OK.
+**Diagnostic question:** what's the average deal size this niche pays today to solve adjacent problems? If they already pay $10k+ to a competitor or substitute, buying power is fine.
 
-### 3. Saturação do mercado
+### 3. Market saturation
 
-Quantos competidores já atacam o mesmo nicho com posicionamento parecido?
+How many competitors already attack this niche with similar positioning?
 
-- **10/10:** 0-3 competidores estabelecidos. Mercado emergente ou ignorado.
-- **5/10:** 5-15 competidores, mas há espaço por diferenciação clara.
-- **1/10:** 50+ competidores, comoditizado, todos com posicionamento idêntico.
+- **10/10:** 0-3 established competitors. Emerging or ignored market.
+- **5/10:** 5-15 competitors, but there's room with clear differentiation.
+- **1/10:** 50+ competitors, commoditized, everyone positioned identically.
 
-**Pergunta diagnóstica:** se cliente pesquisa "[problema] + [seu nicho]" no Google, quantos anúncios pagos aparecem? Se > 10, está saturado. Se 0-2, mercado pode ser pequeno demais (cuidado).
+**Diagnostic question:** if the customer searches "[problem] + [your niche]" on Google, how many paid ads show up? More than 10 means saturated. 0-2 may mean the market is too small (careful).
 
-### 4. TAM viável
+### 4. Viable TAM
 
-Quantos clientes pagantes possíveis existem no nicho, dado seu pricing?
+How many possible paying customers exist in the niche at your pricing?
 
-- **10/10:** 50.000+ empresas/pessoas pagariam seu ticket. Espaço pra crescer 10 anos.
-- **5/10:** 5.000-50.000. Cabe 5-7 anos de operação se conversão OK.
-- **1/10:** < 1.000. Tudo do nicho vira cliente em 2 anos, depois fim.
+- **10/10:** 50,000+ companies/people would pay your deal size. Room to grow for 10 years.
+- **5/10:** 5,000-50,000. Fits 5-7 years of operation if conversion holds.
+- **1/10:** < 1,000. The whole niche becomes a customer in 2 years, then it's over.
 
-**Cálculo:** se ticket é R$ 10k/ano, pra crescer pra 1M ARR você precisa 100 clientes ativos. TAM viável significa ter pelo menos 10x esse número (1.000+) em prospects qualificados.
+**Math:** if the deal size is $10k/year, growing to $1M ARR takes 100 active customers. A viable TAM means having at least 10x that number (1,000+) in qualified prospects.
 
-**Pergunta diagnóstica:** procure no LinkedIn Sales Navigator (ou similar) a query exata do seu ICP. Se < 5.000 perfis no Brasil, TAM é apertado.
+**Diagnostic question:** run your exact ICP query in LinkedIn Sales Navigator (or similar). If you find < 5,000 profiles in your target market, TAM is tight.
 
-### 5. Acesso ao nicho
+### 5. Reach
 
-Você consegue alcançar esse nicho com mensagem clara e canal viável?
+Can you reach this niche with a clear message on a viable channel?
 
-- **10/10:** nicho concentrado em 2-3 canais previsíveis (LinkedIn, eventos específicos, comunidades fechadas), linguagem comum identificável.
-- **5/10:** disperso entre canais, mas atingível com 3-4 estratégias diferentes.
-- **1/10:** nicho fragmentado, sem canal comum, sem linguagem identificável.
+- **10/10:** the niche is concentrated in 2-3 predictable channels (LinkedIn, specific events, closed communities), with a common, identifiable language.
+- **5/10:** scattered across channels, but reachable with 3-4 different plays.
+- **1/10:** fragmented niche, no common channel, no identifiable language.
 
-**Pergunta diagnóstica:** você conhece 5 pessoas do nicho hoje? Se sim, acesso é razoável. Se não conhece nenhuma e nunca conversou com uma → bandeira vermelha, nicho é abstração.
+**Diagnostic question:** do you know 5 people in the niche today? If yes, reach is reasonable. If you know none and have never talked to one → red flag, the niche is an abstraction.
 
-## Tabela de scoring
+## Scoring table
 
-| Nicho candidato | Dor | Compra | Saturação | TAM | Acesso | Score | Viável? |
+| Candidate niche | Pain | Buy | Saturation | TAM | Reach | Score | Viable? |
 |---|---|---|---|---|---|---|---|
-| {{exemplo: SaaS B2B fintech BR}} | 9 | 8 | 6 | 7 | 8 | 38/50 | Sim (todos > 6) |
-| {{exemplo: coaching de produtividade pra estudantes}} | 7 | 3 | 2 | 9 | 5 | 26/50 | Não (compra + saturação) |
+| {{example: B2B fintech SaaS}} | 9 | 8 | 6 | 7 | 8 | 38/50 | Yes (all > 6) |
+| {{example: productivity coaching for students}} | 7 | 3 | 2 | 9 | 5 | 26/50 | No (buy + saturation) |
 
-Soma ≥ 35 + nenhum vetor < 5 = nicho viável.
+Sum ≥ 35 and no vector < 5 = viable niche.
 
-## Processo de drilling reversível
+## The reversible drilling process
 
-Founder brasileiro tende a "casar com o nicho" no dia 1 e depois não consegue admitir erro. O processo correto é testar 3-4 nichos em paralelo de forma barata antes de commitar.
+Founders tend to "marry the niche" on day 1 and then can't admit the mistake. The right move is to test 3-4 niches in parallel, cheaply, before committing.
 
-**Passo 1 — Brainstorm 5-7 candidatos.**
-Liste nichos baseado em: (a) onde você tem founder-market fit, (b) onde já conhece 5+ pessoas, (c) onde os 5 vetores parecem altos no papel.
+**Step 1 — Brainstorm 5-7 candidates.**
+List niches based on: (a) where you have founder-market fit, (b) where you already know 5+ people, (c) where the 5 vectors look high on paper.
 
-**Passo 2 — Pré-validação (1 semana por nicho).**
-- 10 conversas com pessoas reais do nicho (LinkedIn DM, indicação).
-- 1 pergunta: "qual o problema X que você mais paga pra resolver hoje?"
-- Conta as menções espontâneas do problema que você atacaria.
+**Step 2 — Pre-validation (1 week per niche).**
+- 10 conversations with real people from the niche (LinkedIn DM, referral).
+- 1 question: "What problem X do you pay the most to solve right now?"
+- Count the spontaneous mentions of the problem you'd attack.
 
-Gate: ≥ 6/10 mencionam o problema sem você induzir → segue. Caso contrário, kill.
+Gate: ≥ 6/10 mention the problem without prompting → proceed. Otherwise, kill it.
 
-**Passo 3 — Validação de oferta (3 semanas).**
-Para os 2-3 nichos que sobraram do Passo 2:
-- Cria LP rascunho com Grand Slam Offer adaptada ao nicho.
-- Roda R$ 500-1.000 de ads frios ou 50 cold emails segmentados.
-- Mede reply rate / opt-in / click-to-call.
+**Step 3 — Offer validation (3 weeks).**
+For the 2-3 niches that survived Step 2:
+- Draft an LP with a Grand Slam Offer adapted to the niche.
+- Run $500-1,000 of cold ads or 50 segmented cold emails.
+- Measure reply rate / opt-in / click-to-call.
 
-Gate: nicho com 2x melhor conversão que o segundo lugar → finalista.
+Gate: the niche converting 2x better than second place → finalist.
 
-**Passo 4 — Commit (mas não definitivo).**
-Foca 100% no finalista por 90 dias. Mede LTV:CAC real. Se ratio > 3:1 em 90 dias, commit total. Se < 2:1, volta pro Passo 3 com aprendizados.
+**Step 4 — Commit (but not for life).**
+Focus 100% on the finalist for 90 days. Measure real LTV:CAC. If the ratio is > 3:1 in 90 days, commit fully. If < 2:1, go back to Step 3 with what you learned.
 
-## Armadilhas comuns
+## Common traps
 
-**1. "Eu amo esse nicho" sem critério econômico.**
-Paixão pessoal pelo tema é ruído. Founder brasileiro escolhe "nicho fofo" (yoga, café, sustentabilidade, pets) porque gosta — sem checar dor, compra ou TAM. Quase sempre falha em poder de compra.
+**1. "I love this niche" with no economic test.**
+Personal passion for the topic is noise. Founders pick a "cute niche" (yoga, coffee, sustainability, pets) because they like it — without checking pain, buying power, or TAM. It almost always fails on buying power.
 
-**2. Nicho pequeno demais "pra dominar fácil".**
-"Vou ser o líder em [micro-nicho]" é receita pra teto baixo. Se TAM total é 500 empresas, você não constrói negócio de R$ 5M ARR ali.
+**2. A niche too small "so I can dominate it easily."**
+"I'll be the leader in [micro-niche]" is a recipe for a low ceiling. If the total TAM is 500 companies, you won't build a $5M ARR business there.
 
-**3. Nicho com poder de compra mas sem acesso.**
-"Médicos cardiologistas top de SP" tem dinheiro, mas você não chega nele. Nicho viável precisa canal viável.
+**3. A niche with buying power but no reach.**
+"Top cardiologists in [major city]" have money, but you can't get to them. A viable niche needs a viable channel.
 
-**4. Nicho saturado mas "vou ser diferente".**
-Mercado de cursos de marketing digital tem 200+ players estabelecidos. Diferenciação cosmética não salva. Só vai se você tem diferencial estrutural (founder-fit raro, methodology proprietária com proof, etc).
+**4. A saturated niche, but "I'll be different."**
+The digital marketing course market has 200+ established players. Cosmetic differentiation won't save you. You only go in if you have a structural edge (rare founder-fit, a proprietary methodology with proof, etc.).
 
-**5. Validar com amigos / network próximo.**
-Amigos sempre dizem "boa ideia". Validação real é estranho na internet pagando ou pedindo deposit. Se ninguém paga, ideia é só mais um post no LinkedIn.
+**5. Validating with friends / your close network.**
+Friends always say "great idea." Real validation is a stranger on the internet paying or putting down a deposit. If nobody pays, the idea is just another LinkedIn post.
 
-**6. Confundir nicho com persona.**
-"Nicho: profissionais de marketing" não é nicho — é categoria gigantesca. Nicho real: "Head de Growth em SaaS B2B com ARR entre R$ 5-50M, ciclo de venda > 60 dias, time interno de 3-8 profissionais."
+**6. Confusing a niche with a persona.**
+"Niche: marketing professionals" isn't a niche — it's a giant category. A real niche: "Head of Growth at a B2B SaaS with $5-50M ARR, sales cycle > 60 days, internal team of 3-8 people."
 
-## Aplicação por caso de uso
+## Use by case
 
-| Caso | Como usar Niche Selection |
+| Case | How to use Niche Selection |
 |---|---|
-| `/hormozi-gtm:init` | Antes de preencher ICP no `gtm-context.md`, valida com os 5 vetores. Se score < 35, sugere refinar nicho antes. |
-| `/hormozi-gtm:audit` | Se oferta tem Value Equation alto mas conversão ruim, audit raiz pode ser nicho errado, não copy. |
-| `/hormozi-gtm:plano` | Plano de 90 dias começa com validação dos 5 vetores se o founder está cedo (pré-PMF). |
+| `/hormozi-gtm:init` | Before filling in the ICP in `gtm-context.md`, validate with the 5 vectors. If the score is < 35, suggest refining the niche first. |
+| `/hormozi-gtm:audit` | If the offer has a high Value Equation but poor conversion, the root cause in the audit may be the wrong niche, not the copy. |
+| `/hormozi-gtm:plan` | A 90-day plan starts with validating the 5 vectors if the founder is early (pre-PMF). |
 
-## Quando essa skill NÃO entra
+## When this skill does NOT apply
 
-- Founder já tem PMF, > 50 clientes pagantes, LTV:CAC > 3:1 → nicho já validado, foca em copy/pricing/scaling.
-- Refinar oferta de produto já maduro → use `grand-slam-offer` direto.
+- Founder already has PMF, > 50 paying customers, LTV:CAC > 3:1 → niche is already validated, focus on copy/pricing/scaling.
+- Refining the offer of an already mature product → use `grand-slam-offer` directly.
 
-## Referência detalhada
+## Detailed reference
 
-`reference/100m-leads-extracts.md` (cap. 2-3) e `reference/100m-offers-extracts.md` (cap. 1-2).
+`reference/100m-leads-extracts.md` (ch. 2-3) and `reference/100m-offers-extracts.md` (ch. 1-2).

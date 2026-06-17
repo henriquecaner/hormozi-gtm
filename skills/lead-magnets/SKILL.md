@@ -1,95 +1,95 @@
 ---
 name: lead-magnets
-description: 3 archetypes de lead magnet do $100M Leads — Reveal Problems, Samples & Trials, One Step Of Process. Use ao desenhar lead magnet do zero, escolher delivery method, escrever copy de captura.
+description: 3 lead magnet archetypes from $100M Leads — Reveal Problems, Samples & Trials, One Step Of Process. Use when designing a lead magnet from scratch, choosing a delivery method, or writing capture copy.
 ---
 
 # Lead Magnets
 
-Fonte: Alex Hormozi, *$100M Leads*, Capítulo 5.
+Source: Alex Hormozi, *$100M Leads*, Chapter 5.
 
-## Os 3 archetypes
+## The 3 archetypes
 
 ### 1. Reveal Problems
-**Lógica:** cliente não sabe exatamente o que está quebrado. Você diagnostica.
+**Logic:** the prospect doesn't know exactly what's broken. You diagnose it.
 
-Formatos:
-- Audit / assessment gratuito
-- Quiz que revela problema
-- Calculadora que expõe gap
+Formats:
+- Free audit / assessment
+- Quiz that reveals the problem
+- Calculator that exposes the gap
 - Scorecard
 
-**Exemplo:** "Diagnóstico de funil — descubra os 3 gargalos do seu pipeline em 12 perguntas"
+**Example:** "Funnel diagnostic — find the 3 bottlenecks in your pipeline in 12 questions"
 
-**Quando usar:** ICP que sabe que algo está errado mas não consegue nomear. Comum em B2B.
+**When to use:** an ICP that knows something is wrong but can't name it. Common in B2B.
 
 ### 2. Samples & Trials
-**Lógica:** cliente desconfia, quer testar antes de pagar.
+**Logic:** the prospect is skeptical and wants to test before paying.
 
-Formatos:
-- Free trial limitado (7-14 dias)
-- Sample do produto / serviço
-- Mini-curso (3 aulas) do programa completo
-- 1 call gratuita
+Formats:
+- Limited free trial (7-14 days)
+- Sample of the product / service
+- Mini-course (3 lessons) of the full program
+- 1 free call
 
-**Exemplo:** "Acesse 1 módulo completo do programa por 7 dias"
+**Example:** "Get full access to 1 module of the program for 7 days"
 
-**Quando usar:** ICP que valoriza "ver antes de comprar". Comum em digital products.
+**When to use:** an ICP that values "seeing before buying". Common in digital products.
 
 ### 3. One Step Of Process
-**Lógica:** entrega 1 passo isolado do que você faz como serviço completo.
+**Logic:** you deliver 1 isolated step of what you do as a full service.
 
-Formatos:
-- "Strategy session" gratuita (1 ato isolado de consultoria)
-- 1 template / playbook isolado
-- 1 workshop específico
+Formats:
+- Free "strategy session" (1 isolated act of consulting)
+- 1 standalone template / playbook
+- 1 specific workshop
 
-**Exemplo:** "Estratégia de fechamento high-ticket — workshop de 90min ao vivo"
+**Example:** "High-ticket closing strategy — 90-min live workshop"
 
-**Quando usar:** Serviço high-ticket onde 1 isolado é útil mas o real valor é a sequência completa.
+**When to use:** a high-ticket service where 1 isolated step is useful but the real value is the full sequence.
 
-## 4 delivery methods (matriz)
+## 4 delivery methods (matrix)
 
-| Método | Custo de entrega | Velocidade | Quando |
+| Method | Delivery cost | Speed | When |
 |---|---|---|---|
-| Software | Alto (build), baixo (run) | Alta | Cliente quer ferramenta |
-| Information | Baixo | Alta | Cliente quer entender |
-| Service | Alto (recorrente) | Baixa | Cliente quer feito por outro |
-| Physical | Alto (logística) | Baixa | Branding / posicionamento alto |
+| Software | High (build), low (run) | High | Prospect wants a tool |
+| Information | Low | High | Prospect wants to understand |
+| Service | High (recurring) | Low | Prospect wants it done for them |
+| Physical | High (logistics) | Low | Branding / high positioning |
 
-## Anatomia de lead magnet que captura
+## Anatomy of a lead magnet that captures
 
-5 elementos:
+5 elements:
 
-1. **Problema resolvido** (1 problema, não 5)
-2. **3-step process** ou estrutura clara (não monólito)
-3. **Tempo de consumo** declarado (5min / 30min / 90min)
-4. **CTA pro próximo passo** ("se isso resolveu X, vamos resolver Y" — gancho pra core offer)
-5. **Atribuição visual** (logotipo, autor, fonte)
+1. **One problem solved** (1 problem, not 5)
+2. **A 3-step process** or clear structure (not a monolith)
+3. **Stated consumption time** (5min / 30min / 90min)
+4. **CTA to the next step** ("if this fixed X, let's fix Y" — hook into the core offer)
+5. **Visual attribution** (logo, author, source)
 
-## Anti-padrões
+## Anti-patterns
 
-- "Ebook de 47 páginas" (cliente nunca lê)
-- Lead magnet sem CTA pro core (vira gift útil que não converte)
-- Lead magnet que entrega tanto que cliente não precisa do core (canibaliza)
-- Lead magnet generic ("Guia definitivo de X") sem específico
+- "47-page ebook" (the prospect never reads it)
+- A lead magnet with no CTA to the core (becomes a useful gift that doesn't convert)
+- A lead magnet that delivers so much the prospect doesn't need the core (cannibalizes it)
+- A generic lead magnet ("The Definitive Guide to X") with nothing specific
 
 ## Workflow
 
-1. Identifica em qual archetype o ICP precisa (Reveal / Sample / Process)
-2. Escolhe delivery method com base em recursos disponíveis
-3. Define problema único resolvido
-4. Estrutura 3-step process ou frame claro
-5. Adiciona CTA pro core offer no final
-6. Posiciona contra core: lead magnet entrega 10% da transformação; core entrega 90%
+1. Identify which archetype the ICP needs (Reveal / Sample / Process)
+2. Choose the delivery method based on available resources
+3. Define the single problem solved
+4. Structure a 3-step process or clear frame
+5. Add a CTA to the core offer at the end
+6. Position it against the core: the lead magnet delivers 10% of the transformation; the core delivers 90%
 
-## Aplicação por caso de uso
+## Application by use case
 
-| Caso | Uso |
+| Case | Use |
 |---|---|
-| LP de vendas | LP do core menciona o lead magnet como porta de entrada complementar |
-| Roteiro de ad | Ads de canal cold puxam pro lead magnet primeiro, não pro core direto |
-| Business plan | Money Model nível 1 (Attraction Offer) = lead magnet definido |
+| Sales LP | The core LP mentions the lead magnet as a complementary entry point |
+| Ad script | Cold-channel ads pull to the lead magnet first, not straight to the core |
+| Business plan | Money model level 1 (Attraction Offer) = lead magnet defined |
 
-## Referência detalhada
+## Detailed reference
 
-Veja `reference/100m-leads-extracts.md` (seção Lead Magnets Deep Dive).
+See `reference/100m-leads-extracts.md` (Lead Magnets Deep Dive section).

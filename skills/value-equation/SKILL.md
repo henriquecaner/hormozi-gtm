@@ -1,94 +1,94 @@
 ---
 name: value-equation
-description: Value Equation do $100M Offers. Use para diagnosticar qualquer oferta nos 4 vetores ((Dream Outcome × Probability) ÷ (Effort × Time Delay)) antes de escrever copy. Identifica qual vetor é o gargalo crítico e gera score numérico justificado.
+description: The Value Equation from $100M Offers. Use to diagnose any offer across the 4 vectors ((Dream Outcome × Probability) ÷ (Effort × Time Delay)) before writing copy. Identifies which vector is the critical bottleneck and produces a justified numeric score.
 ---
 
 # Value Equation
 
-Fonte: Alex Hormozi, *$100M Offers*, Capítulo 6.
+Source: Alex Hormozi, *$100M Offers*, Chapter 6.
 
-## Fórmula
+## The formula
 
 ```
-Valor = (Dream Outcome × Probabilidade Percebida de Sucesso) ÷ (Tempo Demora × Esforço & Sacrifício)
+Value = (Dream Outcome × Perceived Probability of Success) ÷ (Time Delay × Effort & Sacrifice)
 ```
 
-Numerador você quer maximizar. Denominador você quer minimizar.
+You want to maximize the numerator. You want to minimize the denominator.
 
-## Os 4 vetores
+## The 4 vectors
 
 ### 1. Dream Outcome (maximize)
-**Pergunta:** O que o cliente quer de FATO? Não o que você vende.
+**Question:** What does the client ACTUALLY want? Not what you sell.
 
-Diagnóstico:
-- **10/10:** Resultado específico, quantificado, emocionalmente carregado, alinhado com o que cliente diria num bar
-- **5/10:** Resultado genérico ("aumentar vendas")
-- **1/10:** Foco no produto, não no outcome ("8 módulos de aulas")
+Diagnostic:
+- **10/10:** Specific, quantified, emotionally loaded result — the thing the client would say out loud at a bar
+- **5/10:** Generic result ("increase sales")
+- **1/10:** Focused on the product, not the outcome ("8 lesson modules")
 
 ### 2. Perceived Probability of Success (maximize)
-**Pergunta:** Por que o cliente acreditaria que vai funcionar PRA ELE especificamente?
+**Question:** Why would the client believe this will work FOR THEM specifically?
 
-Alavancas:
-- Cases comparáveis (ICP similar, números explícitos)
-- Mechanism nomeado e explicado
-- Garantia condicional de performance
-- Demonstração ao vivo / sample / trial
-- Endorsements de autoridade
+Levers:
+- Comparable case studies (similar ICP, explicit numbers)
+- A named, explained mechanism
+- Conditional performance guarantee
+- Live demo / sample / trial
+- Authority endorsements
 
-Diagnóstico:
-- **10/10:** Cliente vê 5+ cases idênticos ao perfil dele + garantia condicional + mecanismo nomeado
-- **5/10:** Tem cases mas não comparáveis; garantia genérica
-- **1/10:** Sem cases, sem garantia, sem mecanismo nomeado
+Diagnostic:
+- **10/10:** Client sees 5+ case studies identical to their profile + conditional guarantee + named mechanism
+- **5/10:** Has case studies but they're not comparable; generic guarantee
+- **1/10:** No case studies, no guarantee, no named mechanism
 
 ### 3. Time Delay (minimize)
-**Pergunta:** Quanto tempo até o cliente VER resultado?
+**Question:** How long until the client SEES a result?
 
-Alavancas:
-- Quick wins logo na primeira semana
-- Roadmap por fase com marcos visíveis
-- Implementação done-for-you / done-with-you (reduz tempo até primeiro resultado)
+Levers:
+- Quick wins in the first week
+- Phased roadmap with visible milestones
+- Done-for-you / done-with-you implementation (cuts time to first result)
 
-Diagnóstico:
-- **10/10:** Primeiro resultado mensurável em 7-14 dias
-- **5/10:** Resultado em 30-60 dias com marcos intermediários
-- **1/10:** "Vai dar resultado eventualmente" / 6+ meses sem milestone
+Diagnostic:
+- **10/10:** First measurable result in 7-14 days
+- **5/10:** Result in 30-60 days with interim milestones
+- **1/10:** "It'll pay off eventually" / 6+ months with no milestone
 
 ### 4. Effort & Sacrifice (minimize)
-**Pergunta:** O que o cliente precisa FAZER e ABRIR MÃO?
+**Question:** What does the client have to DO and GIVE UP?
 
-Alavancas:
-- Templates prontos (vs criar do zero)
-- Suporte 1:1 ou comunidade ativa
-- Automações que reduzem tempo de execução
-- "Done-for-you" no que dá pra terceirizar
+Levers:
+- Ready-made templates (vs building from scratch)
+- 1:1 support or an active community
+- Automations that cut execution time
+- "Done-for-you" on whatever can be offloaded
 
-Diagnóstico:
-- **10/10:** Cliente investe <5h/semana e usa templates prontos
-- **5/10:** Cliente investe 10-15h/semana e cria material do zero
-- **1/10:** Cliente investe 20+h/semana, sem templates, sem suporte
+Diagnostic:
+- **10/10:** Client invests <5h/week and uses ready-made templates
+- **5/10:** Client invests 10-15h/week and builds material from scratch
+- **1/10:** Client invests 20+h/week, no templates, no support
 
-## Como rodar audit
+## How to run the audit
 
-1. Coleta os 4 inputs do cliente (dream / probability / time / effort)
-2. Atribui score 1-10 em cada vetor com justificativa de 1 frase
-3. Calcula score agregado: `(Dream × Probability) / (Time × Effort)` em escala normalizada
-4. Identifica o **vetor crítico** (mais baixo) — esse é onde concentrar fix
-5. Propõe top 3 alavancas para esse vetor
+1. Collect the 4 inputs from the client (dream / probability / time / effort)
+2. Assign a 1-10 score to each vector with a one-sentence justification
+3. Compute the aggregate score: `(Dream × Probability) / (Time × Effort)` on a normalized scale
+4. Identify the **critical vector** (the lowest) — that's where you concentrate the fix
+5. Propose the top 3 levers for that vector
 
-## Anti-padrões
+## Anti-patterns
 
-- Inflar Dream Outcome sem aumentar Probability (gera ad agressivo + página fraca = no-buy + reembolso)
-- Diminuir Time sem garantir Probability (sub-promete e overdelivers no prazo, mas resultado não vem)
-- Tudo focado em reduzir Effort (vira "fácil demais", percepção de baixo valor)
+- Inflating Dream Outcome without raising Probability (aggressive ad + weak page = no-buy + refund)
+- Cutting Time without securing Probability (you under-promise and over-deliver on timing, but the result never comes)
+- Everything focused on reducing Effort (turns into "too easy," reads as low value)
 
-## Aplicação por caso de uso
+## Application by use case
 
-| Caso | Como usar Value Equation |
+| Case | How to use the Value Equation |
 |---|---|
-| LP de vendas | Cada seção da página aumenta 1+ vetor explicitamente |
-| Roteiro de ad | Copy do ad foca em aumentar Probability (social proof) OU reduzir Effort (sistema pronto) |
-| Business plan | Identifica qual vetor é constraint principal do mercado; design do produto otimiza esse vetor |
+| Sales LP | Each section of the page raises 1+ vector explicitly |
+| Ad script | Ad copy focuses on raising Probability (social proof) OR reducing Effort (ready-made system) |
+| Business plan | Identify which vector is the market's main constraint; design the product to optimize that vector |
 
-## Referência detalhada
+## Detailed reference
 
-Veja `reference/100m-offers-extracts.md` (seção Value Equation).
+See `reference/100m-offers-extracts.md` (Value Equation section).

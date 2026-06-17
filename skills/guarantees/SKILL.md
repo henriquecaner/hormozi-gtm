@@ -1,108 +1,108 @@
 ---
 name: guarantees
-description: 4 tipos de guarantee do $100M Offers — Money-back, Results-based, Time-based, Performance. Use para reduzir risco percebido na LP, aumentar Probability na Value Equation, justificar preço alto.
+description: The 4 guarantee types from $100M Offers — money-back, results-based, time-based, performance. Use to cut perceived risk on the LP, raise Probability in the Value Equation, and justify a high price.
 ---
 
 # Guarantees
 
-Fonte: Alex Hormozi, *$100M Offers*, Capítulo 15.
+Source: Alex Hormozi, *$100M Offers*, Chapter 15.
 
-## Por que garantia importa
+## Why the guarantee matters
 
-Reduz **risco percebido** do cliente, aumenta **Probability** na Value Equation, justifica preço mais alto. Cliente que acredita que vai dar certo pra ele paga 3-5x mais.
+It cuts the client's **perceived risk**, raises **Probability** in the Value Equation, and justifies a higher price. A client who believes it'll work for them pays 3–5x more.
 
-**Regra:** garantia genérica = nenhuma garantia.
+**Rule:** a generic guarantee = no guarantee.
 
-## Os 4 tipos
+## The 4 types
 
 ### 1. Money-back guarantee (unconditional)
-**Estrutura:** "Se não gostar nos primeiros N dias, devolução integral. Sem pergunta."
+**Structure:** "If you don't like it in the first N days, full refund. No questions asked."
 
-**Quando usar:** produto digital de baixo-médio ticket; cliente facilmente toma decisão de testar.
+**When to use:** low-to-mid deal-size digital product; the client decides to try it easily.
 
-**Risco:** refund rate pode subir 5-15% sem screening.
+**Risk:** refund rate can climb 5–15% with no screening.
 
 ### 2. Results-based guarantee
-**Estrutura:** "Se você seguir [protocolo específico] e não atingir [resultado mensurável] em [tempo], [compensação concreta]."
+**Structure:** "If you follow [specific protocol] and don't hit [measurable result] within [time], [concrete compensation]."
 
-**Quando usar:** serviço com protocolo executável e métrica clara.
+**When to use:** a service with an executable protocol and a clear metric.
 
-**Exemplo:** "Se você implementar o playbook nos primeiros 30 dias e não fechar pelo menos 1 deal novo, devolução integral + R$ 500 pelo seu tempo."
+**Example:** "If you implement the playbook in the first 30 days and don't close at least 1 new deal, full refund + $500 for your time."
 
-**Risco:** baixo se você qualifica bem. Mais conversão que money-back simples.
+**Risk:** low if you qualify well. Converts better than a plain money-back.
 
 ### 3. Time-based guarantee
-**Estrutura:** "Use por N dias. Se não estiver satisfeito, devolução."
+**Structure:** "Use it for N days. If you're not satisfied, refund."
 
-**Quando usar:** SaaS, subscription, serviço continuado. Tempo dá ao cliente espaço pra perceber valor.
+**When to use:** SaaS, subscription, ongoing service. Time gives the client room to feel the value.
 
-**Exemplo:** "60 dias de uso ilimitado. Cancele a qualquer momento, devolução pro-rata."
+**Example:** "60 days of unlimited use. Cancel anytime, pro-rata refund."
 
 ### 4. Performance guarantee
-**Estrutura:** "Se você fizer X passos e não acontecer Y, [compensação acima da expectativa]."
+**Structure:** "If you take X steps and Y doesn't happen, [compensation above expectation]."
 
-**Quando usar:** high-ticket onde você tem skin in the game.
+**When to use:** high-ticket where you have skin in the game.
 
-**Exemplo:** "Implementa o sistema R.A.M.P. nos 90 dias. Se você não fechar 3 deals novos seguindo o protocolo, eu devolvo integralmente E pago R$ 3.000 pelo seu tempo."
+**Example:** "Implement the R.A.M.P. system over 90 days. If you don't close 3 new deals following the protocol, I refund you in full AND pay you $3,000 for your time."
 
-**Risco:** mais alto, mas converte massivamente. Use só se você tem dados de cases.
+**Risk:** higher, but converts massively. Use it only if you have case data.
 
-## Como construir guarantee que converte
+## How to build a guarantee that converts
 
-5 elementos:
+5 elements:
 
-1. **Condição executável** — o que cliente PRECISA fazer (não "se você tentar")
-2. **Métrica mensurável** — Y dinheiro, N deals, X horas economizadas
-3. **Tempo claro** — dias, semanas, meses
-4. **Compensação concreta** — devolução + bonus adicional
-5. **Processo de cláim simples** — não cria fricção pra pedir refund (cliente sente que é truque)
+1. **Executable condition** — what the client MUST do (not "if you try")
+2. **Measurable metric** — Y dollars, N deals, X hours saved
+3. **Clear time window** — days, weeks, months
+4. **Concrete compensation** — refund + an extra bonus
+5. **Simple claim process** — no friction to request a refund (friction makes the client feel it's a trick)
 
-### Exemplo mal feito
-> "Satisfação garantida ou seu dinheiro de volta."
+### Done badly
+> "Satisfaction guaranteed or your money back."
 
-### Exemplo bem feito
-> **Garantia R.A.M.P. de Performance**
-> Implementa o Sistema R.A.M.P. nos primeiros 60 dias. Cumpre os 4 milestones (cada um marcado no calendário). Se você não fechar pelo menos 1 deal novo seguindo o protocolo, eu devolvo os R$ 4.997 integralmente E te pago R$ 500 pelo tempo investido.
+### Done well
+> **R.A.M.P. Performance Guarantee**
+> Implement the R.A.M.P. System in the first 60 days. Hit the 4 milestones (each one marked on the calendar). If you don't close at least 1 new deal following the protocol, I refund the $4,997 in full AND pay you $500 for the time you put in.
 >
-> Como pedir: 1 email com print dos milestones cumpridos. Sem ligação, sem desconto pra ficar, sem retenção. Resposta em 48h.
+> How to claim: 1 email with a screenshot of the milestones you hit. No call, no discount to stay, no retention pitch. Reply within 48h.
 
-## Onde colocar na LP
+## Where to place it on the LP
 
-- Bloco dedicado **acima do CTA principal**
-- Repetido em formato compacto no FAQ
-- Mencionado no recap da oferta
-- Visualmente destacado (selo, ícone, borda)
+- A dedicated block **above the main CTA**
+- Repeated in compact form in the FAQ
+- Mentioned in the offer recap
+- Visually highlighted (badge, icon, border)
 
-## Anti-padrões
+## Anti-patterns
 
-- "Satisfação garantida" (sem cláusula = não conta)
-- Garantia escondida no rodapé
-- Processo de refund com 8 etapas (sinal de má-fé)
-- "Mediante análise" (não é garantia)
-- Garantia que cliente percebe como impossível ("se você ficar milionário em 30 dias")
+- "Satisfaction guaranteed" (no clause = doesn't count)
+- Guarantee buried in the footer
+- An 8-step refund process (a sign of bad faith)
+- "Subject to review" (that's not a guarantee)
+- A guarantee the client reads as impossible ("if you don't become a millionaire in 30 days")
 
-## Cuidado com regulação (BR)
+## Watch the regulation (localize per market)
 
-CDC (Código de Defesa do Consumidor BR) tem regras sobre arrependimento e garantia. Performance guarantees customizadas são válidas mas precisam de cláusula clara. Não promete o que não pode entregar — fica risco jurídico.
+Consumer-protection law (which varies by market — localize) often sets rules on cooling-off periods and refunds. Custom performance guarantees are valid, but they need a clear clause. Don't promise what you can't deliver — that's legal exposure.
 
 ## Workflow
 
-1. Identifica o resultado-chave da oferta
-2. Define métrica mensurável (R$, deals, %, tempo)
-3. Define tempo para o resultado aparecer
-4. Define ação executável do cliente (não passivo)
-5. Define compensação acima de "dinheiro de volta" (extras compensa risco zero)
-6. Define processo de cláim simples
-7. Posiciona com visual destacado na LP
+1. Identify the offer's key result
+2. Define the measurable metric ($, deals, %, time)
+3. Define the time window for the result to show up
+4. Define the client's executable action (not passive)
+5. Define compensation above plain "money back" (extras pay for the zero-risk feeling)
+6. Define a simple claim process
+7. Position it with a highlighted visual on the LP
 
-## Aplicação por caso de uso
+## Application by use case
 
-| Caso | Uso |
+| Case | Use |
 |---|---|
-| LP de vendas | Bloco dedicado acima do CTA, repetido no FAQ |
-| Roteiro de ad | Garantia revelada nos últimos 30s antes do CTA |
-| Pricing review | Identifica se preço alto exige guarantee mais forte |
+| Sales LP | Dedicated block above the CTA, repeated in the FAQ |
+| Ad script | Guarantee revealed in the last 30s before the CTA |
+| Pricing review | Identifies whether a high price demands a stronger guarantee |
 
-## Referência detalhada
+## Detailed reference
 
-Veja `reference/100m-offers-extracts.md` (seção Risk Reversal / Guarantees).
+See `reference/100m-offers-extracts.md` (Risk Reversal / Guarantees section).

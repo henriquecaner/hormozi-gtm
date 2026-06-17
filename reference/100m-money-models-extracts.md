@@ -1,69 +1,69 @@
-# $100M Money Models — Extratos atribuídos
+# $100M Money Models — Attributed Extracts
 
-**Fonte:** Alex Hormozi, *$100M Money Models* (em desenvolvimento/série de vídeos + notas), Acquisition.com.
+**Source:** Alex Hormozi, *$100M Money Models* (in development / video series + notes), Acquisition.com.
 
-> **Fair use disclaimer:** Notas e excertos curtos para fins instrucionais transformativos no plugin hormozi-gtm. Obra completa é propriedade intelectual de Alex Hormozi.
+> **Fair use disclaimer:** Short notes and excerpts used for transformative instructional purposes inside the hormozi-gtm plugin. The complete work is the intellectual property of Alex Hormozi.
 
 ---
 
-## Estrutura central: 4 níveis
+## Core structure: 4 levels
 
 ### 1. Attraction Offer
-- Função: capturar intent, gerar lista qualificada
-- Formatos: lead magnet free, tripwire R$ 7-47, webinar
-- Métrica: CPL + opt-in rate
+- Job: capture intent, build a qualified list
+- Formats: free lead magnet, $7–47 tripwire, webinar
+- Metric: CPL + opt-in rate
 
 ### 2. Core Offer
-- Função: resolver problema central, maior margem absoluta
-- Preço alvo: 10-100x tripwire ou >100x lead magnet
-- Margem gross alvo: 70%+ (serviço), 80%+ (digital)
-- Métrica: conversion rate + AOV
+- Job: solve the central problem, highest absolute margin
+- Target price: 10–100x the tripwire or >100x the lead magnet
+- Target gross margin: 70%+ (service), 80%+ (digital)
+- Metric: conversion rate + AOV
 
-### 3. Upsell Offer (crítico)
-- Função: absorver CAC em 30 dias = Client-Financed Acquisition
-- Formatos: order bump, OTO, upsell page, DFY tier
-- Take rate alvo: 20-40%
-- Profit upsell alvo ≥ CAC
+### 3. Upsell Offer (critical)
+- Job: absorb CAC within 30 days = Client-Financed Acquisition
+- Formats: order bump, OTO, upsell page, DFY tier
+- Target take rate: 20–40%
+- Target upsell profit ≥ CAC
 
 ### 4. Continuity / Downsell
 
 **Continuity:**
-- Função: maximizar LTV via recorrência
-- Formatos: comunidade paga, mentoria mensal, SaaS layer
-- Métrica: MRR/ARR + churn
+- Job: maximize LTV through recurring revenue
+- Formats: paid community, monthly mentorship, SaaS layer
+- Metric: MRR/ARR + churn
 
 **Downsell:**
-- Função: recuperar quem disse não ao core
-- Formatos: versão self-paced, mini-curso, parcelamento mais longo
-- Take rate alvo: 10-25% dos no-buys do core
+- Job: recover the people who said no to the core offer
+- Formats: self-paced version, mini-course, longer payment plan
+- Target take rate: 10–25% of core no-buys
 
-## Vídeos referenciados (em `100$ MONEY MODELS VIDS/`)
+## Referenced videos (in `100$ MONEY MODELS VIDS/`)
 
-- **10. Attraction Offers** — design de lead magnets e tripwires
-- **17. Upsell Offers** — onde, quando, como apresentar pós-checkout
-- **22. Downsell Offers** — recuperação de no-buys
-- **31. 10 Years in 10 Minutes** — resumo de princípios cross-portfolio
+- **10. Attraction Offers** — designing lead magnets and tripwires
+- **17. Upsell Offers** — where, when, and how to present them post-checkout
+- **22. Downsell Offers** — recovering no-buys
+- **31. 10 Years in 10 Minutes** — summary of cross-portfolio principles
 
-## Client-Financed Acquisition (regra de ouro)
+## Client-Financed Acquisition (the golden rule)
 
 Hormozi:
-> "Se sua upsell paga seu CAC em 30 dias, você pode escalar paid ads sem limite de capital. Isso é o santo graal."
+> "If your upsell pays for your CAC within 30 days, you can scale paid ads with no capital limit. That's the holy grail."
 
-Como modelar:
-1. Calcula CAC atual ou pretendido
-2. Calcula profit médio do upsell em 30 dias
-3. Se profit ≥ CAC, escala paid agressivamente
-4. Se profit < CAC, trabalha pra fazer ser verdadeiro antes de escalar
+How to model it:
+1. Calculate current or intended CAC
+2. Calculate average upsell profit over 30 days
+3. If profit ≥ CAC, scale paid aggressively
+4. If profit < CAC, work to make it true before scaling
 
-## Sinais de Money Model fraco
+## Signs of a weak Money Model
 
-- Só core offer, sem upsell (CAC paga lento)
-- Sem continuity (LTV plano, ratio sempre apertado)
-- Upsell take rate < 10% (oferta errada ou momento errado)
-- Downsell inexistente (perde 70% dos no-buys)
-- Core offer com margem < 50% (modelo não fecha em escala)
+- Core offer only, no upsell (CAC pays back slowly)
+- No continuity (flat LTV, ratio always tight)
+- Upsell take rate < 10% (wrong offer or wrong moment)
+- No downsell (loses 70% of no-buys)
+- Core offer with margin < 50% (the model doesn't close at scale)
 
 ---
 
-*Vídeos completos disponíveis localmente em Hormozi/References/100$ MONEY MODELS VIDS/.*
-*Acquisition.com tem material adicional gratuito.*
+*Full videos available locally in Hormozi/References/100$ MONEY MODELS VIDS/.*
+*Acquisition.com has additional free material.*

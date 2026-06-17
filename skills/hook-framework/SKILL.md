@@ -1,89 +1,89 @@
 ---
 name: hook-framework
-description: Hook Framework do $100M Leads — 3 tipos de hook (dream outcome, problem, secret). Use para gerar headlines de LP, hooks de ads (especialmente short-form), subject lines de email, primeiras frases de copy.
+description: Hook Framework from $100M Leads — 3 hook types (dream outcome, problem, secret). Use to generate LP headlines, ad hooks (especially short-form), email subject lines, and opening lines of copy.
 ---
 
 # Hook Framework
 
-Fonte: Alex Hormozi, *$100M Leads* (Magnetic Reasons + Lead Magnet hooks) + *$100M Offers* (Naming).
+Source: Alex Hormozi, *$100M Leads* (Magnetic Reasons + Lead Magnet hooks) + *$100M Offers* (Naming).
 
-## Os 3 tipos de hook
+## The 3 hook types
 
 ### 1. Dream Outcome Hook
-**Estrutura:** "Como [pessoa específica] alcançou [resultado específico] em [tempo] sem [obstáculo comum]"
+**Structure:** "How [specific person] hit [specific result] in [timeframe] without [common obstacle]"
 
-Exemplos:
-- "Como closers iniciantes passaram de R$ 8k pra R$ 23k MRR em 47 dias sem mudar de empresa"
-- "Como freelancers de design fecharam contratos de R$ 50k+ sem cold email"
+Examples:
+- "How rookie closers went from $8k to $23k MRR in 47 days without switching companies"
+- "How freelance designers landed $50k+ contracts without cold email"
 
-**Quando usar:** audience aspiracional, cliente já vê o desejo claramente.
+**When to use:** aspirational audience, the prospect already sees the desire clearly.
 
 ### 2. Problem Hook
-**Estrutura:** "Pare de [comportamento errado]. O problema não é [diagnóstico raso], é [diagnóstico real]."
+**Structure:** "Stop [the wrong behavior]. The problem isn't [shallow diagnosis], it's [the real diagnosis]."
 
-Exemplos:
-- "Pare de ler livro de vendas. O problema do seu closer não é técnica, é objeção de preço."
-- "Pare de gastar em ads. Sua LP perde 80% do tráfego porque a oferta está fraca."
+Examples:
+- "Stop reading sales books. Your closer's problem isn't technique, it's price objection."
+- "Stop spending on ads. Your LP bleeds 80% of its traffic because the offer is weak."
 
-**Quando usar:** audience cética, cliente já tentou outras coisas, precisa de reframe.
+**When to use:** skeptical audience, the prospect has tried other things, needs a reframe.
 
 ### 3. Secret Hook
-**Estrutura:** "A coisa que [autoridade/grupo] não conta sobre [tópico relevante]"
+**Structure:** "The thing [an authority/group] won't tell you about [relevant topic]"
 
-Exemplos:
-- "A coisa que os top closers de SaaS não contam sobre objeção de preço"
-- "O número que sua planilha de pricing está mentindo pra você"
+Examples:
+- "The thing top SaaS closers won't tell you about price objection"
+- "The number your pricing spreadsheet is lying to you about"
 
-**Quando usar:** audience curiosa, tópico onde existe percepção de informação oculta.
+**When to use:** curious audience, a topic where there's a sense of hidden information.
 
-## Anti-padrões (descarta automaticamente)
+## Anti-patterns (auto-discard)
 
-- "Descubra o segredo de X" (genérico, sem especificidade)
-- "Você quer ganhar mais?" (yes/no genérico)
-- "Hoje vou te ensinar..." (anti-hook, mata atenção)
-- Emoji excessivo
-- TUDO EM CAIXA ALTA
-- Pergunta retórica óbvia
+- "Discover the secret to X" (generic, no specificity)
+- "Want to make more money?" (generic yes/no)
+- "Today I'm going to teach you..." (anti-hook, kills attention)
+- Excessive emoji
+- ALL CAPS
+- Obvious rhetorical question
 
-## Critérios de qualidade
+## Quality criteria
 
-Um hook bom passa em 3 testes:
+A good hook passes 3 tests:
 
-1. **Especificidade numérica:** tem número (idade, valor, tempo, %, quantidade)
-2. **Tweet test:** o hook lê isoladamente como tweet/post? Se sim, OK.
-3. **Curiosity gap:** o leitor PRECISA saber o que vem depois?
+1. **Numeric specificity:** it has a number (age, dollar amount, timeframe, %, quantity)
+2. **Tweet test:** does the hook read on its own as a tweet/post? If yes, OK.
+3. **Curiosity gap:** does the reader NEED to know what comes next?
 
-## Workflow batch (15 hooks)
+## Batch workflow (15 hooks)
 
-Quando comando `/hormozi-gtm:hooks` for invocado:
+When the `/hormozi-gtm:hooks` command is invoked:
 
-1. Coleta ICP + oferta + transformação prometida
-2. Gera 5 hooks por tipo (5 dream + 5 problem + 5 secret) = 15 total
-3. Especifica para cada hook:
-   - Ângulo (dream/problem/secret)
-   - Mecanismo (qual emoção/pensamento aciona)
-   - Onde usar (LP headline / ad hook / email subject)
-4. Identifica top 3 do agent com justificativa
+1. Collect ICP + offer + promised transformation
+2. Generate 5 hooks per type (5 dream + 5 problem + 5 secret) = 15 total
+3. For each hook, specify:
+   - Angle (dream/problem/secret)
+   - Mechanism (which emotion/thought it triggers)
+   - Where to use it (LP headline / ad hook / email subject)
+4. Identify the agent's top 3 with rationale
 
-Quantidades configuráveis via `--n=N` (default 15).
+Quantities configurable via `--n=N` (default 15).
 
-## Aplicação por caso de uso
+## Application by use case
 
-| Caso | Como usar Hook Framework |
+| Case | How to use the Hook Framework |
 |---|---|
-| LP de vendas | Primary headline + sub-headline testam 3 tipos diferentes. Winner rotates |
-| Roteiro de ad | Primeiros 3 segundos = hook. Short-form vive ou morre aqui |
-| Hooks batch | 15-20 variantes pra teste A/B |
+| Sales LP | Primary headline + sub-headline test the 3 different types. Winner rotates |
+| Ad script | First 3 seconds = the hook. Short-form lives or dies here |
+| Hooks batch | 15-20 variants for A/B testing |
 
-## Especialização por plataforma
+## Platform specialization
 
-| Plataforma | Tipo de hook que tende a vencer |
+| Platform | Hook type that tends to win |
 |---|---|
-| Reels / TikTok | Problem hook (reframe rápido) |
-| YouTube | Dream outcome hook (longo formato suporta) |
-| LP headline | Dream outcome hook (alta especificidade) |
-| Email subject | Secret hook (curiosity > especificidade) |
+| Reels / TikTok | Problem hook (fast reframe) |
+| YouTube | Dream outcome hook (long format supports it) |
+| LP headline | Dream outcome hook (high specificity) |
+| Email subject | Secret hook (curiosity > specificity) |
 
-## Referência detalhada
+## Detailed reference
 
-Veja `reference/100m-leads-extracts.md` (seção Magnetic Reasons + Hook Mechanics).
+See `reference/100m-leads-extracts.md` (Magnetic Reasons + Hook Mechanics section).

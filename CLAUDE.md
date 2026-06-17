@@ -1,132 +1,132 @@
 # CLAUDE.md — hormozi-gtm
 
-Este arquivo orienta Claude Code (claude.ai/code) ao trabalhar neste repo.
+This file guides Claude Code (claude.ai/code) when working in this repo.
 
-## O que este repo é
+## What this repo is
 
-Plugin Claude Code da LEVEL — não é uma aplicação executável. Os "artefatos" são Markdown estruturado (slash commands, agents, skills) que outras instâncias do Claude Code carregam. Não há build, lint, test runner ou pacote a instalar.
+LEVEL's Claude Code plugin — not an executable application. The "artifacts" are structured Markdown (slash commands, agents, skills) that other Claude Code instances load. There's no build, lint, test runner, or package to install.
 
-## Arquitetura
+## Architecture
 
 ```
 hormozi-gtm/
 ├── .claude-plugin/plugin.json      # manifest
 ├── commands/                       # 17 slash commands (entry points)
-├── agents/                         # 7 subagents (hormozi-persona + 5 especialistas + humanizer)
-├── skills/                         # 42 skills (frameworks + estratégia + hormozi-voice + 16 template-* esqueletos)
-├── hooks/hooks.json                # banner SessionStart + aiism-check PostToolUse (consolidado)
-└── reference/                      # extratos atribuídos dos livros (fair-use)
-                                    # (esqueletos de output vivem em skills/template-*; audit é inline)
+├── agents/                         # 7 subagents (hormozi-persona + 5 specialists + humanizer)
+├── skills/                         # 42 skills (frameworks + strategy + hormozi-voice + 16 template-* skeletons)
+├── hooks/hooks.json                # SessionStart banner + aiism-check PostToolUse (consolidated)
+└── reference/                      # attributed excerpts from the books (fair-use)
+                                    # (output skeletons live in skills/template-*; audit is inline)
 ```
 
-**Pipeline canônico de um comando:**
+**Canonical pipeline for a command:**
 
 ```
 slash command (commands/<x>.md)
-    └─ orquestrador: hormozi-persona (sempre)
-         └─ delegate a especialista: offer-architect | ad-architect | pricing-strategist | leads-strategist | money-model-architect
-              └─ skills carregadas conforme o comando lista em "Skills ativas"
-         └─ último passo: subagent humanizer (lite ou full) — escreve em outputs/
+    └─ orchestrator: hormozi-persona (always)
+         └─ delegate to specialist: offer-architect | ad-architect | pricing-strategist | leads-strategist | money-model-architect
+              └─ skills loaded per the command's "Active skills" list
+         └─ final step: humanizer subagent — writes to outputs/
 ```
 
-Regras invariantes:
+Invariant rules:
 
-1. **Persona Hormozi sempre ativa** em qualquer comando `/hormozi-gtm:*`. 1ª pessoa, sem voz de assistente. Não relaxar mesmo em pergunta operacional curta. Detalhes em `agents/hormozi-persona.md`.
-2. **Humanizer = gate só de copy externa** (lp, roteiro, hooks, email, case-study, webinar, conteúdo, winback). Diagnóstico/estratégia/interno (audit, review, plano, pricing, objections, positioning, análise de churn, onboarding) e interações ficam **crus, Hormozi brutal**. Modo `lite` removido. Humanizer unifica voz + protege a presa (CTA-ordem, frase-martelo, especificidade agressiva); nunca amacia. Regras em `skills/humanizer-rules/SKILL.md` e `agents/humanizer.md`.
-3. **Frameworks são fonte da verdade.** Não inventar conselho de GTM fora do que está em `skills/` + `reference/`. Citar capítulo/seção do livro ao ampliar.
-4. **Voz brutal (v1.0).** O registro de voz vive em `skills/hormozi-voice/` (exemplos do corpus + regras duras + rubrica de brutalidade 0-10, gate ≥7 para copy externa). Persona, especialistas e humanizer carregam essa skill. Comandos também carregam `hormozi-voice` IN-CONTEXTO — não só via subagent (robustez no Cowork, onde subagent raramente roda).
-5. **Template loading (v1.0).** `${CLAUDE_PLUGIN_ROOT}` NÃO interpola em corpo de command (issue #9354). Cada template virou skill `template-*` (description de-triggerizada) carregada por nome via ferramenta Skill, ou inline (audit). As skills `template-*` são a **fonte única** do esqueleto (a pasta `templates/` foi removida no 1.0.1 — era duplicação morta); `audit` usa esqueleto inline no próprio comando. Ao mudar o formato de um output, edite a skill `template-<nome>` correspondente.
-6. **Pipeline single-context (v1.0).** Sem gate de tier / "modo GOD" auto-detectado (deep review provou não-confiável e sem ganho de output). Comandos orquestram fases no próprio contexto carregando skills; isolamento de subagent é opt-in, não auto-detecção.
+1. **Hormozi persona always on** in any `/hormozi-gtm:*` command. First person, no assistant voice. Don't relax it even on a short operational question. Details in `agents/hormozi-persona.md`.
+2. **Humanizer = gate for external copy only** (lp, script, hooks, email, case-study, webinar, content, winback). Diagnostic/strategy/internal work (audit, review, plan, pricing, objections, positioning, churn analysis, onboarding) and interactions stay **raw, brutal Hormozi**. The `lite` mode was removed. Humanizer unifies the voice and protects the bite (command-style CTA, hammer line, aggressive specificity); it never softens. Rules in `skills/humanizer-rules/SKILL.md` and `agents/humanizer.md`.
+3. **Frameworks are the source of truth.** Don't invent GTM advice outside what lives in `skills/` + `reference/`. Cite the book chapter/section when you expand on something.
+4. **Brutal voice (v1.0).** The voice register lives in `skills/hormozi-voice/` (corpus examples + hard rules + 0–10 brutality rubric, ≥7 gate for external copy). Persona, specialists, and humanizer all load this skill. Commands also load `hormozi-voice` IN-CONTEXT — not just via subagent (robustness in Cowork, where the subagent rarely runs).
+5. **Template loading (v1.0).** `${CLAUDE_PLUGIN_ROOT}` does NOT interpolate inside a command body (issue #9354). Each template became a `template-*` skill (de-triggered description) loaded by name through the Skill tool, or inline (audit). The `template-*` skills are the **single source** of the skeleton (the `templates/` folder was removed in 1.0.1 — it was dead duplication); `audit` uses an inline skeleton in the command itself. To change an output's format, edit the matching `template-<name>` skill.
+6. **Single-context pipeline (v1.0).** No tier gate / auto-detected "GOD mode" (deep review proved unreliable and added no output gain). Commands orchestrate phases in their own context by loading skills; subagent isolation is opt-in, not auto-detection.
 
-## Contrato `gtm-context.md`
+## `gtm-context.md` contract
 
-Comandos exceto `/hormozi-gtm:init` leem `gtm-context.md` na raiz do projeto-consumidor (não deste repo). É a memória persistente de empresa/cliente: ICP, oferta, brand voice, Core Four split, stage.
+Every command except `/hormozi-gtm:init` reads `gtm-context.md` at the root of the consuming project (not this repo). It's the persistent company/client memory: ICP, offer, brand voice, Core Four split, stage, output language.
 
-- Schema canônico: skill `template-gtm-context`.
-- Se ausente, comandos disparam `/hormozi-gtm:init` automaticamente antes de prosseguir.
-- Se `last_updated` >30 dias, comandos avisam "contexto stale" e sugerem `--refresh`.
-- Editar fluxos de comando preservando esse contrato — quebrar a auto-detecção quebra todo o plugin.
+- Canonical schema: the `template-gtm-context` skill.
+- If it's missing, commands fire `/hormozi-gtm:init` automatically before proceeding.
+- If `last_updated` is >30 days old, commands warn "stale context" and suggest `--refresh`.
+- Edit command flows while preserving this contract — breaking the auto-detection breaks the whole plugin.
 
-## Convenção de outputs
+## Output conventions
 
-Definida em `skills/output-conventions/SKILL.md`. Detalhes load-bearing:
+Defined in `skills/output-conventions/SKILL.md`. Load-bearing details:
 
-- Caminho: `outputs/<tipo>/<tipo>-<slug>-<YYYYMMDD>-v<n>.md` no projeto-consumidor.
-- Versionamento incrementa. Nunca sobrescrever sem `--overwrite`.
-- Frontmatter obrigatório: `plugin`, `plugin_version`, `command`, `version`, `status`, `created`, `client`, `product`, `frameworks`, `humanizer_pass`, `humanizer_mode`.
-- `humanizer_pass: false` é gate de release externo.
+- Path: `outputs/<type>/<type>-<slug>-<YYYYMMDD>-v<n>.md` in the consuming project.
+- Versioning increments. Never overwrite without `--overwrite`.
+- Required frontmatter: `plugin`, `plugin_version`, `command`, `version`, `status`, `created`, `client`, `product`, `frameworks`, `humanizer_pass`, `humanizer_mode`, `voice`, `language`.
+- `humanizer_pass: false` is the external release gate.
 
-## Convenção de argumentos
+## Argument conventions
 
-Todos os commands seguem o padrão `--flag=valor`. Não há argumentos posicionais — evita ambiguidade entre "slug do produto" e "caminho de arquivo".
+Every command follows the `--flag=value` pattern. There are no positional arguments — that avoids ambiguity between "product slug" and "file path".
 
-**Flags compartilhadas (mesmo significado em todos os commands):**
+**Shared flags (same meaning across all commands):**
 
-| Flag | Função |
+| Flag | Purpose |
 |---|---|
-| `--produto=<slug>` | Slug do produto (kebab-case). Lido de `gtm-context.md` se omitido, ou perguntado no chat. |
-| `--ref=<caminho>` | Caminho para um output anterior (refinar / criar v2). Ex: `--ref=outputs/lp/lp-revops-20260519-v1.md`. |
-| `--foco=<secao>` | Em modo refinar (`--ref`), foca em parte específica do material. Ex: `--foco=hero` na LP. |
-| `--full-rewrite` | Em modo refinar (`--ref`), cria v2 do zero usando o anterior só como `parent_version`. |
-| `--no-humanize` | Pula o humanizer pass (debug ou A/B test). Salva com `humanizer_pass: false`. **Só existe nos commands de copy externa** (lp, roteiro, hooks, email, case-study, webinar, content-hub→peças, churn-prevention→winback). Nos commands internos/diagnóstico (audit, review, plano, pricing, objections, positioning, onboarding) a flag não existe — eles já saem crus, nunca humanizam. |
+| `--product=<slug>` | Product slug (kebab-case). Read from `gtm-context.md` if omitted, or asked in chat. |
+| `--ref=<path>` | Path to a prior output (refine / create a v2). E.g. `--ref=outputs/lp/lp-revops-20260519-v1.md`. |
+| `--focus=<section>` | In refine mode (`--ref`), focuses on a specific part of the material. E.g. `--focus=hero` on the LP. |
+| `--full-rewrite` | In refine mode (`--ref`), creates a v2 from scratch, using the prior version only as `parent_version`. |
+| `--no-humanize` | Skips the humanizer pass (debug or A/B test). Saves with `humanizer_pass: false`. **Only exists on external-copy commands** (lp, script, hooks, email, case-study, webinar, content-hub→pieces, churn-prevention→winback). On internal/diagnostic commands (audit, review, plan, pricing, objections, positioning, onboarding) the flag doesn't exist — those ship raw and never humanize. |
 
-**Flags específicas por command:**
-- `init`: `--refresh` (reabre entrevista mantendo `gtm-context.md` como base).
-- `roteiro`: `--formato=vsl|reels|shorts|tiktok`, `--batch`, `--n=N`.
-- `hooks`: `--n=N`, `--angulo=dream|problem|secret|contrarian|proof`.
-- `lp`: `--skip-audit` (ignora warning de audit ausente).
-- `plano`: `--tipo=empresa|produto`.
-- `email`: `--tipo=cold|warm|nurture|re-engagement`.
+**Command-specific flags:**
+- `init`: `--refresh` (reopens the interview, keeping `gtm-context.md` as the base).
+- `script`: `--format=vsl|reels|shorts|tiktok`, `--batch`, `--n=N`.
+- `hooks`: `--n=N`, `--angle=dream|problem|secret|contrarian|proof`.
+- `lp`: `--skip-audit` (ignores the missing-audit warning).
+- `plan`: `--type=company|product`.
+- `email`: `--type=cold|warm|nurture|re-engagement`.
 
-**Regra:** se está pensando em adicionar arg posicional novo, transforme em `--flag` primeiro. Evita "esse caminho é referência ou destino?" e mantém o autocomplete do Claude Code útil.
+**Rule:** if you're thinking about adding a new positional arg, turn it into a `--flag` first. It avoids "is this path a reference or a destination?" and keeps Claude Code's autocomplete useful.
 
-## Tarefas comuns
+## Common tasks
 
-### Validar um comando manualmente
+### Validate a command manually
 
-Não há test runner. Validação é executar o comando dentro de um projeto-consumidor real:
+There's no test runner. Validation means running the command inside a real consuming project:
 
 ```bash
-claude --plugin-dir .   # do diretório raiz do plugin, ou path absoluto se rodando de outro lugar
+claude --plugin-dir .   # from the plugin's root dir, or an absolute path if running elsewhere
 /hormozi-gtm:init
 /hormozi-gtm:audit
 ```
 
-### Adicionar novo comando
+### Add a new command
 
-1. Criar `commands/<nome>.md` com frontmatter (`description`, `argument-hint`).
-2. Listar persona orquestradora, especialista, skills, template, regra de humanizer.
-3. Adicionar skill `template-<nome>` com o esqueleto do output novo (description de-triggerizada), ou inline no command.
-4. Atualizar `skills/output-conventions/SKILL.md`.
-5. Bump `version` em `.claude-plugin/plugin.json` + entrada no `CHANGELOG.md`.
+1. Create `commands/<name>.md` with frontmatter (`description`, `argument-hint`).
+2. List the orchestrating persona, the specialist, the skills, the template, the humanizer rule.
+3. Add a `template-<name>` skill with the new output's skeleton (de-triggered description), or inline it in the command.
+4. Update `skills/output-conventions/SKILL.md`.
+5. Bump `version` in `.claude-plugin/plugin.json` + an entry in `CHANGELOG.md`.
 
-### Publicar nova versão
+### Publish a new version
 
-1. Bump `version` em `.claude-plugin/plugin.json` (SemVer).
-2. Bump `metadata.version` e `plugins[0].version` em `.claude-plugin/marketplace.json` (mesmo SemVer — o workflow `release.yml` valida que os três batem).
-3. Atualizar `CHANGELOG.md` (mover de `[Unreleased]` para nova seção `[X.Y.Z]`).
-4. Commit, push para `main`.
-5. `git tag vX.Y.Z && git push origin vX.Y.Z` — dispara workflow `release.yml` (gera ZIP, cria release, extrai notes do CHANGELOG).
-6. Clientes recebem via `/plugin update hormozi-gtm` (marketplace integrado no mesmo repo).
+1. Bump `version` in `.claude-plugin/plugin.json` (SemVer).
+2. Bump `metadata.version` and `plugins[0].version` in `.claude-plugin/marketplace.json` (same SemVer — the `release.yml` workflow checks that all three match).
+3. Update `CHANGELOG.md` (move from `[Unreleased]` into a new `[X.Y.Z]` section).
+4. Commit, push to `main`.
+5. `git tag vX.Y.Z && git push origin vX.Y.Z` — fires the `release.yml` workflow (builds the ZIP, creates the release, pulls notes from the CHANGELOG).
+6. Clients get it via `/plugin update hormozi-gtm` (marketplace lives in the same repo).
 
-> Os esqueletos (skills `template-*`) usam `plugin_version: {{plugin_version}}` como placeholder dinâmico. Não precisa editá-los a cada bump — o command lê o valor de `.claude-plugin/plugin.json` na hora de gerar o output.
+> The skeletons (`template-*` skills) use `plugin_version: {{plugin_version}}` as a dynamic placeholder. You don't need to edit them on every bump — the command reads the value from `.claude-plugin/plugin.json` when it generates the output.
 
 ## Roadmap
 
-> v0.1.x → v0.4.x: encerradas (ver `CHANGELOG.md` para detalhes).
+> v0.1.x → v0.4.x: closed (see `CHANGELOG.md` for details).
 
-### [0.5.0+] Roadmap distante (opcional)
-- `settings.json` customization (cliente declara `humanizer_mode_default`, intensidade Hormozi, preferências de output).
-- Multi-cliente em paralelo (gtm-context.md singular hoje — futuro: `gtm-context-{slug}.md` por cliente).
-- Comando `/hormozi-gtm:export` — empacota outputs de 1 cliente num zip pra entrega.
-- A/B testing automation — integração com plataformas de ads (depende de API externa).
+### [0.5.0+] Distant roadmap (optional)
+- `settings.json` customization (client declares `humanizer_mode_default`, Hormozi intensity, output preferences).
+- Multiple clients in parallel (gtm-context.md is singular today — future: `gtm-context-{slug}.md` per client).
+- `/hormozi-gtm:export` command — packs one client's outputs into a zip for delivery.
+- A/B testing automation — integration with ad platforms (depends on an external API).
 
-### Não planejado (workflow manual necessário)
-- CRM sync (manutenção de `gtm-context.md` manual por enquanto).
+### Not planned (manual workflow required)
+- CRM sync (`gtm-context.md` stays hand-maintained for now).
 
-## Editando conteúdo
+## Editing content
 
-- **Persona** (`agents/hormozi-persona.md`): invariante de voz. Não suavizar.
-- **Humanizer** (`agents/humanizer.md` + `skills/humanizer-rules/SKILL.md`): listas EN+PT-BR de AI-isms. Adicionar padrão novo nos dois arquivos.
-- **Reference** (`reference/*.md`): só extratos curtos (≤10% de capítulo), com atribuição e fair-use disclaimer no topo.
-- **CHANGELOG**: toda mudança em `commands/`, `agents/` ou `skills/` (inclui as `template-*`) precisa entrada.
+- **Persona** (`agents/hormozi-persona.md`): the voice invariant. Don't soften it.
+- **Humanizer** (`agents/humanizer.md` + `skills/humanizer-rules/SKILL.md`): EN + PT-BR lists of AI-isms. Add a new pattern in both files.
+- **Reference** (`reference/*.md`): short excerpts only (≤10% of a chapter), with attribution and a fair-use disclaimer at the top.
+- **CHANGELOG**: any change in `commands/`, `agents/`, or `skills/` (including the `template-*` ones) needs an entry.

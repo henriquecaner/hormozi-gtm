@@ -1,158 +1,160 @@
 ---
-description: Roadmap 30-90 dias de conteúdo orgânico. Tópico × formato × funnel stage × CTA. Mix saudável (60% educacional, 25% entertainment, 15% promocional). Para founder/consultor que quer organic compondo ao longo de 6-18 meses, não 1 post viral.
-argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--duracao=30|60|90] [--plataforma=linkedin|instagram|youtube|x]"
+description: 30-90 day organic content roadmap. Topic × format × funnel stage × CTA. Healthy mix (60% educational, 25% entertainment, 15% promotional). For the founder/consultant who wants organic compounding over 6-18 months, not one viral post.
+argument-hint: "[--product=<slug>] [--ref=<path>] [--duration=30|60|90] [--platform=linkedin|instagram|youtube|x]"
 ---
 
 # /hormozi-gtm:content-hub
 
-Plano operacional de conteúdo. Não é "ideias de post" — é roadmap de cadência sustentável com tópicos mapeados em funnel stages, formatos por plataforma, métricas por trimestre.
+An operational content plan. Not "post ideas" — a roadmap for a sustainable cadence, with topics mapped to funnel stages, formats per platform, and metrics per quarter.
 
-## Carregamento de persona
+## Persona loading
 
-Use `hormozi-persona` para orquestrar. Delegate ao `ad-architect` para destilar tópicos em formato consumível.
+Orchestrator: `hormozi-persona`. Delegate to `ad-architect` to distill topics into consumable formats.
 
-Carregue a skill `hormozi-voice` via ferramenta Skill e **imite o registro** (não dependa só do subagent — no Cowork ele pode não rodar). O roadmap é diagnóstico/estratégia interna: voz crua, número e verbo, zero adjetivo de marketing, direto na cara. Sem ≥7, sem humanizer aqui.
+Load the `hormozi-voice` skill via the Skill tool and imitate the register (don't rely on the subagent alone — in Cowork it may not run). The roadmap is internal diagnostic/strategy: raw voice, number and verb, zero marketing adjectives, straight to their face. No ≥7 gate, no humanizer here.
 
-As **peças de conteúdo produzidas DEPOIS** a partir deste roadmap são copy externa. Quando forem produzidas (em outros comandos: `/hormozi-gtm:hooks`, `/hormozi-gtm:roteiro`), copy externa só sai com **brutalidade ≥7 na rubrica da hormozi-voice** e passa por humanizer full. Este comando, porém, só entrega o roadmap — cru.
+The **content pieces produced LATER** from this roadmap are external copy. When they get produced (in other commands: `/hormozi-gtm:hooks`, `/hormozi-gtm:script`), external copy only ships at **brutality ≥7 on the hormozi-voice rubric** and runs through humanizer full. This command, though, only delivers the roadmap — raw.
 
-## Skills ativas
+Generate all client-facing copy in the language set in gtm-context `language` (default English). The voice and brutality rules are language-independent and apply in every language.
 
-- `content-engine` (cadência sustentável, mix, métricas)
-- `hook-framework` (cada tópico vira hook potencial)
-- `ad-copy-formula` (formatos curtos)
-- `leila-scaling` (cadência sustentável vs aspiracional)
-- `hormozi-voice` (registro de voz — carregar in-contexto e imitar)
-- `template-content-roadmap` (esqueleto do output — carregar in-contexto)
+## Active skills
+
+- `content-engine` (sustainable cadence, mix, metrics)
+- `hook-framework` (every topic becomes a potential hook)
+- `ad-copy-formula` (short formats)
+- `leila-scaling` (sustainable vs aspirational cadence)
+- `hormozi-voice` (voice register — load in-context and imitate)
+- `template-content-roadmap` (output skeleton — load in-context)
 - `output-conventions`
 
-## Argumentos
+## Arguments
 
-| Argumento | Comportamento |
+| Argument | Behavior |
 |---|---|
-| (vazio) | Modo interativo: pergunta produto + duração + plataforma primária |
-| `--produto=<slug>` | Slug do produto |
-| `--ref=<caminho>` | Refinar roadmap existente |
-| `--duracao=30\|60\|90` | Período do roadmap em dias (default 90) |
-| `--plataforma=linkedin\|instagram\|youtube\|x` | Plataforma primária. Pode ser múltipla. |
+| (empty) | Interactive mode: asks for product + duration + primary platform |
+| `--product=<slug>` | Product slug |
+| `--ref=<path>` | Refine an existing roadmap |
+| `--duration=30\|60\|90` | Roadmap window in days (default 90) |
+| `--platform=linkedin\|instagram\|youtube\|x` | Primary platform. Can be multiple. |
 
-## Pré-requisitos
+## Prerequisites
 
-1. `gtm-context.md` existe → carrega ICP, oferta, brand voice, intensidade de tom
-2. Founder-market fit definido (skill `founder-market-fit`) — sem fit, conteúdo orgânico não constrói autoridade
-3. Para `--duracao=90`: idealmente algum case study disponível para inserir como conteúdo promocional
+1. `gtm-context.md` exists → loads ICP, offer, brand voice, tone intensity
+2. Founder-market fit defined (skill `founder-market-fit`) — without fit, organic content builds no authority
+3. For `--duration=90`: ideally some case study available to slot in as promotional content
 
-## Fluxo
+## Flow
 
-### Passo 1: Calibra cadência sustentável
+### Step 1: Calibrate a sustainable cadence
 
-Pergunta:
-- Quanto tempo por semana o founder consegue dedicar (realista, não aspiracional)?
-- Tem time de conteúdo (estrategista, editor)?
-- Existe biblioteca de cases / frameworks documentados?
+Ask:
+- How much time per week can the founder realistically dedicate (real, not aspirational)?
+- Is there a content team (strategist, editor)?
+- Is there a library of documented cases / frameworks?
 
-Determina cadência:
-- Solo, 4-6h/semana: 2-3 posts/semana em 1 plataforma.
-- Solo + assistente, 8h/semana: 3-4 posts/semana em 1 plataforma + repurpose para 2ª.
-- Time pequeno (3 pessoas): 1 post/dia em 2-3 plataformas.
+Set the cadence:
+- Solo, 4-6h/week: 2-3 posts/week on 1 platform.
+- Solo + assistant, 8h/week: 3-4 posts/week on 1 platform + repurpose to a 2nd.
+- Small team (3 people): 1 post/day on 2-3 platforms.
 
-### Passo 2: Define mix por trimestre
+### Step 2: Define the mix per quarter
 
-Mix saudável (vide skill `content-engine`):
-- **60% educacional** (autoridade): frameworks, tutoriais, análises de caso público.
-- **25% entertainment/contrarian**: hot takes, story pessoal, failure post.
-- **15% promocional**: case do cliente, oferta atual, "o que eu faço".
+Healthy mix (see skill `content-engine`):
+- **60% educational** (authority): frameworks, tutorials, public case breakdowns.
+- **25% entertainment/contrarian**: hot takes, personal story, failure post.
+- **15% promotional**: client case, current offer, "here's what I do".
 
-Em estágio inicial (mês 1-3): reduz promocional para 5-10% (audience ainda formando).
+Early stage (months 1-3): drop promotional to 5-10% (audience still forming).
 
-### Passo 3: Mapeia tópicos por funnel stage
+### Step 3: Map topics to funnel stages
 
-Cada tópico atende 1 stage do funil:
+Each topic serves 1 stage of the funnel:
 
-- **Awareness:** problema reconhecível para audience que NÃO sabe que existe solução.
-- **Consideration:** análise de método/framework, comparação de abordagens.
-- **Decision:** case study com resultado mensurável, FAQ, comparação direta.
-- **Retention:** dicas operacionais para quem já é cliente (vira advocacy).
+- **Awareness:** a recognizable problem for an audience that does NOT know a solution exists.
+- **Consideration:** method/framework breakdown, comparison of approaches.
+- **Decision:** case study with a measurable result, FAQ, direct comparison.
+- **Retention:** operational tips for existing clients (turns into advocacy).
 
-### Passo 4: Calendar por semana
+### Step 4: Weekly calendar
 
-Para o período (30/60/90 dias), distribui tópicos em calendar:
+For the window (30/60/90 days), distribute topics across a calendar:
 
-| Semana | Tópico 1 | Tópico 2 | Tópico 3 |
+| Week | Topic 1 | Topic 2 | Topic 3 |
 |---|---|---|---|
-| 1 | {{tópico educ}} | {{contrarian}} | {{educ}} |
+| 1 | {{educ topic}} | {{contrarian}} | {{educ}} |
 | 2 | {{educ}} | {{promo - case}} | {{educ}} |
 | ... | ... | ... | ... |
 
-### Passo 5: Formatos por plataforma
+### Step 5: Formats per platform
 
-Para cada tópico, sugere formato ideal por plataforma:
+For each topic, suggest the ideal format per platform:
 
-| Tópico | LinkedIn | Instagram | YouTube | X |
+| Topic | LinkedIn | Instagram | YouTube | X |
 |---|---|---|---|---|
-| {{Framework de pricing}} | Post longo + carrossel | Reel 60s + carrossel | Vídeo 8-12min | Thread 8 tweets |
+| {{Pricing framework}} | Long post + carousel | 60s Reel + carousel | 8-12min video | 8-tweet thread |
 
-### Passo 6: Repurpose plan
+### Step 6: Repurpose plan
 
-Para cada conteúdo principal (vídeo longo ou artigo), define 4-6 derivados:
-- 1 post LinkedIn
+For each anchor piece (long video or article), define 4-6 derivatives:
+- 1 LinkedIn post
 - 2-3 Reels/Shorts
-- 1 thread X
+- 1 X thread
 - 1 quote card
 - 1 newsletter section
 
-### Passo 7: Métricas e cadência de review
+### Step 7: Metrics and review cadence
 
-Define métricas primárias por mês:
-- Mês 1-2: reach + save rate
-- Mês 3-4: DM inbound + profile views
-- Mês 6+: leads/mês via organic
+Set primary metrics per month:
+- Month 1-2: reach + save rate
+- Month 3-4: inbound DMs + profile views
+- Month 6+: leads/month via organic
 
-### Passo 8: Voz crua (sem humanizer)
+### Step 8: Raw voice (no humanizer)
 
-Roadmap é diagnóstico/estratégia interna — **NÃO passa por humanizer**. Sai cru, Hormozi direto. (Humanizer é gate só de copy externa; aqui ele amaciaria justo a voz que precisa estar afiada.) Mantenha o registro da `hormozi-voice`: número e verbo, zero adjetivo de marketing, cadência realista na cara do founder.
+The roadmap is internal diagnostic/strategy — it does **NOT** run through humanizer. It ships raw, Hormozi straight. (Humanizer gates external copy only; here it would soften the exact voice that needs to stay sharp.) Keep the `hormozi-voice` register: number and verb, zero marketing adjectives, a realistic cadence laid out to the founder's face.
 
-As peças de conteúdo geradas a partir deste roadmap (posts, hooks, roteiros) são copy externa e passam por humanizer full **na hora de produzir**, em outros comandos.
+The content pieces generated from this roadmap (posts, hooks, scripts) are external copy and run through humanizer full **at production time**, in other commands.
 
-### Passo 9: Salva
+### Step 9: Save
 
-Carregue a skill `hormozi-gtm:template-content-roadmap` via ferramenta Skill e preencha o esqueleto (substitua todos os `{{...}}`). Salve em:
+Load the `hormozi-gtm:template-content-roadmap` skill via the Skill tool and fill the skeleton (replace every `{{...}}`). Save to:
 
-`outputs/content/content-roadmap-{produto_slug}-{YYYYMMDD}-v{n}.md`
+`outputs/content/content-roadmap-{product_slug}-{YYYYMMDD}-v{n}.md`
 
-### Passo 10: Preview na conversa
+### Step 10: Preview in the conversation
 
 ```
-✅ Salvo em: outputs/content/content-roadmap-{slug}-{YYYYMMDD}-v{n}.md
+✅ Saved to: outputs/content/content-roadmap-{slug}-{YYYYMMDD}-v{n}.md
 📋 Preview:
-   • Período: {{N}} dias
-   • Plataforma primária: {{nome}}
-   • Cadência: {{N}} posts/semana
-   • Total de conteúdos no roadmap: {{N}}
+   • Window: {{N}} days
+   • Primary platform: {{name}}
+   • Cadence: {{N}} posts/week
+   • Total pieces in the roadmap: {{N}}
    • Mix: {{N}}% educ / {{N}}% entertain / {{N}}% promo
-   • Voz: crua (roadmap interno, sem humanizer)
+   • Voice: raw (internal roadmap, no humanizer)
 
-👉 Próximos passos:
-   1. Bloqueia 4-6h/semana no calendar para produção
-   2. Documenta 1 framework por semana (vira tópico educacional)
-   3. Mede reach + save rate semanalmente nos primeiros 30 dias
+👉 Next steps:
+   1. Block 4-6h/week on the calendar for production
+   2. Document 1 framework per week (becomes an educational topic)
+   3. Track reach + save rate weekly for the first 30 days
 ```
 
-## Critério de pronto
+## Done criteria
 
-- [ ] Cadência definida e realista (não aspiracional)
-- [ ] Mix saudável (não 100% promocional ou 100% educacional)
-- [ ] Tópicos mapeados em funnel stages
-- [ ] Calendar por semana preenchido
-- [ ] Repurpose plan para conteúdos principais
-- [ ] Métricas primárias por mês definidas
-- [ ] Voz crua aplicada (roadmap interno — sem humanizer; frontmatter humanizer_pass: false / humanizer_mode: n/a / voz: crua)
+- [ ] Cadence defined and realistic (not aspirational)
+- [ ] Healthy mix (not 100% promotional or 100% educational)
+- [ ] Topics mapped to funnel stages
+- [ ] Weekly calendar filled in
+- [ ] Repurpose plan for anchor pieces
+- [ ] Primary metrics per month defined
+- [ ] Raw voice applied (internal roadmap — no humanizer; frontmatter humanizer_pass: false / humanizer_mode: n/a / voice: raw)
 
-## Anti-padrões
+## Anti-patterns
 
-- Cadência aspiracional (1 post/dia sem time)
-- Mix 100% promocional (vira anúncio chato)
-- Tópicos sem funnel stage (cliente perde fio)
-- Plataforma errada para ICP (B2B enterprise no Instagram, B2C no LinkedIn)
-- Repurpose ausente (subutiliza cada conteúdo principal)
-- Roadmap sem métricas (sem como medir progresso)
-- Esperar viral em vez de compound
+- Aspirational cadence (1 post/day with no team)
+- 100% promotional mix (turns into a boring ad)
+- Topics with no funnel stage (the client loses the thread)
+- Wrong platform for the ICP (B2B enterprise on Instagram, B2C on LinkedIn)
+- No repurpose (underuses each anchor piece)
+- Roadmap with no metrics (no way to measure progress)
+- Waiting for viral instead of compounding

@@ -1,13 +1,13 @@
 ---
 name: template-churn-analysis
-description: "Esqueleto interno do output (análise de churn) do comando /hormozi-gtm:churn-prevention. Carregado pelo comando, não para uso direto."
+description: "Internal skeleton for the churn-analysis output of the /hormozi-gtm:churn-prevention command. Loaded by the command, not for direct use."
 ---
 
 # Template — churn-analysis.md
 
-Esqueleto canônico do output de análise de churn. O comando `/hormozi-gtm:churn-prevention` carrega esta skill e preenche o esqueleto abaixo com os inputs do usuário. Reproduza a estrutura exata: frontmatter + todas as seções + placeholders `{{...}}`.
+Canonical skeleton for the churn-analysis output. The `/hormozi-gtm:churn-prevention` command loads this skill and fills the skeleton below with the user's inputs. Reproduce the exact structure: frontmatter + every section + `{{...}}` placeholders.
 
-> **Voz crua.** A análise de churn é diagnóstico interno — **não passa por humanizer**. O frontmatter reflete isso: `humanizer_pass: false`, `humanizer_mode: n/a`, `voz: crua`. (A sequência de winback, quando gerada, é copy externa e usa o template `template-email-sequence` com humanizer full.)
+> **Raw voice.** Churn analysis is an internal diagnostic — it **does not go through the humanizer**. The frontmatter reflects that: `humanizer_pass: false`, `humanizer_mode: n/a`, `voice: raw`. (The winback sequence, when generated, is external copy and uses the `template-email-sequence` template with full humanizer.)
 
 ````markdown
 ---
@@ -18,8 +18,8 @@ foco: {{churn | winback | retention}}
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{empresa_slug}}
-product: {{produto_slug}}
+client: {{company_slug}}
+product: {{product_slug}}
 frameworks:
   - leila-scaling
   - value-equation
@@ -27,177 +27,178 @@ frameworks:
   - ltv-cac
 humanizer_pass: false
 humanizer_mode: n/a
-voz: crua
-parent_version: {{caminho_v_anterior_ou_null}}
+voice: raw
+language: {{language}}
+parent_version: {{prior_version_path_or_null}}
 ---
 
-# Churn Analysis — {{produto_nome}}
+# Churn Analysis — {{product_name}}
 
 ## TL;DR
 
-**Churn rate atual:** {{X}}%/mês ({{tendência: subindo/estável/caindo}})
-**Motivo dominante:** {{tipo}} ({{N}}% dos casos)
-**Impacto financeiro:** R$ {{Y}}/mês em revenue perdido
-**Recomendação principal em 1 frase:** {{...}}
+**Current churn rate:** {{X}}%/month ({{trend: rising/flat/falling}})
+**Dominant reason:** {{type}} ({{N}}% of cases)
+**Financial impact:** ${{Y}}/month in lost revenue
+**Top recommendation in 1 sentence:** {{...}}
 
 ---
 
 ## 1. Snapshot
 
-| Métrica | Valor atual | Benchmark mercado | Status |
+| Metric | Current value | Market benchmark | Status |
 |---|---|---|---|
-| Churn mensal | {{X}}% | {{2-5% SaaS, 5-15% consultoria}} | {{✓ / ⚠️ / ❌}} |
-| Lifetime médio | {{N}} meses | {{...}} | {{...}} |
-| NPS atual | {{X}} | {{30-50 saudável}} | {{...}} |
-| Net Revenue Retention | {{X}}% | {{100%+ é alvo}} | {{...}} |
-| % churn em <30 dias | {{X}}% | {{<10% saudável}} | {{...}} |
+| Monthly churn | {{X}}% | {{2-5% SaaS, 5-15% consulting}} | {{✓ / ⚠️ / ❌}} |
+| Average lifetime | {{N}} months | {{...}} | {{...}} |
+| Current NPS | {{X}} | {{30-50 healthy}} | {{...}} |
+| Net Revenue Retention | {{X}}% | {{100%+ is the target}} | {{...}} |
+| % churn in <30 days | {{X}}% | {{<10% healthy}} | {{...}} |
 
 ---
 
-## 2. Distribuição por tipo de churn
+## 2. Distribution by churn type
 
-| Tipo | % do total | Janela típica | Raiz no Value Equation |
+| Type | % of total | Typical window | Root in the Value Equation |
 |---|---|---|---|
-| Precoce (<30d) | {{X}}% | Onboarding | Probability ↓ ou expectativa quebrada |
-| Médio (30-90d) | {{X}}% | Entrega | Probability/Time Delay ↓ |
-| Tardio (>90d) | {{X}}% | Continuity | Continuity offer fraca |
-| Voluntário | {{X}}% | Qualquer | Alternativa surgiu ou budget mudou |
-| Passivo | {{X}}% | Qualquer | Engagement caiu |
+| Early (<30d) | {{X}}% | Onboarding | Probability ↓ or expectation broken |
+| Mid (30-90d) | {{X}}% | Delivery | Probability/Time Delay ↓ |
+| Late (>90d) | {{X}}% | Continuity | Weak continuity offer |
+| Voluntary | {{X}}% | Any | An alternative showed up or budget changed |
+| Passive | {{X}}% | Any | Engagement dropped |
 
-**Padrão dominante:** {{descrição em 1-2 frases}}
+**Dominant pattern:** {{1-2 sentence description}}
 
 ---
 
-## 3. Motivos declarados (após win/loss interviews)
+## 3. Stated reasons (after win/loss interviews)
 
-| Motivo | N clientes | % | Categoria raiz | Reversível? |
+| Reason | # clients | % | Root category | Reversible? |
 |---|---|---|---|---|
-| Preço | {{N}} | {{X}}% | {{Dream Outcome ↓ / Probability ↓}} | Sim |
-| Não entregou esperado | {{N}} | {{X}}% | {{Probability ↓}} | Sim |
-| Time interno assumiu | {{N}} | {{X}}% | {{Effort ↓ — cliente conseguiu reduzir}} | Não (sucesso, mas adeus) |
-| Mudou de fornecedor | {{N}} | {{X}}% | {{Saturação ou positioning}} | Parcialmente |
-| Mudança no business | {{N}} | {{X}}% | {{Não-evitável}} | Não |
-| Outro | {{N}} | {{X}}% | {{...}} | {{...}} |
+| Price | {{N}} | {{X}}% | {{Dream Outcome ↓ / Probability ↓}} | Yes |
+| Didn't deliver as expected | {{N}} | {{X}}% | {{Probability ↓}} | Yes |
+| Internal team took it over | {{N}} | {{X}}% | {{Effort ↓ — client managed to cut it}} | No (a win, but goodbye) |
+| Switched vendors | {{N}} | {{X}}% | {{Saturation or positioning}} | Partially |
+| Business change | {{N}} | {{X}}% | {{Unavoidable}} | No |
+| Other | {{N}} | {{X}}% | {{...}} | {{...}} |
 
 ---
 
 ## 4. Win/loss interviews — insights
 
-### 5-10 entrevistas qualitativas realizadas
+### 5-10 qualitative interviews conducted
 
-**Quote recorrente:**
-> "{{frase que apareceu em ≥3 entrevistas, com aspas exatas}}"
+**Recurring quote:**
+> "{{line that came up in ≥3 interviews, exact quotation}}"
 
-**Padrão emergente:**
-{{2-3 frases descrevendo o que múltiplos clientes que saíram disseram em comum.}}
+**Emerging pattern:**
+{{2-3 sentences describing what multiple churned clients said in common.}}
 
-**Surpresas (o que clientes pediram que você não esperava):**
+**Surprises (what clients asked for that you didn't expect):**
 - {{insight 1}}
 - {{insight 2}}
 
-**O que continua valendo (não joga fora):**
-- {{aspectos da oferta que clientes que saíram ainda elogiam}}
+**What still holds (don't throw it out):**
+- {{aspects of the offer that churned clients still praise}}
 
 ---
 
-## 5. Retention Playbook — 4 blocos
+## 5. Retention Playbook — 4 blocks
 
-### Bloco 1: Quick wins (0-30 dias)
+### Block 1: Quick wins (0-30 days)
 
-Implementação imediata. Cada item: descrição + owner + métrica de sucesso.
+Immediate implementation. Each item: description + owner + success metric.
 
-| Ação | Owner | Métrica de sucesso | Prazo |
+| Action | Owner | Success metric | Deadline |
 |---|---|---|---|
-| {{Adicionar check-in semanal nas primeiras 4 semanas de cliente novo}} | {{CS}} | {{NPS dia-30 ≥ 7}} | 2 semanas |
-| {{Survey NPS automático em D30/D60/D90}} | {{Ops}} | {{≥ 70% response rate}} | 2 semanas |
-| {{One-Done Guarantee em resposta a tickets (4h úteis)}} | {{Suporte}} | {{First response time < 4h}} | 1 semana |
+| {{Add a weekly check-in in the first 4 weeks of a new client}} | {{CS}} | {{Day-30 NPS ≥ 7}} | 2 weeks |
+| {{Automated NPS survey at D30/D60/D90}} | {{Ops}} | {{≥ 70% response rate}} | 2 weeks |
+| {{One-Done Guarantee on ticket responses (4 business hours)}} | {{Support}} | {{First response time < 4h}} | 1 week |
 | {{...}} | {{...}} | {{...}} | {{...}} |
 | {{...}} | {{...}} | {{...}} | {{...}} |
 
-### Bloco 2: Mudanças estruturais (30-90 dias)
+### Block 2: Structural changes (30-90 days)
 
-| Mudança | Skill Hormozi correspondente | Owner | Marco principal |
+| Change | Matching Hormozi skill | Owner | Key milestone |
 |---|---|---|---|
-| {{Refazer onboarding em 4-week structured journey}} | `leila-scaling` (5 Star Service) | {{CS lead}} | Primeiros 5 clientes na nova jornada |
-| {{Redesenhar continuity offer}} | `money-models` | {{Founder + Pricing}} | Tier de continuity lançado |
-| {{Repensar pricing tier para reduzir comoditização}} | `pricing-playbook` (Lei 4) | {{Founder}} | Novo tiering testado em 10 sales calls |
+| {{Rebuild onboarding into a 4-week structured journey}} | `leila-scaling` (5 Star Service) | {{CS lead}} | First 5 clients on the new journey |
+| {{Redesign the continuity offer}} | `money-models` | {{Founder + Pricing}} | Continuity tier launched |
+| {{Rethink pricing tier to cut commoditization}} | `pricing-playbook` (Law 4) | {{Founder}} | New tiering tested on 10 sales calls |
 
-### Bloco 3: Métricas e monitoring
+### Block 3: Metrics and monitoring
 
-**North star metric de retention:** {{NPS | day-90 product adoption | expansion revenue | net retention}}
+**Retention north star metric:** {{NPS | day-90 product adoption | expansion revenue | net retention}}
 
-**Alvo (12 meses):** {{X}}
+**Target (12 months):** {{X}}
 
-**Threshold de "cliente em risco":**
-- {{ex: 0 logins em 14 dias → trigger automático}}
-- {{ex: NPS dia-30 < 5 → call de check-in obrigatória em 48h}}
-- {{ex: 2 tickets de suporte em 7 dias → escalation pra CS sênior}}
+**"At-risk client" threshold:**
+- {{e.g. 0 logins in 14 days → automatic trigger}}
+- {{e.g. day-30 NPS < 5 → mandatory check-in call within 48h}}
+- {{e.g. 2 support tickets in 7 days → escalation to senior CS}}
 
-**Trigger de intervenção:**
-{{Como o sistema avisa quem é responsável quando threshold bate.}}
+**Intervention trigger:**
+{{How the system alerts whoever is responsible when a threshold trips.}}
 
-### Bloco 4: Cultura e operação
+### Block 4: Culture and operations
 
-- **Owner do retention metric:** {{1 pessoa, não diluído}}
-- **Cadência de review:** semanal (squad), mensal (founders)
-- **Pós-mortem obrigatório:** todo cancelamento gera 1 documento curto (15min de escrita) com: motivo, o que aprendemos, o que muda na operação
-- **Ritual:** primeira segunda do mês, 30min de retention review
+- **Owner of the retention metric:** {{1 person, not diluted}}
+- **Review cadence:** weekly (squad), monthly (founders)
+- **Mandatory post-mortem:** every cancellation produces 1 short doc (15 min of writing) with: reason, what we learned, what changes in operations
+- **Ritual:** first Monday of the month, 30 min of retention review
 
 ---
 
-## 6. Impacto financeiro projetado
+## 6. Projected financial impact
 
-### Cenário atual
-
-```
-Churn mensal: {{X}}%
-LTV atual: R$ {{Y}}
-ARR: R$ {{Z}}
-```
-
-### Cenário 90 dias (após implementar Bloco 1 + 2)
+### Current scenario
 
 ```
-Churn mensal projetado: {{X - 1 a 2 pontos percentuais}}%
-LTV projetado: R$ {{Y + 20-40%}}
-ARR adicional capturado em 12 meses: R$ {{W}}
+Monthly churn: {{X}}%
+Current LTV: ${{Y}}
+ARR: ${{Z}}
 ```
 
-### ROI da intervenção
+### 90-day scenario (after implementing Block 1 + 2)
 
-**Investimento (3 meses):** {{horas de squad + ferramentas}} ≈ R$ {{Z}}
-**Retorno (12 meses):** R$ {{W}}
+```
+Projected monthly churn: {{X - 1 to 2 percentage points}}%
+Projected LTV: ${{Y + 20-40%}}
+Additional ARR captured over 12 months: ${{W}}
+```
+
+### Intervention ROI
+
+**Investment (3 months):** {{squad hours + tools}} ≈ ${{Z}}
+**Return (12 months):** ${{W}}
 **Ratio:** {{W/Z}}x
 
 ---
 
-## 7. Próximos 14 dias — ações concretas
+## 7. Next 14 days — concrete actions
 
-- [ ] Rodar 5-10 win/loss interviews com clientes que saíram nos últimos 90 dias (script no Anexo)
-- [ ] Implementar Quick Win 1: {{...}}
-- [ ] Implementar Quick Win 2: {{...}}
-- [ ] Definir owner único de retention metric
-- [ ] Agendar review semanal recorrente
-
----
-
-## Anexo A — Script de win/loss interview (6-8 perguntas)
-
-1. "Pode contar o momento exato em que decidiu cancelar? O que aconteceu no dia/semana?"
-2. "Antes de decidir, você tentou resolver isso de outra forma? Como?"
-3. "O que o {{competidor ou alternativa}} oferece que a gente não oferecia?"
-4. "Olhando pra trás, o que continua valendo do tempo que você foi cliente?"
-5. "Se você pudesse voltar 90 dias antes da decisão, o que faria diferente OU o que eu poderia ter feito diferente?"
-6. "Em quais condições você consideraria voltar?"
-7. "Tem alguma coisa que eu não perguntei mas seria útil eu saber?"
-8. "Posso te procurar em 6 meses pra atualizar você sobre o que mudou aqui?"
-
-**Regras:**
-- Sem agenda de venda. Cliente sente.
-- Toma notas. Não argumenta nem defende.
-- Promete confidencialidade (não usa o que falaram em copy sem permissão).
+- [ ] Run 5-10 win/loss interviews with clients who churned in the last 90 days (script in Appendix)
+- [ ] Implement Quick Win 1: {{...}}
+- [ ] Implement Quick Win 2: {{...}}
+- [ ] Name a single owner of the retention metric
+- [ ] Schedule a recurring weekly review
 
 ---
 
-*Churn analysis gerado pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Voz crua — diagnóstico interno não passa por humanizer.*
+## Appendix A — Win/loss interview script (6-8 questions)
+
+1. "Can you walk me through the exact moment you decided to cancel? What happened that day/week?"
+2. "Before deciding, did you try to solve it another way? How?"
+3. "What does {{competitor or alternative}} offer that we didn't?"
+4. "Looking back, what still holds up from the time you were a client?"
+5. "If you could go back 90 days before the decision, what would you do differently OR what could I have done differently?"
+6. "Under what conditions would you consider coming back?"
+7. "Is there anything I didn't ask that would be useful for me to know?"
+8. "Can I reach out in 6 months to update you on what's changed here?"
+
+**Rules:**
+- No sales agenda. The client can feel it.
+- Take notes. Don't argue or defend.
+- Promise confidentiality (don't use what they said in copy without permission).
+
+---
+
+*Churn analysis generated by the hormozi-gtm plugin. Alex Hormozi persona applied. Raw voice — internal diagnostic does not go through the humanizer.*
 ````

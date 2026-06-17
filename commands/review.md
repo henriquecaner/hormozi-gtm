@@ -1,160 +1,161 @@
 ---
-description: Feedback brutal de material existente (LP, ad, email, proposta, post). Veredito por severidade (LEVE/MÉDIO/CRÍTICO), top 3 fix concretos, reescrita de trechos críticos. Persona Hormozi sem mercy mas com fix construtivo.
-argument-hint: "[--ref=<caminho>] [--foco=<secao>] [--full-rewrite]"
+description: Brutal feedback on existing material (LP, ad, email, proposal, post). Verdict by severity (MINOR/MODERATE/CRITICAL), top 3 concrete fixes, rewrite of the critical passages. Hormozi persona, no mercy but with a constructive fix.
+argument-hint: "[--ref=<path>] [--focus=<section>] [--full-rewrite]"
 ---
 
 # /hormozi-gtm:review
 
-Feedback brutal mas construtivo. Não é review elogiosa, não é review destrutiva. Diz o que está fraco, por que mata, e como consertar — com exemplo.
+Brutal but constructive feedback. Not a flattering review, not a destructive one. It says what's weak, why it kills the piece, and how to fix it — with an example.
 
-## Carregamento de persona
+## Persona loading
 
-Use `hormozi-persona` com mood: direto, sem economizar em diagnóstico, mas sempre com fix.
+Use `hormozi-persona` with mood: direct, no holding back on diagnosis, but always with a fix.
 
-Carregue a skill `hormozi-voice` via ferramenta Skill e **imite o registro** (número e verbo, zero adjetivo de marketing, diagnóstico na cara do leitor). Não dependa só do subagent — no Cowork ele pode não rodar; a voz tem que vir carregada in-contexto neste comando. Review é diagnóstico interno e cru: a voz fica afiada, sem amaciar. (As reescritas de trecho dentro do output carregam essa voz; não é preciso aplicar gate de release externo aqui — review é interno.)
+Load the `hormozi-voice` skill via the Skill tool and **imitate the register** (number and verb, zero marketing adjectives, diagnosis to the reader's face). Don't rely on the subagent alone — in Cowork it may not run; the voice has to come loaded in-context in this command. Review is an internal, raw diagnostic: the voice stays sharp, no softening. (The passage rewrites inside the output carry this voice; there's no external-release gate to apply here — review is internal.)
 
-Após detectar o `material_tipo` (LP, ad, email, pricing, proposta), delegate ao especialista correspondente para o diagnóstico técnico, mantendo a persona como voz de saída:
+Generate all client-facing copy in the language set in gtm-context `language` (default English). The voice and brutality rules are language-independent and apply in every language.
 
-- `material_tipo: lp` → consulta `offer-architect`
-- `material_tipo: ad` → consulta `ad-architect`
-- `material_tipo: pricing` → consulta `pricing-strategist`
-- `material_tipo: outro` → opera apenas com a persona
+After detecting the `material_type` (lp, ad, email, pricing, proposal), delegate to the matching specialist for the technical diagnosis, keeping the persona as the output voice:
 
-O especialista produz o diagnóstico estruturado; a persona escreve a saída na voz Hormozi.
+- `material_type: lp` → consult `offer-architect`
+- `material_type: ad` → consult `ad-architect`
+- `material_type: pricing` → consult `pricing-strategist`
+- `material_type: other` → operate with the persona alone
 
-## Skills ativas
+The specialist produces the structured diagnosis; the persona writes the output in the Hormozi voice.
 
-- `hormozi-voice` (sempre — registro de voz carregado in-contexto)
-- `template-review` (sempre — esqueleto do output)
-- `value-equation` (se material é LP/ad/copy)
-- `grand-slam-offer` (se material é oferta)
-- `hook-framework` (se material tem hook/headline)
-- `ad-copy-formula` (se material é ad)
-- `pricing-playbook` (se material é pricing)
+## Active skills
 
-## Argumentos
+- `hormozi-voice` (always — voice register loaded in-context)
+- `template-review` (always — output skeleton)
+- `value-equation` (if the material is LP/ad/copy)
+- `grand-slam-offer` (if the material is an offer)
+- `hook-framework` (if the material has a hook/headline)
+- `ad-copy-formula` (if the material is an ad)
+- `pricing-playbook` (if the material is pricing)
 
-| Argumento | Comportamento |
+## Arguments
+
+| Argument | Behavior |
 |---|---|
-| `caminho_do_material` | Lê arquivo, faz review completa |
-| (vazio) | Pede pra colar material no chat |
-| múltiplos paths | Faz review comparativa |
-| `--foco=<secao>` | Foca em 1 parte do material |
+| `path_to_material` | Reads the file, runs a full review |
+| (empty) | Asks you to paste the material in chat |
+| multiple paths | Runs a comparative review |
+| `--focus=<section>` | Focuses on one part of the material |
 
-## Pré-requisitos
+## Prerequisites
 
-`gtm-context.md` ajuda mas não é obrigatório. Review pode operar em qualquer material.
+`gtm-context.md` helps but isn't required. Review can operate on any material.
 
-## Modo Re-review
+## Re-review mode
 
-Se o `--ref` aponta para um material que **já foi revisado anteriormente** (existe `outputs/review/review-{material}-{data anterior}.md`), entra em modo Re-review:
+If `--ref` points to material that **was reviewed before** (an `outputs/review/review-{material}-{prior date}.md` exists), it enters Re-review mode:
 
-**Passo R1: Detecta review anterior**
-Procura em `outputs/review/` por arquivo cujo frontmatter tem `material_revisado: {{mesmo path}}`. Pode haver múltiplos (v1, v2, etc.).
+**Step R1: Detect the prior review**
+Search `outputs/review/` for a file whose frontmatter has `material_reviewed: {{same path}}`. There may be several (v1, v2, etc.).
 
-**Passo R2: Compara material atual vs review anterior**
-Lê o material como está agora. Compara contra o snapshot que estava sendo revisado quando a review anterior foi escrita.
+**Step R2: Compare current material vs prior review**
+Read the material as it stands now. Compare it against the snapshot under review when the prior review was written.
 
-Auto-detecta o que mudou:
-- Headlines alteradas → relista feedback aplicável
-- Sections removidas/adicionadas → ajusta análise
-- Frontmatter mudou (version, audit_ref) → contextualiza
+Auto-detect what changed:
+- Headlines altered → re-list applicable feedback
+- Sections removed/added → adjust the analysis
+- Frontmatter changed (version, audit_ref) → add context
 
-**Passo R3: Resumo da delta na conversa**
-Mostra antes de seguir:
+**Step R3: Delta summary in chat**
+Show before proceeding:
 
-> "Detectei que esse material foi revisado em {{data}} (review-v1).
-> Desde então, mudaram: {{lista de mudanças concretas}}.
-> A review nova vai incidir sobre:
-> (1) Mudanças desde v1 (delta apenas) — recomendado
-> (2) Review completa do material atual (ignora v1)
-> (3) Cancelar — quero ver review v1 primeiro"
+> "Detected that this material was reviewed on {{date}} (review-v1).
+> Since then, these changed: {{list of concrete changes}}.
+> The new review will cover:
+> (1) Changes since v1 (delta only) — recommended
+> (2) Full review of the current material (ignores v1)
+> (3) Cancel — I want to see review v1 first"
 
-**Passo R4: Review com seção "Histórico"**
-Se usuário escolheu (1), gera review v2 contendo seção "Histórico de reviews" que mostra:
-- Problema X de v1 → estado em v2 (resolvido / pior / igual)
-- Novo problema Y identificado em v2 (não existia em v1)
+**Step R4: Review with a "History" section**
+If the user chose (1), generate review v2 containing a "Review history" section that shows:
+- Problem X from v1 → state in v2 (resolved / worse / same)
+- New problem Y found in v2 (didn't exist in v1)
 
-Frontmatter da review v2:
-- `parent_version: outputs/review/review-{material}-{data}-v1.md`
+review v2 frontmatter:
+- `parent_version: outputs/review/review-{material}-{date}-v1.md`
 - `version: 2`
 
-## Fluxo
+## Flow
 
-### Passo 1: Identifica tipo
+### Step 1: Identify the type
 
-Auto-detecta:
-- Tem headline + CTA + stack de bonuses → LP
-- Tem timestamps + hook → roteiro
-- Tem header de email + subject → email
-- Tem estrutura de proposta comercial → proposta
-- Senão → pergunta ao usuário
+Auto-detect:
+- Has headline + CTA + bonus stack → LP
+- Has timestamps + hook → script
+- Has an email header + subject → email
+- Has a sales proposal structure → proposal
+- Otherwise → ask the user
 
-Pergunta opcional:
-> "Qual é o objetivo principal desse material? Conversion / awareness / nurturing / educacional / outro?"
+Optional question:
+> "What's the main goal of this material? Conversion / awareness / nurturing / educational / other?"
 
-### Passo 2: Carrega skills relevantes
+### Step 2: Load the relevant skills
 
-Baseado no tipo:
+Based on type:
 - LP/ad: value-equation, grand-slam-offer, ad-copy-formula, hook-framework
 - Pricing: pricing-playbook, value-equation
 - Email: ad-copy-formula, hook-framework
 
-### Passo 3: Análise
+### Step 3: Analysis
 
-Estrutura interna:
+Internal structure:
 
-1. **Veredito** em 1 linha (LEVE / MÉDIO / CRÍTICO)
-2. **O que funciona** (3-5 pontos — calibra credibilidade)
-3. **Problemas em ordem de impacto** (cada um: descrição + por que mata + fix concreto)
-4. **Top 3 se for fazer só 3 coisas**
-5. **Reescrita de 1-2 trechos críticos** (mostra como aplicar fix)
-6. **Diagnóstico Value Equation** (se aplicável)
-7. **Próximos passos**
+1. **Verdict** in 1 line (MINOR / MODERATE / CRITICAL)
+2. **What works** (3-5 points — calibrates credibility)
+3. **Problems in order of impact** (each: description + why it kills + concrete fix)
+4. **Top 3 if you only do 3 things**
+5. **Rewrite of 1-2 critical passages** (shows how to apply the fix)
+6. **Value Equation diagnosis** (if applicable)
+7. **Next steps**
 
-### Passo 4: Voz crua (sem humanizer)
+### Step 4: Raw voice (no humanizer)
 
-Review é diagnóstico interno — **NÃO passa por humanizer**. Sai cru, Hormozi brutal, direto. (Humanizer é gate só de copy externa; aqui ele amaciaria justo onde o diagnóstico tem que ser mais afiado.) Mantenha o registro de `hormozi-voice`: número e verbo, zero adjetivo de marketing, problema na cara do leitor. As reescritas de trecho dentro do output já carregam essa voz.
+Review is an internal diagnostic — it does **NOT** pass through humanizer. It ships raw, brutal Hormozi, direct. (Humanizer gates external copy only; here it would soften exactly where the diagnosis has to be sharpest.) Keep the `hormozi-voice` register: number and verb, zero marketing adjectives, the problem to the reader's face. The passage rewrites inside the output already carry this voice.
 
-### Passo 5: Salva
+### Step 5: Save
 
-Carregue a skill `hormozi-gtm:template-review` via ferramenta Skill e preencha o esqueleto. Salva em `outputs/review/review-{nome-original}-{YYYYMMDD}.md`.
+Load the `hormozi-gtm:template-review` skill via the Skill tool and fill in the skeleton. Save to `outputs/review/review-{original-name}-{YYYYMMDD}.md`.
 
-No frontmatter do output (já refletido no esqueleto): `humanizer_pass: false`, `humanizer_mode: n/a`, `voz: crua`.
+In the output frontmatter (already reflected in the skeleton): `humanizer_pass: false`, `humanizer_mode: n/a`, `voice: raw`.
 
-Note: review não tem `-v{n}` no nome (one-shot). Se for re-review do mesmo material após mudança, vira `-v2`.
+Note: review has no `-v{n}` in the name (one-shot). A re-review of the same material after a change becomes `-v2`.
 
-### Passo 6: Resumo
+### Step 6: Summary
 
-Mostra:
-- Veredito + 1 frase
-- Top 3 fix
-- Caminho do arquivo
+Show:
+- Verdict + 1 sentence
+- Top 3 fixes
+- File path
 
-## Critério de pronto
+## Done criteria
 
-- [ ] Veredito tem severidade explícita (não "tá ok, só pequenos ajustes")
-- [ ] Pelo menos 1 ponto que funciona (não review só negativa)
-- [ ] Cada problema tem fix concreto (não "melhore a clareza")
-- [ ] Reescrita de pelo menos 1 trecho mostrando como aplicar
-- [ ] Top 3 priorizado (se ele fizer só 3 coisas, são essas)
-- [ ] Não é review elogiosa-vazia ("ficou bom, só ajustes")
-- [ ] Não é review destrutiva-gratuita
-- [ ] Saiu cru — review é diagnóstico interno, não passa por humanizer
+- [ ] Verdict has an explicit severity (not "it's ok, just minor tweaks")
+- [ ] At least 1 thing that works (not a purely negative review)
+- [ ] Every problem has a concrete fix (not "improve clarity")
+- [ ] Rewrite of at least 1 passage showing how to apply it
+- [ ] Top 3 prioritized (if they only do 3 things, these are them)
+- [ ] Not an empty-flattery review ("looks good, just tweaks")
+- [ ] Not a gratuitously destructive review
 
-## Anti-padrões
+## Anti-patterns
 
-- "Bom material!" (zero diagnóstico)
-- "Precisa melhorar a clareza" (sem ação)
-- Listar 15 problemas sem priorizar
-- Reescrever 80% do material (review vira rewriting; usa /lp ou /roteiro pra rewriting)
-- Ser cruel sem ser útil
+- "Good material!" (zero diagnosis)
+- "Needs better clarity" (no action)
+- Listing 15 problems without prioritizing
+- Rewriting 80% of the material (review becomes rewriting; use /lp or /script for that)
+- Being cruel without being useful
 
-## Tom
+## Tone
 
-Hormozi review é como amigo competente revisando teu negócio num bar. Vai dizer o que está errado, vai apontar o que vai mudar tua vida se você arrumar, e vai te explicar como arrumar. Sem economizar — mas com fim construtivo.
+A Hormozi review is like a competent friend going over your business at a bar. He'll tell you what's wrong, point out what'll change your life if you fix it, and explain how to fix it. No holding back — but with a constructive end.
 
-## Output esperado
+## Expected output
 
-Arquivo: 600-1200 palavras
-Conversa: 3-5 linhas (veredito + top 3 + caminho)
+File: 600-1200 words
+Chat: 3-5 lines (verdict + top 3 + path)

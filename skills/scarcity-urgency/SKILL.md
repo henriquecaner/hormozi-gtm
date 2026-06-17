@@ -1,127 +1,127 @@
 ---
 name: scarcity-urgency
-description: Scarcity e urgency genuínos — Hormozi distingue entre escassez fake (mata credibilidade) e escassez real (multiplica conversão). Use ao montar oferta, LP ou ad que precisa de mecanismo de fechamento.
+description: Genuine scarcity and urgency — Hormozi separates fake scarcity (kills credibility) from real scarcity (multiplies conversion). Use when building an offer, LP, or ad that needs a closing mechanism.
 ---
 
 # Scarcity & Urgency
 
-Fonte: Alex Hormozi, *$100M Offers*, Capítulos 14 + Lost Chapter.
+Source: Alex Hormozi, *$100M Offers*, Chapters 14 + Lost Chapter.
 
-## Distinção crítica
+## The critical distinction
 
-| Tipo | Característica | Efeito |
+| Type | Trait | Effect |
 |---|---|---|
-| **Genuíno** | Limite real, motivado por entrega/operação | Aumenta conversão + protege margem |
-| **Fake** | Countdown que sempre reinicia, "última vaga" mensal | Mata credibilidade no segundo encontro |
+| **Genuine** | Real limit, driven by delivery/operations | Raises conversion + protects margin |
+| **Fake** | Countdown that always resets, "last spot" every month | Kills credibility on the second encounter |
 
-Hormozi só recomenda **escassez genuína**.
+Hormozi only recommends **genuine scarcity**.
 
-## Mecanismos de escassez (limite de oferta)
+## Scarcity mechanisms (offer limit)
 
-1. **Limited spots** — você só atende N clientes por mês por capacidade real
-   - Exemplo: "Aceito 8 imersões por trimestre porque cada uma exige 12h minha por semana"
-2. **Limited stock** — produto físico ou digital de tiragem limitada
-3. **Limited cohort** — turma X começa em DD/MM e fecha
-4. **Limited fast-action bonus** — bonus extra disponível só nas primeiras 24h
-5. **Limited segment** — só atende ICP X (B2B SaaS) e recusa o resto
+1. **Limited spots** — you only take N clients per month because of real capacity
+   - Example: "I take 8 intensives per quarter because each one eats 12h of my week"
+2. **Limited stock** — physical or digital product with a limited run
+3. **Limited cohort** — cohort X starts on MM/DD and closes
+4. **Limited fast-action bonus** — extra bonus available only in the first 24h
+5. **Limited segment** — you only serve ICP X (B2B SaaS) and turn down the rest
 
-## Mecanismos de urgency (limite de tempo)
+## Urgency mechanisms (time limit)
 
-1. **Deadline real** — turma começa em DD/MM, depois disso só na próxima
-2. **Price increase** — preço sobe em DD/MM (e sobe mesmo)
-3. **Bonus phase-out** — bonus #3 disponível só até DD/MM
-4. **Implementation window** — "implementar antes do Q4" se há razão estratégica
+1. **Real deadline** — cohort starts MM/DD, after that you wait for the next one
+2. **Price increase** — price goes up on MM/DD (and it actually goes up)
+3. **Bonus phase-out** — bonus #3 available only until MM/DD
+4. **Implementation window** — "implement before Q4" when there's a strategic reason
 
-## Sinais de escassez fake (matar imediato)
+## Signs of fake scarcity (kill on sight)
 
-- Countdown que reseta quando você atualiza a página
-- "Última vaga" disponível há 6 meses
-- "Restam 2 spots" toda semana
-- "Promoção válida até hoje" todo dia
-- Email de "última chance" 3 vezes na semana
+- Countdown that resets when you refresh the page
+- "Last spot" that's been available for 6 months
+- "2 spots left" every single week
+- "Offer ends today" every day
+- "Last chance" email 3 times a week
 
-## Como construir escassez genuína
+## How to build genuine scarcity
 
-Pergunta-se:
-1. **Qual o gargalo real de capacidade?** (suas horas, deliverable customizado, turma máxima)
-2. **Qual o ciclo natural?** (cohort trimestral, calendário fiscal, prazo de implementação)
-3. **Qual o gatilho de aumento de preço?** (próxima versão, nova feature, mais cases)
+Ask yourself:
+1. **What's the real capacity bottleneck?** (your hours, a custom deliverable, max cohort size)
+2. **What's the natural cycle?** (quarterly cohort, fiscal calendar, implementation deadline)
+3. **What's the price-increase trigger?** (next version, new feature, more case studies)
 
-Se você consegue responder essas 3 com fato, sua escassez é genuína. Se precisa inventar a resposta, é fake — não use.
+If you can answer all three with a fact, your scarcity is genuine. If you have to invent the answer, it's fake — don't use it.
 
-## Comunicando escassez sem soar desesperado
+## Communicating scarcity without sounding desperate
 
-Mesmo escassez genuína vira fake aos olhos do cliente se for comunicada com tom de leilão de TV de madrugada. Padrão errado mata conversão tanto quanto inventar escassez.
+Even genuine scarcity reads as fake to the client if you communicate it like a late-night TV auction. The wrong tone kills conversion just as hard as inventing scarcity does.
 
-**NÃO faça (urgência desesperada — soa fake mesmo se for real):**
-> "Últimas 2 vagas! Não perca! Garanta a sua AGORA!"
+**DON'T (desperate urgency — sounds fake even when it's real):**
+> "Only 2 spots left! Don't miss out! Grab yours NOW!"
 >
-> "⏰ FALTAM 3 HORAS! 🔥 Esta oferta NUNCA mais volta!"
+> "⏰ 3 HOURS LEFT! 🔥 This offer is NEVER coming back!"
 
-Problemas: caps lock + emoji + ponto de exclamação + "AGORA" + "NUNCA" são marcadores de pressure tactic. Cliente fecha a aba.
+What's wrong: caps lock + emoji + exclamation points + "NOW" + "NEVER" are pressure-tactic markers. The client closes the tab.
 
-**FAÇA (urgência ancorada em fato operacional):**
-> "Próxima turma começa em 12 de agosto. Antes disso, tenho 6 vagas restantes pra garantir 1h por participante por semana — quando essa turma fecha, abrimos a próxima em outubro com lista de espera."
+**DO (urgency anchored in an operational fact):**
+> "Next cohort starts August 12. Before then I have 6 spots left so I can guarantee 1h per participant per week — when this cohort closes, the next one opens in October with a waitlist."
 
-Por quê funciona:
-- Data específica (12 de agosto, não "em breve")
-- Número específico de vagas (6, não "poucas")
-- Razão operacional do limite (1h por participante por semana = capacidade real)
-- Próximo ciclo nomeado (outubro) — mostra que não é "agora ou nunca"
+Why it works:
+- Specific date (August 12, not "soon")
+- Specific spot count (6, not "a few")
+- Operational reason for the limit (1h per participant per week = real capacity)
+- Next cycle named (October) — shows it isn't "now or never"
 
-**Templates por categoria:**
+**Templates by category:**
 
-**Cohort com data:**
-> "Próxima cohort começa [data]. Vagas: [N]. Quando fecha, próxima é [data próxima]."
+**Cohort with a date:**
+> "Next cohort starts [date]. Spots: [N]. When it closes, the next one is [next date]."
 
-**Capacidade de atendimento:**
-> "Atendo no máximo [N] clientes por trimestre porque [razão: horas de mentoria 1:1, turma reduzida, etc.]. Trimestre atual: [vagas]/[total] preenchidas."
+**Service capacity:**
+> "I take at most [N] clients per quarter because [reason: 1:1 mentoring hours, small cohort, etc.]. This quarter: [spots]/[total] filled."
 
-**Bonus por window:**
-> "Quem fecha até [data] entra com [bonus específico]. Não é desconto — é [bonus] que sai do pacote depois porque [razão: vou parar de oferecer essa mentoria 1:1, vou empacotar essa skill em produto separado, etc.]."
+**Bonus window:**
+> "Close before [date] and you get [specific bonus]. It's not a discount — it's [bonus] that leaves the package afterward because [reason: I'm going to stop offering this 1:1 mentoring, I'm packaging this skill into a separate product, etc.]."
 
-**Aumento de preço programado:**
-> "Preço sobe para R$ [Y] em [data] porque [razão operacional: nova versão do programa, adição de [feature], mais cases comprovam, etc.]. Quem fecha antes mantém R$ [X]."
+**Scheduled price increase:**
+> "Price goes to $[Y] on [date] because [operational reason: new version of the program, added [feature], more case studies, etc.]. Close before then and you keep $[X]."
 
-**Regra Hormozi:** a comunicação tem que sustentar pergunta "por quê esse limite existe?" com resposta de uma frase que descreve algo do mundo real. Sem isso, é fake mesmo se for tecnicamente verdade.
+**Hormozi rule:** the message has to survive the question "why does this limit exist?" with a one-sentence answer that describes something in the real world. Without that, it's fake even if it's technically true.
 
-## Anatomia de mecanismo válido na LP/ad
+## Anatomy of a valid mechanism in the LP/ad
 
 ```
-[Mecanismo escolhido]
-+ [Razão genuína]
-+ [Próximo gatilho de mudança]
+[Chosen mechanism]
++ [Genuine reason]
++ [Next change trigger]
 ```
 
-**Exemplo:**
-> "Só atendo 8 imersões por trimestre porque cada uma exige 12h da minha semana.
-> 6 spots já preenchidos para Q3.
-> Quando fecharem os 8, próxima turma só em Q4."
+**Example:**
+> "I only take 8 intensives a quarter because each one eats 12h of my week.
+> 6 spots already filled for Q3.
+> Once the 8 are gone, the next cohort is Q4."
 
-Compare com:
-> "Últimas 2 vagas! Não perca!"
+Compare with:
+> "Only 2 spots left! Don't miss out!"
 
-A primeira é estratégia. A segunda é gatilho mecânico que mata trust.
+The first is strategy. The second is a mechanical trigger that kills trust.
 
 ## Workflow
 
-1. Identifica gargalo real de capacidade (suas horas, time, infra)
-2. Calcula honestamente quantos clientes você atende por período
-3. Comunica o limite + a razão + o próximo ciclo
-4. Atualiza o número conforme reais entradas (cliente checa)
+1. Identify the real capacity bottleneck (your hours, your team, infra)
+2. Honestly calculate how many clients you serve per period
+3. Communicate the limit + the reason + the next cycle
+4. Update the number as real entries come in (the client checks)
 
-## Aplicação por caso de uso
+## Application by use case
 
-| Caso | Uso |
+| Case | Use |
 |---|---|
-| LP de vendas | Bloco "Vagas disponíveis: X de Y" + razão honesta |
-| Roteiro de ad | CTA final menciona escassez genuína ("essa turma começa em DD/MM") |
-| Business plan | Modela receita baseado em limite real de capacidade por período |
+| Sales LP | "Spots available: X of Y" block + honest reason |
+| Ad script | Final CTA names genuine scarcity ("this cohort starts MM/DD") |
+| Business plan | Models revenue based on the real capacity limit per period |
 
-## Anti-padrão crítico
+## Critical anti-pattern
 
-NÃO use escassez se você está começando e tem capacidade ociosa. Aceita todo cliente que aparecer. Cria escassez genuína quando ela DE FATO existir.
+DON'T use scarcity if you're just starting and have idle capacity. Take every client who shows up. Create genuine scarcity once it ACTUALLY exists.
 
-## Referência detalhada
+## Detailed reference
 
-Veja `reference/100m-offers-extracts.md` (seção Scarcity + Urgency).
+See `reference/100m-offers-extracts.md` (Scarcity + Urgency section).

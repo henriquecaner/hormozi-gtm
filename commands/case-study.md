@@ -1,123 +1,125 @@
 ---
-description: Case study estruturado — antes/depois numérico, contexto, mecanismo aplicado, quote do cliente. Gera tanto a peça completa quanto assets de 1-linha pra usar em LP, ad e email. Para consultor que precisa converter projeto vencido em proof asset.
-argument-hint: "[--cliente=<nome>] [--ref=<caminho>] [--antes=<numero>] [--depois=<numero>] [--no-humanize]"
+description: Structured case study — numeric before/after, context, mechanism applied, client quote. Produces both the full piece and 1-line assets to drop into an LP, ad, and email. For the consultant who needs to turn a won, delivered project into a proof asset.
+argument-hint: "[--client=<name>] [--ref=<path>] [--before=<number>] [--after=<number>] [--no-humanize]"
 ---
 
 # /hormozi-gtm:case-study
 
-Case study é a moeda de Probability no Value Equation. Sem case study sólido, qualquer copy soa promessa. Esta skill estrutura case study real com antes/depois numérico, contexto suficiente pra leitor relacionar, mecanismo nomeado.
+A case study is the currency of Probability in the Value Equation. Without a solid case study, any copy reads as a promise. This skill structures a real case study with a numeric before/after, enough context for the reader to relate, and a named mechanism.
 
-## Carregamento de persona
+## Persona loading
 
-Use `hormozi-persona` para orquestrar. Delegate ao `offer-architect` para amarrar antes/depois no Value Equation. Pass final pelo `humanizer` modo **full** (case study vai pra LP/ad/email externos).
+Use `hormozi-persona` to orchestrate. Delegate to `offer-architect` to tie the before/after to the Value Equation. Final pass through the `humanizer` in **full** mode (the case study goes into external LP/ad/email).
 
-Carregue a skill `hormozi-voice` e imite o registro (não dependa só do subagent — no Cowork ele pode não rodar). Copy externa só sai com brutalidade ≥7 na rubrica da `hormozi-voice`.
+Load the `hormozi-voice` skill and imitate the register (don't rely on the subagent alone — in Cowork it may not run). External copy only ships at brutality ≥7 on the `hormozi-voice` rubric.
 
-## Skills ativas
+Generate all client-facing copy in the language set in gtm-context `language` (default English). The voice and brutality rules are language-independent and apply in every language.
 
-- `hormozi-voice` (registro de voz — carregar in-contexto antes de escrever)
-- `template-case-study` (esqueleto do output — carregar via Skill tool)
-- `value-equation` (antes/depois mapeado nos 4 vetores)
-- `grand-slam-offer` (case valida promessa da oferta)
-- `ad-copy-formula` (formatos curtos derivados)
-- `hook-framework` (headline do case)
-- `humanizer-rules` (modo full)
+## Active skills
+
+- `hormozi-voice` (voice register — load in-context before writing)
+- `template-case-study` (output skeleton — load via the Skill tool)
+- `value-equation` (before/after mapped to the 4 vectors)
+- `grand-slam-offer` (the case validates the offer's promise)
+- `ad-copy-formula` (derived short formats)
+- `hook-framework` (the case headline)
+- `humanizer-rules` (full mode)
 - `output-conventions`
 
-## Argumentos
+## Arguments
 
-| Argumento | Comportamento |
+| Argument | Behavior |
 |---|---|
-| (vazio) | Modo interativo: pergunta cliente + antes + depois + contexto |
-| `--cliente=<nome>` | Nome do cliente (com permissão) |
-| `--ref=<caminho>` | Refinar case study existente |
-| `--antes=<numero>` | Número antes (ex: CAC R$ 450, ciclo 75d, ARR 500k) |
-| `--depois=<numero>` | Número depois |
-| `--no-humanize` | Pula humanizer (debug) |
+| (empty) | Interactive mode: asks for client + before + after + context |
+| `--client=<name>` | Client name (with permission) |
+| `--ref=<path>` | Refine an existing case study |
+| `--before=<number>` | Before number (e.g. CAC $450, cycle 75d, ARR $500k) |
+| `--after=<number>` | After number |
+| `--no-humanize` | Skips the humanizer (debug) |
 
-## Pré-requisitos
+## Prerequisites
 
-1. `gtm-context.md` existe → carrega ICP, oferta
-2. Cliente real com permissão pra usar nome ou anonimato consentido
-3. Dados quantitativos do antes/depois (não case "intuitivo")
+1. `gtm-context.md` exists → loads ICP, offer
+2. A real client with permission to use their name, or consented anonymity
+3. Quantitative before/after data (not an "intuitive" case)
 
-## Fluxo
+## Flow
 
-### Passo 1: Coleta de dados estruturada
+### Step 1: Structured data collection
 
-Em modo interativo, pergunta em sequência:
+In interactive mode, ask in sequence:
 
-1. **Identificação do cliente** (nome real ou pseudônimo consentido + categoria/setor)
-2. **Stage** (ARR ou tamanho da empresa quando começou)
-3. **Problema específico** (em 1 frase Hormozi — não "queriam crescer", mas "ciclo de venda B2B subiu de 45 pra 90 dias")
-4. **Antes** (3-5 métricas numéricas concretas)
-5. **Mecanismo aplicado** (qual framework / skill do plugin foi usado, em 2-3 linhas)
-6. **Depois** (mesmas 3-5 métricas numéricas)
-7. **Timeframe** (em quanto tempo aconteceu)
-8. **Quote do cliente** (frase exata, com aspas)
+1. **Client identification** (real name or consented pseudonym + category/industry)
+2. **Stage** (ARR or company size when they started)
+3. **Specific problem** (in one Hormozi sentence — not "they wanted to grow," but "the B2B sales cycle went from 45 to 90 days")
+4. **Before** (3-5 concrete numeric metrics)
+5. **Mechanism applied** (which framework / plugin skill was used, in 2-3 lines)
+6. **After** (the same 3-5 numeric metrics)
+7. **Timeframe** (how long it took)
+8. **Client quote** (exact words, in quotation marks)
 
-### Passo 2: Validação
+### Step 2: Validation
 
-Antes de gerar o case, valida com `value-equation`:
-- Antes/depois cobrem qual vetor (Dream Outcome, Probability, Time Delay, Effort)?
-- Diff numérico é mensurável e auditable?
-- Quote do cliente sustenta a narrativa?
+Before generating the case, validate with `value-equation`:
+- Which vector does the before/after cover (Dream Outcome, Probability, Time Delay, Effort)?
+- Is the numeric diff measurable and auditable?
+- Does the client quote hold up the narrative?
 
-Se faltar dado obrigatório, pergunta. Não inventa.
+If a required data point is missing, ask. Don't make it up.
 
-### Passo 3: Geração
+### Step 3: Generation
 
-Delegate ao `ad-architect` para escrever a narrativa do case (4-6 parágrafos), e ele devolve:
-- Versão completa (1 página, pra usar em LP/proposta)
-- Versão 1-parágrafo (pra usar em ad / cold email)
-- Versão 1-linha (pra usar em hero da LP / hook de ad)
+Delegate to `ad-architect` to write the case narrative (4-6 paragraphs), and it returns:
+- Full version (1 page, for use in an LP/proposal)
+- 1-paragraph version (for use in an ad / cold email)
+- 1-line version (for use in the LP hero / ad hook)
 
-### Passo 4: Assets derivados
+### Step 4: Derived assets
 
-- Quote card (pra Instagram / LP testimonial section)
-- 1-line case (pra ad headline)
-- 1-paragraph case (pra cold email proof)
+- Quote card (for Instagram / LP testimonial section)
+- 1-line case (for ad headline)
+- 1-paragraph case (for cold-email proof)
 
-### Passo 5: Humanizer (full)
+### Step 5: Humanizer (full)
 
-### Passo 6: Salva
+### Step 6: Save
 
-Carregue a skill `hormozi-gtm:template-case-study` via ferramenta Skill e preencha o esqueleto. Salva em `outputs/case-studies/case-study-{cliente_slug}-{YYYYMMDD}-v{n}.md`.
+Load the `hormozi-gtm:template-case-study` skill via the Skill tool and fill in the skeleton. Save to `outputs/case-studies/case-study-{client_slug}-{YYYYMMDD}-v{n}.md`.
 
-### Passo 7: Preview na conversa
+### Step 7: In-conversation preview
 
 ```
-✅ Salvo em: outputs/case-studies/case-study-{cliente}-{YYYYMMDD}-v{n}.md
+✅ Saved to: outputs/case-studies/case-study-{client}-{YYYYMMDD}-v{n}.md
 📋 Preview:
-   • Cliente: {{nome}}
-   • Antes → Depois: {{X}} → {{Y}} ({{N}}% mudança)
-   • Timeframe: {{N}} {{dias|semanas|meses}}
-   • Quote: "{{primeiros 50 chars}}..."
-   • Assets gerados: completo + 1-parágrafo + 1-linha + quote card
-   • Status humanizer: ✓ full pass
+   • Client: {{name}}
+   • Before → After: {{X}} → {{Y}} ({{N}}% change)
+   • Timeframe: {{N}} {{days|weeks|months}}
+   • Quote: "{{first 50 chars}}..."
+   • Assets generated: full + 1-paragraph + 1-line + quote card
+   • Humanizer status: ✓ full pass
 
-👉 Próximos passos:
-   1. Pedir permissão final ao cliente (se ainda não pediu)
-   2. Adicionar em outputs/lp/ existente (seção "Quem usou")
-   3. /hormozi-gtm:hooks com 1-linha como referência
+👉 Next steps:
+   1. Get final permission from the client (if not already requested)
+   2. Add to an existing outputs/lp/ ("Who used it" section)
+   3. /hormozi-gtm:hooks with the 1-line as reference
 ```
 
-## Critério de pronto
+## Definition of done
 
-- [ ] Cliente identificado (nome real ou pseudônimo consentido)
-- [ ] Antes/depois numéricos auditable (não estimativa)
-- [ ] Timeframe específico (não "rápido")
-- [ ] Mecanismo nomeado (framework aplicado, não "trabalho duro")
-- [ ] Quote do cliente em aspas (palavra exata)
-- [ ] Versões completas: 1-página, 1-parágrafo, 1-linha
-- [ ] Humanizer full aplicado
+- [ ] Client identified (real name or consented pseudonym)
+- [ ] Numeric before/after auditable (not an estimate)
+- [ ] Specific timeframe (not "fast")
+- [ ] Named mechanism (framework applied, not "hard work")
+- [ ] Client quote in quotation marks (exact words)
+- [ ] Full set of versions: 1-page, 1-paragraph, 1-line
+- [ ] Humanizer full applied
 
-## Anti-padrões
+## Anti-patterns
 
-- Case sem número (apenas adjetivos)
-- "Cliente teve resultado incrível" (vago, descartável)
-- Inventar número estimado e marcar como real
-- Quote inventada ou parafraseada (cliente percebe)
-- Case com 5 frameworks aplicados simultaneamente (não dá pra atribuir resultado)
-- Versão completa só (sem assets curtos derivados)
-- Pular humanizer em peças que vão pra cliente externo
+- Case with no number (adjectives only)
+- "The client got an amazing result" (vague, throwaway)
+- Inventing an estimated number and marking it as real
+- Invented or paraphrased quote (the client notices)
+- Case with 5 frameworks applied at once (you can't attribute the result)
+- Full version only (no derived short assets)
+- Skipping the humanizer on pieces that go to an external client

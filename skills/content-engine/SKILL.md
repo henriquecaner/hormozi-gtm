@@ -1,188 +1,188 @@
 ---
 name: content-engine
-description: Engine de conteúdo orgânico consistente — 3 tipos (educational, entertainment, promotional), cadência sustentável, métricas que importam, lag esperado de 3-6 meses antes de gerar lead de fato. Para founders/consultores que querem aquisição não-paga compondo ao longo do tempo.
+description: Consistent organic content engine — 3 types (educational, entertainment, promotional), sustainable cadence, metrics that matter, and the expected 3-6 month lag before content actually generates leads. For founders/consultants who want non-paid acquisition that compounds over time.
 ---
 
 # Content Engine
 
-Fonte: Alex Hormozi, *$100M Leads* (Cap. 6, "Organic Content") + cross-reference com `core-four` (organic = 1:many free) e `hook-framework`.
+Source: Alex Hormozi, *$100M Leads* (Ch. 6, "Organic Content") + cross-reference with `core-four` (organic = 1:many free) and `hook-framework`.
 
-## Por que essa skill existe
+## Why this skill exists
 
-Organic content é 30-40% típico do split Core Four. Skills atuais (`hook-framework`, `ad-copy-formula`) cobrem **o que escrever**. Esta cobre **como sustentar produção consistente** ao longo de 6-18 meses, sem desistir nos primeiros 60 dias quando ROI ainda não apareceu.
+Organic content is typically 30-40% of the Core Four split. The existing skills (`hook-framework`, `ad-copy-formula`) cover **what to write**. This one covers **how to sustain consistent production** over 6-18 months without quitting in the first 60 days, before the ROI shows up.
 
-A maior armadilha do organic não é qualidade do conteúdo — é **consistência**. Founder brasileiro posta 1x, não vê resultado em 30 dias, desanima, para. Lag esperado é 3-6 meses; quem para no mês 2 nunca colhe.
+The biggest trap in organic isn't content quality — it's **consistency**. A founder posts once, sees no result in 30 days, gets discouraged, stops. The expected lag is 3-6 months; whoever quits in month 2 never reaps it.
 
-## Os 3 tipos de conteúdo (mix saudável)
+## The 3 content types (a healthy mix)
 
-Conteúdo de aquisição orgânica precisa balancear 3 funções diferentes. Mix ideal: ~60% educacional, ~25% entertainment, ~15% promocional.
+Organic acquisition content has to balance 3 different jobs. Ideal mix: ~60% educational, ~25% entertainment, ~15% promotional.
 
-### 1. Educacional (60% do volume)
+### 1. Educational (60% of volume)
 
-**Função:** ensina algo útil aplicável sem você. Constrói autoridade.
+**Job:** teach something useful the reader can apply without you. Builds authority.
 
-**Formatos:**
-- Tutorial passo-a-passo (escrito ou vídeo)
-- Framework nomeado com componentes
-- Análise de caso real (com permissão)
-- Reframe de crença comum no nicho
+**Formats:**
+- Step-by-step tutorial (written or video)
+- A named framework with components
+- Real case breakdown (with permission)
+- Reframe of a common belief in the niche
 
-**Métrica primária:** save rate / share rate (não like). Save indica utilidade real.
+**Primary metric:** save rate / share rate (not likes). A save signals real usefulness.
 
-**Exemplo:**
-> "Aqui está o framework de Pricing Playbook em 5 leis:
-> 1. Compete em valor, não em preço.
-> 2. Cobre o que vale, não o que custa.
+**Example:**
+> "Here's the Pricing Playbook framework in 5 laws:
+> 1. Compete on value, not on price.
+> 2. Charge what it's worth, not what it costs.
 > ..."
 
-### 2. Entertainment / Contrarian (25% do volume)
+### 2. Entertainment / Contrarian (25% of volume)
 
-**Função:** pega atenção em feed saturado. Conta opinião que vai contra senso comum do nicho.
+**Job:** grab attention in a saturated feed. State an opinion that cuts against the niche's conventional wisdom.
 
-**Formatos:**
-- Hot take com prova ("Marketing digital morreu — aqui está o porquê")
-- Story pessoal com lição
-- Failure post (o que não funcionou)
-- Comparison atrevida (você vs incumbente)
+**Formats:**
+- Hot take with proof ("Digital marketing is dead — here's why")
+- Personal story with a lesson
+- Failure post (what didn't work)
+- A bold comparison (you vs. the incumbent)
 
-**Métrica primária:** engagement rate (comentário + reach orgânico).
+**Primary metric:** engagement rate (comments + organic reach).
 
-**Risco:** se você só posta contrarian, vira clickbait. Tem que sustentar a opinião com dado/case.
+**Risk:** if you only post contrarian takes, it turns into clickbait. You have to back the opinion with data or a case.
 
-### 3. Promocional (15% do volume)
+### 3. Promotional (15% of volume)
 
-**Função:** lembra audience de que você vende algo. Não vergonha disso — autoridade que não vende some.
+**Job:** remind the audience that you sell something. No shame in it — authority that never sells disappears.
 
-**Formatos:**
-- Case study com antes/depois numérico
-- Resultado de cliente recente (com permissão)
-- Oferta atual + escassez genuína
-- "O que eu faço" + CTA
+**Formats:**
+- Case study with a numeric before/after
+- Recent client result (with permission)
+- Current offer + genuine scarcity
+- "What I do" + CTA
 
-**Métrica primária:** click-to-call / link click / DM inbound.
+**Primary metric:** click-to-call / link click / inbound DM.
 
-**Regra:** nunca 100% promocional. Audience cansa. 1 promocional a cada 4-6 educacional/entertainment.
+**Rule:** never 100% promotional. The audience burns out. 1 promotional post for every 4-6 educational/entertainment.
 
-## Cadência sustentável (não a aspiracional)
+## Sustainable cadence (not the aspirational one)
 
-O erro é começar com cadência alta demais ("vou postar 1x/dia") e parar em 3 semanas. Cadência sustentável é a que você **mantém em mês 12**, não a do mês 1.
+The mistake is starting at a cadence that's too high ("I'll post once a day") and stopping in 3 weeks. Sustainable cadence is the one you **keep up in month 12**, not the one from month 1.
 
-| Founder solo / lado da empresa | Cadência recomendada | Realista? |
+| Solo founder / running it on the side | Recommended cadence | Realistic? |
 |---|---|---|
-| Sem time, primeiro ano | 2-3 posts/semana em 1 plataforma | Sim, se reserva 4-6h/semana |
-| Com 1 estrategista de conteúdo | 4-5 posts/semana em 2 plataformas | Sim, 10-15h/semana total |
-| Time de conteúdo dedicado (3+) | 1-2 posts/dia em 3-4 plataformas | Sim, modelo agência |
+| No team, first year | 2-3 posts/week on 1 platform | Yes, if you reserve 4-6h/week |
+| With 1 content strategist | 4-5 posts/week on 2 platforms | Yes, 10-15h/week total |
+| Dedicated content team (3+) | 1-2 posts/day on 3-4 platforms | Yes, agency model |
 
-**Princípio:** dobra de cadência exige time, não vontade. Vontade dura 60 dias; time dura 3 anos.
+**Principle:** doubling cadence takes a team, not willpower. Willpower lasts 60 days; a team lasts 3 years.
 
-**Plataforma única vs múltipla:**
-- Mês 1-3: foca em 1 plataforma. Ganha tração antes de diluir.
-- Mês 4-12: replica conteúdo principal em 2ª plataforma (LinkedIn → Instagram, ou X → YouTube).
-- Ano 2+: time de conteúdo distribui em 3-4 plataformas com ajuste de formato.
+**Single vs. multiple platforms:**
+- Month 1-3: focus on 1 platform. Get traction before you dilute.
+- Month 4-12: replicate your main content on a 2nd platform (LinkedIn → Instagram, or X → YouTube).
+- Year 2+: a content team distributes across 3-4 platforms with format adjustments.
 
-## Métricas: lag e o que importa
+## Metrics: the lag and what matters
 
-**Lag típico antes de gerar lead pagante:**
-- Mês 1-2: ~0 leads. Audience ainda formando.
-- Mês 3-4: 1-5 leads/mês. Primeiros DM inbound qualificados.
-- Mês 6: 10-20 leads/mês. Pipeline orgânico viável.
-- Mês 12: 30-80 leads/mês. Canal estável.
+**Typical lag before generating a paying lead:**
+- Month 1-2: ~0 leads. The audience is still forming.
+- Month 3-4: 1-5 leads/month. First qualified inbound DMs.
+- Month 6: 10-20 leads/month. A viable organic pipeline.
+- Month 12: 30-80 leads/month. A stable channel.
 
-**Padrão de medição (não vanity):**
+**Measurement pattern (not vanity):**
 
-| Métrica | O que mede | Quando importa |
+| Metric | What it measures | When it matters |
 |---|---|---|
-| **Reach** | Audience expandindo? | Mês 1-6 |
-| **Save rate / Share rate** | Utilidade percebida? | Mês 1-12 |
-| **Profile views** | Audience curiosa sobre você? | Mês 2-12 |
-| **DM inbound / Link clicks** | Conversão para lead? | Mês 3-12 |
-| **Inbound qualificado / mês** | ROI real? | Mês 4+ |
-| **Custo de aquisição via organic** | Comparação vs paid | Mês 6+ |
+| **Reach** | Is the audience expanding? | Month 1-6 |
+| **Save rate / Share rate** | Perceived usefulness? | Month 1-12 |
+| **Profile views** | Is the audience curious about you? | Month 2-12 |
+| **Inbound DMs / Link clicks** | Conversion to lead? | Month 3-12 |
+| **Qualified inbound / month** | Real ROI? | Month 4+ |
+| **Acquisition cost via organic** | Comparison vs. paid | Month 6+ |
 
-**Métricas vanity a ignorar:**
-- Likes (não correlaciona com leads).
-- Followers totais (audience comprada não compra).
-- Post de melhor desempenho do mês (1 viral não faz primavera).
+**Vanity metrics to ignore:**
+- Likes (don't correlate with leads).
+- Total followers (a bought audience doesn't buy).
+- Best-performing post of the month (1 viral doesn't make a spring).
 
-## Roadmap por trimestre
+## Quarterly roadmap
 
-### Q1 (mês 1-3): foundation
+### Q1 (month 1-3): foundation
 
-- Define 1 plataforma primária.
-- Posta cadência sustentável (não aspiracional).
-- Mix: 70% educacional, 20% entertainment, 10% promocional (volume promocional ainda baixo porque não tem audience).
-- **Sucesso:** posta consistente, ganha primeiros 100-500 seguidores qualificados, 1-3 DMs inbound (mesmo não comprando).
+- Pick 1 primary platform.
+- Post at a sustainable cadence (not the aspirational one).
+- Mix: 70% educational, 20% entertainment, 10% promotional (promotional volume is still low because there's no audience yet).
+- **Success:** posting consistently, earning your first 100-500 qualified followers, 1-3 inbound DMs (even if they don't buy).
 
-### Q2 (mês 4-6): consistency + first leads
+### Q2 (month 4-6): consistency + first leads
 
-- Mantém cadência.
-- Começa a coletar e republicar wins de clientes (case studies).
-- Mix evolui: 60% educ / 25% entertain / 15% promo.
-- **Sucesso:** 5-15 leads/mês inbound, primeiros 1-3 clientes via organic, NPS de seguidores > 50 (você consegue fazer survey pequeno).
+- Hold the cadence.
+- Start collecting and reposting client wins (case studies).
+- Mix evolves: 60% educational / 25% entertainment / 15% promo.
+- **Success:** 5-15 inbound leads/month, first 1-3 clients via organic, follower NPS > 50 (you can run a small survey).
 
-### Q3 (mês 7-9): scaling output
+### Q3 (month 7-9): scaling output
 
-- Considera adicionar 2ª plataforma (replica conteúdo principal).
-- Lança formato signature (newsletter, podcast, série) se tiver tração.
-- **Sucesso:** 20-40 leads/mês, organic vira ≥ 20% dos novos clientes.
+- Consider adding a 2nd platform (replicate your main content).
+- Launch a signature format (newsletter, podcast, series) if you have traction.
+- **Success:** 20-40 leads/month, organic becomes ≥ 20% of new clients.
 
-### Q4 (mês 10-12): canal estável
+### Q4 (month 10-12): stable channel
 
-- Avalia: continuar investindo, contratar estrategista, ou focar paid?
-- Repurpose: 1 conteúdo principal vira 5-10 mini-conteúdos.
-- **Sucesso:** organic é canal previsível com CAC mais baixo que paid no nicho.
+- Decide: keep investing, hire a strategist, or focus on paid?
+- Repurpose: 1 main piece becomes 5-10 mini-pieces.
+- **Success:** organic is a predictable channel with a lower CAC than paid in your niche.
 
-## Repurpose (não repetir, reusar)
+## Repurpose (don't repeat, reuse)
 
-Cada peça de conteúdo principal deve gerar 4-8 derivados:
+Each main piece of content should generate 4-8 derivatives:
 
-**Origem: vídeo longo / artigo de 1500 palavras**
-- 1 post LinkedIn (resumo + insight)
-- 1 thread Twitter/X (5-10 tweets)
-- 2-3 Reels/Shorts (15-60s cada, takeaway específico)
+**Source: long video / 1,500-word article**
+- 1 LinkedIn post (summary + insight)
+- 1 Twitter/X thread (5-10 tweets)
+- 2-3 Reels/Shorts (15-60s each, one specific takeaway)
 - 1 newsletter section
-- 1 quote card pro Instagram
-- 1 mini-podcast (8-12min)
+- 1 quote card for Instagram
+- 1 mini-podcast (8-12 min)
 
-Cada derivado pega audience diferente (atenção fragmentada). Repurpose é o que faz organic escalar sem 10x do tempo.
+Each derivative catches a different audience (fragmented attention). Repurposing is what lets organic scale without 10x the time.
 
-## Anti-padrões
+## Anti-patterns
 
-**1. Postar e desaparecer.**
-Não responder comentários/DMs. Audience nota e para de engajar.
+**1. Post and vanish.**
+Not replying to comments/DMs. The audience notices and stops engaging.
 
-**2. Mix 100% promocional.**
-Vira anúncio. Audience cansa em 60 dias, unfollows aceleram.
+**2. 100% promotional mix.**
+It becomes an ad. The audience burns out in 60 days, unfollows accelerate.
 
-**3. Plataforma errada para o nicho.**
-B2B enterprise → Instagram é menos eficiente que LinkedIn. B2C transformação pessoal → LinkedIn é menos eficiente que Instagram/TikTok. Valida ICP onde está antes de escolher plataforma.
+**3. Wrong platform for the niche.**
+B2B enterprise → Instagram is less efficient than LinkedIn. B2C personal transformation → LinkedIn is less efficient than Instagram/TikTok. Confirm where your ICP actually is before picking a platform.
 
-**4. Esperar viralizar.**
-Conteúdo orgânico funciona por compound, não por hit único. 50 posts médios > 1 viral + 49 ruins.
+**4. Waiting to go viral.**
+Organic content works by compounding, not by a single hit. 50 average posts > 1 viral + 49 bad ones.
 
-**5. Copiar concorrente.**
-Audience detecta. Próprio ângulo (founder voice, contrarian opinion) é o diferencial.
+**5. Copying a competitor.**
+The audience detects it. Your own angle (founder voice, contrarian opinion) is the edge.
 
-**6. Comparar com criadores 5+ anos à frente.**
-Mês 3 seu vs 10 anos do concorrente é apples-to-oranges. Compara consigo de 6 meses atrás.
+**6. Comparing yourself to creators 5+ years ahead.**
+Your month 3 vs. a competitor's 10 years is apples to oranges. Compare yourself to who you were 6 months ago.
 
-**7. Pedir feedback de amigos.**
-Amigo vai dizer "tá lindo". Métrica real é mercado (saves, shares, DM inbound de stranger).
+**7. Asking friends for feedback.**
+A friend will say "looks great." The real metric is the market (saves, shares, inbound DMs from strangers).
 
-## Aplicação por caso de uso
+## Application by use case
 
-| Caso | Como usar Content Engine |
+| Case | How to use Content Engine |
 |---|---|
-| `/hormozi-gtm:plano` com organic > 20% do mix Core Four | Inclui roadmap por trimestre + métricas + cadência sustentável |
-| Founder em plateau de aquisição paga | Considera organic como ramp paralelo (lag 6 meses) |
-| `/hormozi-gtm:content-hub` (v0.3.0+) | Skill carrega ao montar roadmap específico de 30-90 dias |
+| `/hormozi-gtm:plan` with organic > 20% of the Core Four mix | Include the quarterly roadmap + metrics + sustainable cadence |
+| Founder on a paid-acquisition plateau | Consider organic as a parallel ramp (6-month lag) |
+| `/hormozi-gtm:content-hub` (v0.3.0+) | Skill loads when building a specific 30-90 day roadmap |
 
-## Quando NÃO entra
+## When it does NOT apply
 
-- Founder pré-PMF com runway < 6 meses (não tem tempo de esperar lag).
-- Negócio que escala 100% via paid e tem LTV:CAC saudável (não precisa organic).
-- Refinement de copy específica de post → use `hook-framework` ou `ad-copy-formula`.
+- Pre-PMF founder with < 6 months of runway (no time to wait out the lag).
+- A business that scales 100% via paid with healthy LTV:CAC (doesn't need organic).
+- Refining specific post copy → use `hook-framework` or `ad-copy-formula`.
 
-## Referência detalhada
+## Detailed reference
 
-`reference/100m-leads-extracts.md` cap. 6 ("Organic Content") + `reference/journal-extracts.md` ("Compound > Linear").
+`reference/100m-leads-extracts.md` ch. 6 ("Organic Content") + `reference/journal-extracts.md` ("Compound > Linear").

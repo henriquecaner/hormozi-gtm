@@ -1,111 +1,114 @@
 ---
 name: template-gtm-context
-description: "Esqueleto interno do output do comando /hormozi-gtm:init. Carregado pelo comando, não para uso direto."
+description: "Internal output skeleton for the /hormozi-gtm:init command. Loaded by the command, not for direct use."
 ---
 
 # Template — gtm-context.md
 
-Esqueleto canônico do arquivo `gtm-context.md`. O comando `/hormozi-gtm:init` carrega esta skill e preenche o esqueleto abaixo com os inputs do usuário. Reproduza a estrutura exata: frontmatter + todas as seções + placeholders `{{...}}`.
+Canonical skeleton for the `gtm-context.md` file. The `/hormozi-gtm:init` command loads this skill and fills the skeleton below with the user's inputs. Reproduce the exact structure: frontmatter + every section + `{{...}}` placeholders.
 
 ```markdown
 ---
-empresa_nome: {{empresa_nome}}
-empresa_slug: {{empresa_slug}}
+company_name: {{company_name}}
+company_slug: {{company_slug}}
 last_updated: {{YYYY-MM-DD}}
 version: 1
 plugin: hormozi-gtm
+language: en
 ---
 
-# GTM Context — {{empresa_nome}}
+# GTM Context — {{company_name}}
 
-Arquivo de contexto persistente. Todos os comandos do plugin consultam ele automaticamente. Atualize-o quando mudanças relevantes acontecerem (oferta, preço, ICP, canal). Versões antigas ficam em git.
+Persistent context file. Every plugin command reads it automatically. Update it whenever something relevant changes (offer, price, ICP, channel). Old versions stay in git.
 
-## Empresa
+> **`language` field:** output language for generated copy (`en` | `pt-br` | ...). Defaults to `en`. The voice and brutality rules are language-independent and apply in every language — the copy is written native in the target language, never translated.
 
-- **Categoria/mercado** (1 frase específica):
-  > {{categoria}}
+## Company
 
-- **Stage atual:**
-  > {{validando-oferta | escalando-aquisicao | otimizando-monetizacao | exit-prep}}
+- **Category/market** (1 specific sentence):
+  > {{category}}
+
+- **Current stage:**
+  > {{validating-offer | scaling-acquisition | optimizing-monetization | exit-prep}}
 
 ## ICP
 
-- **ICP em 1 frase ultra-específica** (incluindo segmento, tamanho, papel, dor principal):
+- **ICP in 1 ultra-specific sentence** (include segment, size, role, primary pain):
   > {{icp}}
 
-- **Anti-ICP** (quem você NÃO atende, pra filtrar):
+- **Anti-ICP** (who you do NOT serve, to filter):
   > {{anti-icp}}
 
-## Oferta
+## Offer
 
-- **Core offer** (1 frase com transformação prometida):
+- **Core offer** (1 sentence with the promised transformation):
   > {{core-offer}}
 
-- **Preço atual:**
-  > {{preco}}
+- **Current price:**
+  > {{price}}
 
-- **Modelo:** one-time | recorrência | híbrido
-  > {{modelo}}
+- **Model:** one-time | recurring | hybrid
+  > {{model}}
 
-- **Transformação prometida** (em quanto tempo, quem vira o quê):
-  > {{transformacao}}
+- **Promised transformation** (in how long, who becomes what):
+  > {{transformation}}
 
-- **Última audit:** {{caminho_para_audit_recente_ou_nenhum}}
+- **Last audit:** {{path_to_recent_audit_or_none}}
 
 ## Brand Voice
 
-- **Tom:** {{ex: inteligente, prático, estruturado, direto, ocasionalmente provocativo}}
-- **Mix Hormozi vs voz própria:** {{ex: 70% Hormozi + 30% voz LEVEL}}
-- **Audience externa:** {{B2B sênior | consumidor final | mid-market | enterprise}}
-- **Intensidade do tom:** {{baixa | média | alta}} — calibra agressividade da copy
+- **Tone:** {{ex: intelligent, practical, structured, direct, occasionally provocative}}
+- **Hormozi vs own-voice mix:** {{ex: 70% Hormozi + 30% LEVEL voice}}
+- **External audience:** {{senior B2B | end consumer | mid-market | enterprise}}
+- **Tone intensity:** {{low | medium | high}} — calibrates the aggressiveness of the copy
 
-**Exemplo de copy que ressoa com o ICP** (cole 1-2 parágrafos de material existente, post no LinkedIn, email do fundador):
+**Example of copy that resonates with the ICP** (paste 1-2 paragraphs of existing material, a LinkedIn post, a founder email):
 
-> {{exemplo_de_copy}}
+> {{copy_example}}
 
-## Canais
+## Channels
 
-**Core Four split atual (soma 100):**
+**Current Core Four split (sums to 100):**
 
-| Canal | % | Status |
+| Channel | % | Status |
 |---|---|---|
-| Warm (1:1) | {{ex: 30}}% | {{ativo/inativo}} |
-| Cold (1:1) | {{ex: 10}}% | {{ativo/inativo}} |
-| Organic (1:many free) | {{ex: 40}}% | {{ativo/inativo}} |
-| Paid (1:many paid) | {{ex: 20}}% | {{ativo/inativo}} |
+| Warm (1:1) | {{ex: 30}}% | {{active/inactive}} |
+| Cold (1:1) | {{ex: 10}}% | {{active/inactive}} |
+| Organic (1:many free) | {{ex: 40}}% | {{active/inactive}} |
+| Paid (1:many paid) | {{ex: 20}}% | {{active/inactive}} |
 
-**Lead magnet ativo:** {{nome_ou_nenhum}}
+**Active lead magnet:** {{name_or_none}}
 
-## Unit economics (se conhecidos)
+## Unit economics (if known)
 
-- **Preço médio composto:** R$ {{}}
-- **Custo variável:** R$ {{}}
-- **LTGP estimado:** R$ {{}}
-- **CAC atual:** R$ {{}}
-- **Ratio LTGP:CAC:** {{}}
-- **Payback period:** {{dias}}
+- **Blended average price:** $ {{}}
+- **Variable cost:** $ {{}}
+- **Estimated LTGP:** $ {{}}
+- **Current CAC:** $ {{}}
+- **LTGP:CAC ratio:** {{}}
+- **Payback period:** {{days}}
 
-## Contexto adicional
+## Additional context
 
-- **Maior gargalo atual** (1 frase honesta):
-  > {{gargalo}}
+- **Biggest current bottleneck** (1 honest sentence):
+  > {{bottleneck}}
 
-- **Tentativas anteriores que falharam:**
-  > {{lista_ou_n_a}}
+- **Past attempts that failed:**
+  > {{list_or_n_a}}
 
-- **Decisões recentes ou em aberto:**
-  > {{lista_ou_n_a}}
+- **Recent or open decisions:**
+  > {{list_or_n_a}}
 
 ---
 
-## Como atualizar
+## How to update
 
-Rode `/hormozi-gtm:init --refresh` quando:
-- ICP mudou
-- Oferta principal mudou
-- Preço mudou >10%
-- Canal dominante mudou
-- Stage da empresa avançou
+Run `/hormozi-gtm:init --refresh` when:
+- The ICP changed
+- The core offer changed
+- The price changed >10%
+- The dominant channel changed
+- The company's stage advanced
 
-Plugin avisa "contexto stale" se `last_updated` for >30 dias.
+The plugin warns "context stale" if `last_updated` is >30 days old.
 ```

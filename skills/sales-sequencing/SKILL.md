@@ -1,202 +1,202 @@
 ---
 name: sales-sequencing
-description: Sequência de outbound completa — 5-step cadence (initial + follow 1 + follow 2 + reframe + close), timing (1d/3d/7d/14d/30d), como variar contexto entre touches sem repetir copy, when to kill. Para founder que manda email frio único e desiste.
+description: Full outbound sequence — 5-step cadence (initial + follow 1 + follow 2 + reframe + close), timing (1d/3d/7d/14d/30d), how to vary context between touches without repeating copy, when to kill. For the founder who sends one cold email and gives up.
 ---
 
 # Sales Sequencing
 
-Fonte: Alex Hormozi, *$100M Leads* (Cap. 3, "Cold Outreach") + cross-reference com `leila-scaling` (High-Performance Communication) e `ad-copy-formula` (cold variant).
+Source: Alex Hormozi, *$100M Leads* (Ch. 3, "Cold Outreach") + cross-reference with `leila-scaling` (High-Performance Communication) and `ad-copy-formula` (cold variant).
 
-## Por que essa skill existe
+## Why this skill exists
 
-`ad-copy-formula` tem "cold email example" — copy de email único. Esta cobre a **sequência completa** de outbound. A maior alavanca de cold outreach não é a copy do primeiro email; é a sequência de 5+ touches contextualizados.
+`ad-copy-formula` has a "cold email example" — copy for a single email. This one covers the **full outbound sequence**. The biggest lever in cold outreach isn't the copy of the first email; it's the sequence of 5+ contextualized touches.
 
-Founder brasileiro manda 1 email frio, espera resposta, não recebe, desiste. Reply rate real de cold outreach em sequência de 5 touches em B2B SaaS Brasil: 5-12%. Reply rate de email único: 0.5-2%. Sequência multiplica resultado por 4-10x.
+Most founders send 1 cold email, wait for a reply, get nothing, give up. Real reply rate for cold outreach across a 5-touch sequence in B2B SaaS: 5-12%. Reply rate for a single email: 0.5-2%. The sequence multiplies the result 4-10x.
 
-## O 5-step cadence
+## The 5-step cadence
 
-Estrutura padrão. Funciona em cold email, LinkedIn DM, ou multichannel (email + LinkedIn + voicemail).
+The standard structure. Works in cold email, LinkedIn DM, or multichannel (email + LinkedIn + voicemail).
 
-### Touch 1: Initial (Dia 0)
+### Touch 1: Initial (Day 0)
 
-**Função:** abre o relacionamento. Hook + research + soft ask.
+**Function:** opens the relationship. Hook + research + soft ask.
 
-**Estrutura:**
-- Subject: específico, ≤ 50 chars, sem clickbait.
-- Opener: referência específica ao prospect (não "vi que você é Head of X").
-- 1-2 linhas de dor reconhecível.
-- 1-2 linhas de proof curto.
-- Soft CTA (não "marca call" — "te mando PDF de 5 páginas").
+**Structure:**
+- Subject: specific, ≤ 50 chars, no clickbait.
+- Opener: a specific reference to the prospect (not "saw you're Head of X").
+- 1-2 lines of recognizable pain.
+- 1-2 lines of short proof.
+- Soft CTA (not "book a call" — "I'll send you a 5-page PDF").
 
-**Exemplo:**
-> Subject: Cortando ciclo de venda da Stark em 60%
+**Example:**
+> Subject: Cutting Stark's sales cycle by 60%
 >
-> Vi seu LinkedIn na Stark Bank trabalhando com onboarding de fintechs. Notei que vocês expandiram pra B2B no Q3 — fluxo de venda B2B novo costuma adicionar 60-90 dias ao ciclo do que o B2C que vocês já dominam.
+> Saw your LinkedIn at Stark Bank working on fintech onboarding. Noticed you expanded into B2B in Q3 — a new B2B sales motion usually adds 60-90 days to the cycle compared to the B2C you already own.
 >
-> A gente reduziu ciclo de venda B2B de 75 dias pra 28 em 3 fintechs ano passado. Posso te mandar o teardown? PDF de 5 páginas, 10min de leitura.
+> We cut the B2B sales cycle from 75 days to 28 at 3 fintechs last year. Want me to send you the teardown? 5-page PDF, 10-min read.
 
-### Touch 2: Follow-up (Dia +3)
+### Touch 2: Follow-up (Day +3)
 
-**Função:** reforça com **proof point diferente**. NÃO repete o Touch 1.
+**Function:** reinforces with a **different proof point**. Does NOT repeat Touch 1.
 
-**Estrutura:**
-- Subject: "Re: [subject anterior]" OU novo ângulo do mesmo problema.
-- Reconhece touch anterior brevemente ("Sobre meu email anterior...").
-- Apresenta novo proof point: case study, número, observação adicional.
-- CTA: igual ou ligeiramente mais direto.
+**Structure:**
+- Subject: "Re: [previous subject]" OR a new angle on the same problem.
+- Acknowledge the previous touch briefly ("About my earlier email...").
+- Present a new proof point: case study, number, additional observation.
+- CTA: same or slightly more direct.
 
-**Exemplo:**
-> Subject: Re: Cortando ciclo de venda da Stark em 60%
+**Example:**
+> Subject: Re: Cutting Stark's sales cycle by 60%
 >
-> Sobre meu email de quinta-feira: relendo o último report da Stark, vi que CAC em B2B subiu 40% vs B2C. Mesma fricção que ouvimos da Cora antes do projeto.
+> About my email on Thursday: re-reading Stark's latest report, I saw B2B CAC climbed 40% vs B2C. Same friction we heard from Cora before that project.
 >
-> Mando o teardown? São 3 fintechs comparáveis em tamanho e fase, mesma intervenção, mesmo resultado em 90 dias.
+> Want the teardown? It's 3 fintechs comparable in size and stage, same intervention, same result in 90 days.
 
-### Touch 3: Follow-up 2 / Reframe (Dia +7)
+### Touch 3: Follow-up 2 / Reframe (Day +7)
 
-**Função:** muda o ângulo. Se Touch 1 e 2 atacaram "dor X", Touch 3 ataca "dor Y" do mesmo prospect.
+**Function:** changes the angle. If Touch 1 and 2 hit "pain X," Touch 3 hits "pain Y" of the same prospect.
 
-**Estrutura:**
-- Subject novo (não "Re:").
-- Identifica objeção comum: "A maioria dos heads de RevOps me dizem nesse momento que 'a gente já tem time interno'..."
-- Reframe em 2-3 linhas: "Mas o que vimos nos últimos 14 projetos é que time interno faz X, o que falta é Y..."
-- Proof adicional.
+**Structure:**
+- New subject (not "Re:").
+- Name the common objection: "Most RevOps heads tell me at this point that 'we already have an in-house team'..."
+- Reframe in 2-3 lines: "But what we've seen across the last 14 projects is that the in-house team does X — what's missing is Y..."
+- Additional proof.
 - CTA.
 
-### Touch 4: Valor sem ask (Dia +14)
+### Touch 4: Value, no ask (Day +14)
 
-**Função:** demonstra valor sem pedir nada. Quebra dinâmica de "esse cara só quer vender".
+**Function:** delivers value without asking for anything. Breaks the "this guy just wants to sell" dynamic.
 
-**Estrutura:**
-- Subject: "Insight pra você"
-- Conteúdo educacional próprio (link pra post / framework / case público).
-- 1-2 linhas conectando ao prospect.
-- **Sem CTA de venda.** Só "achei que pudesse interessar".
+**Structure:**
+- Subject: "Something for you"
+- Your own educational content (link to a post / framework / public case).
+- 1-2 lines connecting it to the prospect.
+- **No sales CTA.** Just "thought it might be useful."
 
-**Por que funciona:** quebra o padrão de pressão. Prospect lembra: "esse cara me manda valor antes de pedir."
+**Why it works:** breaks the pressure pattern. The prospect remembers: "this guy sends me value before asking for anything."
 
-### Touch 5: Close ou Breakup (Dia +21-30)
+### Touch 5: Close or Breakup (Day +21-30)
 
-**Função:** decide. Última call explícita ou breakup honesto.
+**Function:** forces a decision. An explicit final call, or an honest breakup.
 
-**Duas opções:**
+**Two options:**
 
-**Opção A — Última call com escassez genuína:**
-> Subject: Vou parar de te incomodar
+**Option A — final call with genuine scarcity:**
+> Subject: I'll stop bugging you
 >
-> Mandei 4 emails sobre [problema]. Sem julgamento se a prioridade está em outro lugar.
+> I sent 4 emails about [problem]. No judgment if the priority is somewhere else right now.
 >
-> Última coisa: tenho 6 vagas pra projeto Q3 (próxima janela é só Q1 do ano que vem). Quer ver a proposta antes de eu fechar essas vagas?
+> One last thing: I have 6 spots for Q3 projects (next window is Q1 of next year). Want to see the proposal before I fill them?
 
-**Opção B — Breakup direto:**
-> Subject: Encerrando o follow-up
+**Option B — direct breakup:**
+> Subject: Closing out the follow-up
 >
-> Encerrando o follow-up por enquanto. Mas se daqui 3-6 meses [problema] virar prioridade, é só responder este email — pulo todo o discovery, vamos direto pra escopo.
+> Closing out the follow-up for now. But if 3-6 months from now [problem] becomes a priority, just reply to this email — I'll skip the whole discovery and go straight to scope.
 >
-> Até lá, fico de fora do seu inbox.
+> Until then, I'm out of your inbox.
 
-**Curiosidade:** breakup email tem reply rate alto (10-20%) — frequentemente mais que touches anteriores. Cliente em modo "tá indo embora" responde.
+**Worth noting:** the breakup email has a high reply rate (10-20%) — often higher than the earlier touches. A prospect in "they're walking away" mode replies.
 
-## Timing entre touches
+## Timing between touches
 
-| Touch | Dia | Lógica |
+| Touch | Day | Logic |
 |---|---|---|
 | 1 | 0 | Initial |
-| 2 | +3 | Curto suficiente para lembrar, longo suficiente pra não parecer ansioso |
-| 3 | +7 | 1 semana — prospect provavelmente teve outra semana de trabalho desde o último contato |
-| 4 | +14 | Espaço maior, sinaliza paciência |
-| 5 | +21 a +30 | Fechamento |
+| 2 | +3 | Short enough to remember, long enough not to seem anxious |
+| 3 | +7 | 1 week — the prospect has probably had another work week since the last contact |
+| 4 | +14 | A wider gap, signals patience |
+| 5 | +21 to +30 | The close |
 
-**Variações por canal:**
-- Email: timing acima.
-- LinkedIn DM: aperta um pouco (dia 0, 2, 5, 10, 18) — LinkedIn tem janela de visibilidade menor.
-- Multichannel (email + LinkedIn): alterna canais nos touches (Touch 1 email, Touch 2 LinkedIn, Touch 3 email, etc.) — aumenta surface area sem cansar 1 canal.
+**Variations by channel:**
+- Email: timing above.
+- LinkedIn DM: tighten it up (day 0, 2, 5, 10, 18) — LinkedIn has a shorter visibility window.
+- Multichannel (email + LinkedIn): alternate channels across touches (Touch 1 email, Touch 2 LinkedIn, Touch 3 email, etc.) — increases surface area without exhausting one channel.
 
-## Como variar contexto sem repetir copy
+## How to vary context without repeating copy
 
-A pior coisa em sequência de outbound é prospect notar "esse cara está só me copiando emails diferentes". Cada touch precisa ter ângulo único, mesmo atacando a mesma dor.
+The worst thing in an outbound sequence is the prospect noticing "this guy is just copy-pasting me different emails." Every touch needs a unique angle, even when hitting the same pain.
 
-**5 ângulos rotacionáveis:**
+**5 rotatable angles:**
 
-1. **Dor direta:** "Você está perdendo X por causa de Y."
-2. **Proof point:** "Cliente A teve mesmo problema, resolvi assim, virou Z."
-3. **Reframe de objeção:** "A maioria pensa que [objeção], mas o que vi é [realidade]."
-4. **Pergunta provocativa:** "Por que ninguém em [nicho] resolve [problema X]?"
-5. **Valor sem ask:** "Aqui está um framework útil, mesmo se você nunca contratar."
+1. **Direct pain:** "You're losing X because of Y."
+2. **Proof point:** "Client A had the same problem, I solved it this way, it turned into Z."
+3. **Objection reframe:** "Most people think [objection], but what I've seen is [reality]."
+4. **Provocative question:** "Why does nobody in [niche] solve [problem X]?"
+5. **Value, no ask:** "Here's a useful framework, even if you never hire me."
 
-Cada touch usa 1 ângulo. Sequência de 5 touches = 5 ângulos diferentes.
+Each touch uses 1 angle. A 5-touch sequence = 5 different angles.
 
-## When to kill o prospect
+## When to kill the prospect
 
-Não joga lead morno fora. Mas tem que saber quando parar de gastar energia nesse:
+Don't throw a lukewarm lead away. But you have to know when to stop spending energy on this one:
 
-**Kill após 5 touches se:**
-- 0 abertura (não abriu nenhum email).
-- 0 click (abriu mas não clicou em nada).
-- Sem resposta (mesmo breakup).
+**Kill after 5 touches if:**
+- 0 opens (didn't open a single email).
+- 0 clicks (opened but clicked nothing).
+- No reply (not even to the breakup).
 
-**Re-engage 90 dias depois** com sequence nova (3 touches, ângulo diferente).
+**Re-engage 90 days later** with a new sequence (3 touches, different angle).
 
-**Kill permanente se:**
-- 2 sequências completas sem qualquer resposta.
-- LinkedIn não conectou após 60 dias.
-- Trocou de empresa (re-classifica como lead novo na nova empresa).
+**Permanent kill if:**
+- 2 full sequences with no reply at all.
+- LinkedIn didn't connect after 60 days.
+- Changed companies (re-classify as a new lead at the new company).
 
-## Métricas que importam
+## Metrics that matter
 
-| Métrica | Alvo realista B2B SaaS BR | O que mede |
+| Metric | Realistic B2B SaaS target | What it measures |
 |---|---|---|
-| **Open rate** | 35-55% | Subject + remetente OK |
-| **Reply rate** | 5-12% | Sequência inteira funciona |
-| **Positive reply rate** | 2-5% | Interesse real (não só "tira da lista") |
-| **Meeting booked** | 1-3% | ROI final |
-| **Open por touch** | Touch 1: 50%+, Touch 5: 25%+ | Drop natural |
+| **Open rate** | 35-55% | Subject + sender are OK |
+| **Reply rate** | 5-12% | The whole sequence works |
+| **Positive reply rate** | 2-5% | Real interest (not just "take me off the list") |
+| **Meeting booked** | 1-3% | Final ROI |
+| **Open per touch** | Touch 1: 50%+, Touch 5: 25%+ | Natural drop |
 
-**Sinais de problema:**
-- Open rate < 25% → subject fraco ou domínio/reputation ruim.
-- Open rate alto, reply rate < 2% → copy do corpo / CTA fraco.
-- Reply rate alto, meeting < 1% → CTA atrai curiosos, não compradores.
+**Problem signals:**
+- Open rate < 25% → weak subject or bad domain/reputation.
+- High open rate, reply rate < 2% → weak body copy / CTA.
+- High reply rate, meetings < 1% → the CTA attracts the curious, not buyers.
 
-## Anti-padrões
+## Anti-patterns
 
-**1. Touch único e desistir.**
-1 email frio = 0.5-2% reply rate. Sequência completa = 5-12%. Quem para no touch 1 está deixando 4-10x na mesa.
+**1. Single touch, then quit.**
+1 cold email = 0.5-2% reply rate. A full sequence = 5-12%. Whoever stops at touch 1 is leaving 4-10x on the table.
 
-**2. Copy idêntico repetido.**
-Prospect nota e desativa filtro. Cada touch precisa ângulo único.
+**2. Identical copy repeated.**
+The prospect notices and tunes out. Every touch needs a unique angle.
 
-**3. Personalização rasa.**
-"Olá [Nome], adorei seu post sobre [tópico aleatório]." Antispam detecta, prospect rejeita.
+**3. Shallow personalization.**
+"Hi [Name], loved your post about [random topic]." Spam filters catch it, the prospect rejects it.
 
-**4. CTA cresce desesperado.**
-Touch 1: "te mando PDF". Touch 5: "POR FAVOR ME RESPONDA". Audiência cancela.
+**4. CTA grows desperate.**
+Touch 1: "I'll send a PDF." Touch 5: "PLEASE JUST REPLY." The audience checks out.
 
-**5. Não documentar o que mandou.**
-3 meses depois, manda mesmo email frio pra mesmo prospect. Marca como spammer.
+**5. Not documenting what you sent.**
+3 months later you send the same cold email to the same prospect. You get flagged as a spammer.
 
-**6. Sequência sem breakup.**
-Touch 5 é genérico "última oportunidade". Breakup honesto converte mais.
+**6. Sequence with no breakup.**
+Touch 5 is a generic "last chance." An honest breakup converts more.
 
-**7. Volume sem qualidade.**
-500 emails frios genéricos vs 50 emails frios bem researched. Os 50 ganham 3x mais resposta.
+**7. Volume without quality.**
+500 generic cold emails vs 50 well-researched ones. The 50 win 3x more replies.
 
-**8. Não testar subject.**
-Mesmo subject 6 meses. Audience cansa. Roda variações.
+**8. Not testing the subject.**
+Same subject for 6 months. The audience tires. Run variations.
 
-## Aplicação por caso de uso
+## Application by use case
 
-| Caso | Como usar |
+| Case | How to use |
 |---|---|
-| `/hormozi-gtm:email --tipo=cold` | Skill carrega para estruturar sequência completa de 5-7 touches |
-| `/hormozi-gtm:plano` com Core Four split alto em cold | Plano detalha sequência + métricas + cadência por SDR |
-| `/hormozi-gtm:audit` com canal cold "não funciona" | Verifica: testou sequência completa ou só touch único? |
+| `/hormozi-gtm:email --type=cold` | Skill loads to structure a full 5-7 touch sequence |
+| `/hormozi-gtm:plan` with a high Core Four split on cold | The plan details the sequence + metrics + cadence per SDR |
+| `/hormozi-gtm:audit` with a cold channel that "doesn't work" | Check: did they test the full sequence or just a single touch? |
 
-## Quando NÃO entra
+## When it does NOT apply
 
-- 100% inbound business (não roda outbound).
-- B2C transactional (compra impulso, sem ciclo de venda).
-- Refinement de copy de touch único → use `ad-copy-formula` (cold variant).
+- 100% inbound business (no outbound to run).
+- B2C transactional (impulse buy, no sales cycle).
+- Refining single-touch copy → use `ad-copy-formula` (cold variant).
 
-## Referência detalhada
+## Detailed reference
 
-`reference/100m-leads-extracts.md` cap. 3 ("Cold Outreach") + `reference/leila-sops-extracts.md` (High-Performance Communication, aplicável a SDR/closer).
+`reference/100m-leads-extracts.md` ch. 3 ("Cold Outreach") + `reference/leila-sops-extracts.md` (High-Performance Communication, applicable to SDR/closer).

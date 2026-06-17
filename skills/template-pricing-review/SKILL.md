@@ -1,11 +1,11 @@
 ---
 name: template-pricing-review
-description: "Esqueleto interno do output do comando /hormozi-gtm:pricing. Carregado pelo comando, não para uso direto."
+description: "Internal output skeleton for the /hormozi-gtm:pricing command. Loaded by the command, not for direct use."
 ---
 
 # Template — pricing-review.md
 
-Esqueleto canônico do output do comando `/hormozi-gtm:pricing`. O comando carrega esta skill e preenche o esqueleto abaixo com a análise. Reproduza a estrutura exata: frontmatter + todas as seções + placeholders `{{...}}`.
+Canonical output skeleton for the `/hormozi-gtm:pricing` command. The command loads this skill and fills the skeleton below with the analysis. Reproduce the exact structure: frontmatter + every section + `{{...}}` placeholders.
 
 ```markdown
 ---
@@ -15,8 +15,8 @@ command: pricing
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{empresa_slug}}
-product: {{produto_slug}}
+client: {{company_slug}}
+product: {{product_slug}}
 frameworks:
   - pricing-playbook
   - value-equation
@@ -24,152 +24,153 @@ frameworks:
   - money-models
 humanizer_pass: false
 humanizer_mode: n/a
-voz: crua
-audit_ref: {{caminho_ou_null}}
-parent_version: {{caminho_v_anterior_ou_null}}
+voice: raw
+language: {{language}}
+audit_ref: {{path_or_null}}
+parent_version: {{prior_version_path_or_null}}
 ---
 
-# Pricing Review — {{produto}}
+# Pricing Review — {{product}}
 
 ## TL;DR
 
-**Preço atual:** R$ {{X}}
-**Recomendação:** range R$ {{Y}} a R$ {{Z}} (default Gold tier)
-**Maior alavanca:** {{...}}
-**Risco principal:** {{...}}
+**Current price:** ${{X}}
+**Recommendation:** range ${{Y}} to ${{Z}} (default Gold tier)
+**Biggest lever:** {{...}}
+**Main risk:** {{...}}
 
 ---
 
 ## 📊 Snapshot
 
-| Campo | Valor |
+| Field | Value |
 |---|---|
-| Produto | {{nome}} |
-| Preço atual | R$ {{X}} |
-| Modelo | one-time \| recorrência \| híbrido |
-| Margem gross atual | {{X}}% |
-| Volume mensal | {{N}} clientes |
-| LTGP estimado | R$ {{X}} |
-| CAC atual | R$ {{X}} |
-| Ratio LTGP:CAC | {{X}}:1 |
+| Product | {{name}} |
+| Current price | ${{X}} |
+| Model | one-time \| recurring \| hybrid |
+| Current gross margin | {{X}}% |
+| Monthly volume | {{N}} customers |
+| Estimated LTGP | ${{X}} |
+| Current CAC | ${{X}} |
+| LTGP:CAC ratio | {{X}}:1 |
 
 ---
 
-## 🏛 Concorrência direta
+## 🏛 Direct competition
 
-| Concorrente | Oferta similar | Preço | Observação |
+| Competitor | Similar offer | Price | Note |
 |---|---|---|---|
-| {{nome 1}} | {{...}} | R$ {{X}} | {{...}} |
-| {{nome 2}} | {{...}} | R$ {{X}} | {{...}} |
-| {{nome 3}} | {{...}} | R$ {{X}} | {{...}} |
-| {{nome 4}} (ancora superior) | {{...}} | R$ {{X}} | {{...}} |
+| {{name 1}} | {{...}} | ${{X}} | {{...}} |
+| {{name 2}} | {{...}} | ${{X}} | {{...}} |
+| {{name 3}} | {{...}} | ${{X}} | {{...}} |
+| {{name 4}} (upper anchor) | {{...}} | ${{X}} | {{...}} |
 
-**Sua posição no mercado:** {{baixo | mid | mid-high | premium}}
-
----
-
-## ⚖️ Análise das 5 Leis
-
-### Lei 1: Compete em valor, não em preço
-**Score:** {{verde | amarelo | vermelho}}
-**Diagnóstico:** {{...}}
-**Recomendação:** {{...}}
-
-### Lei 2: Cobra o que vale, não o que custa
-**Score:** {{...}}
-**Diagnóstico:** {{...}}
-**Recomendação:** {{...}}
-
-### Lei 3: Preço sinaliza qualidade
-**Score:** {{...}}
-**Diagnóstico:** {{...}}
-**Recomendação:** {{...}}
-
-### Lei 4: Tiering captura mais mercado
-**Score:** {{...}}
-**Diagnóstico:** {{tem tiers? funcionam?}}
-**Recomendação:** {{...}}
-
-### Lei 5: Runway maior, ask maior
-**Score:** {{...}}
-**Diagnóstico:** {{...}}
-**Recomendação:** {{...}}
+**Your position in the market:** {{low | mid | mid-high | premium}}
 
 ---
 
-## 💡 É problema de preço OU de percepção?
+## ⚖️ The 5 Laws analysis
 
-{{Análise específica diferenciando os dois. Se o problema é percepção de valor, baixar preço não resolve — fortalece probability primeiro.}}
+### Law 1: Compete on value, not on price
+**Score:** {{green | yellow | red}}
+**Diagnosis:** {{...}}
+**Recommendation:** {{...}}
 
-**Conclusão:** {{problema é preço | problema é percepção | ambos}}
+### Law 2: Charge what it's worth, not what it costs
+**Score:** {{...}}
+**Diagnosis:** {{...}}
+**Recommendation:** {{...}}
+
+### Law 3: Price signals quality
+**Score:** {{...}}
+**Diagnosis:** {{...}}
+**Recommendation:** {{...}}
+
+### Law 4: Tiering captures more of the market
+**Score:** {{...}}
+**Diagnosis:** {{do tiers exist? do they work?}}
+**Recommendation:** {{...}}
+
+### Law 5: Longer runway, bigger ask
+**Score:** {{...}}
+**Diagnosis:** {{...}}
+**Recommendation:** {{...}}
 
 ---
 
-## 🎯 Recomendação
+## 💡 Is it a price problem OR a perception problem?
 
-### Estrutura de tiers proposta
+{{Specific analysis separating the two. If the problem is value perception, dropping the price doesn't fix it — strengthen probability first.}}
 
-**Tier 1 — Silver: R$ {{X}}**
+**Conclusion:** {{it's a price problem | it's a perception problem | both}}
+
+---
+
+## 🎯 Recommendation
+
+### Proposed tier structure
+
+**Tier 1 — Silver: ${{X}}**
 - {{deliverables}}
-- {{Para quem: entrada/budget-conscious}}
+- {{For whom: entry/budget-conscious}}
 
-**Tier 2 — Gold (DEFAULT): R$ {{Y}}** ← destacar visualmente
+**Tier 2 — Gold (DEFAULT): ${{Y}}** ← highlight visually
 - {{deliverables}}
-- {{Para quem: bulk do mercado, 60-70%}}
+- {{For whom: the bulk of the market, 60-70%}}
 
-**Tier 3 — Platinum: R$ {{Z}}**
+**Tier 3 — Platinum: ${{Z}}**
 - {{deliverables}}
-- {{Para quem: high-touch, ancoragem)}}
+- {{For whom: high-touch, anchoring}}
 
-### Ancoragem
-{{Como apresentar visualmente: "vs Mentoria C a R$ X" ou "valor agregado da stack R$ Y"}}
+### Anchoring
+{{How to present it visually: "vs Mentorship C at $X" or "stack value of $Y"}}
 
-### Estrutura de pagamento
-- À vista: R$ {{X}}
-- {{N}}x sem juros: R$ {{X/N}}
-- {{12}}x com juros: R$ {{X/12 + juros}}
+### Payment structure
+- Paid in full: ${{X}}
+- {{N}} installments, no interest: ${{X/N}}
+- {{12}} installments with interest: ${{X/12 + interest}}
 
 ### Downsell
-{{Para quem disse não ao Silver — formato + preço}}
+{{For whoever said no to Silver — format + price}}
 
-### Upsell (pós-checkout)
-{{Order bump ou OTO — formato + preço + função absorver CAC em 30 dias}}
+### Upsell (post-checkout)
+{{Order bump or OTO — format + price + role in absorbing CAC within 30 days}}
 
 ---
 
-## 🧪 Teste de validação (1-2 semanas)
+## 🧪 Validation test (1-2 weeks)
 
-**Cenário:**
-Próximos 10-20 leads vão receber o novo pricing.
+**Scenario:**
+The next 10-20 leads will get the new pricing.
 
-**Métricas:**
+**Metrics:**
 - Conversion rate lead → close
 - AOV (average order value)
-- Take rate por tier (qual escolhem)
-- Tempo médio de decisão
-- Razões de "não" (entrevista qualitativa em 3-5 no-buys)
+- Take rate per tier (which one they pick)
+- Average time to decide
+- Reasons for "no" (qualitative interview with 3-5 no-buys)
 
-**Critério de sucesso:**
-Conversion rate cai <30% E AOV sobe >50% → mantém novo preço
-Conversion rate cai >30% E AOV sobe <50% → reverte ou ajusta
-
----
-
-## ⚠️ Riscos da recomendação
-
-1. **{{Risco 1 — ex: "Audit da oferta indica Probability fraca (4/10). Subir preço sem fortalecer probability primeiro pode quebrar conversão."}}**
-2. **{{Risco 2 — ex: "Concorrente Y está rodando promoção até DD/MM. Timing pode confundir o teste."}}**
-3. **{{Risco 3 — ex: "Sem cases visíveis na LP, ancoragem do Platinum pode parecer artificial."}}**
+**Success criteria:**
+Conversion rate drops <30% AND AOV rises >50% → keep the new price
+Conversion rate drops >30% AND AOV rises <50% → revert or adjust
 
 ---
 
-## 🔄 Próximos passos
+## ⚠️ Risks of the recommendation
 
-1. Se há audit prévia E Probability ≥ 7, ative novo pricing em 2-3 dias
-2. Se Probability < 7, rode `/hormozi-gtm:audit` primeiro e fortaleça oferta antes de mexer no preço
-3. Após teste de 2 semanas, revisita com `/hormozi-gtm:pricing` (versionamento gera v2)
+1. **{{Risk 1 — e.g.: "Offer audit shows weak Probability (4/10). Raising price without strengthening probability first can break conversion."}}**
+2. **{{Risk 2 — e.g.: "Competitor Y is running a promo until MM/DD. The timing can muddy the test."}}**
+3. **{{Risk 3 — e.g.: "No visible case studies on the LP, so the Platinum anchor may look artificial."}}**
 
 ---
 
-*Pricing review gerado pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Voz crua, sem humanizer (output interno/diagnóstico).*
+## 🔄 Next steps
+
+1. If there's a prior audit AND Probability ≥ 7, roll out the new pricing in 2-3 days
+2. If Probability < 7, run `/hormozi-gtm:audit` first and strengthen the offer before touching the price
+3. After the 2-week test, revisit with `/hormozi-gtm:pricing` (versioning generates v2)
+
+---
+
+*Pricing review generated by the hormozi-gtm plugin. Alex Hormozi persona applied. Raw voice, no humanizer (internal/diagnostic output).*
 ```

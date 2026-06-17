@@ -1,11 +1,11 @@
 ---
 name: template-webinar-agenda
-description: "Esqueleto interno do output do comando /hormozi-gtm:webinar. Carregado pelo comando, não para uso direto."
+description: "Internal output skeleton for the /hormozi-gtm:webinar command. Loaded by the command, not for direct use."
 ---
 
 # Template — webinar-agenda.md
 
-Esqueleto canônico do output de webinar. O comando `/hormozi-gtm:webinar` carrega esta skill e preenche o esqueleto abaixo com os inputs do usuário. Reproduza a estrutura exata: frontmatter + todos os blocos + placeholders `{{...}}`.
+Canonical output skeleton for a webinar. The `/hormozi-gtm:webinar` command loads this skill and fills the skeleton below with the user's inputs. Reproduce the exact structure: frontmatter + every block + `{{...}}` placeholders.
 
 ````markdown
 ---
@@ -15,10 +15,10 @@ command: webinar
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{empresa_slug}}
-product: {{produto_slug}}
-duracao_min: {{30 | 45 | 60}}
-formato: {{zoom | youtube | prerecorded}}
+client: {{company_slug}}
+product: {{product_slug}}
+duration_min: {{30 | 45 | 60}}
+format: {{zoom | youtube | prerecorded}}
 frameworks:
   - hook-framework
   - vsl-7-step
@@ -27,225 +27,226 @@ frameworks:
   - guarantees
 humanizer_pass: true
 humanizer_mode: full
-audit_ref: {{caminho_ou_null}}
-parent_version: {{caminho_v_anterior_ou_null}}
+language: {{language}}
+audit_ref: {{path_or_null}}
+parent_version: {{prior_version_path_or_null}}
 ---
 
-# Webinar — {{produto_nome}}
+# Webinar — {{product_name}}
 
-## Visão geral
+## Overview
 
-**Título do webinar:** {{título punchy, ≤ 60 chars}}
-**Subtítulo / promessa:** {{1 linha com Dream Outcome específico}}
-**Duração planejada:** {{N}} min
-**Formato:** {{zoom (live) | youtube | prerecorded}}
-**ICP alvo:** {{descrição em 1 linha}}
-**CTA primário:** {{ex: "agendar 30min de auditoria estratégica"}}
+**Webinar title:** {{punchy title, ≤ 60 chars}}
+**Subtitle / promise:** {{1 line with a specific Dream Outcome}}
+**Planned length:** {{N}} min
+**Format:** {{zoom (live) | youtube | prerecorded}}
+**Target ICP:** {{1-line description}}
+**Primary CTA:** {{e.g.: "book a 30min strategy audit"}}
 
 ---
 
-## Agenda — bloco a bloco
+## Agenda — block by block
 
-| Bloco | Tempo | Tópico | Função |
+| Block | Time | Topic | Function |
 |---|---|---|---|
-| 1. Abertura + housekeeping | 0:00-0:03 | Hook + agenda + Q&A rules | Captura atenção, define expectativa |
-| 2. Diagnóstico do problema | 0:03-0:11 | Como aparece, custo, por que ninguém resolve | Estabelece dor + autoridade |
-| 3. Mechanism nomeado | 0:11-0:23 | Framework signature + 4-6 componentes | Ensina, vira referência |
-| 4. Cases | 0:23-0:31 | 2-3 antes/depois numérico | Proof de Probability |
-| 5. Oferta + bonuses + garantia | 0:31-0:38 | Grand Slam + tier visual + escassez | Vende |
-| 6. Q&A | 0:38-0:43 | Live (real) ou simulado (prerecorded) | Quebra objeção, reforça autoridade |
-| 7. Fechamento + CTA | 0:43-0:45 | Direção final + próximos passos | Move ação |
+| 1. Open + housekeeping | 0:00-0:03 | Hook + agenda + Q&A rules | Grabs attention, sets expectations |
+| 2. Problem diagnosis | 0:03-0:11 | How it shows up, the cost, why nobody fixes it | Establishes pain + authority |
+| 3. Named mechanism | 0:11-0:23 | Signature framework + 4-6 components | Teaches, becomes the reference |
+| 4. Cases | 0:23-0:31 | 2-3 numeric before/after | Proof of Probability |
+| 5. Offer + bonuses + guarantee | 0:31-0:38 | Grand Slam + visual tier + scarcity | Sells |
+| 6. Q&A | 0:38-0:43 | Live (real) or scripted (prerecorded) | Breaks objections, reinforces authority |
+| 7. Close + CTA | 0:43-0:45 | Final direction + next steps | Moves to action |
 
-(Ajusta proporcionalmente para 30min ou 60min.)
+(Scale proportionally for 30min or 60min.)
 
 ---
 
-## Bloco 1 — Abertura (0:00-0:03)
+## Block 1 — Open (0:00-0:03)
 
-### Hook (primeiros 30 segundos — crítico)
+### Hook (first 30 seconds — critical)
 
-> "{{Hook escrito por extenso. Voz Hormozi 1ª pessoa. Passa tweet-test: lê isolado e gera curiosity gap. Ex: 'Os 7 SaaS B2B que escalam de R$ 5M para R$ 50M ARR no Brasil têm uma coisa em comum que ninguém comenta. E não é founder, não é capital, não é product-market fit.'}}"
+> "{{Hook written out in full. Hormozi voice, first person. Passes the tweet-test: read in isolation it opens a curiosity gap. E.g.: 'The B2B SaaS companies that scale from $5M to $50M ARR all share one thing nobody talks about. And it's not the founder, not capital, not product-market fit.'}}"
 
-### Agenda anunciada
+### Agenda announced
 
-> "Nos próximos {{N}} minutos vamos cobrir 4 coisas:
-> 1. {{tópico 1}}
-> 2. {{tópico 2}}
-> 3. {{tópico 3}}
-> 4. {{tópico 4}}
+> "Over the next {{N}} minutes we're going to cover 4 things:
+> 1. {{topic 1}}
+> 2. {{topic 2}}
+> 3. {{topic 3}}
+> 4. {{topic 4}}
 >
-> No final, abro Q&A por {{N}} minutos."
+> At the end, I'll open Q&A for {{N}} minutes."
 
 ### Housekeeping (Q&A)
 
-> "{{Regra de Q&A — ex: 'Manda pergunta no chat a qualquer momento, respondo as melhores no final. Quem precisar sair antes, gravação fica disponível em 24h.'}}"
+> "{{Q&A rule — e.g.: 'Drop questions in the chat anytime, I'll answer the best ones at the end. If you have to leave early, the recording will be available in 24h.'}}"
 
 ---
 
-## Bloco 2 — Diagnóstico (0:03-0:11)
+## Block 2 — Diagnosis (0:03-0:11)
 
-### Como o problema aparece
+### How the problem shows up
 
-{{2-3 parágrafos descrevendo o problema do ponto de vista do ICP. Não "teoria" — sintomas concretos. Ex:}}
+{{2-3 paragraphs describing the problem from the ICP's point of view. Not "theory" — concrete symptoms. E.g.:}}
 
-> "Você roda Meta Ads R$ 30k/mês, gera 200 leads qualificados, mas o ciclo de venda B2B trava em 75 dias. Time de SDR adicionou 2 pessoas, conversão por SDR caiu pela metade. Cliente assina, mas demora 90 dias pra fazer onboarding completo. Cada mês desses custa R$ 80k em CAC sem retorno."
+> "You run $30k/mo on Meta Ads, generate 200 qualified leads, but the B2B sales cycle stalls at 75 days. Your SDR team added 2 people and conversion per SDR halved. The customer signs, but takes 90 days to complete onboarding. Every one of those months burns $80k in CAC with no return."
 
-### Custo do problema
+### Cost of the problem
 
-> "{{Quantifica. Não 'caro'. R$ X por mês de oportunidade perdida + Y de overhead + Z de moral do time.}}"
+> "{{Quantify it. Not 'expensive'. $X per month of lost opportunity + Y of overhead + Z of team morale.}}"
 
-### Por que ninguém resolve
+### Why nobody fixes it
 
-> "{{Reframe contrarian. Ex: 'A maioria dos consultores ataca isso como problema de copy de sales page. Não é. Copy não muda comitê de compra B2B. O que muda é o framework de comunicação aplicado no SDR antes de o lead chegar na sales call.'}}"
-
----
-
-## Bloco 3 — Mechanism nomeado (0:11-0:23)
-
-### Nome do framework
-
-**{{Nome próprio do framework}}**
-
-> {{1 frase definindo o que é}}
-
-### Os {{N}} componentes
-
-**Componente 1: {{Nome}}**
-- {{1-2 parágrafos explicando}}
-- Por que importa: {{em 1 linha}}
-
-**Componente 2: {{Nome}}**
-- {{descrição}}
-
-**Componente 3: {{Nome}}**
-- {{descrição}}
-
-**Componente 4: {{Nome}}**
-- {{descrição}}
-
-(Mantém 4-6 componentes — mais é confuso, menos é raso.)
+> "{{Contrarian reframe. E.g.: 'Most consultants attack this as a sales-page copy problem. It isn't. Copy doesn't move a B2B buying committee. What moves it is the communication framework applied at the SDR stage, before the lead ever hits the sales call.'}}"
 
 ---
 
-## Bloco 4 — Cases (0:23-0:31)
+## Block 3 — Named mechanism (0:11-0:23)
 
-### Case 1: {{Cliente}}
+### Name of the framework
 
-- **De:** {{antes em 1 linha}}
-- **Para:** {{depois em 1 linha}}
-- **Em:** {{tempo}}
-- **Mechanism aplicado:** {{componentes 1, 2}}
-- **Quote:** "{{frase do cliente}}"
+**{{Proper name of the framework}}**
 
-### Case 2: {{Cliente}}
+> {{1 sentence defining what it is}}
 
-[mesma estrutura]
+### The {{N}} components
 
-### Case 3: {{Cliente, opcional}}
+**Component 1: {{Name}}**
+- {{1-2 paragraphs explaining}}
+- Why it matters: {{in 1 line}}
 
-[mesma estrutura]
+**Component 2: {{Name}}**
+- {{description}}
+
+**Component 3: {{Name}}**
+- {{description}}
+
+**Component 4: {{Name}}**
+- {{description}}
+
+(Keep it to 4-6 components — more is confusing, fewer is shallow.)
 
 ---
 
-## Bloco 5 — Oferta + Bonuses + Garantia (0:31-0:38)
+## Block 4 — Cases (0:23-0:31)
 
-### A oferta — {{Nome próprio da oferta}}
+### Case 1: {{Customer}}
 
-**O que você ganha:**
-- {{deliverable 1 nomeado}}
+- **From:** {{before in 1 line}}
+- **To:** {{after in 1 line}}
+- **In:** {{time}}
+- **Mechanism applied:** {{components 1, 2}}
+- **Quote:** "{{customer line}}"
+
+### Case 2: {{Customer}}
+
+[same structure]
+
+### Case 3: {{Customer, optional}}
+
+[same structure]
+
+---
+
+## Block 5 — Offer + Bonuses + Guarantee (0:31-0:38)
+
+### The offer — {{Proper name of the offer}}
+
+**What you get:**
+- {{named deliverable 1}}
 - {{deliverable 2}}
 - {{deliverable 3}}
 
-**Em quanto tempo:** {{prazo específico}}
+**In how long:** {{specific timeframe}}
 
-### Bonus stack (3-5, ímpar)
+### Bonus stack (3-5, odd number)
 
-- **{{Bonus 1 — nome via naming psychology}}** (R$ {{valor}})
-- **{{Bonus 2}}** (R$ {{valor}})
-- **{{Bonus 3}}** (R$ {{valor}})
+- **{{Bonus 1 — name via naming psychology}}** (${{value}})
+- **{{Bonus 2}}** (${{value}})
+- **{{Bonus 3}}** (${{value}})
 
-(Valor total da stack: R$ {{X}})
+(Total stack value: ${{X}})
 
-### Garantia
+### Guarantee
 
-> "{{Condicional + métrica + compensação. Ex: 'Em 90 dias você tem ciclo de venda B2B reduzido em 40% ou devolvemos o investimento + R$ 10.000 de bonus.'}}"
+> "{{Conditional + metric + compensation. E.g.: 'In 90 days your B2B sales cycle is cut by 40% or we refund the investment + a $10,000 bonus.'}}"
 
-### Investimento
+### Investment
 
-**Tier default (Gold):** R$ {{Y}}/mês ou R$ {{N×Y com desconto}}/ano à vista.
+**Default tier (Gold):** ${{Y}}/mo or ${{N×Y with discount}}/yr paid in full.
 
-Mostra os 3 tiers visualmente (Silver / Gold com destaque / Platinum).
+Show the 3 tiers visually (Silver / Gold highlighted / Platinum).
 
-### Escassez genuína
+### Genuine scarcity
 
-> "{{Razão operacional do limite. Ex: 'Próxima turma começa em 12 de agosto. Tenho 6 vagas para manter o framework de 1 hora por cliente por semana.'}}"
-
----
-
-## Bloco 6 — Q&A (0:38-0:43)
-
-### Plant questions (live) ou Scripted Q&A (prerecorded)
-
-**Pergunta 1:** {{objeção comum 1}}
-> Resposta: {{2-3 frases. Voz Hormozi. Reframe.}}
-
-**Pergunta 2:** {{objeção comum 2}}
-> Resposta: {{...}}
-
-**Pergunta 3:** {{objeção comum 3}}
-> Resposta: {{...}}
-
-**Pergunta 4:** {{objeção sobre preço}}
-> Resposta: {{...}}
-
-**Pergunta 5:** {{objeção sobre timing}}
-> Resposta: {{...}}
+> "{{Operational reason for the limit. E.g.: 'Next cohort starts August 12. I have 6 spots to keep the framework at one hour per client per week.'}}"
 
 ---
 
-## Bloco 7 — Fechamento + CTA (0:43-0:45)
+## Block 6 — Q&A (0:38-0:43)
 
-### Recap (30 segundos)
+### Plant questions (live) or Scripted Q&A (prerecorded)
 
-> "{{Resumo em 2-3 frases: o problema, o mechanism, a oferta.}}"
+**Question 1:** {{common objection 1}}
+> Answer: {{2-3 sentences. Hormozi voice. Reframe.}}
 
-### CTA específico
+**Question 2:** {{common objection 2}}
+> Answer: {{...}}
 
-> "{{Direção exata. Não 'visite o site'. Algo como: 'Clica no link no chat. Você vai pra uma página com 5 minutos de aplicação. Quem aplicar nas próximas 48h, vejo individualmente e respondo se faz fit.'}}"
+**Question 3:** {{common objection 3}}
+> Answer: {{...}}
 
-### Próximos passos
+**Question 4:** {{price objection}}
+> Answer: {{...}}
 
-> "{{Confirma timing: 'Aplicação aberta até [data]. Quem aplicar nessa janela, recebe resposta em até 72h.'}}"
+**Question 5:** {{timing objection}}
+> Answer: {{...}}
 
 ---
 
-## Notas de produção
+## Block 7 — Close + CTA (0:43-0:45)
 
-### Slides (sugestões)
+### Recap (30 seconds)
 
-- Slide 1 (Hook): texto grande, sem decoração. 1 sentence.
-- Slides 2-4 (Diagnóstico): 1 sintoma por slide, com número.
-- Slides 5-10 (Mechanism): 1 componente por slide + ícone.
-- Slides 11-13 (Cases): 1 case por slide, antes/depois grande.
-- Slide 14-15 (Oferta): visual de tiering Silver/Gold/Platinum.
-- Slide 16 (Garantia): destaque visual.
-- Slide 17 (CTA): URL grande + QR code.
+> "{{Summary in 2-3 sentences: the problem, the mechanism, the offer.}}"
 
-### Equipamento mínimo (live)
+### Specific CTA
 
-- Câmera 1080p (smartphone moderno serve).
-- Microfone external (não built-in laptop).
-- Background neutro ou marca.
-- Iluminação frontal (key light).
+> "{{Exact direction. Not 'visit the site'. Something like: 'Click the link in the chat. You'll land on a page with a 5-minute application. Anyone who applies in the next 48h, I review personally and reply on whether it's a fit.'}}"
+
+### Next steps
+
+> "{{Confirm timing: 'Applications open until [date]. Apply in that window and you get a reply within 72h.'}}"
+
+---
+
+## Production notes
+
+### Slides (suggestions)
+
+- Slide 1 (Hook): big text, no decoration. 1 sentence.
+- Slides 2-4 (Diagnosis): 1 symptom per slide, with a number.
+- Slides 5-10 (Mechanism): 1 component per slide + icon.
+- Slides 11-13 (Cases): 1 case per slide, before/after big.
+- Slide 14-15 (Offer): Silver/Gold/Platinum tiering visual.
+- Slide 16 (Guarantee): visual highlight.
+- Slide 17 (CTA): big URL + QR code.
+
+### Minimum equipment (live)
+
+- 1080p camera (a modern smartphone works).
+- External mic (not the laptop built-in).
+- Neutral or branded background.
+- Front lighting (key light).
 - Internet ≥ 50 Mbps.
 
-### Para prerecorded
+### For prerecorded
 
-- 3 takes mínimo por bloco.
-- Edição em ferramenta simples (Descript, Riverside).
-- Adicionar pattern interrupts (zoom in, cut to b-roll) a cada 90 segundos.
+- 3 takes minimum per block.
+- Edit in a simple tool (Descript, Riverside).
+- Add pattern interrupts (zoom in, cut to b-roll) every 90 seconds.
 
 ---
 
-*Webinar gerado pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Humanizer (modo full) aplicado.*
+*Webinar generated by the hormozi-gtm plugin. Alex Hormozi persona applied. Humanizer (full mode) applied.*
 ````

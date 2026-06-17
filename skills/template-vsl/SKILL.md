@@ -1,25 +1,25 @@
 ---
 name: template-vsl
-description: "Esqueleto interno do output VSL longo do comando /hormozi-gtm:roteiro. Carregado pelo comando, não para uso direto."
+description: "Internal output skeleton for the long-form VSL from the /hormozi-gtm:script command. Loaded by the command, not for direct use."
 ---
 
-# Template — VSL longo (roteiro)
+# Template — long-form VSL (script)
 
-Esqueleto canônico do output VSL (8-15min) do comando `/hormozi-gtm:roteiro`. O comando carrega esta skill e preenche o esqueleto abaixo com os inputs do usuário. Reproduza a estrutura exata: frontmatter + todas as seções + placeholders `{{...}}`.
+Canonical output skeleton for the long-form VSL (8-15min) from the `/hormozi-gtm:script` command. The command loads this skill and fills the skeleton below with the user's inputs. Reproduce the exact structure: frontmatter + every section + `{{...}}` placeholders.
 
 ````markdown
 ---
 plugin: hormozi-gtm
 plugin_version: {{plugin_version}}
-command: roteiro
-formato: vsl
+command: script
+format: vsl
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{empresa_slug}}
-product: {{produto_slug}}
-duracao_alvo: 12min
-plataforma: {{youtube | facebook | landing-page-embed}}
+client: {{company_slug}}
+product: {{product_slug}}
+target_duration: 12min
+platform: {{youtube | facebook | landing-page-embed}}
 frameworks:
   - hook-framework
   - vsl-7-step
@@ -27,164 +27,165 @@ frameworks:
   - ad-copy-formula
 humanizer_pass: true
 humanizer_mode: full
-audit_ref: {{caminho_ou_null}}
-parent_version: {{caminho_v_anterior_ou_null}}
+language: {{language}}
+audit_ref: {{path_or_null}}
+parent_version: {{prior_version_path_or_null}}
 ---
 
-# VSL — {{produto}}
+# VSL — {{product}}
 
 ## TL;DR
 
-Duração: {{X}}min
-Hook escolhido: {{tipo + frase}}
-Mecanismo nomeado: {{Sistema X.Y.Z}}
-CTA final: {{ação verbal específica}}
+Length: {{X}}min
+Hook chosen: {{type + line}}
+Named mechanism: {{System X.Y.Z}}
+Final CTA: {{specific verbal action}}
 
 ---
 
 ## ⏱ Timestamps
 
-| Tempo | Ato | Conteúdo |
+| Time | Act | Content |
 |---|---|---|
-| 0:00-0:15 | Hook | {{frase hook}} |
-| 0:15-2:00 | Story | {{origem ou case}} |
-| 2:00-4:00 | Problem | {{3-5 sintomas + por que outras soluções falham}} |
-| 4:00-7:00 | Mechanism | {{Sistema nomeado + 3-5 componentes}} |
-| 7:00-9:00 | Proof | {{3-5 cases comparáveis com números}} |
-| 9:00-11:00 | Offer | {{stack + preço + garantia + scarcity}} |
-| 11:00-12:00 | CTA + Urgency | {{ação + razão de agir agora}} |
+| 0:00-0:15 | Hook | {{hook line}} |
+| 0:15-2:00 | Story | {{origin or case}} |
+| 2:00-4:00 | Problem | {{3-5 symptoms + why other solutions fail}} |
+| 4:00-7:00 | Mechanism | {{named System + 3-5 components}} |
+| 7:00-9:00 | Proof | {{3-5 comparable cases with numbers}} |
+| 9:00-11:00 | Offer | {{stack + price + guarantee + scarcity}} |
+| 11:00-12:00 | CTA + Urgency | {{action + reason to act now}} |
 
 ---
 
-## 🎬 Roteiro completo
+## 🎬 Full script
 
-### Ato 1: Hook (0:00-0:15)
+### Act 1: Hook (0:00-0:15)
 
-{{Frase de abertura com especificidade — não promete vazio. Tipo: dream/problem/secret}}
+{{Opening line with specificity — no empty promise. Type: dream/problem/secret}}
 
-**Visual sugerido:** {{descrição rápida do enquadramento, prop, ambiente}}
-
----
-
-### Ato 2: Story (0:15-2:00)
-
-{{Narrativa pessoal ou de cliente. Conflito real, não vitória fácil. 2-3 parágrafos. Especificidade numérica.}}
-
-**Pontos de tensão:**
-- {{momento 1 — quando errou ou descobriu}}
-- {{momento 2}}
-- {{momento 3 — virada}}
+**Suggested visual:** {{quick description of the framing, prop, setting}}
 
 ---
 
-### Ato 3: Problem (2:00-4:00)
+### Act 2: Story (0:15-2:00)
 
-{{Diagnóstico do problema que o cliente reconhece com precisão dolorida.}}
+{{Personal or customer narrative. Real conflict, not an easy win. 2-3 paragraphs. Numeric specificity.}}
 
-**Sintomas concretos do problema:**
-1. {{sintoma específico do ICP}}
-2. {{sintoma}}
-3. {{sintoma}}
-
-**Por que outras soluções falham:**
-{{2-3 parágrafos quebrando alternativas comuns com diagnóstico contraintuitivo}}
-
-**Custo real de não resolver:**
-{{Quantificado em R$, tempo ou oportunidade}}
+**Tension points:**
+- {{moment 1 — when they screwed up or figured it out}}
+- {{moment 2}}
+- {{moment 3 — the turn}}
 
 ---
 
-### Ato 4: Mechanism (4:00-7:00)
+### Act 3: Problem (2:00-4:00)
 
-**Apresentando: {{Nome do Sistema/Método}}**
+{{Diagnosis of the problem the customer recognizes with painful precision.}}
 
-{{1 parágrafo introduzindo o nome próprio + por que esse nome}}
+**Concrete symptoms of the problem:**
+1. {{symptom specific to the ICP}}
+2. {{symptom}}
+3. {{symptom}}
 
-**Os {{N}} componentes:**
+**Why other solutions fail:**
+{{2-3 paragraphs breaking down common alternatives with a counterintuitive diagnosis}}
 
-1. **{{Componente 1 — letra/nome}}** — {{explicação em 2-3 linhas}}
-2. **{{Componente 2}}** — {{explicação}}
-3. **{{Componente 3}}** — {{explicação}}
-4. **{{Componente 4 — opcional}}** — {{explicação}}
-
-**Insight contraintuitivo:**
-{{Algo que parece errado mas funciona — peça central da revelação}}
-
----
-
-### Ato 5: Proof (7:00-9:00)
-
-**Case 1: {{Cliente — nome + papel + empresa, se possível}}**
-{{Antes/Depois numérico. 1 parágrafo.}}
-
-**Case 2: {{Cliente}}**
-{{Antes/Depois numérico. 1 parágrafo.}}
-
-**Case 3: {{Cliente}}**
-{{Antes/Depois numérico. 1 parágrafo.}}
-
-**Sumário de proof:** {{frase resumindo "X clientes, Y resultado médio, em Z tempo"}}
+**Real cost of not solving it:**
+{{Quantified in $, time, or opportunity}}
 
 ---
 
-### Ato 6: Offer (9:00-11:00)
+### Act 4: Mechanism (4:00-7:00)
 
-**O que você recebe se entrar agora:**
+**Introducing: {{Name of the System/Method}}**
 
-- {{Deliverable 1 — nome próprio + valor}}
+{{1 paragraph introducing the proper name + why that name}}
+
+**The {{N}} components:**
+
+1. **{{Component 1 — letter/name}}** — {{explanation in 2-3 lines}}
+2. **{{Component 2}}** — {{explanation}}
+3. **{{Component 3}}** — {{explanation}}
+4. **{{Component 4 — optional}}** — {{explanation}}
+
+**Counterintuitive insight:**
+{{Something that looks wrong but works — the centerpiece of the reveal}}
+
+---
+
+### Act 5: Proof (7:00-9:00)
+
+**Case 1: {{Customer — name + role + company, if possible}}**
+{{Numeric before/after. 1 paragraph.}}
+
+**Case 2: {{Customer}}**
+{{Numeric before/after. 1 paragraph.}}
+
+**Case 3: {{Customer}}**
+{{Numeric before/after. 1 paragraph.}}
+
+**Proof summary:** {{line summing up "X customers, Y average result, in Z time"}}
+
+---
+
+### Act 6: Offer (9:00-11:00)
+
+**What you get if you join now:**
+
+- {{Deliverable 1 — proper name + value}}
 - {{Deliverable 2}}
 - {{Deliverable 3}}
-- Bônus #1: {{nome + valor R$}}
-- Bônus #2: {{nome + valor R$}}
-- Bônus #3: {{nome + valor R$}}
+- Bonus #1: {{name + $ value}}
+- Bonus #2: {{name + $ value}}
+- Bonus #3: {{name + $ value}}
 
-**Valor total: R$ {{X}}**
-**Seu investimento hoje: R$ {{Y}}**
+**Total value: ${{X}}**
+**Your investment today: ${{Y}}**
 
-**Garantia: {{Nome da Garantia}}**
-{{1-2 frases explicando: condição, tempo, compensação}}
+**Guarantee: {{Name of the Guarantee}}**
+{{1-2 sentences explaining: condition, time, compensation}}
 
-**Vagas: {{X de Y}}**
-{{Razão genuína de escassez}}
-
----
-
-### Ato 7: CTA + Urgency (11:00-12:00)
-
-{{Recap em 30s do que o leitor está prestes a perder se não agir}}
-
-**{{Ação verbal específica — ex: "Clica no link abaixo e responde 3 perguntas"}}**
-
-{{O que acontece depois — "Eu vejo sua aplicação, respondo em 24h, te marco uma call de 15min"}}
-
-**Razão de agir agora:**
-{{Deadline real, próxima turma, fast-action bonus}}
+**Spots: {{X of Y}}**
+{{Genuine reason for the scarcity}}
 
 ---
 
-## 🎥 Notas de produção
+### Act 7: CTA + Urgency (11:00-12:00)
 
-- **Tom:** {{conversacional | direto-câmera | story-driven}}
-- **B-roll sugerido:** {{lista de cuts visuais por ato}}
-- **Texto on-screen:** {{frases-chave a destacar visualmente}}
-- **CTA on-screen:** persistente nos últimos 60s
-- **Música:** {{none | sutil | dinâmica}}
+{{30s recap of what the viewer is about to lose if they don't act}}
 
----
+**{{Specific verbal action — e.g.: "Click the link below and answer 3 questions"}}**
 
-## 📊 Pós-publicação
+{{What happens next — "I review your application, reply within 24h, book you a 15min call"}}
 
-**Métricas a monitorar:**
-- Retention curve (pontos onde audience cai)
-- CTR do CTA
-- Conversion rate na LP destino
-- Cost per acquisition (se rodando em paid)
-
-**Próximos passos recomendados após publicar:**
-1. Gerar 5-10 short-form variants do mesmo material (`/hormozi-gtm:roteiro --formato=reels`)
-2. Gerar batch de hooks pra testar primeiros 3s (`/hormozi-gtm:hooks`)
+**Reason to act now:**
+{{Real deadline, next cohort, fast-action bonus}}
 
 ---
 
-*VSL gerado pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Humanizer (modo full) aplicado.*
+## 🎥 Production notes
+
+- **Tone:** {{conversational | direct-to-camera | story-driven}}
+- **Suggested B-roll:** {{list of visual cuts by act}}
+- **On-screen text:** {{key lines to highlight visually}}
+- **On-screen CTA:** persistent in the last 60s
+- **Music:** {{none | subtle | dynamic}}
+
+---
+
+## 📊 Post-publishing
+
+**Metrics to watch:**
+- Retention curve (points where the audience drops off)
+- CTA CTR
+- Conversion rate on the destination LP
+- Cost per acquisition (if running paid)
+
+**Recommended next steps after publishing:**
+1. Generate 5-10 short-form variants from the same material (`/hormozi-gtm:script --format=reels`)
+2. Generate a batch of hooks to test the first 3s (`/hormozi-gtm:hooks`)
+
+---
+
+*VSL generated by the hormozi-gtm plugin. Alex Hormozi persona applied. Humanizer (full mode) applied.*
 ````

@@ -1,114 +1,114 @@
 ---
 name: pricing-playbook
-description: As 5 leis do LEAKED Pricing Playbook do Hormozi. Use para analisar preço atual, recomendar range, estruturar tiers e ancoragem, validar contra Value Equation e mercado.
+description: The 5 laws of Hormozi's LEAKED Pricing Playbook. Use it to analyze the current price, recommend a range, structure tiers and anchoring, and validate against the Value Equation and the market.
 ---
 
-# Pricing Playbook — 5 Leis
+# Pricing Playbook — 5 Laws
 
-Fonte: *LEAKED Pricing Playbook* + cruzamento com $100M Offers.
+Source: *LEAKED Pricing Playbook* + cross-referenced with $100M Offers.
 
-## Lei 1: Não compete em preço. Compete em valor.
+## Law 1: Don't compete on price. Compete on value.
 
-Antes de tocar no preço, roda Value Equation (skill `value-equation`). Se a Probability está em 4/10, baixar preço não ajuda — fortalece probability primeiro (cases, garantias, mecanismo nomeado).
+Before touching price, run the Value Equation (skill `value-equation`). If Probability sits at 4/10, dropping the price won't help — strengthen probability first (case studies, guarantees, a named mechanism).
 
-**Sinal de violação:** "Eles cobram X, vou cobrar X-20%."
+**Violation signal:** "They charge X, I'll charge X-20%."
 
-## Lei 2: Cobre o que vale, não o que custa.
+## Law 2: Charge what it's worth, not what it costs.
 
-Custo é seu problema, não do cliente. Pricing baseado em custo + margem (cost-plus) deixa dinheiro na mesa.
+Cost is your problem, not the customer's. Cost-plus pricing (cost + margin) leaves money on the table.
 
-Pricing por valor:
-- Mede transformação entregue em R$ ou tempo
-- Cobra 10-20% da transformação
-- Justifica preço pelo outcome, não pelo input
+Value-based pricing:
+- Measure the transformation delivered in dollars or time
+- Charge 10-20% of the transformation
+- Justify the price by the outcome, not the input
 
-**Exemplo:** Se você ajuda cliente a fechar R$ 100k extra em 60 dias, cobrar R$ 10-20k é defensável.
+**Example:** if you help a client close an extra $100k in 60 days, charging $10-20k is defensible.
 
-## Lei 3: Preço sinaliza qualidade.
+## Law 3: Price signals quality.
 
-Preço muito baixo = percepção de baixo valor.
+A price that's too low = perception of low value.
 
-Curiosidade: preços altos AUMENTAM:
-- Compromisso do cliente (skin in the game)
-- Resultado (cliente aplica)
-- Margem para entrega caprichada
-- Filtragem de cliente difícil
+Counterintuitively, high prices INCREASE:
+- Customer commitment (skin in the game)
+- Results (the customer actually applies it)
+- Margin for a high-quality delivery
+- Filtering out difficult customers
 
-**Regra prática:** se mais de 50% dos leads dizem "fechado" sem hesitar, seu preço está baixo demais.
+**Rule of thumb:** if more than 50% of leads say "done" without hesitating, your price is too low.
 
-## Lei 4: Tiering captura mais mercado sem commoditização.
+## Law 4: Tiering captures more of the market without commoditizing.
 
-3 tiers padrão (silver / gold / platinum):
-- **Silver:** core sem suporte premium, preço entrada
-- **Gold (default):** core + suporte + 1-2 bonuses (60-70% dos clientes pegam)
-- **Platinum:** core + done-for-you + mentoria 1:1 + bonuses premium (10-15% pegam, mas alta margem)
+3 standard tiers (silver / gold / platinum):
+- **Silver:** core without premium support, entry price
+- **Gold (default):** core + support + 1-2 bonuses (60-70% of customers pick it)
+- **Platinum:** core + done-for-you + 1:1 mentorship + premium bonuses (10-15% pick it, but high margin)
 
-Regras:
-- Diferença entre tiers tem que ser percebida (não cosmética)
-- Platinum existe pra fazer Gold parecer barato (ancoragem)
-- Silver existe pra não perder budget-conscious
-- Default = Gold (highlight visual na LP)
+Rules:
+- The gap between tiers has to be perceived (not cosmetic)
+- Platinum exists to make Gold look cheap (anchoring)
+- Silver exists so you don't lose budget-conscious buyers
+- Default = Gold (visual highlight on the LP)
 
-### Tiering por categoria de produto
+### Tiering by product category
 
-Valores são referências de mercado brasileiro (PT-BR, B2B/B2C 2024-2026). Range maior cabe; o que importa é a **proporção** entre tiers (Gold ~3-4x Silver; Platinum ~3-5x Gold).
+These are market reference points (B2B/B2C, 2024-2026) — localize per market and currency. A wider range is fine; what matters is the **ratio** between tiers (Gold ~3-4x Silver; Platinum ~3-5x Gold).
 
-| Categoria | Silver | Gold (default) | Platinum (decoy) |
+| Category | Silver | Gold (default) | Platinum (decoy) |
 |---|---|---|---|
-| Curso digital self-paced | R$ 297 | R$ 997 | R$ 2.997 |
-| Curso ao vivo (cohort) | R$ 997 | R$ 4.997 | R$ 14.997 |
-| Mastermind / coaching grupo | R$ 4.997 | R$ 19.997 | R$ 59.997 |
-| Consultoria 1:1 (3 meses) | R$ 14.997 | R$ 39.997 | R$ 97.000 |
-| SaaS B2B (mensal) | R$ 499/mês | R$ 1.499/mês | R$ 4.997/mês |
-| SaaS B2B (anual, com desconto) | R$ 4.788/ano | R$ 14.388/ano | R$ 47.971/ano |
-| Serviço high-ticket (3 meses) | R$ 19.997 | R$ 59.997 | R$ 197.000 + continuity |
-| Serviço enterprise (anual) | — | R$ 200k | R$ 500k+ |
+| Self-paced digital course | $97 | $297 | $997 |
+| Live course (cohort) | $297 | $1,497 | $4,997 |
+| Mastermind / group coaching | $1,497 | $5,997 | $19,997 |
+| 1:1 consulting (3 months) | $4,997 | $11,997 | $29,997 |
+| B2B SaaS (monthly) | $149/mo | $499/mo | $1,497/mo |
+| B2B SaaS (annual, discounted) | $1,428/yr | $4,788/yr | $14,388/yr |
+| High-ticket service (3 months) | $5,997 | $17,997 | $59,997 + continuity |
+| Enterprise service (annual) | — | $60k | $150k+ |
 
-**Função decoy do Platinum:**
+**Platinum's decoy function:**
 
-Platinum **não precisa vender volume** — existe pra que Gold pareça "a escolha óbvia". 10-15% pegam Platinum (alta margem); 60-70% pegam Gold ancorados contra Platinum. Se Gold sozinho fosse R$ 39.997 sem âncora de R$ 97k, conversão cairia 25-40%.
+Platinum **doesn't need to sell volume** — it exists so Gold looks like "the obvious choice." 10-15% pick Platinum (high margin); 60-70% pick Gold, anchored against Platinum. If Gold alone were $11,997 with no $29k anchor, conversion would drop 25-40%.
 
-**Sinais de tiering errado:**
-- Tiers parecidos demais (Silver R$ 997, Gold R$ 1.297, Platinum R$ 1.597) → falsa escolha, nada ancora
-- Sem Platinum → Gold parece teto, cliente regateia
-- Sem Silver → perde budget-conscious sem ganhar nada
-- Diferença é só "mais horas/sessões" → commoditização, cliente compara hora a hora
+**Signs of broken tiering:**
+- Tiers too similar (Silver $297, Gold $397, Platinum $497) → false choice, nothing anchors
+- No Platinum → Gold looks like the ceiling, the customer haggles
+- No Silver → you lose budget-conscious buyers and gain nothing
+- The difference is only "more hours/sessions" → commoditization, the customer compares hour to hour
 
-## Lei 5: Runway maior, ask maior.
+## Law 5: Longer runway, bigger ask.
 
-Se você atende o cliente por 12 meses, pode cobrar muito mais do que atendimento de 1 mês — porque o anchor é maior e a transformação cumulativa é maior.
+If you serve the customer for 12 months, you can charge far more than for a 1-month engagement — because the anchor is bigger and the cumulative transformation is bigger.
 
-**Aplicação:**
-- Programas longos cobram mais por mês (não menos) que curtos
-- Anchor de pacote anual > anchor de pacote mensal × 12
-- Delay de gratificação genuíno = ask maior
+**Application:**
+- Long programs charge more per month (not less) than short ones
+- The annual-package anchor > the monthly-package anchor × 12
+- Genuine delayed gratification = a bigger ask
 
-## Workflow de pricing review
+## Pricing review workflow
 
-1. Coleta: oferta + preço atual + 3-5 concorrentes + margem-alvo + LTV
-2. Roda Value Equation primeiro (skill `value-equation`)
-3. Avalia cada uma das 5 leis com nota e justificativa
-4. Identifica se o problema é **preço** ou **percepção** (distinção crítica)
-5. Recomenda **range** (não preço único), com ancoragem explícita
-6. Sugere estrutura: tiers, parcelamento, downsell, upsell
-7. Sugere teste de validação (próximos 10-20 leads) executável em 1-2 semanas
+1. Gather: offer + current price + 3-5 competitors + target margin + LTV
+2. Run the Value Equation first (skill `value-equation`)
+3. Score each of the 5 laws with a grade and rationale
+4. Identify whether the problem is **price** or **perception** (critical distinction)
+5. Recommend a **range** (not a single price), with explicit anchoring
+6. Suggest a structure: tiers, installments, downsell, upsell
+7. Suggest a validation test (next 10-20 leads) executable in 1-2 weeks
 
-## Sinais de pricing quebrado
+## Signs of broken pricing
 
-- Cobrando o mesmo que concorrente direto (você é commodity)
-- Sem tiers, sem ancoragem (deixa receita na mesa)
-- Preço justificado por horas/módulos em vez de transformação
-- Mais de 50% dizem "ok, fechado" sem hesitar (subprice)
-- Mais de 90% dizem "tá caro" e somem (overprice OU value equation fraca)
+- Charging the same as a direct competitor (you're a commodity)
+- No tiers, no anchoring (leaving revenue on the table)
+- Price justified by hours/modules instead of transformation
+- More than 50% say "ok, done" without hesitating (underpriced)
+- More than 90% say "too expensive" and vanish (overpriced OR weak value equation)
 
-## Aplicação por caso de uso
+## Use by case
 
-| Caso | Aplicação |
+| Case | Application |
 |---|---|
-| LP de vendas | LP exibe 3 tiers; default Gold destacado; preço anchora contra ROI |
-| Roteiro de ad | Tira preço do ad inicial (revela em LP); usa ROI no copy |
-| Business plan | Pricing strategy por segmento; mix de tiers projetado; margem guardrail 70%+ |
+| Sales LP | LP shows 3 tiers; Gold default highlighted; price anchored against ROI |
+| Ad script | Pull price out of the initial ad (reveal it on the LP); use ROI in the copy |
+| Business plan | Pricing strategy per segment; projected tier mix; 70%+ margin guardrail |
 
-## Referência detalhada
+## Detailed reference
 
-Veja `reference/leaked-pricing-playbook.md`.
+See `reference/leaked-pricing-playbook.md`.

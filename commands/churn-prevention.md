@@ -1,221 +1,223 @@
 ---
-description: Win/loss interview + churn analysis + retention playbook. Foca em retenção (não aquisição) — onde 80% do plugin atual está focado. Para SaaS B2B com churn > 5%/mês, consultoria com renewal rate < 70%, ou negócio recorrente em platô.
-argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--foco=churn|winback|retention] [--no-humanize]"
+description: Win/loss interview + churn analysis + retention playbook. Focuses on retention (not acquisition) — where 80% of the current plugin is focused. For B2B SaaS with churn > 5%/month, consulting with renewal rate < 70%, or a recurring business on a plateau.
+argument-hint: "[--product=<slug>] [--ref=<path>] [--mode=churn|winback|retention] [--no-humanize]"
 ---
 
 # /hormozi-gtm:churn-prevention
 
-Aquisição cara virou dado (CAC sempre subindo). Retenção é onde fica margem. Esta skill estrutura: por que cliente saiu, o que reverter rápido, o que mudar estruturalmente.
+Expensive acquisition is a given (CAC always climbing). Retention is where the margin lives. This skill structures: why the client left, what to reverse fast, what to change structurally.
 
-## Carregamento de persona
+## Persona loading
 
-Use `hormozi-persona` para orquestrar. Delegate ao `money-model-architect` para análise de impacto financeiro (LTV, churn ratio), e ao `offer-architect` se a raiz for problema de oferta original (Probability fraca → cliente desiste cedo).
+Use `hormozi-persona` to orchestrate. Delegate to `money-model-architect` for the financial-impact analysis (LTV, churn ratio), and to `offer-architect` if the root cause is the original offer (weak Probability → client gives up early).
 
-**Carregue a skill `hormozi-gtm:hormozi-voice` via ferramenta Skill no próprio fluxo do comando e imite o registro** — não dependa só do subagent (no Cowork ele pode não rodar). Toda saída em 1ª pessoa Hormozi-mode, sem voz de assistente: número e verbo no lugar de adjetivo de marketing, diagnóstico na cara do cliente.
+**Load the `hormozi-gtm:hormozi-voice` skill via the Skill tool inside the command's own flow and imitate the register** — don't rely on the subagent alone (in Cowork it may not run). All output in first-person Hormozi mode, no assistant voice: number and verb instead of marketing adjectives, the diagnosis to the client's face.
 
-**Escopo de humanizer (modo misto):**
-- **Análise de churn** (`--foco=churn` / `--foco=retention` e o output `churn-analysis`): diagnóstico interno → sai **cru, sem humanizer**.
-- **Sequência de winback** (`--foco=winback` e o output `winback-sequence`): copy externa pro cliente que saiu → **humanizer modo full**, e só sai com **brutalidade ≥7 na rubrica da `hormozi-voice`**.
+Generate all client-facing copy in the language set in gtm-context `language` (default English). The voice and brutality rules are language-independent and apply in every language.
 
-## Skills ativas
+**Humanizer scope (mixed mode):**
+- **Churn analysis** (`--mode=churn` / `--mode=retention` and the `churn-analysis` output): internal diagnostic → ships **raw, no humanizer**.
+- **Winback sequence** (`--mode=winback` and the `winback-sequence` output): external copy to the client who left → **humanizer full mode**, and only ships at **brutality ≥7 on the `hormozi-voice` rubric**.
 
-- `hormozi-voice` (registro de voz brutal — carregada explicitamente no fluxo)
-- `template-churn-analysis` (esqueleto do output de análise de churn)
-- `leila-scaling` (5 Star Service framework — operação de retenção)
-- `value-equation` (diagnostica se Probability/Effort estavam fracos)
-- `money-models` (impacto financeiro do churn)
-- `ltv-cac` (matemática de retenção)
-- `humanizer-rules` (modo full — só na sequência de winback; a análise de churn sai crua)
+## Active skills
+
+- `hormozi-voice` (brutal voice register — loaded explicitly in the flow)
+- `template-churn-analysis` (skeleton for the churn-analysis output)
+- `leila-scaling` (5 Star Service framework — retention operations)
+- `value-equation` (diagnoses whether Probability/Effort were weak)
+- `money-models` (financial impact of churn)
+- `ltv-cac` (retention math)
+- `humanizer-rules` (full mode — winback sequence only; the churn analysis ships raw)
 - `output-conventions`
 
-## Argumentos
+## Arguments
 
-| Argumento | Comportamento |
+| Argument | Behavior |
 |---|---|
-| (vazio) | Modo interativo: pergunta produto + métricas de churn + acesso a clientes que saíram |
-| `--produto=<slug>` | Slug do produto |
-| `--ref=<caminho>` | Refinar análise existente |
-| `--foco=churn` | Análise de churn passado (entender por que clientes saíram) |
-| `--foco=winback` | Sequência de winback (recuperar clientes que saíram nos últimos 90 dias) |
-| `--foco=retention` | Playbook preventivo (reduzir churn futuro) |
-| `--no-humanize` | Pula humanizer |
+| (empty) | Interactive mode: asks for product + churn metrics + access to churned clients |
+| `--product=<slug>` | Product slug |
+| `--ref=<path>` | Refine an existing analysis |
+| `--mode=churn` | Past-churn analysis (understand why clients left) |
+| `--mode=winback` | Winback sequence (recover clients who left in the last 90 days) |
+| `--mode=retention` | Preventive playbook (reduce future churn) |
+| `--no-humanize` | Skips the humanizer |
 
-## Pré-requisitos
+## Prerequisites
 
-1. `gtm-context.md` existe → carrega ICP, oferta, ticket médio
-2. Dados de retenção: churn rate atual, % de clientes que saíram nos últimos 6 meses
-3. Lista de clientes que saíram (idealmente com motivo declarado)
-4. Para `--foco=winback`: lista de contatos ainda válidos dos clientes que saíram
+1. `gtm-context.md` exists → loads ICP, offer, average deal size
+2. Retention data: current churn rate, % of clients who left in the last 6 months
+3. List of clients who left (ideally with a stated reason)
+4. For `--mode=winback`: list of still-valid contacts for the clients who left
 
-## Fluxo
+## Flow
 
-### Passo 1: Coleta dados de churn
+### Step 1: Collect churn data
 
-Em modo interativo, pergunta:
+In interactive mode, ask:
 
-1. **Métrica primária:** churn rate mensal atual (ou trimestral)?
-2. **Tendência:** subiu/desceu nos últimos 6 meses?
-3. **Comparação com cohort:** churn varia muito por época de entrada?
-4. **Lifetime médio:** quantos meses cliente fica em média antes de sair?
-5. **% de churn por motivo declarado:** preço / produto não entregou / time interno assumiu / mudou de fornecedor / outro?
+1. **Primary metric:** current monthly churn rate (or quarterly)?
+2. **Trend:** up/down over the last 6 months?
+3. **Cohort comparison:** does churn vary a lot by entry period?
+4. **Average lifetime:** how many months does a client stay on average before leaving?
+5. **% of churn by stated reason:** price / product didn't deliver / internal team took over / switched vendor / other?
 
-### Passo 2: Análise por tipo de churn
+### Step 2: Analysis by churn type
 
-Identifica padrão dominante:
+Identify the dominant pattern:
 
-**Churn precoce (< 30 dias):**
-- Raiz: onboarding ruim ou expectativa quebrada na sales call.
-- Fix imediato: revisar sales script + primeiros 14 dias do onboarding.
+**Early churn (< 30 days):**
+- Root: bad onboarding or broken expectation on the sales call.
+- Immediate fix: revise the sales script + the first 14 days of onboarding.
 
-**Churn médio (30-90 dias):**
-- Raiz: Value Equation falhou na entrega (Time Delay > prometido, Effort > esperado).
-- Fix: rodar `/hormozi-gtm:audit` na oferta original.
+**Mid churn (30-90 days):**
+- Root: the Value Equation failed at delivery (Time Delay > promised, Effort > expected).
+- Fix: run `/hormozi-gtm:audit` on the original offer.
 
-**Churn tardio (>90 dias):**
-- Raiz: produto entregou inicial mas falhou em sustentar valor (continuity offer fraca).
-- Fix: olhar `money-models` skill — Continuity tier precisa repensar.
+**Late churn (>90 days):**
+- Root: the product delivered initially but failed to sustain value (weak continuity offer).
+- Fix: look at the `money-models` skill — the continuity tier needs rethinking.
 
-**Churn voluntário (cliente cancela ativamente):**
-- Raiz: alternativa melhor surgiu ou orçamento mudou.
-- Fix: positioning + escassez genuína para premium tier.
+**Voluntary churn (client actively cancels):**
+- Root: a better alternative showed up or the budget changed.
+- Fix: positioning + genuine scarcity for the premium tier.
 
-**Churn passivo (cliente para de usar mas não cancela):**
-- Raiz: engagement caiu, valor percebido foi.
-- Fix: re-engagement sequence (skill `sales-sequencing`).
+**Passive churn (client stops using but doesn't cancel):**
+- Root: engagement dropped, perceived value went with it.
+- Fix: re-engagement sequence (`sales-sequencing` skill).
 
-### Passo 3: Win/loss interview script
+### Step 3: Win/loss interview script
 
-Para `--foco=churn` ou `--foco=winback`:
+For `--mode=churn` or `--mode=winback`:
 
-Gera script de 6-8 perguntas para entrevistar 5-10 clientes que saíram. Pergunta-chave:
+Generates a script of 6-8 questions to interview 5-10 clients who left. The key question:
 
-> "Olha, sem agenda de venda — só quero entender. Se você pudesse voltar 90 dias antes da decisão de cancelar, o que faria diferente OU o que eu poderia ter feito diferente?"
+> "Look, no sales agenda — I just want to understand. If you could go back 90 days before the decision to cancel, what would you do differently OR what could I have done differently?"
 
-E mais 5-7 perguntas estruturadas pra extrair:
-- Momento exato em que decidiu sair (gatilho).
-- O que tentou antes de cancelar.
-- O que o competidor/alternativa oferece que você não oferecia.
-- O que segue valendo (não joga tudo fora).
-- Se voltasse, em quais condições.
+Plus another 5-7 structured questions to extract:
+- The exact moment they decided to leave (the trigger).
+- What they tried before canceling.
+- What the competitor/alternative offers that you didn't.
+- What still holds up (don't throw it all out).
+- Under what conditions they'd come back.
 
-### Passo 4: Categorização de motivos
+### Step 4: Reason categorization
 
-Após 5-10 interviews:
+After 5-10 interviews:
 
-| Motivo | Quantos clientes | % | Raiz no Value Equation |
+| Reason | How many clients | % | Root in the Value Equation |
 |---|---|---|---|
-| Preço | {{N}} | {{X}}% | Dream Outcome ↓ ou Probability ↓ |
-| Não entregou esperado | {{N}} | {{X}}% | Probability ↓ |
-| Time interno assumiu | {{N}} | {{X}}% | Effort ↓ (cliente conseguiu reduzir) |
-| Mudou de fornecedor | {{N}} | {{X}}% | Saturação de mercado |
-| Mudança no business | {{N}} | {{X}}% | Não evitável (não tente) |
+| Price | {{N}} | {{X}}% | Dream Outcome ↓ or Probability ↓ |
+| Didn't deliver as expected | {{N}} | {{X}}% | Probability ↓ |
+| Internal team took over | {{N}} | {{X}}% | Effort ↓ (client managed to reduce it) |
+| Switched vendor | {{N}} | {{X}}% | Market saturation |
+| Change in the business | {{N}} | {{X}}% | Not avoidable (don't try) |
 
-### Passo 5: Retention playbook
+### Step 5: Retention playbook
 
-Para `--foco=retention`, gera playbook em 4 blocos:
+For `--mode=retention`, generate a playbook in 4 blocks:
 
-**Bloco 1 — Quick wins (0-30 dias):**
-3-5 ações concretas a implementar essa semana. Ex:
-- Adicionar check-in semanal nos primeiros 30 dias de cliente novo.
-- Survey NPS automático no dia 30 + 60 + 90.
-- One-Done Guarantee em resposta de cliente (resposta em 4h úteis).
+**Block 1 — Quick wins (0-30 days):**
+3-5 concrete actions to implement this week. E.g.:
+- Add a weekly check-in during a new client's first 30 days.
+- Automatic NPS survey on day 30 + 60 + 90.
+- One-Done Guarantee on client replies (reply within 4 business hours).
 
-**Bloco 2 — Mudanças estruturais (30-90 dias):**
-- Refazer onboarding (skill `leila-scaling` 5 Star Service).
-- Refazer continuity offer (skill `money-models`).
-- Repensar pricing tier (skill `pricing-playbook`).
+**Block 2 — Structural changes (30-90 days):**
+- Rebuild onboarding (`leila-scaling` skill, 5 Star Service).
+- Rebuild the continuity offer (`money-models` skill).
+- Rethink the pricing tier (`pricing-playbook` skill).
 
-**Bloco 3 — Métricas e monitoring (sempre):**
-- North star metric de retention (ex: NPS, day-90 product adoption, expansion revenue).
-- Threshold de "cliente em risco" (ex: 0 logins em 14 dias).
-- Trigger automático de intervenção.
+**Block 3 — Metrics and monitoring (always):**
+- North star metric for retention (e.g. NPS, day-90 product adoption, expansion revenue).
+- "At-risk client" threshold (e.g. 0 logins in 14 days).
+- Automatic intervention trigger.
 
-**Bloco 4 — Cultura e operação:**
-- 1 pessoa responsável por retention metrics (não diluído).
-- Review semanal de churn em squad.
-- Pós-mortem de cada cancelamento (mesmo se for inevitável).
+**Block 4 — Culture and operations:**
+- One person owning retention metrics (not diluted).
+- Weekly churn review in the squad.
+- Post-mortem on every cancellation (even if it was inevitable).
 
-### Passo 6: Winback (se `--foco=winback`)
+### Step 6: Winback (if `--mode=winback`)
 
-Sequência de 3-4 emails para clientes que saíram nos últimos 90 dias:
+A sequence of 3-4 emails to clients who left in the last 90 days:
 
-**Email 1 (no momento que sai):**
-- Honestidade + 1 pergunta direta ("o que eu poderia ter feito diferente?")
-- Sem CTA de venda.
+**Email 1 (at the moment they leave):**
+- Honesty + 1 direct question ("what could I have done differently?")
+- No sales CTA.
 
-**Email 2 (+30 dias):**
-- Update do que mudou desde que saiu (novo recurso, novo case, refinement no produto).
-- CTA muito leve ("fique de olho").
+**Email 2 (+30 days):**
+- Update on what's changed since they left (new feature, new case, product refinement).
+- Very light CTA ("keep an eye out").
 
-**Email 3 (+60 dias):**
-- Oferta de winback específica (não desconto genérico — algo verdadeiramente novo).
-- CTA: pequena conversa de 15min sem pressão.
+**Email 3 (+60 days):**
+- A specific winback offer (not a generic discount — something genuinely new).
+- CTA: a short 15-min, no-pressure conversation.
 
-**Email 4 (+90 dias):**
-- Última call. Honesto que vai parar de mandar.
-- Porta aberta sempre.
+**Email 4 (+90 days):**
+- Last call. Honest that you'll stop emailing.
+- Door always open.
 
-### Passo 7: Impacto financeiro
+### Step 7: Financial impact
 
-Delegate ao `money-model-architect`:
-
-```
-Cenário atual:
-- Churn rate: {{X}}%/mês
-- LTV atual: R$ {{X}}
-- Quanto cada 1% de redução no churn vale?
-
-Projeção:
-- Reduzir churn de {{X}}% para {{Y}}% em 90 dias
-- LTV sobe para R$ {{Z}}
-- Impacto em ARR/12 meses: R$ {{W}}
-```
-
-### Passo 8: Escopo de humanizer (modo misto)
-
-**Análise de churn (`churn-analysis`) — voz crua (sem humanizer).** É diagnóstico interno: NÃO passa por humanizer. Sai cru, Hormozi brutal, direto. No frontmatter do output: `humanizer_pass: false`, `humanizer_mode: n/a`, `voz: crua`.
-
-**Sequência de winback (`winback-sequence`) — humanizer modo full.** É copy externa pro cliente que saiu: passa pelo humanizer modo full e só sai com brutalidade ≥7 na rubrica da `hormozi-voice`. No frontmatter desse output: `humanizer_pass: true`, `humanizer_mode: full`.
-
-### Passo 9: Salva
-
-Carregue a skill `hormozi-gtm:template-churn-analysis` via ferramenta Skill e preencha o esqueleto. Salva em `outputs/retention/churn-analysis-{produto_slug}-{YYYYMMDD}-v{n}.md`.
-
-Se `--foco=winback`: também salva `outputs/retention/winback-sequence-{produto_slug}-{YYYYMMDD}-v{n}.md`. Carregue a skill `hormozi-gtm:template-email-sequence` via ferramenta Skill e preencha o esqueleto (a sequência de winback herda a estrutura de email-sequence).
-
-### Passo 10: Preview na conversa
+Delegate to `money-model-architect`:
 
 ```
-✅ Salvo em: outputs/retention/churn-analysis-{slug}-{YYYYMMDD}-v{n}.md
+Current scenario:
+- Churn rate: {{X}}%/month
+- Current LTV: ${{X}}
+- What is each 1% reduction in churn worth?
+
+Projection:
+- Reduce churn from {{X}}% to {{Y}}% in 90 days
+- LTV rises to ${{Z}}
+- Impact on ARR/12 months: ${{W}}
+```
+
+### Step 8: Humanizer scope (mixed mode)
+
+**Churn analysis (`churn-analysis`) — raw voice (no humanizer).** It's an internal diagnostic: it does NOT go through the humanizer. It ships raw, Hormozi brutal, direct. In the output frontmatter: `humanizer_pass: false`, `humanizer_mode: n/a`, `voice: raw`.
+
+**Winback sequence (`winback-sequence`) — humanizer full mode.** It's external copy to the client who left: it goes through the humanizer in full mode and only ships at brutality ≥7 on the `hormozi-voice` rubric. In that output's frontmatter: `humanizer_pass: true`, `humanizer_mode: full`.
+
+### Step 9: Save
+
+Load the `hormozi-gtm:template-churn-analysis` skill via the Skill tool and fill in the skeleton. Save to `outputs/retention/churn-analysis-{product_slug}-{YYYYMMDD}-v{n}.md`.
+
+If `--mode=winback`: also save `outputs/retention/winback-sequence-{product_slug}-{YYYYMMDD}-v{n}.md`. Load the `hormozi-gtm:template-email-sequence` skill via the Skill tool and fill in the skeleton (the winback sequence inherits the email-sequence structure).
+
+### Step 10: In-conversation preview
+
+```
+✅ Saved to: outputs/retention/churn-analysis-{slug}-{YYYYMMDD}-v{n}.md
 📋 Preview:
-   • Churn atual: {{X}}%/mês
-   • Motivo dominante: {{tipo}} ({{N}}% dos casos)
-   • Quick wins identificados: {{N}}
-   • Impacto financeiro de retention 90d: R$ {{X}}
-   • Status humanizer: voz crua (sem humanizer) — winback, se gerado, sai com humanizer full
+   • Current churn: {{X}}%/month
+   • Dominant reason: {{type}} ({{N}}% of cases)
+   • Quick wins identified: {{N}}
+   • Financial impact of 90-day retention: ${{X}}
+   • Humanizer status: raw voice (no humanizer) — winback, if generated, ships with humanizer full
 
-👉 Próximos passos:
-   1. Rodar 5-10 win/loss interviews esta semana (script no output)
-   2. Implementar 3 quick wins do Bloco 1 nos próximos 30 dias
-   3. Re-medir churn em 90 dias e gerar v2 da análise
+👉 Next steps:
+   1. Run 5-10 win/loss interviews this week (script in the output)
+   2. Implement 3 quick wins from Block 1 over the next 30 days
+   3. Re-measure churn in 90 days and generate v2 of the analysis
 ```
 
-## Critério de pronto
+## Definition of done
 
-- [ ] Churn rate medido e contextualizado vs benchmark
-- [ ] Motivo dominante identificado (com %)
-- [ ] Quick wins concretos (3-5) implementáveis em 30 dias
-- [ ] Mudanças estruturais identificadas com framework Hormozi correspondente
-- [ ] Impacto financeiro quantificado (R$ por % de churn reduzido)
-- [ ] Win/loss interview script (≥ 6 perguntas)
-- [ ] Para `--foco=winback`: sequência de 3-4 emails
+- [ ] Churn rate measured and contextualized vs. benchmark
+- [ ] Dominant reason identified (with %)
+- [ ] Concrete quick wins (3-5) implementable in 30 days
+- [ ] Structural changes identified with the matching Hormozi framework
+- [ ] Financial impact quantified ($ per % of churn reduced)
+- [ ] Win/loss interview script (≥ 6 questions)
+- [ ] For `--mode=winback`: a sequence of 3-4 emails
 
-## Anti-padrões
+## Anti-patterns
 
-- "Vamos descontar pra reter" (cliente que sai por valor não volta por preço)
-- Ignorar churn passivo (só olha cancelamentos formais)
-- Win/loss interview sem perguntar "se voltasse" (perde insight)
-- Quick wins genéricos ("melhorar atendimento") — precisa específico
-- Mudança estrutural sem owner (nenhuma pessoa responsável = nada muda)
-- Esquecer pós-mortem (perde aprendizado de cada caso)
-- Winback como spam (mesma sequência pra todos os clientes que saíram)
+- "Let's discount to retain them" (a client who leaves over value won't come back over price)
+- Ignoring passive churn (only looking at formal cancellations)
+- Win/loss interview without asking "if you came back" (loses insight)
+- Generic quick wins ("improve support") — has to be specific
+- Structural change with no owner (nobody responsible = nothing changes)
+- Forgetting the post-mortem (loses the learning from each case)
+- Winback as spam (same sequence for every client who left)

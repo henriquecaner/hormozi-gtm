@@ -1,158 +1,158 @@
 ---
 name: market-saturation-pivot
-description: Detecta quando seu canal/nicho saturou e quando pivotar. Métricas concretas (CAC trend, reply rate, CTR), 3 sinais simultâneos como gate de pivot, framework de pivot in-place sem perder audience.
+description: Detects when your channel/niche has saturated and when to pivot. Concrete metrics (CAC trend, reply rate, CTR), 3 simultaneous signals as the pivot gate, and a framework for pivoting in-place without losing your audience.
 ---
 
 # Market Saturation & Pivot
 
-Fonte: Alex Hormozi, *$100M Leads* (Cap. 3, "Saturated Markets") + cross-reference com `pricing-playbook` (Lei 1) e `core-four`.
+Source: Alex Hormozi, *$100M Leads* (Ch. 3, "Saturated Markets") + cross-reference with `pricing-playbook` (Law 1) and `core-four`.
 
-## Por que essa skill existe
+## Why this skill exists
 
-Founder brasileiro fica meses (às vezes anos) em mercado saturado esperando que "vai funcionar". Cada mês perdido custa runway. As outras skills do plugin assumem que o canal/nicho ainda tem espaço. Esta detecta quando ele não tem mais.
+Founders sit for months — sometimes years — in a saturated market waiting for it to "start working." Every month wasted burns runway. The plugin's other skills assume the channel/niche still has room. This one detects when it doesn't.
 
-Saturação não é "tem competidor". É **competidor + comoditização + CAC subindo + você perdendo diferenciação**. Quando os 4 batem juntos, persistir é queimar dinheiro.
+Saturation isn't "there's a competitor." It's **competitor + commoditization + CAC climbing + you losing differentiation**. When all four land at once, persisting is just burning cash.
 
-## Os 4 sinais quantitativos de saturação
+## The 4 quantitative signals of saturation
 
-Você não pivota com base em "sentimento". Pivota com base em dados que param de evoluir. Os 4 sinais:
+You don't pivot on a "feeling." You pivot on data that stops improving. The four signals:
 
-### Sinal 1: CAC subindo 25%+ trimestre a trimestre
+### Signal 1: CAC climbing 25%+ quarter over quarter
 
-Calcule CAC dos últimos 4 trimestres. Se a tendência é crescimento ≥ 25% trimestre-a-trimestre por 2 trimestres consecutivos → canal está esgotando.
+Pull CAC for the last 4 quarters. If the trend is ≥ 25% growth quarter-over-quarter for 2 consecutive quarters → the channel is running dry.
 
 ```
-Q1 CAC: R$ 200
-Q2 CAC: R$ 260  (+30%)
-Q3 CAC: R$ 340  (+31%)  ← red flag
-Q4 CAC: R$ 470  (+38%)  ← saturação confirmada
+Q1 CAC: $200
+Q2 CAC: $260  (+30%)
+Q3 CAC: $340  (+31%)  ← red flag
+Q4 CAC: $470  (+38%)  ← saturation confirmed
 ```
 
-Pergunta diagnóstica: o LTV cresceu na mesma proporção? Se não, LTV:CAC está apertando — só margem pra mais 1-2 trimestres antes de quebrar economia unitária.
+Diagnostic question: did LTV grow at the same pace? If not, LTV:CAC is tightening — you've got margin for maybe 1-2 more quarters before the unit economics break.
 
-### Sinal 2: CTR/Reply rate caindo > 30% em 90 dias
+### Signal 2: CTR/reply rate dropping > 30% in 90 days
 
-Mesma copy, mesmo lead magnet, mesmo segmento — performance caindo. Sinal de fadiga de audiência ou competição direta atacando o mesmo prospect com mensagem similar.
+Same copy, same lead magnet, same segment — performance falling. A sign of audience fatigue or direct competitors hitting the same prospect with a similar message.
 
 ```
 Cold email reply rate:
-Mês 1: 8% → Mês 2: 7% → Mês 3: 5% (-37%)  ← red flag
-Mês 4: 3.5%  ← saturação confirmada
+Month 1: 8% → Month 2: 7% → Month 3: 5% (-37%)  ← red flag
+Month 4: 3.5%  ← saturation confirmed
 ```
 
-Pergunta diagnóstica: trocou copy/oferta sem efeito? Se 3 iterações de copy sem melhora, não é a copy — é o mercado.
+Diagnostic question: did you swap copy/offer with no effect? If 3 copy iterations don't move it, it's not the copy — it's the market.
 
-### Sinal 3: Surge de 10+ concorrentes com posicionamento parecido em 12 meses
+### Signal 3: A surge of 10+ competitors with similar positioning in 12 months
 
-Você é o "primeiro" hoje, mas em 12 meses tem 10+ players prometendo o mesmo. Saturação chegando.
+You're the "first" today, but 12 months out there are 10+ players promising the same thing. Saturation incoming.
 
-Sinais:
-- LinkedIn: 5+ founders novos posicionando-se na mesma especialização que você defendia há 1 ano.
-- Ads: 10+ anunciantes brigando pelas mesmas keywords.
-- Eventos: painel onde "todos os palestrantes" oferecem o mesmo serviço.
+Signs:
+- LinkedIn: 5+ new founders positioning on the same specialization you owned a year ago.
+- Ads: 10+ advertisers fighting over the same keywords.
+- Events: a panel where "every speaker" offers the same service.
 
-### Sinal 4: Você não consegue mais justificar pricing premium
+### Signal 4: You can't justify premium pricing anymore
 
-No início do nicho, você cobrava R$ 50k/engajamento. Cliente nem discutia. Agora, 18 meses depois, cada negociação cai pra R$ 30-35k porque "tem player na metade do preço".
+Early in the niche you charged $50k/engagement. The client didn't even push back. Now, 18 months later, every negotiation drops to $30-35k because "there's a player at half the price."
 
-Não é problema de pricing skill — é commoditização do nicho.
+This isn't a pricing-skill problem — it's commoditization of the niche.
 
-## Gate de pivot: 3 dos 4 sinais simultaneamente
+## Pivot gate: 3 of the 4 signals simultaneously
 
-Pivot com 1 sinal isolado é precipitação. Pivot com 3+ sinais simultâneos é necessidade.
+Pivoting on 1 isolated signal is jumping the gun. Pivoting on 3+ simultaneous signals is a necessity.
 
 ```
                   Q1   Q2   Q3   Q4
-CAC ≥ 25%/trim     -    -    ✓    ✓
+CAC ≥ 25%/qtr      -    -    ✓    ✓
 CTR -30%/90d       -    ✓    ✓    ✓
-10+ concorrentes   -    -    ✓    ✓
-Pricing erodindo   -    -    -    ✓
+10+ competitors    -    -    ✓    ✓
+Pricing eroding    -    -    -    ✓
 
-Sinais simultâneos: 4/4 em Q4  → PIVOT
+Simultaneous signals: 4/4 in Q4  → PIVOT
 ```
 
-Se em algum trimestre você bate 3+ sinais simultâneos por 2 trimestres consecutivos → pivote programado para o próximo trimestre.
+If in any quarter you hit 3+ simultaneous signals for 2 consecutive quarters → schedule the pivot for the next quarter.
 
-## Tipos de pivot
+## Types of pivot
 
-### Pivot A: Refinar nicho dentro do mesmo macro-tema (in-place)
+### Pivot A: Refine the niche within the same macro-theme (in-place)
 
-Você atende "SaaS B2B" → satura → refina para "SaaS B2B fintech com ciclo > 90 dias" (sub-segmento mais raro, menos competidor, ticket maior).
+You serve "B2B SaaS" → it saturates → you refine to "B2B fintech SaaS with a >90-day cycle" (rarer sub-segment, fewer competitors, bigger deal size).
 
-**Vantagem:** mantém founder-market fit, mantém metade da audience.
-**Investimento:** 60-90 dias pra reconstruir posicionamento.
+**Advantage:** keeps founder-market fit, keeps half your audience.
+**Investment:** 60-90 days to rebuild the positioning.
 
-### Pivot B: Mudar canal mantendo nicho (channel pivot)
+### Pivot B: Change the channel, keep the niche (channel pivot)
 
-Mesmo nicho, novo canal. Saiu de "cold email" (saturado) pra "podcast + parcerias estratégicas" no mesmo nicho.
+Same niche, new channel. Moved from "cold email" (saturated) to "podcast + strategic partnerships" in the same niche.
 
-**Vantagem:** mantém ICP, mantém produto.
-**Investimento:** 90-180 dias pra construir presença em canal novo.
+**Advantage:** keeps the ICP, keeps the product.
+**Investment:** 90-180 days to build presence on a new channel.
 
-### Pivot C: Mudar oferta mantendo nicho (offer pivot)
+### Pivot C: Change the offer, keep the niche (offer pivot)
 
-Mesmo ICP, nova oferta. De "consultoria de growth genérica" → "auditoria one-shot de funil + entregável de 1 página" (oferta mais defensável, menor commodity).
+Same ICP, new offer. From "generic growth consulting" → "one-shot funnel audit + a 1-page deliverable" (more defensible offer, less of a commodity).
 
-**Vantagem:** mantém audience construída.
-**Investimento:** 30-60 dias (reconstruir narrativa de venda).
+**Advantage:** keeps the audience you built.
+**Investment:** 30-60 days (rebuild the sales narrative).
 
-### Pivot D: Pivot completo (rare, mas necessário às vezes)
+### Pivot D: Full pivot (rare, but sometimes necessary)
 
-Quando os 4 sinais batem **e** você descobre que founder-market fit também está erodindo. Migra pra outro nicho onde tem fit residual ou pode reconstruir.
+When all 4 signals land **and** you discover founder-market fit is eroding too. Migrate to another niche where you have residual fit or can rebuild it.
 
-**Vantagem:** fresh start em mercado com espaço.
-**Investimento:** 6-18 meses pra retomar revenue do nível anterior.
+**Advantage:** fresh start in a market with room.
+**Investment:** 6-18 months to get revenue back to the prior level.
 
-## Framework de pivot in-place sem perder audience
+## Framework for pivoting in-place without losing your audience
 
-Aplica especialmente pra Pivot A e B (manter algo familiar pra audience):
+Applies especially to Pivot A and B (keeping something familiar for the audience):
 
-**Passo 1 — Anuncia a evolução, não a ruptura.**
-"Estive atendendo X nos últimos 18 meses. Aprendi que [sub-segmento] tem dor 3x maior e ninguém atende bem. Vou focar lá pelos próximos 12 meses." (Não diga "abandonei X" — diga "vou nicar pra Y").
+**Step 1 — Announce the evolution, not the break.**
+"I've been serving X for the last 18 months. I learned that [sub-segment] has 3x the pain and nobody serves it well. I'm focusing there for the next 12 months." (Don't say "I abandoned X" — say "I'm niching down to Y.")
 
-**Passo 2 — Mantém 20-30% de conteúdo no nicho antigo por 3-6 meses.**
-Quem te seguiu pelo X ainda gosta de ver X às vezes. Conteúdo de transição.
+**Step 2 — Keep 20-30% of content in the old niche for 3-6 months.**
+The people who followed you for X still like seeing X sometimes. Transition content.
 
-**Passo 3 — Reconstrói cases no sub-nicho rapidamente.**
-3-5 cases no sub-nicho em 90 dias, mesmo gratuito/baixo preço. Sem proof no segmento novo, audience nova não compra.
+**Step 3 — Rebuild proof in the sub-niche fast.**
+3-5 cases in the sub-niche within 90 days, even free or low-priced. With no proof in the new segment, the new audience doesn't buy.
 
-**Passo 4 — Comunicação dupla por 90 dias.**
-Posts no LinkedIn cobrindo o sub-nicho mas explicando lições aplicáveis pro nicho amplo. Suaviza transição.
+**Step 4 — Dual communication for 90 days.**
+LinkedIn posts covering the sub-niche but explaining lessons that apply to the broader niche. Smooths the transition.
 
-**Passo 5 — Comprometimento explícito.**
-Após 90 dias, anuncia "100% foco em [sub-nicho] daqui em diante". Audience que sobrou está alinhada.
+**Step 5 — Explicit commitment.**
+After 90 days, announce "100% focus on [sub-niche] from here on." The audience that stuck around is aligned.
 
-## Armadilhas comuns
+## Common traps
 
-**1. Pivot prematuro (1-2 trimestres sem sinal claro).**
-Founder brasileiro sente "está difícil" e quer pivotar. Difícil ≠ saturado. Confirma com os 4 sinais antes.
+**1. Premature pivot (1-2 quarters with no clear signal).**
+A founder feels "it's getting hard" and wants to pivot. Hard ≠ saturated. Confirm with the 4 signals first.
 
-**2. Persistência irracional.**
-"Vai melhorar", "é só ajustar copy", "vou rodar mais 6 meses". Cada quarter sem evolução é queima de runway. 4/4 sinais simultâneos = pivot programado, não opcional.
+**2. Irrational persistence.**
+"It'll get better," "I just need to tweak the copy," "I'll run it another 6 months." Every quarter with no improvement is burned runway. 4/4 simultaneous signals = scheduled pivot, not optional.
 
-**3. Pivot múltiplo em sequência.**
-Pivota nicho, pivota canal, pivota oferta, pivota tudo de novo em 18 meses. Sinal de que founder não está testando rigorosamente — está fugindo do trabalho duro de fazer ICP/oferta funcionar.
+**3. Serial pivoting.**
+Pivot the niche, pivot the channel, pivot the offer, pivot everything again in 18 months. A sign the founder isn't testing rigorously — they're running from the hard work of making the ICP/offer actually work.
 
-**4. Pivot sem manter founder-market fit.**
-Pivota para nicho onde não tem fit. Constrói nichos serial sem credibilidade. Use skill `founder-market-fit` antes de definir destino do pivot.
+**4. Pivoting without keeping founder-market fit.**
+Pivot to a niche where you have no fit. Building serial niches with no credibility. Use the `founder-market-fit` skill before you set the pivot destination.
 
-**5. Comunicar pivot como falha.**
-"Não funcionou, vou tentar outra coisa." Audience perde confiança. Comunique como evolução estratégica baseada em dados.
+**5. Communicating the pivot as a failure.**
+"It didn't work, I'm going to try something else." The audience loses trust. Communicate it as a strategic evolution backed by data.
 
-## Aplicação por caso de uso
+## Application by use case
 
-| Caso | Como usar |
+| Case | How to use |
 |---|---|
-| `/hormozi-gtm:audit` em founder com 18+ meses de operação | Audit inclui análise dos 4 sinais. Se 3+ batem, recomenda pivot. |
-| `/hormozi-gtm:plano` em founder em platô (revenue lateral 6+ meses) | Plano de 90 dias começa com decision tree: pivotar ou intensificar? |
-| Refinement de copy que parou de converter | Antes de mexer em copy, confirma se não é saturação de canal. |
+| `/hormozi-gtm:audit` on a founder with 18+ months of operation | The audit includes analysis of the 4 signals. If 3+ hit, it recommends a pivot. |
+| `/hormozi-gtm:plan` on a founder on a plateau (revenue flat 6+ months) | The 90-day plan opens with a decision tree: pivot or double down? |
+| Refining copy that stopped converting | Before touching copy, confirm it's not channel saturation. |
 
-## Quando essa skill NÃO entra
+## When this skill does NOT apply
 
-- Founder em primeiros 6 meses (sem dados suficientes pra detectar saturação).
-- Negócio em crescimento saudável (LTV:CAC > 3:1, CAC estável ou caindo).
-- Refinement de oferta unitária → use `grand-slam-offer`.
+- Founder in the first 6 months (not enough data to detect saturation).
+- A business growing healthily (LTV:CAC > 3:1, CAC stable or falling).
+- Refining a single offer → use `grand-slam-offer`.
 
-## Referência detalhada
+## Detailed reference
 
-`reference/100m-leads-extracts.md` cap. 3 ("Saturated Markets"), `reference/leaked-pricing-playbook.md` (Lei 1, sinais de commoditização).
+`reference/100m-leads-extracts.md` ch. 3 ("Saturated Markets"), `reference/leaked-pricing-playbook.md` (Law 1, commoditization signals).

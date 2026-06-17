@@ -1,75 +1,75 @@
 ---
 name: core-four
-description: Core Four do $100M Leads — 4 canais únicos de aquisição (warm 1:1, cold 1:1, organic 1:many, paid 1:many). Use para desenhar estratégia de aquisição, escolher canal certo pro estágio, definir budget split.
+description: The Core Four from $100M Leads — the 4 distinct acquisition channels (warm 1:1, cold 1:1, organic 1:many, paid 1:many). Use to design acquisition strategy, pick the right channel for the stage, and set the budget split.
 ---
 
 # Core Four — Lead Generation
 
-Fonte: Alex Hormozi, *$100M Leads*, Capítulo 7.
+Source: Alex Hormozi, *$100M Leads*, Chapter 7.
 
-## Os 4 canais
+## The 4 channels
 
-| Canal | Tipo | Custo direto | Volume típico/dia | Quando usa |
+| Channel | Type | Direct cost | Typical volume/day | When to use |
 |---|---|---|---|---|
-| **Warm outreach** | 1:1 | tempo (seu) | 5-30 contatos | Estágio inicial, sem audience, recompra fácil |
-| **Cold outreach** | 1:1 | tempo + ferramentas | 50-300 contatos | B2B com ICP claro, ticket alto |
-| **Organic content** | 1:many | tempo (seu) | publicações por semana | Audience building, branding |
-| **Paid ads** | 1:many | capital | dependente do budget | Quando unit economics fecham (LTV:CAC > 3:1) |
+| **Warm outreach** | 1:1 | time (yours) | 5-30 contacts | Early stage, no audience, easy to re-buy |
+| **Cold outreach** | 1:1 | time + tools | 50-300 contacts | B2B with a clear ICP, high-ticket |
+| **Organic content** | 1:many | time (yours) | posts per week | Audience building, branding |
+| **Paid ads** | 1:many | capital | depends on budget | When unit economics work (LTV:CAC > 3:1) |
 
-> **Nota de fonte:** a coluna "Volume típico/dia" (5-30, 50-300) é referência ilustrativa, não número citado de `reference/100m-leads-extracts.md`. O corpus define os 4 canais e a regra de sequência abaixo, não cotas diárias.
+> **Source note:** the "Typical volume/day" column (5-30, 50-300) is illustrative reference, not a number cited from `reference/100m-leads-extracts.md`. The corpus defines the 4 channels and the sequencing rule below, not daily quotas.
 
-## Regra de ouro do Hormozi
+## Hormozi's golden rule
 
-> Comece com 1 canal. Domine. Adicione o 2º. **Nunca 4 ao mesmo tempo.**
+> Start with 1 channel. Master it. Add the 2nd. **Never 4 at once.**
 
-Sequência típica (a única regra dura do corpus é "1 canal por vez, nunca os 4" — a ordem abaixo é o default comum, não um mandato):
-1. **Warm** (clientes/conhecidos primeiro)
-2. **Organic** (transforma o que funciona em warm em conteúdo)
-3. **Paid** (escala o que funciona em organic com capital)
-4. **Cold** (último, quando margem permite e ICP está cristalino)
+Typical sequence (the only hard rule from the corpus is "1 channel at a time, never all 4" — the order below is the common default, not a mandate):
+1. **Warm** (clients/people you know first)
+2. **Organic** (turn what works in warm into content)
+3. **Paid** (scale what works in organic with capital)
+4. **Cold** (last, once margin allows and the ICP is crystal clear)
 
-## Como decidir o próximo canal
+## How to decide the next channel
 
-**Pergunta 1:** Você tem clientes/network suficiente pra preencher 1-2 meses de receita só com warm?
-- Sim → faça warm primeiro, não escala antes
-- Não → confirme que tem oferta validada antes de tentar outros canais
+**Question 1:** Do you have enough clients/network to fill 1-2 months of revenue from warm alone?
+- Yes → do warm first, don't scale before that
+- No → confirm you have a validated offer before trying other channels
 
-**Pergunta 2:** O conteúdo que você produz organicamente gera leads sem ad spend?
-- Sim → adicione paid escalando os mesmos hooks/posts
-- Não → não escale pra paid ainda, refina organic primeiro
+**Question 2:** Does the content you produce organically generate leads without ad spend?
+- Yes → add paid, scaling the same hooks/posts
+- No → don't scale to paid yet, refine organic first
 
-**Pergunta 3:** Sua margem por cliente cobre 3x o CAC esperado em paid?
-- Sim → escale paid agressivamente
-- Não → consert primeiro o money model (use skill `money-models`)
+**Question 3:** Does your margin per client cover 3x the CAC you expect in paid?
+- Yes → scale paid aggressively
+- No → fix the money model first (use the `money-models` skill)
 
-## Lead Magnets por canal
+## Lead magnets by channel
 
-| Canal | Lead magnet típico |
+| Channel | Typical lead magnet |
 |---|---|
-| Warm | "Quero te mostrar 10min de algo que pode resolver X" — direto pra call |
-| Cold | "Diagnostic gratuito de 15min sobre Y" — reduz fricção |
-| Organic | "PDF / vídeo / planilha gratuita" — captura email |
-| Paid | "Calculadora / quiz / mini-curso" — alta especificidade |
+| Warm | "I want to show you 10 min of something that could solve X" — straight to a call |
+| Cold | "Free 15-min diagnostic on Y" — reduces friction |
+| Organic | "Free PDF / video / spreadsheet" — captures email |
+| Paid | "Calculator / quiz / mini-course" — high specificity |
 
-Use skill `lead-magnets` para 3 archetypes (Reveal / Sample / Process).
+Use the `lead-magnets` skill for the 3 archetypes (Reveal / Sample / Process).
 
-## Métrica primária por canal
+## Primary metric by channel
 
-| Canal | Métrica |
+| Channel | Metric |
 |---|---|
 | Warm | Conversion rate (lead → call) |
-| Cold | Reply rate (e depois conversion lead → call) |
-| Organic | Audience growth + leads / mês |
-| Paid | CAC absoluto + LTV:CAC ratio |
+| Cold | Reply rate (then conversion lead → call) |
+| Organic | Audience growth + leads / month |
+| Paid | Absolute CAC + LTV:CAC ratio |
 
-## Aplicação por caso de uso
+## Application by use case
 
-| Caso | Como usar Core Four |
+| Case | How to use Core Four |
 |---|---|
-| LP de vendas | LP serve TODOS os 4 canais. UTM diferencia conversão por canal |
-| Roteiro de ad | Define qual canal vai executar. Copy varia: cold precisa de lead magnet; warm pode vender direto |
-| Business plan | Roadmap por trimestre: trimestre 1 = warm puro; trimestre 2 adiciona organic; trimestre 3 adiciona paid se ratio bate |
+| Sales LP | The LP serves ALL 4 channels. UTM differentiates conversion by channel |
+| Ad script | Defines which channel will run it. Copy varies: cold needs a lead magnet; warm can sell direct |
+| Business plan | Quarterly roadmap: quarter 1 = pure warm; quarter 2 adds organic; quarter 3 adds paid if the ratio holds |
 
-## Referência detalhada
+## Detailed reference
 
-Veja `reference/100m-leads-extracts.md`.
+See `reference/100m-leads-extracts.md`.

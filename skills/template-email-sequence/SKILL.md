@@ -1,23 +1,23 @@
 ---
 name: template-email-sequence
-description: "Esqueleto interno do output do comando /hormozi-gtm:email. Carregado pelo comando, não para uso direto."
+description: "Internal output skeleton for the /hormozi-gtm:email command. Loaded by the command, not for direct use."
 ---
 
 # Template — email-sequence.md
 
-Esqueleto canônico do output de sequência de email. O comando `/hormozi-gtm:email` carrega esta skill e preenche o esqueleto abaixo com os inputs do usuário. Reproduza a estrutura exata: frontmatter + todas as seções + placeholders `{{...}}`.
+Canonical output skeleton for an email sequence. The `/hormozi-gtm:email` command loads this skill and fills the skeleton below with the user's inputs. Reproduce the exact structure: frontmatter + every section + `{{...}}` placeholders.
 
 ```markdown
 ---
 plugin: hormozi-gtm
 plugin_version: {{plugin_version}}
 command: email
-tipo: {{cold | warm | nurture | re-engagement}}
+type: {{cold | warm | nurture | re-engagement}}
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{empresa_slug}}
-product: {{produto_slug}}
+client: {{company_slug}}
+product: {{product_slug}}
 sequence_length: {{N}}
 sequence_span_days: {{N}}
 frameworks:
@@ -27,177 +27,178 @@ frameworks:
   - guarantees
 humanizer_pass: true
 humanizer_mode: full
-audit_ref: {{caminho_ou_null}}
-parent_version: {{caminho_v_anterior_ou_null}}
+language: {{language}}
+audit_ref: {{path_or_null}}
+parent_version: {{path_to_previous_v_or_null}}
 ---
 
-# Email Sequence — {{tipo}} para {{produto_nome}}
+# Email Sequence — {{type}} for {{product_name}}
 
 ## TL;DR
 
-**Tipo:** {{cold | warm | nurture | re-engagement}}
-**Quantidade de emails:** {{N}}
-**Duração da sequência:** {{N}} dias (de envio até breakup)
-**ICP alvo:** {{descrição em 1 linha}}
-**CTA primário ao longo da sequência:** {{ex: agendar 20min de auditoria gratuita}}
+**Type:** {{cold | warm | nurture | re-engagement}}
+**Number of emails:** {{N}}
+**Sequence span:** {{N}} days (from send to breakup)
+**Target ICP:** {{1-line description}}
+**Primary CTA across the sequence:** {{ex: book a free 20min audit}}
 
 ---
 
-## Estratégia da sequência
+## Sequence strategy
 
-**Ângulo principal:** {{dream outcome | dor | contrarian | secret}}
-**Objeção que combatemos:** {{em 1 frase}}
-**Por quê esse tipo (cold/warm/nurture/re-engagement) faz sentido aqui:** {{justificativa em 2-3 linhas}}
+**Main angle:** {{dream outcome | pain | contrarian | secret}}
+**Objection we attack:** {{in 1 sentence}}
+**Why this type (cold/warm/nurture/re-engagement) fits here:** {{rationale in 2-3 lines}}
 
 ---
 
 ## Emails
 
-### Email 1 — {{nome curto, ex: "Hook inicial"}}
+### Email 1 — {{short name, ex: "Opening hook"}}
 
-**Subject:** {{linha curta, ≤ 50 chars, sem clickbait}}
-**Timing:** Dia 0 (envio inicial)
+**Subject:** {{short line, ≤ 50 chars, no clickbait}}
+**Timing:** Day 0 (initial send)
 
 **Body:**
 
-> {{Linha de opener — referência específica ao prospect / dor reconhecível}}
+> {{Opener line — specific reference to the prospect / recognizable pain}}
 >
-> {{2-3 linhas de agitação: por que o problema custa}}
+> {{2-3 lines of agitation: why the problem costs them}}
 >
-> {{1-2 linhas mostrando que você resolveu antes (proof curto)}}
+> {{1-2 lines showing you've solved this before (short proof)}}
 >
-> {{CTA específico — não "vamos conversar?", e sim "te mando PDF de 5 páginas, leva 10min de leitura"}}
+> {{Specific CTA — not "want to chat?", but "I'll send you a 5-page PDF, 10min read"}}
 >
-> — {{nome}}
+> — {{name}}
 
-**Métrica esperada:** {{open rate alvo | reply rate alvo}}
+**Expected metric:** {{target open rate | target reply rate}}
 
 ---
 
-### Email 2 — {{nome curto, ex: "Proof point"}}
+### Email 2 — {{short name, ex: "Proof point"}}
 
-**Subject:** {{linha curta}}
-**Timing:** Dia {{N}} (+{{N}} dias)
+**Subject:** {{short line}}
+**Timing:** Day {{N}} (+{{N}} days)
 
 **Body:**
 
-> {{Referência ao email 1 — "ontem te mandei sobre X..."}}
+> {{Reference to email 1 — "yesterday I sent you about X..."}}
 >
-> {{Case study específico: nome real (com permissão), contexto, antes/depois numérico}}
+> {{Specific case study: real name (with permission), context, numeric before/after}}
 >
-> {{Conexão com a dor do prospect — "se você está em situação parecida..."}}
+> {{Tie to the prospect's pain — "if you're in a similar spot..."}}
 >
-> {{CTA: pode ser o mesmo do email 1 ou variar}}
+> {{CTA: can be the same as email 1 or vary}}
 >
-> — {{nome}}
+> — {{name}}
 
 ---
 
-### Email 3 — {{nome curto, ex: "Reframe da objeção"}}
+### Email 3 — {{short name, ex: "Objection reframe"}}
 
-**Subject:** {{linha curta}}
-**Timing:** Dia {{N}}
+**Subject:** {{short line}}
+**Timing:** Day {{N}}
 
 **Body:**
 
-> {{Identifica a objeção comum: "A maioria que recebe esse email pensa que X..."}}
+> {{Name the common objection: "Most people who get this email think X..."}}
 >
-> {{Reframe em 2-3 linhas: "Mas o que vi nos últimos N clientes é Y..."}}
+> {{Reframe in 2-3 lines: "But what I've seen across the last N clients is Y..."}}
 >
-> {{Prova adicional: dado, número, caso}}
+> {{Additional proof: data, number, case}}
 >
 > {{CTA}}
 
 ---
 
-### Email 4 — {{nome curto, ex: "Valor sem ask"}}
+### Email 4 — {{short name, ex: "Value, no ask"}}
 
-**Subject:** {{linha curta}}
-**Timing:** Dia {{N}}
-
-**Body:**
-
-> {{Conteúdo educacional próprio — link pra post / vídeo / framework}}
->
-> {{Por que esse conteúdo é relevante pro prospect}}
->
-> {{Sem CTA de venda — só "achei que poderia interessar"}}
-
----
-
-### Email 5 — {{Última tentativa | Soft pitch}}
-
-**Subject:** {{linha curta — escassez genuína se aplicável}}
-**Timing:** Dia {{N}}
+**Subject:** {{short line}}
+**Timing:** Day {{N}}
 
 **Body:**
 
-> {{Recap rápido dos pontos dos emails anteriores}}
+> {{Your own educational content — link to a post / video / framework}}
 >
-> {{Escassez ancorada em fato operacional (vaga, cohort, prazo real) — vide skill scarcity-urgency}}
+> {{Why this content is relevant to the prospect}}
 >
-> {{CTA final mais direto}}
+> {{No sales CTA — just "thought this might interest you"}}
 
 ---
 
-### Email 6 — Breakup (opcional mas recomendado)
+### Email 5 — {{Last attempt | Soft pitch}}
 
-**Subject:** {{ex: "Encerrando follow-up — uma última pergunta"}}
-**Timing:** Dia {{N}}
+**Subject:** {{short line — genuine scarcity if applicable}}
+**Timing:** Day {{N}}
 
 **Body:**
 
-> {{Honestidade: "Vou parar de te escrever por enquanto. Antes disso, queria perguntar..."}}
+> {{Quick recap of the points from the earlier emails}}
 >
-> {{1 pergunta sincera — não pitch — pra entender por que não respondeu}}
+> {{Scarcity anchored in an operational fact (a slot, cohort, real deadline) — see scarcity-urgency skill}}
 >
-> {{Deixa porta aberta sem implorar: "Se quiser retomar, é só responder este email."}}
->
-> — {{nome}}
+> {{More direct final CTA}}
 
 ---
 
-### Email 7 — Re-attempt (opcional, 6 semanas depois)
+### Email 6 — Breakup (optional but recommended)
 
-**Subject:** {{linha curta — ângulo NOVO}}
-**Timing:** Dia {{N+45}}
+**Subject:** {{ex: "Closing out follow-up — one last question"}}
+**Timing:** Day {{N}}
 
 **Body:**
 
-> {{Reconhece que tentou antes — não esconde}}
+> {{Honesty: "I'm going to stop writing for now. Before I do, I wanted to ask..."}}
 >
-> {{Novo ângulo (ângulo diferente do email 1) — algo que aconteceu desde então, novo case, nova feature do produto}}
+> {{1 sincere question — not a pitch — to understand why they didn't reply}}
 >
-> {{CTA leve}}
+> {{Leave the door open without begging: "If you ever want to pick this back up, just reply."}}
+>
+> — {{name}}
 
 ---
 
-## Teste sugerido
+### Email 7 — Re-attempt (optional, 6 weeks later)
 
-**Sample mínimo:** 10-15 contatos por tipo (gera sinal estatístico básico)
+**Subject:** {{short line — NEW angle}}
+**Timing:** Day {{N+45}}
 
-**Métricas a monitorar:**
-- **Cold:** reply rate (alvo: ≥ 5% pra prospects qualificados)
-- **Warm:** click-to-call (alvo: ≥ 15%)
-- **Nurture:** open rate por email + click rate no email 6-7 (CTA real)
-- **Re-engagement:** % que respondem "sim, continua" no email 1
+**Body:**
 
-**Critério de iteração:**
-- Reply rate < 3% → troca subject + opener do email 1.
-- Open rate consistente < 30% → problema no subject ou domínio (reputação).
-- Click sem reply → CTA não é forte o suficiente, refaz email 3-5.
+> {{Acknowledge you reached out before — don't hide it}}
+>
+> {{New angle (different from email 1) — something that happened since, a new case, a new product feature}}
+>
+> {{Light CTA}}
 
 ---
 
-## Anti-padrões
+## Suggested test
 
-- Emails sem assinatura ou com assinatura corporativa pesada
-- "Não respondo a emails de cold outreach" (passa por antispam)
-- Múltiplos links no mesmo email (1 CTA, 1 link)
-- Personalização rasa ("Olá {Nome}!") em vez de research real
-- Sequência sem breakup — deixa lead morno indefinidamente
+**Minimum sample:** 10-15 contacts per type (gives basic statistical signal)
+
+**Metrics to track:**
+- **Cold:** reply rate (target: ≥ 5% for qualified prospects)
+- **Warm:** click-to-call (target: ≥ 15%)
+- **Nurture:** open rate per email + click rate on email 6-7 (the real CTA)
+- **Re-engagement:** % who reply "yes, keep going" on email 1
+
+**Iteration criteria:**
+- Reply rate < 3% → swap the subject + opener of email 1.
+- Open rate consistently < 30% → problem in the subject or domain (reputation).
+- Clicks without replies → CTA isn't strong enough, redo emails 3-5.
 
 ---
 
-*Email sequence gerada pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Humanizer (modo full) aplicado.*
+## Anti-patterns
+
+- Emails with no signature or a heavy corporate signature
+- "I don't respond to cold outreach emails" (gets flagged by antispam)
+- Multiple links in one email (1 CTA, 1 link)
+- Shallow personalization ("Hi {Name}!") instead of real research
+- A sequence with no breakup — leaves the lead lukewarm indefinitely
+
+---
+
+*Email sequence generated by the hormozi-gtm plugin. Alex Hormozi persona applied. Humanizer (full mode) applied.*
 ```

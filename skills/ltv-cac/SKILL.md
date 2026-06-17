@@ -1,92 +1,92 @@
 ---
 name: ltv-cac
-description: Matemática de unit economics — LTV (Lifetime Value), LTGP (Lifetime Gross Profit), CAC (Customer Acquisition Cost), payback period, ratio. Use para validar viabilidade de modelo, calibrar pricing e justificar (ou matar) ads.
+description: Unit economics math — LTV (Lifetime Value), LTGP (Lifetime Gross Profit), CAC (Customer Acquisition Cost), payback period, ratio. Use to validate model viability, calibrate pricing, and justify (or kill) ads.
 ---
 
 # LTV : CAC Math
 
-Fonte: Alex Hormozi, *$100M Leads*, Capítulo 8 (Paid Ads Part II).
+Source: Alex Hormozi, *$100M Leads*, Chapter 8 (Paid Ads Part II).
 
-## Definições
+## Definitions
 
 ### LTGP — Lifetime Gross Profit
 ```
-LTGP = (Preço Médio - Custo Variável Médio) × Meses Retidos
+LTGP = (Average Price - Average Variable Cost) × Months Retained
 ```
 
-Use LTGP, não LTV. LTV inclui receita; LTGP inclui só o que SOBRA depois de servir o cliente. É o que paga ads.
+Use LTGP, not LTV. LTV counts revenue; LTGP counts only what's LEFT after you serve the customer. That's what pays for ads.
 
 ### CAC — Customer Acquisition Cost
 ```
-CAC = Ad Spend Total / Clientes Adquiridos
+CAC = Total Ad Spend / Customers Acquired
 ```
 
-Inclui ferramentas de aquisição, equipe de vendas alocada, comissões. Não só ad spend bruto.
+Include acquisition tools, the sales headcount you assign, commissions. Not just raw ad spend.
 
-### Ratio LTGP : CAC
+### LTGP : CAC Ratio
 ```
 Ratio = LTGP / CAC
 ```
 
 **Benchmarks:**
-- `< 1:1` — você está perdendo dinheiro. Para de escalar.
-- `1:1 a 3:1` — sobrevive. Não escala bem.
-- `3:1 a 5:1` — saudável. Escala paid com confiança.
-- `> 5:1` — você está deixando dinheiro na mesa em ad spend. Aumenta budget.
+- `< 1:1` — you're losing money. Stop scaling.
+- `1:1 to 3:1` — you survive. Doesn't scale well.
+- `3:1 to 5:1` — healthy. Scale paid with confidence.
+- `> 5:1` — you're leaving money on the table in ad spend. Raise the budget.
 
 ### Payback period
 ```
-Payback = CAC / (Profit Mensal por Cliente)
+Payback = CAC / (Monthly Profit per Customer)
 ```
 
 **Benchmarks:**
-- `< 30 dias` — Client-Financed Acquisition. Paid scaling ilimitado.
-- `30-90 dias` — saudável se capital permite.
-- `> 90 dias` — risco de cash crunch ao escalar.
+- `< 30 days` — Client-Financed Acquisition. Unlimited paid scaling.
+- `30-90 days` — healthy if you have the capital.
+- `> 90 days` — risk of a cash crunch as you scale.
 
-> **Nota de fonte:** os thresholds canônicos do corpus (`reference/100m-leads-extracts.md`) são **ratio ≥ 3:1** e **payback ≤ 30 dias**. As faixas intermediárias (1:1–3:1, 3:1–5:1, >5:1, 30–90, >90) são calibração prática/heurística para diagnóstico — não números citados literalmente do livro.
+> **Source note:** the canonical thresholds in the corpus (`reference/100m-leads-extracts.md`) are **ratio ≥ 3:1** and **payback ≤ 30 days**. The intermediate bands (1:1–3:1, 3:1–5:1, >5:1, 30–90, >90) are practical/heuristic calibration for diagnosis — not numbers quoted verbatim from the book.
 
-## Como modelar do zero
+## How to model from scratch
 
-1. **Preço médio de venda:** ticket único + média de upsell × take rate
-2. **Custo variável médio:** custo de servir 1 cliente (não overhead)
-3. **Retenção média:** se one-time, 1; se recorrência, meses médios antes de churn
-4. **LTGP = (Preço - Custo) × Retenção**
-5. **CAC atual ou pretendido**
-6. **Ratio e payback**
+1. **Average sale price:** single deal size + average upsell × take rate
+2. **Average variable cost:** cost to serve 1 customer (not overhead)
+3. **Average retention:** if one-time, 1; if recurring, average months before churn
+4. **LTGP = (Price - Cost) × Retention**
+5. **Current or target CAC**
+6. **Ratio and payback**
 
-## Exemplo (curso digital + comunidade)
+## Example (digital course + community)
 
 ```
-Core offer: R$ 4.997 one-time
-Upsell take rate: 30% × R$ 1.997 = R$ 599 esperado
-Continuity: 20% upgrade × R$ 297/mês × 6 meses = R$ 357 esperado
-Preço médio composto: R$ 4.997 + R$ 599 + R$ 357 = R$ 5.953
-Custo variável: R$ 350 (hosting + suporte + processamento)
-LTGP = R$ 5.953 - R$ 350 = R$ 5.603
+Core offer: $4,997 one-time
+Upsell take rate: 30% × $1,997 = $599 expected
+Continuity: 20% upgrade × $297/mo × 6 months = $357 expected
+Blended average price: $4,997 + $599 + $357 = $5,953
+Variable cost: $350 (hosting + support + payment processing)
+LTGP = $5,953 - $350 = $5,603
 
-CAC pretendido em paid: R$ 1.200
-Ratio = 5.603 / 1.200 = 4.67:1 ✓
-Payback = 1.200 / 1.997 (profit do upsell em 30 dias) = ~18 dias ✓
+Target paid CAC: $1,200
+Ratio = 5,603 / 1,200 = 4.67:1 ✓
+Payback = 1,200 / 1,997 (upsell profit within 30 days) = ~18 days ✓
 ```
 
-Ambos benchmarks passam. Escala paid.
+Both benchmarks pass. Scale paid.
 
-## Sinais de problema
+## Trouble signals
 
-- LTGP < 2x CAC → pricing baixo ou churn alto
-- Payback > 6 meses → modelo cash-intensive, exige capital
-- Ratio cai ao escalar → CAC subindo mais rápido que LTGP (saturação de canal)
-- LTV alto mas LTGP baixo → margem ruim, ajusta entrega ou preço
+- LTGP < 2x CAC → pricing too low or churn too high
+- Payback > 6 months → cash-intensive model, demands capital
+- Ratio drops as you scale → CAC rising faster than LTGP (channel saturation)
+- LTV high but LTGP low → bad margin, fix delivery or price
 
-## Quando usar essa skill
+## When to use this skill
 
-| Caso | Aplicação |
+| Case | Application |
 |---|---|
-| Audit de oferta | Calcula ratio atual e identifica se problema é receita ou custo |
-| Pricing review | Justifica range de preço novo via ratio target |
-| Business plan | Seção de unit economics com cenários conservador/realista/otimista |
+| Offer audit | Compute current ratio and identify whether the problem is revenue or cost |
+| Pricing review | Justify a new price range via target ratio |
+| Business plan | Unit-economics section with conservative/realistic/optimistic scenarios |
 
-## Referência detalhada
+## Detailed reference
 
-Veja `reference/100m-leads-extracts.md` (seção Paid Ads + Money Math).
+See `reference/100m-leads-extracts.md` (Paid Ads + Money Math section).

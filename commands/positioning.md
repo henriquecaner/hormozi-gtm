@@ -1,153 +1,154 @@
 ---
-description: Competitive teardown + positioning statement. Mapeia 3-5 concorrentes diretos (features, preço, persona, mensagem), identifica eixos de diferenciação, propõe positioning statement testável. Para founder que vai entrar em nicho com competidores estabelecidos ou que sente sua mensagem "indistinguível".
-argument-hint: "[--produto=<slug>] [--ref=<caminho>] [--competidores=<N>]"
+description: Competitive teardown + positioning statement. Maps 3-5 direct competitors (features, price, persona, message), finds the differentiation axes, proposes a testable positioning statement. For a founder entering a niche with established competitors, or one who feels their message is "indistinguishable".
+argument-hint: "[--product=<slug>] [--ref=<path>] [--competitors=<N>]"
 ---
 
 # /hormozi-gtm:positioning
 
-Posicionamento não é "como você se descreve". É **onde você está no mapa mental do prospect** quando ele compara você com alternativas. Esta skill mapeia o terreno, identifica seu eixo único e produz statement testável.
+Positioning isn't "how you describe yourself". It's **where you sit in the prospect's head** when they compare you against the alternatives. This skill maps the terrain, finds your one axis, and produces a testable statement.
 
-## Carregamento de persona
+## Persona loading
 
-Use `hormozi-persona` para orquestrar. Delegate ao `offer-architect` para amarrar Value Equation contra competidores. Carregue a skill `hormozi-gtm:hormozi-voice` via ferramenta Skill e imite o registro (não dependa só do subagent — no Cowork ele pode não rodar).
+Use `hormozi-persona` to orchestrate. Delegate to `offer-architect` to run the Value Equation against competitors. Load the `hormozi-gtm:hormozi-voice` skill via the Skill tool and imitate the register (don't rely on the subagent alone — in Cowork it may not run).
 
-## Skills ativas
+Generate all client-facing copy in the language set in gtm-context `language` (default English). The voice and brutality rules are language-independent and apply in every language.
 
-- `hormozi-voice` (registro Hormozi cru no diagnóstico)
-- `value-equation` (compara vetores entre você e competidores)
-- `grand-slam-offer` (positioning vira hero copy)
-- `pricing-playbook` (posicionamento de preço vs mercado)
-- `niche-selection` (saturação ajuda decidir eixos)
-- `template-positioning-map` (esqueleto do output)
+## Active skills
+
+- `hormozi-voice` (raw Hormozi register in the diagnostic)
+- `value-equation` (compares vectors between you and competitors)
+- `grand-slam-offer` (positioning becomes hero copy)
+- `pricing-playbook` (price positioning vs the market)
+- `niche-selection` (saturation helps pick the axes)
+- `template-positioning-map` (output skeleton)
 - `output-conventions`
 
-## Argumentos
+## Arguments
 
-| Argumento | Comportamento |
+| Argument | Behavior |
 |---|---|
-| (vazio) | Modo interativo: pergunta produto + competidores |
-| `--produto=<slug>` | Slug do produto |
-| `--ref=<caminho>` | Refinar positioning existente |
-| `--competidores=<N>` | Quantidade de competidores a mapear (default 4) |
+| (empty) | Interactive mode: asks for product + competitors |
+| `--product=<slug>` | Product slug |
+| `--ref=<path>` | Refine an existing positioning |
+| `--competitors=<N>` | Number of competitors to map (default 4) |
 
-## Pré-requisitos
+## Prerequisites
 
-1. `gtm-context.md` existe → carrega ICP, oferta, preço atual
-2. Idealmente: lista de 3-5 competidores que cliente já consideraria (research prévio)
-3. Para análise de preço: dados de pricing público dos competidores
+1. `gtm-context.md` exists → loads ICP, offer, current price
+2. Ideally: a list of 3-5 competitors the client would already consider (prior research)
+3. For price analysis: public pricing data on the competitors
 
-## Fluxo
+## Flow
 
-### Passo 1: Coleta competidores
+### Step 1: Collect competitors
 
-Em modo interativo, pergunta:
-- Quem são 3-5 competidores diretos (mesmo problema, mesmo ICP)?
-- 1 competidor com posicionamento mais premium (ancora superior)?
-- 1 competidor com posicionamento mais barato (ancora inferior)?
-- 1 substituto não-óbvio (algo que o cliente faria em vez de contratar essa categoria)?
+In interactive mode, ask:
+- Who are 3-5 direct competitors (same problem, same ICP)?
+- One competitor with more premium positioning (high anchor)?
+- One competitor with cheaper positioning (low anchor)?
+- One non-obvious substitute (something the client would do instead of buying this category)?
 
-### Passo 2: Mapping matrix
+### Step 2: Mapping matrix
 
-Constrói matrix com:
+Build a matrix with:
 
-| Competidor | Posicionamento declarado | Preço | ICP primário | Mensagem chave | Força percebida | Fraqueza percebida |
+| Competitor | Stated positioning | Price | Primary ICP | Key message | Perceived strength | Perceived weakness |
 |---|---|---|---|---|---|---|
 
-Para cada competidor, preenche cada coluna com observação concreta (não interpretação criativa).
+For each competitor, fill every column with a concrete observation (not creative interpretation).
 
-### Passo 3: Identifica eixos de diferenciação
+### Step 3: Find the differentiation axes
 
-Possíveis eixos:
-- **Problema único resolvido** (resolvemos X específico que ninguém ataca)
-- **Velocidade** (3 dias vs 3 semanas)
-- **Specificidade** (B2B SaaS fintech vs SaaS B2B geral)
-- **Founder-market fit** (ex-CFO consultando ex-CFOs)
-- **Garantia condicional única**
-- **Metodologia proprietária**
-- **Preço** (alta ou baixa âncora)
-- **Formato** (1:1 enterprise vs group vs self-serve)
+Possible axes:
+- **Unique problem solved** (we solve a specific X nobody else attacks)
+- **Speed** (3 days vs 3 weeks)
+- **Specificity** (B2B fintech SaaS vs B2B SaaS in general)
+- **Founder-market fit** (ex-CFO consulting ex-CFOs)
+- **A unique conditional guarantee**
+- **Proprietary methodology**
+- **Price** (high or low anchor)
+- **Format** (1:1 enterprise vs group vs self-serve)
 
-Para cada eixo, verifica: você consegue defender com fato auditable?
+For each axis, check: can you defend it with an auditable fact?
 
-### Passo 4: Diferenciação por dimensão
+### Step 4: Differentiation by dimension
 
-Para 2-3 eixos onde você é defensável:
-
-```
-Eixo: {{Velocidade de implementação}}
-
-Competidores:
-- A: 4-6 semanas
-- B: 3-4 semanas
-- C: 2-3 semanas
-Você: 5 dias.
-
-Defensa: case study X (Stark, Cora) onde implementação foi em 5 dias documentados.
-Razão estrutural: framework de onboarding em 4 sessions vs 12 da maioria.
-```
-
-### Passo 5: Positioning statement
-
-Estrutura padrão:
-
-> "Para [ICP específico], [empresa] é a única que [unique value proposition] sem [trade-off comum]."
-
-Exemplo:
-> "Para SaaS B2B com ciclo de venda > 60 dias, a LEVEL é a única que reduz ciclo em 40% em 5 dias de implementação sem precisar reescrever copy ou trocar o time de SDR."
-
-**Teste de qualidade do statement:**
-- ICP específico (não "B2B" genérico)?
-- Unique value mensurável (não "transformamos seu funil")?
-- Trade-off explícito (cliente sabe o que NÃO precisa abrir mão)?
-- Você consegue sustentar com case real?
-
-### Passo 6: Aplicação
-
-Gera derivados:
-- Hero copy para LP (3 variações)
-- Subject de email frio (3 variações)
-- Bio de LinkedIn (1)
-- Frase de abertura de sales call (1)
-
-### Passo 7: Voz crua (sem humanizer)
-
-positioning é interno — NÃO passa por humanizer. Sai cru, Hormozi brutal, direto.
-
-### Passo 8: Salva
-
-`outputs/positioning/positioning-{produto_slug}-{YYYYMMDD}-v{n}.md`. Carregue a skill `hormozi-gtm:template-positioning-map` via ferramenta Skill e preencha o esqueleto.
-
-### Passo 9: Preview na conversa
+For the 2-3 axes where you're defensible:
 
 ```
-✅ Salvo em: outputs/positioning/positioning-{slug}-{YYYYMMDD}-v{n}.md
+Axis: {{Implementation speed}}
+
+Competitors:
+- A: 4-6 weeks
+- B: 3-4 weeks
+- C: 2-3 weeks
+You: 5 days.
+
+Defense: case study X (Stark, Cora) where implementation took 5 documented days.
+Structural reason: a 4-session onboarding framework vs the 12 most others run.
+```
+
+### Step 5: Positioning statement
+
+Standard structure:
+
+> "For [specific ICP], [company] is the only one that [unique value proposition] without [common trade-off]."
+
+Example:
+> "For B2B SaaS with sales cycles over 60 days, LEVEL is the only one that cuts the cycle by 40% in 5 days of implementation without rewriting copy or swapping out the SDR team."
+
+**Statement quality test:**
+- Specific ICP (not generic "B2B")?
+- Measurable unique value (not "we transform your funnel")?
+- Explicit trade-off (the client knows what they DON'T have to give up)?
+- Can you back it with a real case?
+
+### Step 6: Application
+
+Generate derivatives:
+- Hero copy for the LP (3 variations)
+- Cold email subject lines (3 variations)
+- LinkedIn bio (1)
+- Sales call opening line (1)
+
+### Step 7: Raw voice (no humanizer)
+
+positioning is internal — does NOT pass through humanizer. It ships raw, brutal Hormozi, direct.
+
+### Step 8: Save
+
+`outputs/positioning/positioning-{product_slug}-{YYYYMMDD}-v{n}.md`. Load the `hormozi-gtm:template-positioning-map` skill via the Skill tool and fill in the skeleton.
+
+### Step 9: Preview in chat
+
+```
+✅ Saved to: outputs/positioning/positioning-{slug}-{YYYYMMDD}-v{n}.md
 📋 Preview:
-   • Competidores mapeados: {{N}}
-   • Eixos de diferenciação defensáveis: {{N}}
+   • Competitors mapped: {{N}}
+   • Defensible differentiation axes: {{N}}
    • Positioning statement:
-     "{{primeiras 100 chars}}..."
-   • Derivados: 3 hero copies + 3 cold subject + 1 LinkedIn bio
-   • Voz: crua (sem humanizer)
+     "{{first 100 chars}}..."
+   • Derivatives: 3 hero copies + 3 cold subjects + 1 LinkedIn bio
+   • Voice: raw (no humanizer)
 
-👉 Próximos passos:
-   1. Testar positioning statement em ad headline (R$ 200 ad)
-   2. Atualizar LP hero com nova versão
-   3. /hormozi-gtm:lp para reescrever full LP com novo positioning
+👉 Next steps:
+   1. Test the positioning statement in an ad headline ($200 ad)
+   2. Update the LP hero with the new version
+   3. /hormozi-gtm:lp to rewrite the full LP with the new positioning
 ```
 
-## Critério de pronto
+## Done criteria
 
-- [ ] ≥ 3 competidores mapeados com dados concretos
-- [ ] ≥ 2 eixos de diferenciação defensáveis (com fato auditable)
-- [ ] Positioning statement passa teste de qualidade
-- [ ] Derivados gerados (hero, cold subject, bio)
-- [ ] Output cru (sem humanizer — diagnóstico interno)
+- [ ] ≥ 3 competitors mapped with concrete data
+- [ ] ≥ 2 defensible differentiation axes (backed by an auditable fact)
+- [ ] Positioning statement passes the quality test
+- [ ] Derivatives generated (hero, cold subject, bio)
+- [ ] Output raw (no humanizer — internal diagnostic)
 
-## Anti-padrões
+## Anti-patterns
 
-- Diferenciação sem fato (claim sem case sustentando)
-- Positioning genérico ("a melhor consultoria de growth")
-- Competir em eixo onde já tem 5+ players (não diferencia)
-- Trade-off invisível (cliente não sabe o que perde escolhendo você)
-- Ignorar substituto não-óbvio (cliente pode "não contratar ninguém" e fazer interno)
-- Positioning statement que só você entende (não passa em 1 leitura de stranger)
+- Differentiation with no fact (claim with no case behind it)
+- Generic positioning ("the best growth consultancy")
+- Competing on an axis that already has 5+ players (no differentiation)
+- Invisible trade-off (client doesn't know what they lose by choosing you)
+- A positioning statement only you understand (a stranger doesn't get it on one read)

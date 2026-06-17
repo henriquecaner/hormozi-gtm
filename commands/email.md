@@ -1,144 +1,146 @@
 ---
-description: Email sequence (cold, warm, nurture, re-engagement). Gera 5-7 emails sequenciais com hook + agitação + proof + CTA, timing entre touches, contextualização por touch. Tunado para B2B brasileiro — voz direta, sem superlativo, com prova específica.
-argument-hint: "[--tipo=cold|warm|nurture|re-engagement] [--produto=<slug>] [--ref=<arquivo>]"
+description: Email sequence (cold, warm, nurture, re-engagement). Generates 5-7 sequential emails with hook + agitation + proof + CTA, timing between touches, and context per touch. Tuned for B2B cold outreach — direct voice, no superlatives, specific proof.
+argument-hint: "[--type=cold|warm|nurture|re-engagement] [--product=<slug>] [--ref=<file>] [--focus=<section>] [--no-humanize]"
 ---
 
 # /hormozi-gtm:email
 
-Sequência de emails que faz lead frio virar lead quente, ou lead morno virar oportunidade qualificada. Não é blast — é cadência sequenciada onde cada touch tem função.
+An email sequence that turns a cold lead into a warm one, or a warm lead into a qualified opportunity. Not a blast — a sequenced cadence where every touch has a job.
 
-## Carregamento de persona
+## Persona loading
 
-Use `hormozi-persona` para orquestrar. Delegate copy específico ao `ad-architect` (que escreve cada email no tom Hormozi 1ª pessoa). Pass final pelo `humanizer` modo **full** (output externo entregue a leads do cliente).
+Orchestrator: `hormozi-persona`. Delegate the specific copy to `ad-architect` (which writes each email in the first-person Hormozi tone). Final pass through `humanizer` in **full** mode (external output delivered to the client's leads).
 
-Carregue a skill `hormozi-voice` via ferramenta Skill e **imite o registro** (ritmo, 1ª pessoa com aposta pessoal, CTA-ordem, número no lugar de adjetivo). Não dependa só do subagent `ad-architect`/`hormozi-persona` — no Cowork ele pode não rodar, então a voz precisa estar carregada in-contexto neste comando.
+Load the `hormozi-voice` skill via the Skill tool and **imitate the register** (rhythm, first person with personal stakes, CTA-as-command, number instead of adjective). Don't rely on the `ad-architect`/`hormozi-persona` subagent alone — in Cowork it may not run, so the voice needs to be loaded in-context in this command.
 
-**Esta é copy externa (vai para o lead do cliente): cada email só sai com brutalidade ≥7 na rubrica da `hormozi-voice`.** Subject e CTA abaixo de 7 são reescritos antes de entregar.
+**This is external copy (it goes to the client's lead): each email only ships at brutality ≥7 on the `hormozi-voice` rubric.** Subjects and CTAs below 7 get rewritten before delivery.
 
-## Skills ativas
+Generate all client-facing copy in the language set in gtm-context `language` (default English). The voice and brutality rules are language-independent and apply in every language.
 
-- `hormozi-voice` (registro de voz brutal — carregar in-contexto e imitar)
-- `template-email-sequence` (esqueleto do output — carregar in-contexto no Passo 7)
-- `hook-framework` (subject + opener de cada email)
-- `ad-copy-formula` (estrutura do corpo)
-- `value-equation` (ancoragem nos benefícios)
-- `guarantees` (email de fechamento)
-- `humanizer-rules` (modo full)
+## Active skills
+
+- `hormozi-voice` (brutal voice register — load in-context and imitate)
+- `template-email-sequence` (output skeleton — load in-context at Step 7)
+- `hook-framework` (subject + opener for each email)
+- `ad-copy-formula` (body structure)
+- `value-equation` (anchoring on benefits)
+- `guarantees` (closing email)
+- `humanizer-rules` (full mode)
 - `output-conventions`
 
-## Argumentos
+## Arguments
 
-| Argumento | Comportamento |
+| Argument | Behavior |
 |---|---|
-| (vazio) | Modo interativo: pergunta tipo de sequência + produto + ICP no chat |
-| `--tipo=cold` | Cold outreach (lead nunca te ouviu falar). 5-7 emails. |
-| `--tipo=warm` | Warm (lead engajou — baixou lead magnet, abriu LP). 4-5 emails. |
-| `--tipo=nurture` | Nurture educacional (lead na lista há 30+ dias, sem comprar). 5-7 emails. |
-| `--tipo=re-engagement` | Re-engage lead inativo (90+ dias sem abrir). 3-4 emails. |
-| `--produto=<slug>` | Slug do produto/oferta (lido de gtm-context.md ou input) |
-| `--ref=<arquivo>` | Refinar sequência existente (cria v2) |
-| `--foco=<X>` | Em modo refinar: foca em parte específica (subject, opener, CTA, sequence flow) |
+| (empty) | Interactive mode: asks for sequence type + product + ICP in chat |
+| `--type=cold` | Cold outreach (lead has never heard of you). 5-7 emails. |
+| `--type=warm` | Warm (lead engaged — downloaded a lead magnet, opened the LP). 4-5 emails. |
+| `--type=nurture` | Educational nurture (lead on the list 30+ days, hasn't bought). 5-7 emails. |
+| `--type=re-engagement` | Re-engage an inactive lead (90+ days, no opens). 3-4 emails. |
+| `--product=<slug>` | Product/offer slug (read from gtm-context.md or input) |
+| `--ref=<file>` | Refine an existing sequence (creates v2) |
+| `--focus=<section>` | In refine mode: focuses on a specific part (subject, opener, CTA, sequence flow) |
 
-## Pré-requisitos
+## Prerequisites
 
-1. `gtm-context.md` existe → carrega ICP, oferta, brand voice, audience externa, intensidade do tom
-2. Audit recente (≤30 dias)? → carrega como `audit_ref` (soft warning se ausente)
-3. Para `--tipo=cold`: idealmente sample list de 5-10 prospects reais (LinkedIn, sites) — alimenta personalização
+1. `gtm-context.md` exists → loads ICP, offer, brand voice, external audience, tone intensity
+2. Recent audit (≤30 days)? → loads as `audit_ref` (soft warning if absent)
+3. For `--type=cold`: ideally a sample list of 5-10 real prospects (LinkedIn, sites) — feeds personalization
 
-## Fluxo
+## Flow
 
-### Passo 1: Detecta tipo + valida contexto
+### Step 1: Detect type + validate context
 
-Se `--tipo` não foi passado: pergunta.
-Se `gtm-context.md` está stale (>30 dias): sugere `/init --refresh`.
+If `--type` wasn't passed: ask.
+If `gtm-context.md` is stale (>30 days): suggest `/init --refresh`.
 
-### Passo 2: Carrega briefing de oferta
+### Step 2: Load the offer briefing
 
-Se houver `audit_ref` válido, lê briefing do `offer-architect`. Senão, lê oferta direto do `gtm-context.md` ou pede 3 inputs mínimos:
-- Qual a transformação que a oferta entrega?
-- Quem é o ICP?
-- Qual a objeção principal que aparece em sales calls?
+If there's a valid `audit_ref`, read the `offer-architect` briefing. Otherwise, read the offer straight from `gtm-context.md` or ask for 3 minimum inputs:
+- What transformation does the offer deliver?
+- Who is the ICP?
+- What's the main objection that shows up on sales calls?
 
-### Passo 3: Define estrutura por tipo
+### Step 3: Define the structure by type
 
 **Cold (5-7 emails):**
-- Email 1: Hook + observação específica do prospect (research). CTA leve (PDF, link, micro-pergunta).
-- Email 2 (+3 dias): Proof point específico — case study com nomes + números.
-- Email 3 (+5 dias): Reframe da objeção comum ("a maioria pensa que X, mas é Y").
-- Email 4 (+7 dias): Conteúdo de valor sem ask (linka conteúdo educacional próprio).
-- Email 5 (+14 dias): Última tentativa com escassez genuína (vaga, cohort, prazo real).
-- Email 6 (+21 dias, opcional): Breakup email — "fechando o follow-up, mas se mudar de ideia...". Frequentemente o que mais converte.
-- Email 7 (+45 dias, opcional): Re-attempt 6 semanas depois — sequence nova, ângulo diferente.
+- Email 1: Hook + a specific observation about the prospect (research). Light CTA (PDF, link, micro-question).
+- Email 2 (+3 days): Specific proof point — case study with names + numbers.
+- Email 3 (+5 days): Reframe the common objection ("most people think X, but it's Y").
+- Email 4 (+7 days): Value content with no ask (links to your own educational content).
+- Email 5 (+14 days): Last attempt with genuine scarcity (a spot, a cohort, a real deadline).
+- Email 6 (+21 days, optional): Breakup email — "closing out the follow-up, but if you change your mind...". Often the one that converts most.
+- Email 7 (+45 days, optional): Re-attempt 6 weeks later — new sequence, different angle.
 
 **Warm (4-5 emails):**
-- Email 1: Reconhece o engajamento ("vi que baixou X"), aprofunda dor específica.
-- Email 2 (+2 dias): Demonstração de como o produto resolve a dor — 1 sentença + 1 case curto.
-- Email 3 (+4 dias): Convida pra próxima etapa (demo, call de 15min, trial).
-- Email 4 (+7 dias): Reframe + urgência se aplicável.
-- Email 5 (+14 dias): Breakup.
+- Email 1: Acknowledge the engagement ("saw you downloaded X"), go deeper on the specific pain.
+- Email 2 (+2 days): Show how the product solves the pain — 1 sentence + 1 short case.
+- Email 3 (+4 days): Invite the next step (demo, 15-min call, trial).
+- Email 4 (+7 days): Reframe + urgency if applicable.
+- Email 5 (+14 days): Breakup.
 
-**Nurture (5-7 emails, mais espaçados):**
-- Email 1 a 5 (1 por semana): Cada um ensina 1 framework / mostra 1 case / responde 1 pergunta. Sem CTA de venda explícito até email 5.
-- Email 6 (semana 6): Soft pitch da oferta com contexto do que aprendeu nas semanas anteriores.
-- Email 7 (semana 8): Hard ask com escassez genuína.
+**Nurture (5-7 emails, more spaced out):**
+- Email 1 through 5 (1 per week): Each one teaches 1 framework / shows 1 case / answers 1 question. No explicit sales CTA until email 5.
+- Email 6 (week 6): Soft pitch of the offer with context from what they learned in the prior weeks.
+- Email 7 (week 8): Hard ask with genuine scarcity.
 
 **Re-engagement (3-4 emails):**
-- Email 1: Honesto — "vi que você não abre meus emails há 90 dias. Posso te tirar da lista, ou você quer continuar?". Pergunta direta.
-- Email 2 (+5 dias se ele clicou em "continuar"): Reapresentação do que mudou desde a última vez.
-- Email 3 (+7 dias): Oferta especial de re-engagement (não desconto genérico — algo verdadeiramente novo).
-- Email 4 (+14 dias): Última call.
+- Email 1: Honest — "I noticed you haven't opened my emails in 90 days. I can take you off the list, or do you want to stay?". A direct question.
+- Email 2 (+5 days if they clicked "stay"): Re-introduce what's changed since last time.
+- Email 3 (+7 days): A special re-engagement offer (not a generic discount — something genuinely new).
+- Email 4 (+14 days): Last call.
 
-### Passo 4: Construção dos emails
+### Step 4: Build the emails
 
-Delegate ao `ad-architect` com briefing estruturado de cada email (subject, hook, corpo, CTA). Ele devolve a sequência completa.
+Delegate to `ad-architect` with a structured briefing for each email (subject, hook, body, CTA). It returns the full sequence.
 
-### Passo 5: Humanizer pass (full)
+### Step 5: Humanizer pass (full)
 
-Pass full obrigatório. Sequence vai pra lead do cliente — voz precisa estar limpa.
+Full pass mandatory. The sequence goes to the client's lead — the voice needs to be clean.
 
-### Passo 6: Métricas e teste sugerido
+### Step 6: Metrics and suggested test
 
-Inclui no output:
-- Métrica primária a tracking (reply rate / open rate / click-to-call)
-- Sample size mínimo (10-15 contatos por tipo pra ter sinal)
-- Critério de iteração (se reply rate < 3%, troca subject; se < 1%, troca hook + opener)
+Include in the output:
+- Primary metric to track (reply rate / open rate / click-to-call)
+- Minimum sample size (10-15 contacts per type to get a signal)
+- Iteration criterion (if reply rate < 3%, swap the subject; if < 1%, swap hook + opener)
 
-### Passo 7: Salva
+### Step 7: Save
 
-Carregue a skill `hormozi-gtm:template-email-sequence` via ferramenta Skill e preencha o esqueleto com a sequência gerada. Salva em `outputs/email/email-{tipo}-{produto_slug}-{YYYYMMDD}-v{n}.md`.
+Load the `hormozi-gtm:template-email-sequence` skill via the Skill tool and fill the skeleton with the generated sequence. Save to `outputs/email/email-{type}-{product_slug}-{YYYYMMDD}-v{n}.md`.
 
-### Passo 8: Preview na conversa
+### Step 8: Preview in the conversation
 
 ```
-✅ Salvo em: outputs/email/email-cold-{slug}-20260520-v1.md
+✅ Saved to: outputs/email/email-cold-{slug}-20260520-v1.md
 📋 Preview:
-   • Sequência: cold, 7 emails, span de 45 dias
-   • Subject email 1: "{{X}}"
-   • CTA primário (cada email): "{{Y}}"
-   • Status humanizer: ✓ full pass
+   • Sequence: cold, 7 emails, 45-day span
+   • Email 1 subject: "{{X}}"
+   • Primary CTA (each email): "{{Y}}"
+   • Humanizer status: ✓ full pass
 
-👉 Próximos passos:
-   1. Testar em 10-15 contatos primeiro
-   2. Medir reply rate em 14 dias
-   3. Se < 3%, rode /hormozi-gtm:review --ref=outputs/email/...
+👉 Next steps:
+   1. Test on 10-15 contacts first
+   2. Measure reply rate over 14 days
+   3. If < 3%, run /hormozi-gtm:review --ref=outputs/email/...
 ```
 
-## Critério de pronto
+## Done criteria
 
-- [ ] Cada email tem subject específico (não genérico)
-- [ ] Hook do email 1 passa tweet test (lê isoladamente)
-- [ ] Cada email tem 1 CTA único e específico
-- [ ] Sequência tem timing definido entre emails
-- [ ] Breakup email incluído (se aplicável)
-- [ ] Humanizer full aplicado
-- [ ] Métrica primária e critério de iteração documentados
+- [ ] Each email has a specific subject (not generic)
+- [ ] Email 1's hook passes the tweet test (reads on its own)
+- [ ] Each email has 1 unique, specific CTA
+- [ ] The sequence has defined timing between emails
+- [ ] Breakup email included (if applicable)
+- [ ] Humanizer full applied
+- [ ] Primary metric and iteration criterion documented
 
-## Anti-padrões
+## Anti-patterns
 
-- Email "vamos conversar?" sem proposta específica
-- Todos os emails terminam em "marque uma call" (cliente sai do ritmo)
-- Subject genérico ("Oportunidade") ou clickbait ("Aberto?")
-- Copy idêntico em todos os touches (cliente nota)
-- Personalização fake ("Olá [nome], adorei seu post sobre [tópico aleatório]")
-- Falta de breakup email (deixa lead morno indefinidamente)
-- Sequência sem métrica clara de sucesso/iteração
+- A "let's chat?" email with no specific proposal
+- Every email ends in "book a call" (the lead loses the rhythm)
+- Generic subject ("Opportunity") or clickbait ("Open?")
+- Identical copy across every touch (the lead notices)
+- Fake personalization ("Hi [name], loved your post about [random topic]")
+- No breakup email (leaves the warm lead hanging indefinitely)
+- Sequence with no clear success/iteration metric

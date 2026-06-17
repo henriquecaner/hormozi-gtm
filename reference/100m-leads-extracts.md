@@ -1,89 +1,89 @@
-# $100M Leads — Extratos atribuídos
+# $100M Leads — Attributed Extracts
 
-**Fonte:** Alex Hormozi, *$100M Leads: How to Get Strangers to Want to Buy Your Stuff*, Acquisition.com Publishing, 2023.
+**Source:** Alex Hormozi, *$100M Leads: How to Get Strangers to Want to Buy Your Stuff*, Acquisition.com Publishing, 2023.
 
-> **Fair use disclaimer:** Excertos curtos para fins instrucionais transformativos no plugin hormozi-gtm. Obra completa é propriedade intelectual de Alex Hormozi. Adquira em hormozi.com.
+> **Fair use disclaimer:** Short excerpts used for transformative instructional purposes inside the hormozi-gtm plugin. The complete work is the intellectual property of Alex Hormozi. Buy it at hormozi.com.
 
 ---
 
-## Capítulo 4 — Ad Mechanics
+## Chapter 4 — Ad Mechanics
 
-Estrutura base de ad copy:
+Base ad-copy structure:
 
 ```
 Attention → Problem/Outcome → Mechanism → Social Proof → CTA + Reason to act now
 ```
 
-Variações por contexto:
+Variations by context:
 
-- **Warm:** story-driven, pode pular mechanism (audience já confia)
-- **Cold:** curto, problem-first, mechanism nomeado pra autoridade, CTA baixa fricção
-- **Paid (feed):** headline + sub + image/video + CTA — testa cada elemento isoladamente
+- **Warm:** story-driven, can skip the mechanism (the audience already trusts you)
+- **Cold:** short, problem-first, mechanism named for authority, low-friction CTA
+- **Paid (feed):** headline + sub + image/video + CTA — test each element in isolation
 
-## Capítulo 5 — Lead Magnets
+## Chapter 5 — Lead Magnets
 
-Três archetypes:
+Three archetypes:
 
-1. **Reveal Problems** — diagnóstico, audit, assessment, quiz
+1. **Reveal Problems** — diagnostic, audit, assessment, quiz
 2. **Samples & Trials** — free trial, sample, 1 module, 1 call
-3. **One Step Of Process** — 1 ato isolado do serviço completo
+3. **One Step Of Process** — a single isolated step of the full service
 
-Quatro delivery methods:
+Four delivery methods:
 - Software
 - Information
 - Service
 - Physical
 
-Anatomia de lead magnet:
-- 1 problema (não 5)
-- 3-step process ou estrutura clara
-- Tempo de consumo declarado
-- CTA pro próximo passo (gancho pro core)
-- Atribuição visual
+Lead-magnet anatomy:
+- 1 problem (not 5)
+- A 3-step process or clear structure
+- Stated time to consume
+- CTA to the next step (hook into the core offer)
+- Visual attribution
 
-## Capítulo 7 — Core Four
+## Chapter 7 — Core Four
 
-| Canal | Tipo | Custo | Início |
+| Channel | Type | Cost | When to start |
 |---|---|---|---|
-| Warm outreach | 1:1 | tempo | sempre o primeiro |
-| Cold outreach | 1:1 | tempo + ferramentas | quando ICP cristal |
-| Organic content | 1:many | tempo | escala warm que funciona |
-| Paid ads | 1:many | capital | quando LTV:CAC > 3:1 |
+| Warm outreach | 1:1 | time | always first |
+| Cold outreach | 1:1 | time + tools | when the ICP is crystal clear |
+| Organic content | 1:many | time | scale the warm outreach that works |
+| Paid ads | 1:many | capital | when LTV:CAC > 3:1 |
 
-**Regra crítica:** começa com 1 canal. Domina. Adiciona o 2º. Nunca os 4 ao mesmo tempo.
+**Critical rule:** start with 1 channel. Master it. Add the 2nd. Never run all 4 at once.
 
-## Capítulo 8 — Paid Ads Part II (Money Math)
+## Chapter 8 — Paid Ads Part II (Money Math)
 
-Métricas:
+Metrics:
 
 ```
-LTGP = (Preço Médio - Custo Variável Médio) × Meses Retidos
-CAC = Ad Spend Total / Clientes Adquiridos
-Ratio = LTGP / CAC (alvo ≥ 3:1)
-Payback = CAC / Profit Mensal por Cliente (alvo ≤ 30 dias)
+LTGP = (Average Price - Average Variable Cost) × Months Retained
+CAC = Total Ad Spend / Customers Acquired
+Ratio = LTGP / CAC (target ≥ 3:1)
+Payback = CAC / Monthly Profit per Customer (target ≤ 30 days)
 ```
 
 **Client-Financed Acquisition:**
-Se profit do upsell pós-checkout ≥ CAC em 30 dias, paid scaling é ilimitado.
+If the profit from the post-checkout upsell ≥ CAC within 30 days, paid scaling is unlimited.
 
 ## Magnetic Reasons & Hook Patterns (cross-chapters)
 
-3 tipos canônicos de hook:
+3 canonical hook types:
 
-1. **Dream Outcome:** "Como [pessoa] alcançou [resultado] em [tempo] sem [obstáculo]"
-2. **Problem:** "Pare de [comportamento]. O problema não é [diagnóstico raso], é [diagnóstico real]."
-3. **Secret:** "A coisa que [autoridade] não conta sobre [tópico]"
+1. **Dream Outcome:** "How [person] hit [result] in [time] without [obstacle]"
+2. **Problem:** "Stop [behavior]. The problem isn't [shallow diagnosis], it's [real diagnosis]."
+3. **Secret:** "The thing [authority] won't tell you about [topic]"
 
-Critérios de hook bom:
-- Especificidade numérica
-- Tweet test (lê isolado como tweet)
-- Curiosity gap (leitor precisa saber o que vem)
+Criteria for a good hook:
+- Numerical specificity
+- Tweet test (reads on its own as a tweet)
+- Curiosity gap (the reader needs to know what comes next)
 
 ## Bonus Chapters
 
-**Chapter 1 (bonus):** Affiliates como canal 5
-**Chapter 2 (bonus):** Compound effects de leads tools (CRM + nurture + automation)
+**Chapter 1 (bonus):** Affiliates as the 5th channel
+**Chapter 2 (bonus):** Compound effects of lead tools (CRM + nurture + automation)
 
 ---
 
-*Para o conteúdo integral, livro disponível em hormozi.com.*
+*For the full content, the book is available at hormozi.com.*

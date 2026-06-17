@@ -1,244 +1,241 @@
 <div align="center">
 
 <a href="https://github.com/henriquecaner/hormozi-gtm">
-  <img src=".github/assets/hero.png" alt="Hormozi GTM — LEVEL Edition · 17 comandos · voz Hormozi brutal · persona sempre ativa" width="100%"/>
+  <img src=".github/assets/hero.png" alt="Hormozi GTM — LEVEL Edition · 17 commands · brutal Hormozi voice · persona always on" width="100%"/>
 </a>
 
 # Hormozi GTM — LEVEL Edition
 
-**Operação GTM no estilo Alex Hormozi para o time e clientes da LEVEL.**
+**Alex Hormozi–style GTM operation for the LEVEL team and its clients.**
 
-Plugin Claude Code com 17 comandos, 42 skills (frameworks Hormozi + registro de voz + esqueletos de output), 7 subagents especializados e contrato `gtm-context.md` que persiste entre sessões. Persona Hormozi sempre ativa, voz brutal calibrada por rubrica. Humanizer só em copy externa.
+A Claude Code plugin with 17 commands, 42 skills (Hormozi frameworks + voice register + output skeletons), 7 specialized subagents, and a `gtm-context.md` contract that persists across sessions. Hormozi persona always on, brutal voice calibrated by a rubric. Humanizer runs on external copy only.
 
 [![License](https://img.shields.io/badge/license-proprietary-blue)](./LICENSE)
 [![Latest Release](https://img.shields.io/github/v/release/henriquecaner/hormozi-gtm?color=green&label=release)](https://github.com/henriquecaner/hormozi-gtm/releases/latest)
-[![Commands](https://img.shields.io/badge/commands-17-purple)](#cat%C3%A1logo-de-comandos)
-[![Skills](https://img.shields.io/badge/skills-42-purple)](#cat%C3%A1logo-de-skills)
-[![Agents](https://img.shields.io/badge/agents-7-blueviolet)](#pipeline-de-agents)
+[![Commands](https://img.shields.io/badge/commands-17-purple)](#command-catalog)
+[![Skills](https://img.shields.io/badge/skills-42-purple)](#skill-catalog)
+[![Agents](https://img.shields.io/badge/agents-7-blueviolet)](#agent-pipeline)
 [![Hooks](https://img.shields.io/badge/hooks-2-orange)](#hooks)
 [![Claude Code](https://img.shields.io/badge/Claude%20Code-compatible-D97757)](https://docs.claude.com/en/docs/claude-code)
-[![Claude Cowork](https://img.shields.io/badge/Claude%20Cowork-ready-D97757)](#instala%C3%A7%C3%A3o)
+[![Claude Cowork](https://img.shields.io/badge/Claude%20Cowork-ready-D97757)](#installation)
 
-[Quickstart](#quickstart) · [Comandos](#cat%C3%A1logo-de-comandos) · [Skills](#cat%C3%A1logo-de-skills) · [Pipeline](#pipeline-de-agents) · [Hooks](#hooks) · [Instalação](#instala%C3%A7%C3%A3o) · [Autor](#autor)
+[Quickstart](#quickstart) · [Commands](#command-catalog) · [Skills](#skill-catalog) · [Pipeline](#agent-pipeline) · [Hooks](#hooks) · [Installation](#installation) · [Author](#author)
 
 </div>
 
 ---
 
-## O que é
+## What it is
 
-Consultoria GTM gasta tempo demais reexplicando o mesmo contexto a cada sessão de IA. ICP, oferta, brand voice, posicionamento, Core Four split. Você descreve tudo na segunda, perde os detalhes na quinta, redescreve na semana seguinte. Cada artefato sai com tom levemente diferente do anterior. O cliente percebe a inconsistência antes de você.
+GTM consulting wastes too much time re-explaining the same context to an AI every session. ICP, offer, brand voice, positioning, Core Four split. You spell it all out on Tuesday, lose the details by Friday, spell it out again the next week. Every asset comes out in a slightly different tone than the last. The client notices the inconsistency before you do.
 
-A segunda dor é mais cara: copy gerada por IA é reconhecível em segundos. Em-dash em excesso, listas de três, "stands as a testament", "navegando os desafios". Quando uma LP ou hook de ad chega assim para o cliente, a credibilidade do projeto vai junto.
+The second problem costs more: AI-generated copy is recognizable in seconds. Em-dash overuse, rule of three, "stands as a testament," "navigating the challenges." When a landing page or ad hook lands on the client's desk reading like that, the project's credibility goes with it.
 
-**Hormozi GTM** resolve as duas em paralelo. `/hormozi-gtm:init` faz uma entrevista guiada e grava `gtm-context.md` na raiz do projeto; todo comando subsequente lê esse arquivo automaticamente, então você não reintroduz nada. Todo output destinado ao cliente (LP, roteiro VSL, hook, ad, email, proposta) passa por um agent humanizer com listas EN e PT-BR de padrões AI antes de ser salvo, e `humanizer_pass: true` no frontmatter é gate de release. A persona Alex Hormozi fica em 1ª pessoa nos 17 comandos, sem "ótima pergunta" ou "espero ter ajudado", com um pipeline de 7 agents endurecido contra drift de voz e invasão de territórios entre especialistas.
+**Hormozi GTM** solves both at once. `/hormozi-gtm:init` runs a guided interview and writes `gtm-context.md` to the project root; every command after that reads the file automatically, so you never reintroduce anything. Every client-facing output (LP, VSL script, hook, ad, email, proposal) passes through a humanizer agent with EN and PT-BR AI-pattern lists before it's saved, and `humanizer_pass: true` in the frontmatter is the release gate. The Alex Hormozi persona stays in first person across all 17 commands — no "great question" or "hope that helps" — with a 7-agent pipeline hardened against voice drift and specialists straying out of their lane.
 
-Cobertura: aquisição (cold/warm/orgânico/pago), conversão (LP/VSL/hook/objections), fechamento high-ticket (proposta R$ 30k+), entrega (onboarding 30d), retenção (churn analysis + winback). Frameworks dos 4 livros Hormozi mais o playbook vazado, com camada estratégica nova (niche-selection, founder-market-fit, market-saturation-pivot) que normalmente fica fora de plugins GTM.
+Coverage: acquisition (cold/warm/organic/paid), conversion (LP/VSL/hook/objections), high-ticket closing ($30k+ proposals), delivery (30-day onboarding), retention (churn analysis + winback). Frameworks from all four Hormozi books plus the leaked playbook, with a new strategic layer (niche-selection, founder-market-fit, market-saturation-pivot) that most GTM plugins leave out.
 
 ## Quickstart
 
-### Caso 1 — Cliente novo, do zero
+### Case 1 — New client, from scratch
 
 ```bash
 /plugin marketplace add henriquecaner/hormozi-gtm
 /plugin install hormozi-gtm@hormozi-gtm-marketplace
-/hormozi-gtm:init                                       # entrevista 8 perguntas → gtm-context.md
-/hormozi-gtm:audit                                      # diagnóstico Value Equation
-/hormozi-gtm:lp --produto="nome-do-produto"             # LP de vendas com humanizer full
+/hormozi-gtm:init                                       # 8-question interview → gtm-context.md
+/hormozi-gtm:audit                                      # Value Equation diagnostic
+/hormozi-gtm:lp --product="product-name"                # sales LP with humanizer pass
 ```
 
-### Caso 2 — Não sabe por onde começar
+### Case 2 — Don't know where to start
 
 ```bash
-/hormozi-gtm:help                                       # matriz de decisão em 3 perguntas
+/hormozi-gtm:help                                       # 3-question decision matrix
 ```
 
-### Caso 3 — Tem oferta validada, precisa de leads
+### Case 3 — Validated offer, need leads
 
 ```bash
-/hormozi-gtm:plano                                      # Core Four split + money model 90d
-/hormozi-gtm:email --tipo=cold                          # sequência de 5-7 touches
-/hormozi-gtm:hooks --n=12                               # variantes para A/B testing em ad
+/hormozi-gtm:plan                                      # Core Four split + 90-day money model
+/hormozi-gtm:email --type=cold                          # 5–7 touch sequence
+/hormozi-gtm:hooks --n=12                               # variants for A/B testing in ads
 ```
 
-Mais cenários em `/hormozi-gtm:help`.
+More scenarios in `/hormozi-gtm:help`.
 
-## Catálogo de comandos
+## Command catalog
 
-17 comandos organizados pelo estágio do funil GTM:
+17 commands organized by GTM funnel stage:
 
-### Onboarding e diagnóstico
+### Onboarding and diagnostic
 
-| Comando | Função | Output |
+| Command | Function | Output |
 |---|---|---|
-| `/hormozi-gtm:init` | Cria `gtm-context.md` via entrevista guiada | `gtm-context.md` |
-| `/hormozi-gtm:help` | Matriz de decisão — recomenda command por objetivo | (sem output) |
-| `/hormozi-gtm:audit` | Diagnóstico via Value Equation (gargalo crítico + top 3 alavancas) | `outputs/audit/` |
+| `/hormozi-gtm:init` | Builds `gtm-context.md` via a guided interview | `gtm-context.md` |
+| `/hormozi-gtm:help` | Decision matrix — recommends a command by objective | (no output) |
+| `/hormozi-gtm:audit` | Value Equation diagnostic (critical bottleneck + top 3 levers) | `outputs/audit/` |
 
-### Copy externa
+### External copy
 
-| Comando | Função | Output |
+| Command | Function | Output |
 |---|---|---|
-| `/hormozi-gtm:lp` | Landing page (Grand Slam Offer + 10 seções estruturadas) | `outputs/lp/` |
-| `/hormozi-gtm:roteiro` | VSL longo 7-step ou short-form para Reels/Shorts/TikTok | `outputs/roteiro/` |
-| `/hormozi-gtm:hooks` | Bateria de 8-12 variantes para A/B em ad | `outputs/hooks/` |
+| `/hormozi-gtm:lp` | Landing page (Grand Slam Offer + 10 structured sections) | `outputs/lp/` |
+| `/hormozi-gtm:script` | Long-form 7-step VSL or short-form for Reels/Shorts/TikTok | `outputs/script/` |
+| `/hormozi-gtm:hooks` | Battery of 10–20 ad variants (default 15) for A/B testing | `outputs/hooks/` |
 
-### Aquisição e fechamento
+### Acquisition and closing
 
-| Comando | Função | Output |
+| Command | Function | Output |
 |---|---|---|
-| `/hormozi-gtm:email` | Sequência cold/warm/nurture/re-engagement (5-7 touches) | `outputs/email/` |
-| `/hormozi-gtm:objections` | Matriz de objeções por ICP + scripts para sales call | `outputs/objections/` |
-| `/hormozi-gtm:case-study` | Case study antes/depois + assets derivados | `outputs/case-studies/` |
-| `/hormozi-gtm:webinar` | Estrutura B2B 30-45min (educacional + venda) | `outputs/webinar/` |
+| `/hormozi-gtm:email` | Cold/warm/nurture/re-engagement sequence (5–7 touches) | `outputs/email/` |
+| `/hormozi-gtm:objections` | Objection matrix by ICP + sales-call scripts | `outputs/objections/` |
+| `/hormozi-gtm:case-study` | Before/after case study + derived assets | `outputs/case-studies/` |
+| `/hormozi-gtm:webinar` | B2B 30–45 min structure (educational + sell) | `outputs/webinar/` |
 | `/hormozi-gtm:positioning` | Competitive teardown + positioning statement | `outputs/positioning/` |
 
-### Pricing e business model
+### Pricing and business model
 
-| Comando | Função | Output |
+| Command | Function | Output |
 |---|---|---|
-| `/hormozi-gtm:pricing` | Revisão contra 5 leis do Pricing Playbook (range + tiering) | `outputs/pricing/` |
-| `/hormozi-gtm:plano` | Plano GTM 90 dias (Core Four + Money Model 4 níveis) | `outputs/plano/` |
+| `/hormozi-gtm:pricing` | Review against the 5 Pricing Playbook laws (range + tiering) | `outputs/pricing/` |
+| `/hormozi-gtm:plan` | 90-day GTM plan (Core Four + 4-tier money model) | `outputs/plan/` |
 
-### Entrega, retenção e conteúdo
+### Delivery, retention, and content
 
-| Comando | Função | Output |
+| Command | Function | Output |
 |---|---|---|
-| `/hormozi-gtm:onboarding-cliente` | Primeiros 30 dias pós-venda (5 marcos + triggers) | `outputs/onboarding/` |
-| `/hormozi-gtm:churn-prevention` | Win/loss + churn analysis + retention playbook (+ winback opcional) | `outputs/retention/` |
-| `/hormozi-gtm:content-hub` | Roadmap 30-90 dias de conteúdo orgânico | `outputs/content/` |
+| `/hormozi-gtm:client-onboarding` | First 30 days post-sale (5 milestones + triggers) | `outputs/client-onboarding/` |
+| `/hormozi-gtm:churn-prevention` | Win/loss + churn analysis + retention playbook (+ optional winback) | `outputs/retention/` |
+| `/hormozi-gtm:content-hub` | 30–90 day organic content roadmap | `outputs/content/` |
 
 ### Refinement
 
-| Comando | Função | Output |
+| Command | Function | Output |
 |---|---|---|
-| `/hormozi-gtm:review` | Feedback brutal + modo Re-review (delta v1↔v2) | nova versão `v{n+1}` |
+| `/hormozi-gtm:review` | Brutal feedback + Re-review mode (v1↔v2 delta) | new `v{n+1}` version |
 
-**Convenção de argumentos:** todos os commands usam `--flag=valor`. Compartilhadas: `--produto=<slug>`, `--ref=<caminho>` (refinar), `--foco=<seção>`, `--full-rewrite`, `--no-humanize`. Detalhes em [`CLAUDE.md`](./CLAUDE.md).
+**Argument convention:** every command uses `--flag=value`. Shared flags: `--product=<slug>`, `--ref=<path>` (refine), `--focus=<section>`, `--full-rewrite`, `--no-humanize`. Details in [`CLAUDE.md`](./CLAUDE.md).
 
-## Catálogo de skills
+## Skill catalog
 
-**Frameworks Hormozi** (6)
+**Hormozi frameworks** (6)
 `grand-slam-offer` · `value-equation` · `money-models` · `ltv-cac` · `core-four` · `leila-scaling`
 
-**Estratégia (pré-requisitos invisíveis)** (3)
+**Strategy (invisible prerequisites)** (3)
 `niche-selection` · `founder-market-fit` · `market-saturation-pivot`
 
 **Copy + Ads** (7)
 `hook-framework` · `vsl-7-step` · `ad-copy-formula` · `scarcity-urgency` · `guarantees` · `bonus-stacking` · `lead-magnets`
 
-**Aquisição + Conversão avançada** (4)
+**Advanced acquisition + conversion** (4)
 `content-engine` · `ad-creative-testing` · `sales-sequencing` · `productization`
 
-**Deliverability + Fechamento high-ticket** (2)
+**Deliverability + high-ticket closing** (2)
 `email-deliverability` · `proposal-architecture`
 
 **Pricing** (1)
 `pricing-playbook`
 
-**Operacional + voz** (3)
-`output-conventions` · `humanizer-rules` · `hormozi-voice` (registro de voz brutal + rubrica de brutalidade 0-10)
+**Operational + voice** (3)
+`output-conventions` · `humanizer-rules` · `hormozi-voice` (brutal voice register + 0–10 brutality rubric)
 
-**Esqueletos de output** (16) — internos, carregados pelo comando via ferramenta Skill (confiável no CLI e no Cowork)
-`template-gtm-context` · `template-lp` · `template-vsl` · `template-ad-short` · `template-hooks-batch` · `template-email-sequence` · `template-case-study` · `template-webinar-agenda` · `template-content-roadmap` · `template-churn-analysis` · `template-review` · `template-plano` · `template-pricing-review` · `template-objections-matrix` · `template-positioning-map` · `template-client-onboarding`
+**Output skeletons** (16) — internal, loaded by the command via the Skill tool (reliable on both CLI and Cowork)
+`template-gtm-context` · `template-lp` · `template-vsl` · `template-ad-short` · `template-hooks-batch` · `template-email-sequence` · `template-case-study` · `template-webinar-agenda` · `template-content-roadmap` · `template-churn-analysis` · `template-review` · `template-plan` · `template-pricing-review` · `template-objections-matrix` · `template-positioning-map` · `template-client-onboarding`
 
-Skills carregam só quando o comando declara em `Skills ativas`. `output-conventions` e `humanizer-rules` rodam em todo output externo.
+Skills load only when a command declares them under `Active skills`. `output-conventions` and `humanizer-rules` run on every external output.
 
-## Pipeline de agents
+## Agent pipeline
 
-O plugin opera como pipeline de 7 agents com hand-off contracts estruturados, não como coleção de prompts soltos. Toda invocação de comando segue:
+The plugin runs as a 7-agent pipeline with structured hand-off contracts, not as a loose pile of prompts. Every command invocation follows:
 
 ```
 slash command
     ↓
-hormozi-persona (orquestrador — sempre)
+hormozi-persona (orchestrator — always)
     ↓
-especialista delegado (por domínio)
+delegated specialist (by domain)
     ↓
-humanizer (modo lite ou full antes de salvar)
+humanizer (external copy only, before saving)
     ↓
-outputs/<tipo>/<arquivo>.md
+outputs/<type>/<file>.md
 ```
 
-### Os 7 agents
+### The 7 agents
 
-| Agent | Papel | Quando entra |
+| Agent | Role | When it enters |
 |---|---|---|
-| `hormozi-persona` | Orquestrador. Voz Hormozi invariante 1ª pessoa. Valida saída de cada especialista antes do hand-off. | Sempre — entry point de todo comando |
-| `offer-architect` | Diagnostica oferta via Value Equation, propõe top 3 alavancas, reescreve em 1 parágrafo | `/audit`, `/lp`, `/roteiro` |
-| `ad-architect` | Escreve hooks, VSL 7-step, ad copy. Modos lite/full | `/lp`, `/roteiro`, `/hooks`, `/email`, `/webinar` |
-| `pricing-strategist` | Revisão contra 5 leis. Range + tiering + ancoragem | `/pricing`, `/plano` |
-| `leads-strategist` | Core Four split + canal primário + roadmap | `/plano`, `/email` |
-| `money-model-architect` | 4 níveis (Attraction/Core/Upsell/Continuity) + LTGP/CAC | `/plano`, `/pricing`, `/productization` |
-| `humanizer` | Refina copy contra padrões AI (PT-BR + EN). Modos lite/full | Último passo de todo output externo |
+| `hormozi-persona` | Orchestrator. Invariant first-person Hormozi voice. Validates each specialist's output before hand-off. | Always — entry point for every command |
+| `offer-architect` | Diagnoses the offer via Value Equation, proposes top 3 levers, rewrites it in one paragraph | `/audit`, `/lp`, `/script` |
+| `ad-architect` | Writes hooks, 7-step VSLs, ad copy | `/lp`, `/script`, `/hooks`, `/email`, `/webinar` |
+| `pricing-strategist` | Review against the 5 laws. Range + tiering + anchoring | `/pricing`, `/plan` |
+| `leads-strategist` | Core Four split + primary channel + roadmap | `/plan`, `/email` |
+| `money-model-architect` | 4 tiers (Attraction/Core/Upsell/Continuity) + LTGP/CAC | `/plan`, `/pricing` |
+| `humanizer` | Refines copy against AI patterns (PT-BR + EN) | Last step of every external output |
 
 ### Hand-off contracts
 
-Cada especialista declara em Markdown estruturado o formato exato do output que devolve ao orquestrador. Exemplos:
+Each specialist declares, in structured Markdown, the exact output format it returns to the orchestrator. Examples:
 
-- `offer-architect` → Value Equation scores (1-10 por vetor) + gargalo crítico + top 3 alavancas com lift esperado + oferta reescrita
-- `pricing-strategist` → 5 leis com score (verde/amarelo/vermelho) + range R$ X-Y + tiering Silver/Gold/Platinum + teste de validação
-- `money-model-architect` → 4 níveis com pricing + matemática LTGP/CAC/payback + diagrama de funil em texto
+- `offer-architect` → Value Equation scores (1–10 per vector) + critical bottleneck + top 3 levers with expected lift + rewritten offer
+- `pricing-strategist` → 5 laws scored (green/yellow/red) + $X–Y range + Silver/Gold/Platinum tiering + validation test
+- `money-model-architect` → 4 tiers with pricing + LTGP/CAC/payback math + text funnel diagram
 
-Orquestrador valida cada hand-off antes de invocar o próximo agent. Se o output não cumpre a checklist, devolve com pergunta específica em vez de improvisar.
+The orchestrator validates each hand-off before invoking the next agent. If the output doesn't meet the checklist, it sends it back with a specific question instead of improvising.
 
 ### Recovery / fallback
 
-Cada agent tem comportamento documentado para input incompleto:
+Each agent has documented behavior for incomplete input:
 
-- `offer-architect` sem dados quantitativos → atribui score com confidence intermediário, marca campos como `(estimativa)`
-- `pricing-strategist` sem unit economics → dá range conservador + avisa "estimativa de mercado, não recomendação validada"
-- `humanizer` rejeita output → salva com `humanizer_pass: false` + nota, orquestrador avisa usuário
+- `offer-architect` with no quantitative data → assigns a score at intermediate confidence, marks fields as `(estimate)`
+- `pricing-strategist` with no unit economics → gives a conservative range + flags "market estimate, not a validated recommendation"
+- `humanizer` rejects the output → saves with `humanizer_pass: false` + a note, orchestrator warns the user
 
-Detalhes do pipeline e exemplo end-to-end de 10 passos em [`agents/hormozi-persona.md`](./agents/hormozi-persona.md).
+Pipeline details and a 10-step end-to-end example in [`agents/hormozi-persona.md`](./agents/hormozi-persona.md).
 
 ## Hooks
 
-| Hook | Tipo | Função |
+| Hook | Type | Function |
 |---|---|---|
-| `session-start.json` | SessionStart | Banner informativo ao abrir sessão — lembra que persona está ativa e humanizer é obrigatório |
-| `post-tool-aiism-check.json` | PostToolUse (`Write\|Edit\|MultiEdit`) | Escaneia `outputs/*.md` recém-modificados procurando AI-isms residuais. Soft warning, nunca bloqueia. Defesa em profundidade caso humanizer falhe. |
+| `session-start` | SessionStart | Banner on session open — reminds you the persona is active and the humanizer is mandatory |
+| `post-tool-aiism-check` | PostToolUse (`Write\|Edit\|MultiEdit`) | Scans freshly modified `outputs/*.md` for residual AI-isms. Soft warning, never blocks. Defense in depth if the humanizer misses something. |
 
-Script de scan em `scripts/check-aiisms.py` — Python stdlib pura, detecta vocabulário inflado, voz de assistente, em-dash overuse, hedging. Cap de 20 hits por arquivo para não inundar terminal.
+Scan script in `scripts/check-aiisms.py` — pure Python stdlib, detects inflated vocabulary, assistant voice, em-dash overuse, hedging. Capped at 20 hits per file to avoid flooding the terminal.
 
 ## Outputs
 
-Todo comando que produz material salva em `outputs/<tipo>/<slug>-{YYYYMMDD}-v{n}.md` no projeto consumidor:
+Every command that produces material saves to `outputs/<type>/<slug>-{YYYYMMDD}-v{n}.md` in the consumer project:
 
 ```
 outputs/
 ├── audit/                    ├── email/                    ├── retention/
-├── lp/                       ├── objections/               ├── onboarding/
-├── roteiro/                  ├── case-studies/             ├── content/
+├── lp/                       ├── objections/               ├── client-onboarding/
+├── script/                  ├── case-studies/             ├── content/
 ├── hooks/                    ├── webinar/                  └── review/
 ├── pricing/                  ├── positioning/
-├── plano/
+├── plan/
 ```
 
-Versionamento incrementa, nunca sobrescreve sem `--overwrite`. Frontmatter padrão: `plugin_version`, `command`, `version`, `status`, `client`, `product`, `frameworks` (skills usadas), `humanizer_pass`, `humanizer_mode`, `audit_ref`, `pricing_ref`, `parent_version`.
+Versioning increments; it never overwrites without `--overwrite`. Standard frontmatter: `plugin_version`, `command`, `version`, `status`, `client`, `product`, `frameworks` (skills used), `humanizer_pass`, `humanizer_mode`, `voice`, `language`, `audit_ref`, `pricing_ref`, `parent_version`.
 
-Convenção completa em [`skills/output-conventions/SKILL.md`](./skills/output-conventions/SKILL.md).
+Full convention in [`skills/output-conventions/SKILL.md`](./skills/output-conventions/SKILL.md).
 
-Recomendação: adicione `outputs/` ao `.gitignore` do projeto-consumidor, ou versione tudo dependendo do fluxo de entrega.
+Recommendation: add `outputs/` to the consumer project's `.gitignore`, or version everything depending on your delivery flow.
 
-## Persona e humanizer
+## Persona and humanizer
 
-Persona Alex Hormozi ativa em todos os comandos `/hormozi-gtm:*`. 1ª pessoa, sem voz de assistente. Mesmo em pergunta operacional simples, resposta sai no tom direto da persona. Não relaxa.
+The Alex Hormozi persona is active across all `/hormozi-gtm:*` commands. First person, no assistant voice. Even on a plain operational question, the answer comes out in the persona's direct tone. It doesn't relax.
 
-Humanizer roda como último passo antes de salvar qualquer output externo. Dois modos:
+The humanizer runs as the last step before saving any **external** output (LP, script, hooks, email, case study, webinar, content pieces, winback). It gates external copy only. Diagnostic, strategic, and internal output (audit, review, plan, pricing, objections, positioning, churn analysis, onboarding) stays raw — Hormozi brutal, never softened, no humanizer pass. On external copy the humanizer makes two passes and validates against both EN and PT-BR AI-pattern lists; it unifies the voice and protects the bite (command CTAs, hammer lines, aggressive specificity) instead of sanding it down.
 
-- **lite** — outputs internos (audit, review, plano, churn-analysis, content-roadmap, onboarding). Remove em-dash overuse, rule of three vago, AI vocab. Mantém o tom direto cru.
-- **full** — outputs externos do cliente (LP, roteiro, hooks, pricing, email, objections, case-study, webinar, positioning). Duas passadas + validação contra padrões EN e PT-BR.
+It emits `humanizer_pass: <bool>` in the output frontmatter. `humanizer_pass: false` is the external release gate.
 
-Humanizer emite `humanizer_pass: <bool>` + `humanizer_mode: <lite|full>` no output. `humanizer_pass: false` é gate de release externo.
+The `--no-humanize` flag exists for debugging and A/B tests, and only on the external-copy commands.
 
-Flag `--no-humanize` existe para debug e A/B test.
+Full rules in [`skills/humanizer-rules/SKILL.md`](./skills/humanizer-rules/SKILL.md).
 
-Regras completas em [`skills/humanizer-rules/SKILL.md`](./skills/humanizer-rules/SKILL.md).
+## Installation
 
-## Instalação
-
-### Claude Code (CLI ou Desktop)
+### Claude Code (CLI or Desktop)
 
 ```bash
 /plugin marketplace add henriquecaner/hormozi-gtm
@@ -247,37 +244,37 @@ Regras completas em [`skills/humanizer-rules/SKILL.md`](./skills/humanizer-rules
 
 ### Claude Cowork (Desktop app)
 
-Baixe o ZIP do release mais recente em [github.com/henriquecaner/hormozi-gtm/releases/latest](https://github.com/henriquecaner/hormozi-gtm/releases/latest). Dentro do app:
+Download the ZIP from the latest release at [github.com/henriquecaner/hormozi-gtm/releases/latest](https://github.com/henriquecaner/hormozi-gtm/releases/latest). Inside the app:
 
-1. `+` → **Criar plugin** → **Fazer upload de plugin**
-2. Arraste o ZIP
+1. `+` → **Create plugin** → **Upload plugin**
+2. Drag in the ZIP
 
-O plugin aparece em **Plugins pessoais** e os comandos `/hormozi-gtm:*` ficam disponíveis.
+The plugin shows up under **Personal plugins** and the `/hormozi-gtm:*` commands become available.
 
-## Compatibilidade
+## Compatibility
 
-| Ambiente | Status |
+| Environment | Status |
 |---|---|
-| Claude Code CLI | suportado |
-| Claude Code Desktop (Mac/Win) | suportado |
-| Claude Cowork (Desktop app) | suportado (upload ZIP) |
-| Claude.ai (web) | não suportado |
+| Claude Code CLI | supported |
+| Claude Code Desktop (Mac/Win) | supported |
+| Claude Cowork (Desktop app) | supported (ZIP upload) |
+| Claude.ai (web) | not supported |
 
-## Versionamento
+## Versioning
 
-SemVer. Mudanças catalogadas em [`CHANGELOG.md`](./CHANGELOG.md). Releases automáticas via tag `v*` (workflow `release.yml`):
+SemVer. Changes are cataloged in [`CHANGELOG.md`](./CHANGELOG.md). Releases are automated by a `v*` tag (the `release.yml` workflow):
 
-1. Bump `version` em `.claude-plugin/plugin.json` + `.claude-plugin/marketplace.json` (3 lugares, validados pelo CI)
-2. Adicionar seção `## [X.Y.Z]` em `CHANGELOG.md`
+1. Bump `version` in `.claude-plugin/plugin.json` + `.claude-plugin/marketplace.json` (3 places, validated by CI)
+2. Add a `## [X.Y.Z]` section to `CHANGELOG.md`
 3. `git tag vX.Y.Z && git push origin vX.Y.Z`
 
-Workflow dispara, gera ZIP, extrai notes do CHANGELOG, publica release no GitHub.
+The workflow fires, builds the ZIP, extracts notes from the CHANGELOG, and publishes the GitHub release.
 
 ### Roadmap
 
-Roadmap distante em `[0.5.0+]` (vide [`CLAUDE.md`](./CLAUDE.md)): customização via `settings.json`, multi-cliente em paralelo (gtm-context por slug), comando `/export` para empacotar outputs.
+Longer-horizon roadmap in `[0.5.0+]` (see [`CLAUDE.md`](./CLAUDE.md)): customization via `settings.json`, multiple clients in parallel (gtm-context per slug), an `/export` command to package outputs.
 
-## Desenvolvimento local
+## Local development
 
 ```bash
 git clone https://github.com/henriquecaner/hormozi-gtm.git
@@ -285,18 +282,18 @@ cd hormozi-gtm
 claude --plugin-dir .
 ```
 
-Para empacotar um ZIP local sem disparar release oficial:
+To build a local ZIP without triggering an official release:
 
 ```bash
 bash scripts/build-zip.sh
 ```
 
-Detalhes de arquitetura em [`CLAUDE.md`](./CLAUDE.md).
+Architecture details in [`CLAUDE.md`](./CLAUDE.md).
 
-## Autor
+## Author
 
 [LEVEL](https://github.com/henriquecaner) — Henrique Caner ([caner@thelevel.com.br](mailto:caner@thelevel.com.br)).
 
-## Licença
+## License
 
-Proprietary — LEVEL. Uso autorizado por contrato. Distribuição restrita ao time interno e clientes contratuais.
+Proprietary — LEVEL. Licensed for use by contract. Distribution restricted to the internal team and contractual clients.

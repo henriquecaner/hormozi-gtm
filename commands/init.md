@@ -1,96 +1,96 @@
 ---
-description: Bootstrap do plugin — cria gtm-context.md no projeto consumidor com ICP, oferta, brand voice, canais e stage. Auto-disparado se outros comandos rodarem sem gtm-context.md presente. Suporta --refresh para atualizar contexto stale.
+description: Plugin bootstrap — creates gtm-context.md in the consumer project with ICP, offer, brand voice, channels, and stage. Auto-fires if other commands run without gtm-context.md present. Supports --refresh to update stale context.
 argument-hint: "[--refresh]"
 ---
 
 # /hormozi-gtm:init
 
-Inicializa o contexto persistente da empresa/cliente que vai usar os outros comandos do plugin. Cria `gtm-context.md` na raiz do projeto consumidor.
+Initializes the persistent context for the company/client that will use the rest of the plugin's commands. Creates `gtm-context.md` at the root of the consumer project.
 
-## Carregamento de persona
+## Persona loading
 
-Use o subagent `hormozi-persona` como voz. Toda saída em 1ª pessoa. Sem voz de assistente.
+Use the `hormozi-persona` subagent as the voice. All output in first person. No assistant voice.
 
-Carregue a skill `hormozi-gtm:hormozi-voice` via ferramenta Skill e imite o registro (não dependa só do subagent — no Cowork ele pode não rodar). `init` é interação/setup: voz crua, sem humanizer.
+Load the `hormozi-gtm:hormozi-voice` skill via the Skill tool and imitate the register (don't rely on the subagent alone — in Cowork it may not run). `init` is interaction/setup: raw voice, no humanizer.
 
-## Skills ativas
+## Active skills
 
-- `hormozi-voice` (registro de voz — carregar in-contexto; init é interação crua, sem humanizer)
-- `output-conventions` (segue convenção de naming e frontmatter)
+- `hormozi-voice` (voice register — load in-context; init is raw interaction, no humanizer)
+- `output-conventions` (follows the naming and frontmatter convention)
 
-## Argumentos
+## Arguments
 
-- Sem argumento: cria `gtm-context.md` se não existir. Se existir, pergunta se quer atualizar.
-- `--refresh`: atualiza arquivo existente sem perder versões anteriores (versiona via git ou cria backup `gtm-context.bak.md`).
+- No argument: creates `gtm-context.md` if it doesn't exist. If it exists, asks whether to update.
+- `--refresh`: updates the existing file without losing prior versions (versions via git or creates a `gtm-context.bak.md` backup).
 
-## Fluxo
+## Flow
 
-### Passo 1: Detecta estado
+### Step 1: Detect state
 
-Verifica se `gtm-context.md` existe na raiz do projeto consumidor (cwd).
+Checks whether `gtm-context.md` exists at the root of the consumer project (cwd).
 
-- **Não existe:** segue pra Passo 2 (entrevista completa).
-- **Existe e foi atualizado <30 dias:** avisa "contexto recente detectado". Pergunta se quer `--refresh` ou abortar.
-- **Existe e foi atualizado >30 dias:** avisa "contexto stale (X dias)". Recomenda `--refresh`.
+- **Doesn't exist:** go to Step 2 (full interview).
+- **Exists and updated <30 days ago:** warns "recent context detected". Asks whether to `--refresh` or abort.
+- **Exists and updated >30 days ago:** warns "stale context (X days)". Recommends `--refresh`.
 
-### Passo 2: Entrevista (8 perguntas)
+### Step 2: Interview (8 questions)
 
-Faz uma pergunta de cada vez. Não dispara as 8 em batch.
+Ask one question at a time. Don't fire all 8 at once.
 
-1. **Empresa/projeto** — nome
-2. **Categoria/mercado** — em 1 frase específica
-3. **ICP principal** — em 1 frase ultra-específica (segmento + tamanho + papel + dor)
-4. **Oferta principal e preço atual**
-5. **Transformação prometida** — em quanto tempo, quem vira o quê
-6. **Brand voice** — cola 1-2 parágrafos de material existente OU descreve (formal/casual, técnico/acessível, intensidade Hormozi 0-100%)
-7. **Canais ativos** — Core Four split em % (warm, cold, organic, paid)
-8. **Stage atual** — validando oferta / escalando aquisição / otimizando monetização / exit prep
+1. **Company/project** — name
+2. **Category/market** — in 1 specific sentence
+3. **Primary ICP** — in 1 ultra-specific sentence (segment + size + role + pain)
+4. **Main offer and current price**
+5. **Promised transformation** — in what timeframe, who becomes what
+6. **Brand voice** — paste 1-2 paragraphs of existing material OR describe it (formal/casual, technical/accessible, Hormozi intensity 0-100%)
+7. **Active channels** — Core Four split in % (warm, cold, organic, paid)
+8. **Current stage** — validating offer / scaling acquisition / optimizing monetization / exit prep
 
-Pergunta extra opcional:
-9. **Maior gargalo atual** — em 1 frase honesta
+Optional extra question:
+9. **Biggest current bottleneck** — in 1 honest sentence
 
-### Passo 3: Gera gtm-context.md
+### Step 3: Generate gtm-context.md
 
-Carregue a skill `hormozi-gtm:template-gtm-context` via ferramenta Skill e use o bloco dela como schema canônico. Preencha com os inputs do usuário. Salve em `gtm-context.md` na raiz do projeto consumidor.
+Load the `hormozi-gtm:template-gtm-context` skill via the Skill tool and use its block as the canonical schema. Fill it with the user's inputs. Save to `gtm-context.md` at the root of the consumer project. Default the `language` field to `en` unless the user's brand voice or inputs indicate another output language.
 
-### Passo 4: Resumo + próximos passos
+### Step 4: Summary + next steps
 
-Mostra ao usuário:
-- Caminho do arquivo criado
-- Highlights do contexto capturado (3-5 bullets)
-- Próximos passos sugeridos:
-  - Se sem audit: `/hormozi-gtm:audit` pra diagnosticar oferta
-  - Se com audit: `/hormozi-gtm:lp` ou `/hormozi-gtm:roteiro` pra produzir copy
-  - Se for análise de pricing: `/hormozi-gtm:pricing`
+Show the user:
+- Path of the created file
+- Highlights of the captured context (3-5 bullets)
+- Suggested next steps:
+  - If no audit: `/hormozi-gtm:audit` to diagnose the offer
+  - If audit exists: `/hormozi-gtm:lp` or `/hormozi-gtm:script` to produce copy
+  - If it's a pricing analysis: `/hormozi-gtm:pricing`
 
-## Modo --refresh
+## --refresh mode
 
-Quando passado:
-1. Faz backup do arquivo atual: copia para `gtm-context.bak-YYYYMMDD.md`
-2. Lê o atual e preenche pré-respostas das 8 perguntas
-3. Pergunta uma de cada vez: "Atual: X. Manter ou atualizar?"
-4. Salva nova versão com `last_updated` atualizado e `version` incrementada
+When passed:
+1. Backs up the current file: copies to `gtm-context.bak-YYYYMMDD.md`
+2. Reads the current one and pre-fills answers to the 8 questions
+3. Asks one at a time: "Current: X. Keep or update?"
+4. Saves the new version with `last_updated` refreshed and `version` incremented
 
-## Critério de pronto
+## Done criteria
 
-- [ ] `gtm-context.md` existe na raiz do projeto consumidor
-- [ ] Frontmatter completo com `last_updated`, `version`, `empresa`, `slug`
-- [ ] As 8 seções principais preenchidas (não placeholders)
-- [ ] Brand voice tem exemplo concreto colado ou descrição detalhada
-- [ ] Próximos passos sugeridos baseados no stage informado
+- [ ] `gtm-context.md` exists at the root of the consumer project
+- [ ] Complete frontmatter with `last_updated`, `version`, `company`, `slug`
+- [ ] The 8 main sections filled in (not placeholders)
+- [ ] Brand voice has a concrete pasted example or detailed description
+- [ ] Suggested next steps based on the reported stage
 
-## Anti-padrões
+## Anti-patterns
 
-- Pular pergunta porque "parece óbvio" — sempre pergunta as 8
-- Aceitar resposta genérica em ICP ("PMEs em geral") — pede especificidade
-- Pular Brand voice — é o que evita output genérico mais tarde
-- Disparar todas as 8 perguntas de uma vez (overwhelm)
+- Skipping a question because it "seems obvious" — always ask all 8
+- Accepting a generic ICP answer ("SMBs in general") — push for specificity
+- Skipping Brand voice — it's what prevents generic output later
+- Firing all 8 questions at once (overwhelm)
 
-## Output esperado
+## Expected output
 
-Ao final, usuário vê:
-- Caminho do arquivo (`./gtm-context.md`)
-- Highlights: empresa, ICP, oferta, gargalo
-- 1-3 próximos passos concretos
+At the end, the user sees:
+- File path (`./gtm-context.md`)
+- Highlights: company, ICP, offer, bottleneck
+- 1-3 concrete next steps
 
-Mensagem em 1ª pessoa, direto, sem chatbot vibe.
+First-person message, direct, no chatbot vibe.

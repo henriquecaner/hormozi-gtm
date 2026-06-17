@@ -1,13 +1,13 @@
 ---
 name: template-review
-description: "Esqueleto interno do output do comando /hormozi-gtm:review. Carregado pelo comando, não para uso direto."
+description: "Internal output skeleton for the /hormozi-gtm:review command. Loaded by the command, not for direct use."
 ---
 
 # Template — review
 
-Esqueleto canônico do output de `/hormozi-gtm:review`. O comando carrega esta skill e preenche o esqueleto abaixo com o diagnóstico. Reproduza a estrutura exata: frontmatter + todas as seções + placeholders `{{...}}`. Review é diagnóstico interno e sai cru — o frontmatter já reflete a decisão de voz crua (`humanizer_pass: false`, `humanizer_mode: n/a`, `voz: crua`). Não marque como humanizado.
+Canonical output skeleton for `/hormozi-gtm:review`. The command loads this skill and fills the skeleton below with the diagnostic. Reproduce the exact structure: frontmatter + every section + `{{...}}` placeholders. Review is an internal diagnostic and ships raw — the frontmatter already reflects the raw-voice decision (`humanizer_pass: false`, `humanizer_mode: n/a`, `voice: raw`). Do not mark it as humanized.
 
-A seção "Histórico de reviews" só aparece quando `version > 1` (Re-review). Em v1, delete a seção inteira.
+The "Review history" section only appears when `version > 1` (Re-review). In v1, delete the entire section.
 
 ````markdown
 ---
@@ -17,177 +17,178 @@ command: review
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{empresa_slug}}
-product: {{produto_slug}}
-material_revisado: {{caminho_do_material}}
-material_tipo: {{lp | ad | email | proposta | outro}}
+client: {{company_slug}}
+product: {{product_slug}}
+material_reviewed: {{material_path}}
+material_type: {{lp | ad | email | proposal | other}}
 frameworks:
   - value-equation
   - grand-slam-offer
 humanizer_pass: false
 humanizer_mode: n/a
-voz: crua
+voice: raw
+language: {{language}}
 ---
 
-# Review — {{nome_do_material}}
+# Review — {{material_name}}
 
 ## TL;DR
 
-**Veredito:** {{LEVE | MÉDIO | CRÍTICO}}
+**Verdict:** {{MINOR | MODERATE | CRITICAL}}
 
-**Em 1 frase:** {{...}}
+**In one sentence:** {{...}}
 
-**Top 3 fix em ordem:**
+**Top 3 fixes in order:**
 1. {{fix 1}}
 2. {{fix 2}}
 3. {{fix 3}}
 
 ---
 
-## 📜 Histórico de reviews
+## 📜 Review history
 
-{{Esta seção só aparece quando version > 1 (Re-review). Se v1, deletar essa seção inteira.}}
+{{This section only appears when version > 1 (Re-review). If v1, delete the entire section.}}
 
-**Review anterior:** `{{parent_version}}` ({{data v1}})
+**Previous review:** `{{parent_version}}` ({{date of v1}})
 
-**Mudanças desde a review anterior:**
+**Changes since the previous review:**
 
-| Item v1 | Estado em v2 | Comentário |
+| Item from v1 | State in v2 | Comment |
 |---|---|---|
-| {{problema X de v1}} | ✅ Resolvido | {{como foi resolvido}} |
-| {{problema Y de v1}} | 🟡 Em progresso | {{o que melhorou, o que falta}} |
-| {{problema Z de v1}} | ❌ Piorou | {{por quê}} |
-| — | 🆕 Novo problema | {{problema W não existia em v1}} |
+| {{problem X from v1}} | ✅ Resolved | {{how it was resolved}} |
+| {{problem Y from v1}} | 🟡 In progress | {{what improved, what's left}} |
+| {{problem Z from v1}} | ❌ Got worse | {{why}} |
+| — | 🆕 New problem | {{problem W didn't exist in v1}} |
 
-**Avanço geral:** {{em 1-2 frases — material melhorou, regrediu, ou estagnou?}}
-
----
-
-## ✅ O que funciona
-
-(Calibra credibilidade — não economiza no que tá bom)
-
-- {{ponto 1 que funciona com justificativa}}
-- {{ponto 2}}
-- {{ponto 3}}
+**Overall progress:** {{in 1-2 sentences — did the material improve, regress, or stall?}}
 
 ---
 
-## 🔴 Problemas em ordem de impacto
+## ✅ What works
 
-### Problema 1 — {{título}}
+(Calibrates credibility — don't skimp on what's good)
 
-**Severidade:** CRÍTICO | ALTO | MÉDIO
-
-**O problema:**
-{{descrição concreta do que está errado}}
-
-**Por que mata:**
-{{efeito específico em conversão / leitor / cliente}}
-
-**Fix concreto:**
-{{ação executável, não "melhorar clareza"}}
+- {{point 1 that works, with justification}}
+- {{point 2}}
+- {{point 3}}
 
 ---
 
-### Problema 2 — {{título}}
+## 🔴 Problems in order of impact
 
-**Severidade:** ALTO | MÉDIO
+### Problem 1 — {{title}}
 
-**O problema:**
-{{...}}
+**Severity:** CRITICAL | HIGH | MEDIUM
 
-**Por que mata:**
-{{...}}
+**The problem:**
+{{concrete description of what's wrong}}
 
-**Fix concreto:**
-{{...}}
+**Why it kills:**
+{{specific effect on conversion / reader / customer}}
+
+**Concrete fix:**
+{{executable action, not "improve clarity"}}
 
 ---
 
-### Problema 3 — {{título}}
+### Problem 2 — {{title}}
 
-**Severidade:** MÉDIO
+**Severity:** HIGH | MEDIUM
 
-**O problema:**
+**The problem:**
 {{...}}
 
-**Por que mata:**
+**Why it kills:**
 {{...}}
 
-**Fix concreto:**
+**Concrete fix:**
 {{...}}
 
 ---
 
-### Problema 4 (se aplicável)
+### Problem 3 — {{title}}
 
+**Severity:** MEDIUM
+
+**The problem:**
+{{...}}
+
+**Why it kills:**
+{{...}}
+
+**Concrete fix:**
 {{...}}
 
 ---
 
-### Problema 5 (se aplicável)
+### Problem 4 (if applicable)
 
 {{...}}
 
 ---
 
-## 🏆 Top 3 se for fazer só 3 coisas
+### Problem 5 (if applicable)
 
-1. **{{Fix 1}}** — {{1 linha de impacto esperado}}
-2. **{{Fix 2}}** — {{1 linha de impacto esperado}}
-3. **{{Fix 3}}** — {{1 linha de impacto esperado}}
+{{...}}
 
 ---
 
-## ✍️ Reescrita de trechos críticos
+## 🏆 Top 3 if you only do 3 things
 
-### Trecho 1 (original)
-
-> {{citação do material original que precisa de fix}}
-
-### Trecho 1 (reescrito)
-
-> {{reescrita aplicando o fix}}
-
-**O que mudou:** {{1 linha explicando o move}}
+1. **{{Fix 1}}** — {{1 line of expected impact}}
+2. **{{Fix 2}}** — {{1 line of expected impact}}
+3. **{{Fix 3}}** — {{1 line of expected impact}}
 
 ---
 
-### Trecho 2 (original)
+## ✍️ Rewrite of critical passages
+
+### Passage 1 (original)
+
+> {{quote from the original material that needs a fix}}
+
+### Passage 1 (rewritten)
+
+> {{rewrite applying the fix}}
+
+**What changed:** {{1 line explaining the move}}
+
+---
+
+### Passage 2 (original)
 
 > {{...}}
 
-### Trecho 2 (reescrito)
+### Passage 2 (rewritten)
 
 > {{...}}
 
-**O que mudou:** {{...}}
+**What changed:** {{...}}
 
 ---
 
-## 🧪 Diagnóstico Value Equation aplicado
+## 🧪 Value Equation diagnostic applied
 
-Se o material é LP/ad/copy comercial:
+If the material is an LP/ad/commercial copy:
 
-| Vetor | Score | Comentário |
+| Vector | Score | Comment |
 |---|---|---|
 | Dream Outcome | {{X}}/10 | {{...}} |
 | Probability | {{X}}/10 | {{...}} |
 | Time Delay | {{X}}/10 | {{...}} |
 | Effort | {{X}}/10 | {{...}} |
 
-**Vetor crítico:** {{...}}
+**Critical vector:** {{...}}
 
 ---
 
-## 🎯 Próximos passos recomendados
+## 🎯 Recommended next steps
 
-1. {{ação imediata — ex: "Reescreva a seção de oferta aplicando fix 1"}}
+1. {{immediate action — e.g.: "Rewrite the offer section applying fix 1"}}
 2. {{...}}
-3. {{Se aplicável: rodar /hormozi-gtm:audit antes de iterar mais a copy}}
+3. {{If applicable: run /hormozi-gtm:audit before iterating on the copy further}}
 
 ---
 
-*Review gerada pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Voz crua — diagnóstico interno não passa por humanizer.*
+*Review generated by the hormozi-gtm plugin. Alex Hormozi persona applied. Raw voice — internal diagnostics don't go through the humanizer.*
 ````

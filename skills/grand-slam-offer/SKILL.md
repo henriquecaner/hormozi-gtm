@@ -1,87 +1,87 @@
 ---
 name: grand-slam-offer
-description: Framework de Grand Slam Offer do livro $100M Offers. Use quando criar oferta nova, refatorar oferta existente, ou montar copy que vende a oferta (LP, ad, email). Cobre os 5 componentes — dream outcome, problemas, soluções, bonuses, garantias — e como nomear a oferta.
+description: The Grand Slam Offer framework from $100M Offers. Use when creating a new offer, refactoring an existing one, or writing copy that sells the offer (LP, ad, email). Covers the 5 components — dream outcome, problems, solutions, bonuses, guarantees — and how to name the offer.
 ---
 
 # Grand Slam Offer
 
-Fonte: Alex Hormozi, *$100M Offers*, Capítulos 2-15.
+Source: Alex Hormozi, *$100M Offers*, Chapters 2–15.
 
-## O que é
+## What it is
 
-Uma oferta tão boa que o cliente se sente estúpido dizendo não. Não é "preço baixo". É **valor percebido tão acima do preço que a transação parece desequilibrada a favor do cliente**.
+An offer so good the client feels stupid saying no. It's not "low price." It's **perceived value so far above the price that the transaction feels lopsided in the client's favor**.
 
-Três drivers:
-1. Maximiza Value Equation em todos os 4 vetores (use skill `value-equation`)
-2. Resolve todos os problemas percebidos do caminho até o resultado (trim & stack)
-3. Posiciona-se em mercado com dor alta + poder de compra + sem solução dominante
+Three drivers:
+1. Maxes out the Value Equation across all 4 vectors (use skill `value-equation`)
+2. Solves every perceived problem on the path to the result (trim & stack)
+3. Positions in a market with high pain + buying power + no dominant solution
 
-## Os 5 componentes operacionais
+## The 5 operational components
 
 ### 1. Dream Outcome
-O que o cliente realmente quer — não o produto. Exemplo:
-- Errado: "8 módulos de curso de fechamento"
-- Certo: "Closer iniciante fechando 30% mais deals em 60 dias sem cold email"
+What the client actually wants — not the product. Example:
+- Wrong: "8 modules of a closing course"
+- Right: "Junior closer closing 30% more deals in 60 days with no cold email"
 
-Especificidade > generalidade. Quantifica sempre.
+Specificity > generality. Always quantify.
 
-### 2. Lista de problemas (do estado atual ao dream outcome)
-Mapeia TODOS os obstáculos. Tipicamente 8-15 problemas concretos.
+### 2. List of problems (from current state to dream outcome)
+Map EVERY obstacle. Typically 8–15 concrete problems.
 
-Exemplos:
-- "Não sei o que falar quando o lead pergunta preço"
-- "Demora 3 semanas pro follow-up gerar resposta"
-- "Meu manager não me dá feedback de call gravada"
+Examples:
+- "I don't know what to say when the lead asks about price"
+- "Follow-up takes 3 weeks to get a reply"
+- "My manager won't give me feedback on recorded calls"
 
-### 3. Lista de soluções (cada solução resolve 1+ problema)
-Para cada problema, uma solução nomeada como ENTREGÁVEL CONCRETO.
+### 3. List of solutions (each one solves 1+ problem)
+For every problem, a solution named as a CONCRETE DELIVERABLE.
 
-Exemplo:
-- Problema: "Não sei lidar com objeção de preço"
-- Solução: "Sistema de 4 frases que reframa preço como ROI — disponível em PDF e vídeo de 12min"
+Example:
+- Problem: "I don't know how to handle a price objection"
+- Solution: "A 4-line system that reframes price as ROI — available as a PDF and a 12-min video"
 
 ### 4. Bonus stacking
-Stack de bonuses (3, 5 ou 7 — sempre ímpar) com:
-- Nome do bonus
-- Valor percebido em R$ (ancorado em mercado)
-- O que entrega
-- Por que existe (qual problema adicional resolve)
+A stack of bonuses (3, 5, or 7 — always odd) with:
+- The bonus name
+- Perceived value in $ (anchored to the market)
+- What it delivers
+- Why it exists (which additional problem it solves)
 
-Valor total dos bonuses deve ser 3-5x o preço da oferta principal.
+Total bonus value should be 3–5x the price of the core offer.
 
 ### 5. Guarantee + scarcity
-- Garantia condicional de performance (use skill `guarantees`)
-- Mecanismo de escassez ou urgência genuíno (use skill `scarcity-urgency`)
-- Nome da oferta (psicologia do naming)
+- Conditional performance guarantee (use skill `guarantees`)
+- A genuine scarcity or urgency mechanism (use skill `scarcity-urgency`)
+- The offer's name (naming psychology)
 
-## Como aplicar nos 3 casos de uso
+## How to apply it across the 3 use cases
 
-| Caso | Como usar Grand Slam Offer |
+| Case | How to use the Grand Slam Offer |
 |---|---|
-| LP de vendas | Cada seção (hero, agitação, oferta, stack, garantia, FAQ) mapeia 1+ componente acima |
-| Roteiro de ad | Mecanismo nomeado revela a oferta; stack visível pré-CTA |
-| Business plan | Core offer da empresa = Grand Slam Offer; revenue model assume essa oferta como âncora |
+| Sales LP | Each section (hero, agitation, offer, stack, guarantee, FAQ) maps to 1+ component above |
+| Ad script | The named mechanism reveals the offer; the stack is visible pre-CTA |
+| Business plan | The company's core offer = Grand Slam Offer; the revenue model treats that offer as the anchor |
 
-## Sinais de oferta fraca
+## Signs of a weak offer
 
-- "Compre o curso e tenha acesso à comunidade" (sem stack)
-- "Satisfação garantida ou seu dinheiro de volta" (garantia genérica = nenhuma)
-- "Aprenda copywriting" (sem dream outcome específico)
-- Sem bonuses listados
-- Preço justificado por horas de conteúdo ("12h de aulas") em vez de transformação
-- Sem nome dedicado (vende "curso de copy" em vez de "Sistema Apex")
+- "Buy the course and get access to the community" (no stack)
+- "Satisfaction guaranteed or your money back" (generic guarantee = none)
+- "Learn copywriting" (no specific dream outcome)
+- No bonuses listed
+- Price justified by hours of content ("12 hrs of lessons") instead of transformation
+- No dedicated name (selling "a copy course" instead of "the Apex System")
 
-## Workflow de criação
+## Creation workflow
 
-1. Escreve dream outcome em 1 frase quantificada
-2. Lista 10-15 problemas no caminho (entrevista ICP ajuda)
-3. Para cada problema, escreve solução como entregável nomeado
-4. Stack 3-5 bonuses ímpares com valor percebido
-5. Define garantia condicional
-6. Adiciona scarcity/urgency genuíno
-7. Nomeia a oferta inteira (não componentes)
-8. Calcula valor percebido total vs preço cobrado (alvo: 10:1)
+1. Write the dream outcome in 1 quantified sentence
+2. List 10–15 problems on the path (interviewing the ICP helps)
+3. For each problem, write a solution as a named deliverable
+4. Stack 3–5 odd-numbered bonuses with perceived value
+5. Define the conditional guarantee
+6. Add genuine scarcity/urgency
+7. Name the whole offer (not the components)
+8. Calculate total perceived value vs. price charged (target: 10:1)
 
-## Referência detalhada
+## Detailed reference
 
-Veja `reference/100m-offers-extracts.md` para excertos diretos do livro.
+See `reference/100m-offers-extracts.md` for direct excerpts from the book.

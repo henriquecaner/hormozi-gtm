@@ -1,13 +1,13 @@
 ---
 name: template-objections-matrix
-description: "Esqueleto interno do output do comando /hormozi-gtm:objections. Carregado pelo comando, não para uso direto."
+description: "Internal output skeleton for the /hormozi-gtm:objections command. Loaded by the command, not for direct use."
 ---
 
 # Template — objections-matrix
 
-Esqueleto canônico do output de `/hormozi-gtm:objections`. O comando carrega esta skill e preenche o esqueleto abaixo com o diagnóstico. Reproduza a estrutura exata: frontmatter + todas as seções + placeholders `{{...}}`.
+Canonical skeleton for the `/hormozi-gtm:objections` output. The command loads this skill and fills the skeleton below with the diagnostic. Reproduce the exact structure: frontmatter + all sections + `{{...}}` placeholders.
 
-> **Voz crua.** A matriz de objeções é diagnóstico interno — **não passa por humanizer**. O frontmatter reflete isso: `humanizer_pass: false`, `humanizer_mode: n/a`, `voz: crua`. Mantenha o registro de `hormozi-voice` nos scripts: número e verbo, reframe na cara, sem amaciar. Não marque como humanizado.
+> **Raw voice.** The objections matrix is an internal diagnostic — it **does not go through the humanizer**. The frontmatter reflects that: `humanizer_pass: false`, `humanizer_mode: n/a`, `voice: raw`. Keep the `hormozi-voice` register in the scripts: number and verb, reframe to their face, no softening. Do not mark it as humanized.
 
 ```markdown
 ---
@@ -17,9 +17,9 @@ command: objections
 version: 1
 status: draft
 created: {{ISO8601}}
-client: {{empresa_slug}}
-product: {{produto_slug}}
-segmento: {{icp_subset_ou_geral}}
+client: {{company_slug}}
+product: {{product_slug}}
+segment: {{icp_subset_or_general}}
 frameworks:
   - value-equation
   - grand-slam-offer
@@ -27,71 +27,72 @@ frameworks:
   - guarantees
 humanizer_pass: false
 humanizer_mode: n/a
-voz: crua
-audit_ref: {{caminho_ou_null}}
-parent_version: {{caminho_v_anterior_ou_null}}
+voice: raw
+language: {{language}}
+audit_ref: {{path_or_null}}
+parent_version: {{prior_version_path_or_null}}
 ---
 
-# Matriz de Objeções — {{produto_nome}}
+# Objections Matrix — {{product_name}}
 
 ## TL;DR
 
-**Total de objeções mapeadas:** {{N}}
-**Root cause dominante:** {{Oferta | Preço | Timing | Trust}} ({{N}}% das objeções)
-**Recomendação estrutural:** {{em 1-2 frases}}
+**Total objections mapped:** {{N}}
+**Dominant root cause:** {{Offer | Price | Timing | Trust}} ({{N}}% of objections)
+**Structural recommendation:** {{in 1-2 sentences}}
 
 ---
 
-## Distribuição por root cause
+## Distribution by root cause
 
-| Categoria | Quantidade | % | Diagnóstico |
+| Category | Count | % | Diagnosis |
 |---|---|---|---|
-| Oferta | {{N}} | {{X}}% | {{1 frase}} |
-| Preço | {{N}} | {{X}}% | {{1 frase}} |
-| Timing | {{N}} | {{X}}% | {{1 frase}} |
-| Trust | {{N}} | {{X}}% | {{1 frase}} |
+| Offer | {{N}} | {{X}}% | {{1 sentence}} |
+| Price | {{N}} | {{X}}% | {{1 sentence}} |
+| Timing | {{N}} | {{X}}% | {{1 sentence}} |
+| Trust | {{N}} | {{X}}% | {{1 sentence}} |
 
 ---
 
-## Top objeções (com script palavra-por-palavra)
+## Top objections (with word-for-word script)
 
-### Objeção 1: "{{frase típica do prospect}}"
+### Objection 1: "{{typical prospect line}}"
 
-**Root cause:** {{Oferta | Preço | Timing | Trust}}
+**Root cause:** {{Offer | Price | Timing | Trust}}
 
-**O que a objeção significa de verdade:** {{2-3 frases. Frequentemente diferente do que o prospect verbaliza. Ex: "Tá caro" pode significar "não vejo valor suficiente" ou "não tenho budget agora" — são reframes diferentes.}}
+**What the objection actually means:** {{2-3 sentences. Often different from what the prospect says out loud. E.g. "It's expensive" can mean "I don't see enough value" or "I don't have budget right now" — those are different reframes.}}
 
-**Pergunta de qualificação (antes do reframe):**
+**Qualifying question (before the reframe):**
 
-> "Antes de responder, posso entender uma coisa? {{pergunta específica que separa o tipo real de objeção, ex: 'É problema do preço em si ou do budget disponível esse trimestre?'}}"
+> "Before I answer, can I understand one thing? {{specific question that separates the real type of objection, e.g. 'Is it the price itself, or the budget available this quarter?'}}"
 
-**Reframe (script palavra-por-palavra):**
+**Reframe (word-for-word script):**
 
-> "{{2-3 frases. Voz direta Hormozi. Sem 'eu entendo perfeitamente'. Reframe ataca a raiz, não o sintoma. Termina com pergunta que move pra próximo passo.}}"
+> "{{2-3 sentences. Direct Hormozi voice. No 'I completely understand'. The reframe attacks the root, not the symptom. Ends with a question that moves to the next step.}}"
 
-**Mitigação na oferta:**
+**Offer-side mitigation:**
 
-{{Mudança estrutural que reduz essa objeção aparecer. Ex: "Adicionar garantia condicional reduz objeção 'e se não funcionar' em ~70% dos casos."}}
+{{Structural change that makes this objection show up less. E.g. "Adding a conditional guarantee cuts the 'what if it doesn't work' objection in ~70% of cases."}}
 
-**Sucesso esperado:** {{X}}% dos prospects movem adiante após reframe (estimativa baseada em pattern matching com casos comparáveis)
-
----
-
-### Objeção 2: "{{frase típica}}"
-
-[mesma estrutura]
+**Expected success:** {{X}}% of prospects move forward after the reframe (estimate based on pattern matching with comparable cases)
 
 ---
 
-### Objeção 3: "{{frase típica}}"
+### Objection 2: "{{typical line}}"
 
-[mesma estrutura]
+[same structure]
 
 ---
 
-## Objeções secundárias (matriz resumida)
+### Objection 3: "{{typical line}}"
 
-| Frase do prospect | Root cause | Reframe (1 linha) | Mitigação |
+[same structure]
+
+---
+
+## Secondary objections (summary matrix)
+
+| Prospect line | Root cause | Reframe (1 line) | Mitigation |
 |---|---|---|---|
 | "{{...}}" | {{cat}} | "{{...}}" | {{...}} |
 | "{{...}}" | {{cat}} | "{{...}}" | {{...}} |
@@ -99,49 +100,49 @@ parent_version: {{caminho_v_anterior_ou_null}}
 
 ---
 
-## Recomendações estruturais
+## Structural recommendations
 
-Baseado na distribuição:
+Based on the distribution:
 
-{{Se Oferta domina (≥40%):}}
-- **Roda `/hormozi-gtm:audit`** — o problema raiz é Value Equation, não copy de objeção.
-- Foco no vetor mais quebrado (Probability geralmente).
+{{If Offer dominates (≥40%):}}
+- **Run `/hormozi-gtm:audit`** — the root problem is the Value Equation, not objection copy.
+- Focus on the most broken vector (usually Probability).
 
-{{Se Preço domina (≥40%):}}
-- **Roda `/hormozi-gtm:pricing`** — tiering pode estar errado ou ancoragem ausente.
-- Considera adicionar Platinum decoy para tornar Gold "óbvio".
+{{If Price dominates (≥40%):}}
+- **Run `/hormozi-gtm:pricing`** — the tiering may be wrong or the anchoring missing.
+- Consider adding a Platinum decoy to make Gold the "obvious" choice.
 
-{{Se Timing domina (≥40%):}}
-- **Reforça escassez genuína** (skill `scarcity-urgency`).
-- Considera adicionar urgência operacional (cohort, capacidade, prazo).
+{{If Timing dominates (≥40%):}}
+- **Reinforce genuine scarcity** (skill `scarcity-urgency`).
+- Consider adding operational urgency (cohort, capacity, deadline).
 
-{{Se Trust domina (≥40%):}}
+{{If Trust dominates (≥40%):}}
 - **Audit founder-market fit** (skill `founder-market-fit`).
-- Adiciona cases visíveis na LP, depoimentos em vídeo, mídia.
+- Add visible cases to the LP, video testimonials, media.
 
 ---
 
-## Treinamento sugerido
+## Suggested training
 
-**Role-play de sales call (30min):**
-1. Closer apresenta oferta (2min).
-2. SDR/consultor faz 3 objeções da matriz (1 de cada categoria).
-3. Closer aplica reframe.
-4. Debrief: o que funcionou, o que ficou enlatado, o que precisa refinar.
+**Sales-call role-play (30min):**
+1. Closer presents the offer (2min).
+2. SDR/consultant fires 3 objections from the matrix (1 from each category).
+3. Closer applies the reframe.
+4. Debrief: what worked, what sounded canned, what needs refining.
 
-**Repetir 1x/semana até reframes ficarem naturais (4-6 semanas típico).**
+**Repeat 1x/week until the reframes feel natural (4-6 weeks typical).**
 
 ---
 
-## Métricas de sucesso
+## Success metrics
 
-| Métrica | Como medir | Alvo |
+| Metric | How to measure | Target |
 |---|---|---|
-| Reframe rate | % de objeções reframeadas com sucesso | ≥ 70% |
-| Close rate pós-reframe | % que fecha após objeção | ≥ 40% |
-| Objeção dominante muda? | Reagrupar objeções após 30 dias | Distribution diferente = oferta evoluiu |
+| Reframe rate | % of objections reframed successfully | ≥ 70% |
+| Close rate post-reframe | % that closes after the objection | ≥ 40% |
+| Dominant objection shifts? | Re-group objections after 30 days | A different distribution = the offer evolved |
 
 ---
 
-*Matriz de objeções gerada pelo plugin hormozi-gtm. Persona Alex Hormozi aplicada. Diagnóstico interno — voz crua, sem humanizer.*
+*Objections matrix generated by the hormozi-gtm plugin. Alex Hormozi persona applied. Internal diagnostic — raw voice, no humanizer.*
 ```

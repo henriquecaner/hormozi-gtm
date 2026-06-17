@@ -1,87 +1,87 @@
-# LEAKED Pricing Playbook — Extratos atribuídos
+# LEAKED Pricing Playbook — Attributed Excerpts
 
-**Fonte:** *LEAKED Pricing Playbook* (atribuído a Alex Hormozi / Acquisition.com).
+**Source:** *LEAKED Pricing Playbook* (attributed to Alex Hormozi / Acquisition.com).
 
-> **Fair use disclaimer:** Excertos curtos para fins instrucionais transformativos no plugin hormozi-gtm. Material original é propriedade intelectual de Alex Hormozi / Acquisition.com.
-
----
-
-## As 5 Leis
-
-### Lei 1: Não compete em preço. Compete em valor.
-
-Antes de tocar no preço, valida Value Equation. Se a Probability está em 4/10, baixar preço não ajuda. Fortalece probability primeiro (cases, garantias, mechanism nomeado).
-
-**Sinal de violação:** "Concorrente cobra X, vou cobrar X-20%."
-
-### Lei 2: Cobra o que vale, não o que custa.
-
-Custo é seu problema, não do cliente. Cost-plus pricing deixa dinheiro na mesa.
-
-Pricing por valor:
-- Mede transformação entregue em R$ ou tempo
-- Cobra 10-20% da transformação
-- Justifica preço pelo outcome, não pelo input
-
-**Exemplo:** se você ajuda cliente a fechar R$ 100k extra em 60 dias, cobrar R$ 10-20k é defensável.
-
-### Lei 3: Preço sinaliza qualidade.
-
-Preço muito baixo = percepção de baixo valor.
-
-Preços altos AUMENTAM:
-- Compromisso do cliente
-- Resultado (cliente aplica)
-- Margem para entrega caprichada
-- Filtragem de cliente difícil
-
-**Regra prática:** se mais de 50% dos leads dizem "fechado" sem hesitar, seu preço está baixo demais.
-
-### Lei 4: Tiering captura mais mercado sem commoditização.
-
-Três tiers padrão (silver / gold / platinum):
-- **Silver:** core sem suporte premium, preço entrada
-- **Gold (DEFAULT):** core + suporte + 1-2 bonuses (60-70% dos clientes)
-- **Platinum:** core + done-for-you + mentoria 1:1 (10-15%, alta margem)
-
-Regras de tiering:
-- Diferença entre tiers tem que ser percebida
-- Platinum existe pra fazer Gold parecer barato (ancoragem)
-- Silver existe pra não perder budget-conscious
-- Default visual = Gold (highlight na LP)
-
-### Lei 5: Runway maior, ask maior.
-
-Programas longos cobram mais por mês (não menos) que curtos.
-
-Razão: anchor de pacote anual > anchor de pacote mensal × 12. Delay de gratificação genuíno aumenta o ask.
+> **Fair use disclaimer:** Short excerpts for transformative instructional purposes inside the hormozi-gtm plugin. The original material is the intellectual property of Alex Hormozi / Acquisition.com.
 
 ---
 
-## Estrutura recomendada de oferta com pricing
+## The 5 Laws
+
+### Law 1: Don't compete on price. Compete on value.
+
+Before you touch price, validate the Value Equation. If Probability is sitting at 4/10, cutting price won't help. Strengthen probability first (cases, guarantees, a named mechanism).
+
+**Violation signal:** "Competitor charges X, so I'll charge X-20%."
+
+### Law 2: Charge what it's worth, not what it costs.
+
+Cost is your problem, not the client's. Cost-plus pricing leaves money on the table.
+
+Value-based pricing:
+- Measure the transformation delivered in dollars or time
+- Charge 10-20% of the transformation
+- Justify the price by the outcome, not the input
+
+**Example:** if you help a client close $100k extra in 60 days, charging $10-20k is defensible.
+
+### Law 3: Price signals quality.
+
+A price that's too low reads as low value.
+
+High prices INCREASE:
+- Client commitment
+- Results (the client actually applies it)
+- Margin for premium delivery
+- Filtering out the difficult client
+
+**Rule of thumb:** if more than 50% of leads say "done" without hesitating, your price is too low.
+
+### Law 4: Tiering captures more of the market without commoditizing.
+
+Three standard tiers (silver / gold / platinum):
+- **Silver:** core, no premium support, entry price
+- **Gold (DEFAULT):** core + support + 1-2 bonuses (60-70% of clients)
+- **Platinum:** core + done-for-you + 1:1 mentorship (10-15%, high margin)
+
+Tiering rules:
+- The difference between tiers has to be perceived
+- Platinum exists to make Gold look cheap (anchoring)
+- Silver exists so you don't lose the budget-conscious buyer
+- Visual default = Gold (highlight it on the LP)
+
+### Law 5: Longer runway, bigger ask.
+
+Long programs charge more per month (not less) than short ones.
+
+Why: the anchor of an annual package beats the anchor of a monthly package × 12. Genuine delayed gratification raises the ask.
+
+---
+
+## Recommended offer structure with pricing
 
 ```
-Atrai (lead magnet free)
+Attract (free lead magnet)
   ↓
-Tripwire (R$ 7-97)
+Tripwire ($7-97)
   ↓
-Core offer com 3 tiers (Silver / Gold / Platinum)
+Core offer with 3 tiers (Silver / Gold / Platinum)
   ↓
-Upsell (order bump ou OTO)
+Upsell (order bump or OTO)
   ↓
-Continuity (recorrência mensal)
+Continuity (monthly recurring)
   ↓
-Downsell pra no-buys
+Downsell for no-buys
 ```
 
-## Anti-padrões
+## Anti-patterns
 
-- Pricing único sem tiering
-- Bonuses não monetizados (valor R$ ausente)
-- Sem ancoragem superior (platinum)
-- Preço justificado por horas/módulos (deveria ser por transformação)
-- Promoção permanente (mata percepção de preço cheio)
+- Single price, no tiering
+- Bonuses with no dollar value attached
+- No upper anchor (platinum)
+- Price justified by hours/modules (should be by transformation)
+- Permanent promotion (kills the perception of the full price)
 
 ---
 
-*Para o playbook integral, consulte o material em Hormozi/References/LEAKED PLAYBOOK/.*
+*For the full playbook, see the material in Hormozi/References/LEAKED PLAYBOOK/.*
